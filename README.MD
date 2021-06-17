@@ -4,8 +4,8 @@
 
 <img src="https://github.com/MacarenaPrz/grupo_7_Spellbook/blob/master/Dise%C3%B1o%20y%20Logo/Logo%20para%20fondos%20oscuros.png?raw=true" width="200" height="200" />
 
-Nuestra web es un ecommerce de venta de libros del género fantástico. La audiencia la que apuntamos es amplia, no tenemos un rango de edad definido, pero sí claramente es para personas con gusto por la literatura y el género fantástico en sí.
-La idea es hacer una aplicación llamativa, asociada a colores relacionados con lo mágico y que las decoraciones del mismo hagan alusión a distintos títulos icónicos del género, que sea fácil de navegar y que se acomode a las necesidades del usuario.
+La web que nos solicitó nuestro cliente es un ecommerce de venta de libros del género fantástico. La audiencia a la que se apunta es amplia, sobretodo para personas con gusto por la literatura y el género en sí mismo.
+Si bien el único requisito a cumplir son funcionalidades básicas, nuestra idea es agregarle valor al pedido del cliente creando una aplicación llamativa y accesible, asociada a colores relacionados con lo mágico, que las decoraciones del mismo hagan alusión a distintos títulos icónicos del género, sea fácil de navegar y se acomode a las necesidades tanto del solicitante como del usuario.
 
 
 <h3>Un poco de nosotros:</h3>
