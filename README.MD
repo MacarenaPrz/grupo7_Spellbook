@@ -36,6 +36,7 @@ De nuevo lo que más nos gustó fue el menú anclado y el desplegable, pero a su
 De GitHub nos gustó lo moderno y la simpleza, las animaciones del home, y sobretodo lo claro de la interfaz del usuario.</li>
 
 <h3>Trello del equipo:</h3>
+
 <li><a href ="https://trello.com/b/TAZy8xPk/proyecto-integrador-equipo-7" target="_blank">Tablero SpellBook</a></li></ul>
 
 
