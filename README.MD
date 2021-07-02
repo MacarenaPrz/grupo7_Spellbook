@@ -33,10 +33,10 @@ Nos pareció interesante el uso de menús desplegables y la simpleza del sitio e
 De nuevo lo que más nos gustó fue el menú anclado y el desplegable, pero a su vez, lo fácil de encontrar ítems y de usar de la página. También el efecto de movimiento cuando se pasa el cursor sobre la portada de algún libro.</li>
 <br>
 <li><a href ="https://github.com/" target="_blank">GitHub:</a> 
-De GitHub nos gustó lo moderno y la simpleza, las animaciones del home, y sobretodo lo claro de la interfaz del usuario.</li>
+De GitHub nos gustó lo moderno y la simpleza, las animaciones del home, y sobretodo lo claro de la interfaz del usuario.</li></ul>
 
 <h3>Trello del equipo:</h3>
-
+<ul type="square">
 <li><a href ="https://trello.com/b/TAZy8xPk/proyecto-integrador-equipo-7" target="_blank">Tablero SpellBook</a></li></ul>
 
 
