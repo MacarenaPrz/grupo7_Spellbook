@@ -19,8 +19,27 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+/* ROUTING */
+/* Home */
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, './views/index.html'))
+});
+/* Detalle de producto */
+app.get('/product', (req, res) => {
+  res.sendFile(path.join(__dirname, './views/productDetail.html'))
+});
+/* Shopping Cart */
+app.get('/cart', (req, res) => {
+  res.sendFile(path.join(__dirname, './views/shoppingCart.html'))
+});
+/* Registro */
+app.get('/signup', (req, res) => {
+  res.sendFile(path.join(__dirname, './views/signUp.html'))
+});
+/* Login */
+app.get('/login', (req, res) => {
+  res.sendFile(path.join(__dirname, './views/login.html'))
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
