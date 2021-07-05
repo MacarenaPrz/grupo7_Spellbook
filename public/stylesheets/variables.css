@@ -1,0 +1,15 @@
+:root {
+    --color-beige : #FFF3E6;
+    --color-azulOscuro : #0D335D;
+    --color-azulClaro : #1A508B;
+    --color-Violeta : #C1A1D3;
+
+    /* FUENTES */
+    --font-berkshire : 'Berkshire Swash', cursive;
+    --font-roboto : 'Roboto', sans-serif;
+    /* Tamaños */
+    --paragraph : 12px;
+    --title : 24px;
+    --prices : 18px;
+    --discounts-descriptions : 16px;
+}
