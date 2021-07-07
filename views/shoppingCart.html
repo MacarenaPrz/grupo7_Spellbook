@@ -1,13 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/29f0a39c3c.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="stylesheets/shoppingCart.css">
-    <title>Document</title>
+    <title>SpellBook</title>
 </head>
 <body>
-    <h1>Carrito de compras</h1>
+    <h1 class="title">Mi Carrito</h1>
+    <section>
+        <article class="conteiner-item">   
+            <div class="item-left">
+                <img class="buy-image" src="images/harry-potter-y-el-caliz-de-fuego.jpg" alt="">
+                <p>Harry Potter y el caliz de fuego</p>
+            </div>
+            <div class="item-right">   
+                <i class="far fa-trash-alt right"></i>
+                <p>$ 1200</p>
+                <form action="/carrito" method="GET">
+            <label>Cantidad: </label>
+            <select  class="quantity-button" name="cantidad">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+                </form>
+            </div>
+        </article>
+    </section>
+    <section>
+        <h3 class="detail-title">Detalle de la Compra</h3>
+        <div class="conteiner-price">
+            <p>Harry Potter y el caliz de fuego</p>
+            <p>$$$$</p>
+        </div>
+        <div class="conteiner-price">
+            <p>SubTotal </p>
+            <p>$$$$</p>
+        </div>
+        <div class="conteiner-price total">
+            <p>Total</p>
+            <p>$$$$</p>
+        </div>
+        <a href="#" >
+            <button class="to-pay" type="submit">Ir al Pago</button>
+        </a>
+    </section>
+    <h3 class="recommended-title">Recomendados para Vos</h3>
+    <section class="recommended-conteiner">
+       
+        <article class="recommended-item">
+            <a href="">
+                <img class="recommended-img"src="images/AnimalesFantasticosYDondeEncontrarlos.jpg" alt="">
+                <p>Animales Fantasticos y donde encontrarlos</p>
+            </a>    
+        </article>
+        <article class="recommended-item">
+            <a href="">
+                <img class="recommended-img" src="images/ElSeñorDeLosAnillos_LaComunidadDelAnillo.jpg" alt="">
+                <p>El Señor de los anillos La comunidad del Anillo</p>
+            </a>
+        </article>
+        <article class="recommended-item">
+            <a href="">
+                <img class="recommended-img" src="images/harry-potter-y-la-camara-secreta.png" alt="">
+                <p>Harry Potter y la Camara Secreta</p>
+            </a>
+        </article>
+        <article class="recommended-item">
+            <a href="">
+                <img class="recommended-img" src="images/los-crimenes-de-grindelwald.jpg" alt="">
+                <p>Los Crimenes de Grindelwald</p>
+            </a>
+        </article>
+    </section>
 </body>
 </html>

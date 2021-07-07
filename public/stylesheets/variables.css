@@ -12,4 +12,8 @@
     --title : 24px;
     --prices : 18px;
     --discounts-descriptions : 16px;
+
+    /* Sombreado */
+    --box-shadow-images: 4px 4px 4px rgba(0, 0, 0, 0.5);
+    --box-shadow-button: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
