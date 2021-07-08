@@ -1,9 +1,17 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: rgb(97, 38, 97);
+@import url("header.css");
+@import url("variables.css");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-
+body {
+  font-family: var(--font-roboto);
+  font-size: 62.5%;
+}
+li {
+  list-style-type: none;
+}
 a {
-  color: #00B7FF;
+  text-decoration: none;
 }

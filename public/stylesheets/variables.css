@@ -8,8 +8,9 @@
     --font-berkshire : 'Berkshire Swash', cursive;
     --font-roboto : 'Roboto', sans-serif;
     /* Tamaños */
-    --paragraph : 12px;
-    --title : 24px;
-    --prices : 18px;
-    --discounts-descriptions : 16px;
+    --paragraph : 1.2rem;
+    --icon : 2rem;
+    --title: 2.1rem;
+    --btn : 1.3rem;
+    --discounts-descriptions : 1.4rem;
 }
