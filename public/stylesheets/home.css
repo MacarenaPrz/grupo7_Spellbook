@@ -10,22 +10,23 @@ main{
 
 /* TITULO */
 .headline {
-    display: inline-block;
-    margin-right: 0px 10px
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 1rem;
+    height: 75px;
+    /* padding: 10px 15px; */
     
 }
 .headline .varita {
-    margin-top: 20px;
     width: 30px;
     height: 30px;
 }
 
 h1 {
-    margin: auto auto 15px auto;
-    display: inline-block;
-    font-size: 35px;
+    font-size: 2rem;
     font-family: var(--font-berkshire);
-    text-align: center;
 }
 
 /* CARDS */
@@ -37,7 +38,9 @@ h1 {
 .card .card-content .writer {
     border: 5px solid rgba(193,161,211, 0.8);
     border-radius: 50%;
-    box-shadow: 2px 2px 2px 1px rgba(193,161,211, 0.6);
+     /* box-shadow: 2px 2px 2px 1px rgba(193,161,211, 0.6);  */
+     /* Sombreado */
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
     display: block;
     height: 100px;
     margin: auto;
