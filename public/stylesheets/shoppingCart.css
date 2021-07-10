@@ -8,17 +8,19 @@
 }
 
 body {
+    background-image: url(/images/fondo-magic.jpg);
+    background-size: 300px;
     background-color: var(--color-beige);
     color: var(--color-azulOscuro);
     font-family: var(--font-roboto);
     padding: 20px;
-    max-width: 560px;
+    max-width: 600px;
     margin: 0 auto;
     width: 100%;
 }
 .buy-image {
     border-radius: 15px;
-    height: 150px;
+    height: 200px;
     margin-bottom: 5px;
     box-shadow:var(--box-shadow-images);
 }
@@ -119,5 +121,5 @@ body {
     margin-bottom: 10px;
     box-shadow: var(--box-shadow-images);
     border-radius: 15px;
-    height: 120px;
+    height: 70%;
 }
