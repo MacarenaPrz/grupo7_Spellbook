@@ -1,5 +1,5 @@
 body {
-    background-color: var(--color-beige);
+   background-color: var(--color-beige);
 }
 
 /* AUTORES */
@@ -13,7 +13,7 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     font-size: 1rem;
     height: 75px;
     /* padding: 10px 15px; */
@@ -25,17 +25,48 @@ main{
 }
 
 h1 {
+    color: var(--color-azulOscuro);
+    display: flex;
     font-size: 1.5rem;
     font-family: var(--font-berkshire);
 }
 
 /* CARDS */
+
+
 .card {
     background-color: var(--color-beige);
     margin-bottom: 10px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
   }
+ 
+.card .card-content {
+    padding: 15px;
+}  
 
-.card .card-content .writer {
+.card .card-content .writer-tolkien {
+    border: 5px solid rgba(193,161,211, 0.8);
+    border-radius: 50%;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+    display: block;
+    height: 100px;
+    margin: auto;
+    width: 100px;
+   
+}
+
+.card .card-content .writer-sapkowski {
+    border: 5px solid rgba(193,161,211, 0.8);
+    border-radius: 50%;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+    display: block;
+    height: 100px;
+    margin: auto;
+    width: 100px;
+   
+}
+
+.card .card-content .writer-martin {
     border: 5px solid rgba(193,161,211, 0.8);
     border-radius: 50%;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
@@ -51,8 +82,8 @@ h1 {
 }
 
 .card .card-content .card-text .bio {
-    width: 55%;
-    height: 15%;
+    width: 200px;
+    height: 150px;
     opacity: 0.1;
 }
 
@@ -61,19 +92,112 @@ h1 {
     display: block;
     position: relative;
     text-align: center;
+    margin: 0;
 }
 
 .card .card-content .card-text .bio-text {
+    color: var(--color-azulOscuro);
     font-size: 0.9rem;
     position: absolute;
+
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    margin: 15px auto 15px auto;
+    height: 200px;
+    width: 250px;
 }
 
+h4 {
+    font-family: var(--font-berkshire);
+    color: var(--color-azulOscuro);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 1rem;
+    margin: 20px auto 20px auto;
+}
 
 /* SELECCION DEL MES */
 .month-selection .book .book-content .book-cover {
     width: 100px;
     height: 200px;
 }
+
+/* MÁS TITULOS */
+.titles .more-titles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    font-size: 1rem;
+    height: 75px;
+}
+
+.titles .varita {
+    width: 25px;
+    height: 25px;
+}
+
+/* CARRUSEL */
+  .carrousel {
+    width: 200px;
+    height: 300px;
+    margin: 0 auto 0 auto;
+  }
+  
+  @keyframes display {
+    0% {
+      transform: translateX(200px);
+      opacity: 0;
+    }
+    10% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    20% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    30% {
+      transform: translateX(-200px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(-200px);
+      opacity: 0;
+    }
+  }
+  
+  .carrousel {
+    position: relative;
+    width: 200px;
+    height: 300px;
+    margin-top: 15px;
+  }
+  
+  .carrousel img {
+    width: 200px;
+    height: 300px;
+    position: absolute;
+    top: 0;
+    left: calc(50% - 100px);
+    opacity: 0;
+    animation: display 10s infinite;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+  }
+  
+  img:nth-child(2) {
+    animation-delay: 2s;
+  }
+  img:nth-child(3) {
+    animation-delay: 4s;
+  }
+  img:nth-child(4) {
+    animation-delay: 6s;
+  }
+  img:nth-child(5) {
+    animation-delay: 8s;
+  }
