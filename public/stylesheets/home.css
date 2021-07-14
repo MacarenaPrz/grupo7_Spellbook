@@ -1,7 +1,11 @@
 body {
    background-color: var(--color-beige);
 }
+/* Ocultar slider */
 
+.slider {
+  display: none;
+}
 /* AUTORES */
 main{
     margin: 0 auto;
@@ -262,17 +266,238 @@ h5 {
 
 @media (min-width: 361px) {
 
-  .card {
-    box-shadow: 0px 0px 10px rgb(100, 100,100);
-  }
 
-  .card .card-content h6 {
-    display: block;
-  }
-  
 }
 
 /* Desktop */
 
 @media (min-width: 769px) {
+
+  .carrousel {
+    display: none;
+  }
+
+  .authors {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: center;
+  }
+
+  .month-selection {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+
+  }
+
+  .headline .varita {
+    width: 3rem;
+    height: 3rem;
 }
+
+  h1 {
+    font-size: 4rem;
+  }
+
+
+  /* SLIDER PARA DESKTOP */
+
+
+  .slider {
+    display: block;
+    width: 100%;
+    margin-top: 1rem;
+  }
+  .slider input {
+    display: none;
+  }
+  .testimonials {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    min-height: 400px;
+    perspective: 1000px;
+    overflow: hidden;
+  }
+  .testimonials .item {
+    background-color: transparent;
+    top: 0;
+    position: absolute;
+    box-sizing: border-box;
+    text-align: center;
+    transition: transform 0.4s;
+    -webkit-transform-style: preserve-3d;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    user-select: none;
+    cursor: pointer;
+    border-radius: 15px;
+  }
+  .testimonials .item img {
+    width: 250px;
+    height: 400px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+  
+  }
+ 
+  }
+  .dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .dots label {
+    display: block;
+    height: 5px;
+    width: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: var(--color-azulOscuro);
+    margin: 7px;
+    transition: transform 0.2s, color 0.2s;
+  }
+  
+  /* First */
+  #t-1:checked ~ .dots label[for="t-1"] {
+    transform: scale(2);
+    background-color: #C1A1D3;
+  }
+  #t-1:checked ~ .dots label[for="t-2"] {
+    transform: scale(1.5);
+  }
+  #t-1:checked ~ .testimonials label[for="t-1"] {
+    z-index: 4;
+  }
+  #t-1:checked ~ .testimonials label[for="t-2"] {
+    transform: translateX(300px) translateZ(-90px) rotateY(-15deg);
+    z-index: 3;
+  }
+  #t-1:checked ~ .testimonials label[for="t-3"] {
+    transform: translateX(600px) translateZ(-180px) rotateY(-25deg);
+    z-index: 2;
+  }
+  #t-1:checked ~ .testimonials label[for="t-4"] {
+    transform: translateX(900px) translateZ(-270px) rotateY(-35deg);
+    z-index: 1;
+  }
+  #t-1:checked ~ .testimonials label[for="t-5"] {
+    transform: translateX(1200px) translateZ(-360px) rotateY(-45deg);
+  }
+  
+  /* Second */
+  #t-2:checked ~ .dots label[for="t-1"] {
+    transform: scale(1.5);
+  }
+  #t-2:checked ~ .dots label[for="t-2"] {
+    transform: scale(2);
+    background-color: #C1A1D3;
+  }
+  #t-2:checked ~ .dots label[for="t-3"] {
+    transform: scale(1.5);
+  }
+  #t-2:checked ~ .testimonials label[for="t-1"] {
+    transform: translateX(-300px) translateZ(-90px) rotateY(15deg);
+  }
+  #t-2:checked ~ .testimonials label[for="t-2"] {
+    z-index: 3;
+  }
+  #t-2:checked ~ .testimonials label[for="t-3"] {
+    transform: translateX(300px) translateZ(-90px) rotateY(-15deg);
+    z-index: 2;
+  }
+  #t-2:checked ~ .testimonials label[for="t-4"] {
+    transform: translateX(600px) translateZ(-180px) rotateY(-25deg);
+    z-index: 1;
+  }
+  #t-2:checked ~ .testimonials label[for="t-5"] {
+    transform: translateX(900px) translateZ(-270px) rotateY(-35deg);
+  }
+  
+  /* Third */
+  #t-3:checked ~ .dots label[for="t-2"] {
+    transform: scale(1.5);
+  }
+  #t-3:checked ~ .dots label[for="t-3"] {
+    transform: scale(2);
+    background-color: #C1A1D3;
+  }
+  #t-3:checked ~ .dots label[for="t-4"] {
+    transform: scale(1.5);
+  }
+  #t-3:checked ~ .testimonials label[for="t-1"] {
+    transform: translateX(-600px) translateZ(-180px) rotateY(25deg);
+  }
+  #t-3:checked ~ .testimonials label[for="t-2"] {
+    transform: translateX(-300px) translateZ(-90px) rotateY(15deg);
+  }
+  #t-3:checked ~ .testimonials label[for="t-3"] {
+    z-index: 3;
+  }
+  #t-3:checked ~ .testimonials label[for="t-4"] {
+    transform: translateX(300px) translateZ(-90px) rotateY(-15deg);
+    z-index: 2;
+  }
+  #t-3:checked ~ .testimonials label[for="t-5"] {
+    transform: translateX(600px) translateZ(-180px) rotateY(-25deg);
+  }
+  
+  /* Fourth */
+  #t-4:checked ~ .dots label[for="t-3"] {
+    transform: scale(1.5);
+  }
+  #t-4:checked ~ .dots label[for="t-4"] {
+    transform: scale(2);
+    background-color: #C1A1D3;
+  }
+  #t-4:checked ~ .dots label[for="t-5"] {
+    transform: scale(1.5);
+  }
+  #t-4:checked ~ .testimonials label[for="t-1"] {
+    transform: translateX(-900px) translateZ(-270px) rotateY(35deg);
+  }
+  #t-4:checked ~ .testimonials label[for="t-2"] {
+    transform: translateX(-600px) translateZ(-180px) rotateY(25deg);
+  }
+  #t-4:checked ~ .testimonials label[for="t-3"] {
+    transform: translateX(-300px) translateZ(-90px) rotateY(15deg);
+    z-index: 2;
+  }
+  #t-4:checked ~ .testimonials label[for="t-4"] {
+    z-index: 3;
+  }
+  #t-4:checked ~ .testimonials label[for="t-5"] {
+    transform: translateX(300px) translateZ(-90px) rotateY(-15deg);
+  }
+  
+  /* Fifth */
+  #t-5:checked ~ .dots label[for="t-4"] {
+    transform: scale(1.5);
+  }
+  #t-5:checked ~ .dots label[for="t-5"] {
+    transform: scale(2);
+    background-color: #C1A1D3;
+  }
+  #t-5:checked ~ .testimonials label[for="t-1"] {
+    transform: translateX(-1200px) translateZ(-360px) rotateY(45deg);
+  }
+  #t-5:checked ~ .testimonials label[for="t-2"] {
+    transform: translateX(-900px) translateZ(-270px) rotateY(35deg);
+    z-index: 1;
+  }
+  #t-5:checked ~ .testimonials label[for="t-3"] {
+    transform: translateX(-600px) translateZ(-180px) rotateY(25deg);
+    z-index: 2;
+  }
+  #t-5:checked ~ .testimonials label[for="t-4"] {
+    transform: translateX(-300px) translateZ(-90px) rotateY(15deg);
+    z-index: 3;
+  }
+  #t-5:checked ~ .testimonials label[for="t-5"] {
+    z-index: 4;
+  }
