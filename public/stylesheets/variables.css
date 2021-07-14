@@ -5,12 +5,12 @@
     --color-Violeta : #C1A1D3;
 
     /* FUENTES */
-    --font-berkshire : 'Berkshire Swash', cursive;
+    --font-berkshire : 'Berkshire Swash';
     --font-roboto : 'Roboto', sans-serif;
     /* Tamaños */
-    --paragraph : 1.2rem;
+    --paragraph : 1rem;
     --icon : 2rem;
-    --title: 2.1rem;
-    --btn : 1.3rem;
+    --title: 1.8rem;
+    --btn : 1.2rem;
     --discounts-descriptions : 1.4rem;
 }

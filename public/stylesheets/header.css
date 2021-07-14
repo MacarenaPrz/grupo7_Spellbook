@@ -30,13 +30,13 @@
   height: 90vh;
   width: 100%;
   flex-direction: column;
-  clip-path: circle(0px at 100% -10%);
-  -webkit-clip-path: circle(0px at 100% -10%);
+  clip-path: inset(50% 0 50% 0);
+  -webkit-clip-path: inset(50% 0 50% 0);
   transition: all 2s ease-out;
 }
 .nav.open {
-  clip-path: circle(1000px at 90% -10%);
-  -webkit-clip-path: circle(1000px at 90% -10%);
+  clip-path: inset(0 0 0 0);
+  -webkit-clip-path: inset(0 0 0 0);
   pointer-events: all;
 }
 .menu {
