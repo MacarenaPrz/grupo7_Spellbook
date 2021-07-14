@@ -5,7 +5,7 @@ body {
 /* AUTORES */
 main{
     margin: 0 auto;
-    width: 90%;
+
 }
 
 /* TITULO */
@@ -13,10 +13,10 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: nowrap;
     font-size: 1rem;
     height: 75px;
-    /* padding: 10px 15px; */
+    margin: 2rem 0;
+    text-shadow: 1px 1px 2px grey;
     
 }
 .headline .varita {
@@ -27,21 +27,31 @@ main{
 h1 {
     color: var(--color-azulOscuro);
     display: flex;
-    font-size: 1.5rem;
+    font-size: 1.9rem;
     font-family: var(--font-berkshire);
 }
 
 /* CARDS */
 
+.authors {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
 
 .card {
+    width: 100%;
     background-color: var(--color-beige);
     margin-bottom: 10px;
-    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+    /* box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4); */
+    border-radius: 1rem;
+    max-width: 288px;
   }
  
 .card .card-content {
     padding: 15px;
+  
 }  
 
 .card .card-content .writer-tolkien {
@@ -82,30 +92,32 @@ h1 {
 }
 
 .card .card-content .card-text .bio {
-    width: 200px;
-    height: 150px;
+    width: 5rem;
+    height: 9rem;
     opacity: 0.1;
 }
 
 .card .card-content .card-text {
     font-family: var(--font-roboto);
-    display: block;
+    display: flex;
     position: relative;
     text-align: center;
+    justify-content: center;
     margin: 0;
 }
 
 .card .card-content .card-text .bio-text {
     color: var(--color-azulOscuro);
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     position: absolute;
-
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    margin: 15px auto 15px auto;
-    height: 200px;
-    width: 250px;
+    transform: translate(-50%, -65%);
+    margin: auto 0.5rem;
+    height: 25%;
+    width: 75%;
+    display: flex;
+    align-items: center;
 }
 
 h4 {
@@ -121,8 +133,47 @@ h4 {
 
 /* SELECCION DEL MES */
 .month-selection .book .book-content .book-cover {
-    width: 100px;
-    height: 200px;
+  width: 200px;
+  height: 300px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+  border-radius: 15px;
+}
+
+.month-selection {
+  display: flex;
+  flex-direction: column;
+}
+
+.month-selection .book {
+  margin-top: 0;
+}
+
+h3, h5 {
+  color: var(--color-azulOscuro);
+  font-family: var(--font-roboto);
+}
+
+h5 {
+  margin: 0 auto 2rem auto;
+}
+.month-selection .book .book-content {
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  
+}
+
+.book .book-content input {
+  font-family: var(--font-roboto);
+  border: 1px solid var(--color-azulOscuro);
+  background-color: var(--color-azulOscuro);
+  color: var(--color-beige);
+  padding: 10px 25px;
+  border-radius: 3rem;
+  font-size: 1rem;
 }
 
 /* MÁS TITULOS */
@@ -201,3 +252,27 @@ h4 {
   img:nth-child(5) {
     animation-delay: 8s;
   }
+
+
+
+
+/* Media queries */
+
+/* Tablet */
+
+@media (min-width: 361px) {
+
+  .card {
+    box-shadow: 0px 0px 10px rgb(100, 100,100);
+  }
+
+  .card .card-content h6 {
+    display: block;
+  }
+  
+}
+
+/* Desktop */
+
+@media (min-width: 769px) {
+}
