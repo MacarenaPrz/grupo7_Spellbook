@@ -40,6 +40,11 @@ app.get('/signup', (req, res) => {
 app.get('/login', (req, res) => {
   res.sendFile(path.join(__dirname, './views/login.html'))
 });
+/* Info de Usuario */
+app.get('/register', (req, res) => {
+  res.sendFile(path.join(__dirname, './views/register.html'))
+});
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

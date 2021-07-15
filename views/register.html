@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- LINK DE FONT AWESONE  -->
+      <script src="https://kit.fontawesome.com/fc00004fb4.js"crossorigin="anonymous"></script>
+   
+      <script src="https://kit.fontawesome.com/29f0a39c3c.js" crossorigin="anonymous"></script>
+      
+      <!-- LINK DE GOOGLE FONT BERKSHIRE Y ROBOTO -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+     
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     
+      <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Roboto&display=swap" rel="stylesheet">
+      
+      <!-- LINK CSS DEL HEADER -->
+      <link rel="stylesheet" href="stylesheets/header.css">
+
+      <!-- LINK DEL REGISTRO -->
+      <link rel="stylesheet" href="stylesheets/register.css">
+
+      <!-- TITULO DEL SITIO -->
+      <title>SpellBook</title>
+
+</head>
+  
+<!-- BODY CON IMAGEN DE FONDO -->
+<body class="background-image">
+
+    <!-- COMIENZA EL HEADER -->
+    <header class="header">
+
+        <!-- LOGO CON LINK AL HOME -->
+        <div class="logo">
+          <h1 class="logo__title"><a href="" class="logo__link">SpellBook</a></h1>
+        </div>
+
+        <!-- BURGER MENU -->
+        <div class="btn">
+          <i class="fas fa-bars" id="icon"></i>
+        </div>
+
+        <!-- MENU DESPLEGABLE -->
+        <nav class="nav">
+          <ul class="menu">
+            <li class="menu__items">
+                <a href="#" class="menu__link">Inicio</a>
+            </li>
+            <li class="menu__items">
+                <a href="#" class="menu__link">Libros</a>
+            </li>
+            <li class="menu__items">
+              <a href="#" class="menu__link">Recomendados</a>
+            </li>
+            <li class="menu__items">
+              <a href="#" class="menu__link">Novedades</a>
+            </li>
+            <li class="menu__items">
+              <a href="#" class="menu__link">Nosotros</a>
+            </li>
+          </ul>
+
+          <!-- REGISTRO E INICIO DE SESIÓN -->
+          <div class="login">
+            <a class="login__btn">Registrate</a>
+            <a class="login__btn login--up">Iniciar sesion</a>
+          </div>
+        </nav>
+
+        <!-- HEADER VERSIÓN DESKTOP -->
+        
+        <!-- SE UTILIZA EL MISMO LOGO ORIENTADO EN EL CENTRO -->
+        
+            <!-- LUPA, CARRITO Y MAGO DE USUARIO -->
+        <div class="user__desk">
+
+            <!-- LUPA DE BUSQUEDA -->
+            <label name="search" id="search" >
+                <input class="user__search__desk" type="search" name="search" id="search" placeholder="¿Que buscas Muggle?">
+                <i class="fas fa-search user__icon__desk"></i>
+            </label>
+
+            <!-- HACIA EL CARRITO DE COMPRAS -->
+            <a href="/cart">
+                <i class="fas fa-shopping-cart user__icon__desk"></i>
+            </a>
+            <!-- MAGO PARA REGISTRARSE -->
+            <div class="wizard">    
+                 <a href="/login" class="wizard__image">
+                     <img src="images/wizard-icon.png" width="20px" alt="">
+                 </a>
+                 <a href="/login" class="wizard__login">
+                    <p>Ingresar / </p>
+                 </a>
+                 <a href="/signup" class="wizard__login">
+                     <p>Registrarse</p>
+                 </a>
+            </div>
+        </div>
+
+        <!-- MENU POR DEBAJO DEL HEADER -->
+        <nav class="nav__desk">
+            <ul class="menu__desk">
+              <li class="menu__items__desk">
+                  <a href="/" class="menu__link__desk">Inicio</a>
+              </li>
+              <li class="menu__items__desk">
+                  <a href="/product" class="menu__link__desk">Libros</a>
+              </li>
+              <li class="menu__items__desk">
+                <a href="#" class="menu__link__desk">Recomendados</a>
+              </li>
+              <li class="menu__items__desk">
+                <a href="#" class="menu__link__desk__desk">Novedades</a>
+              </li>
+              <li class="menu__items__desk">
+                <a href="#" class="menu__link__desk">Nosotros</a>
+              </li>
+            </ul>
+        </nav>
+      </header>
+
+   <!-- COMIENZA EL REGITRO DE USUARIO -->
+
+  <main class="conteiner-main">
+     
+    <!-- FORMULARIO DE REGISTRO -->
+    <form action="/signup" method="POST">
+
+      <!-- IMAGEN DE USUARIO, BARITA -->
+      <section class="user">        
+          <div class="user-image">
+              <img  class= "user-image-item"src="images/user-img.png"  alt="">
+          </div>
+          <div class="user-magic-wand">
+              <i class="fas fa-magic"></i>
+          </div>
+      </section>
+
+     <!-- NOMBRE DEL USUARIO -->
+      <h5 class="user-name">Nombre del Usuario</h5>
+        
+      <!-- CAMPOS A LLENAR -->
+
+      <!-- NOMBRE -->
+        <p class="user-data">
+        <label for="name">
+            <img class="user-data-icon user-pocision" height="40px" src="images/wizard-icon.png" alt="img de mago">
+        </label>
+        <input class = "user-date-inputs" placeholder="Nombre Completo" type="text" name="name" id="name">
+        </p>
+
+      <!-- NACIMIENTO -->
+        <p class="user-data ">
+        <label for="date">
+            <i class="far fa-calendar user-data-icon "><img class="image-icon" height="18px" src="images/wizard-icon.png" alt="img de mago"></i>
+        </label>
+        <input class ="user-date-inputs-date date-pocision" type="date" name="date" id="date">
+        </p>
+
+      <!-- LUGAR -->
+        <p class="user-data">    
+        <label for="location">
+            <i class="fas fa-globe-americas user-data-icon"></i>
+        </label>
+        <input class = "user-date-inputs" placeholder="¿De donde Eres?" type="text" name="location" id="location">
+        </p>
+
+        <!-- CONTRASEÑA -->
+        <p class="user-data">    
+        <label for="password">
+            <i class="fas fa-lock user-data-icon pass-pocision"></i>
+        </label>
+        <input class = "user-date-inputs" placeholder="Contraseña" type="password" name="pass" id="password">
+        </p>
+        <p class="confirmation">
+          <input class = "user-date-inputs " placeholder="Confirmar Contraseña" type="password" name="pass" id="password">
+        </p>
+
+        <!-- EMAIL -->
+        <p class="user-data">
+        <label for="email">
+            <i class="fas fa-envelope user-data-icon"></i>
+        </label>
+        <input class = "user-date-inputs" placeholder="E-mail" type="email" name="email" id="email">
+        </p>
+        <p class="confirmation">
+          <input class = "user-date-inputs" placeholder="Confirmar E-mail" type="email" name="email" id="email">
+        </p>
+
+        <!-- TELEFONO -->
+        <p class="user-data">
+        <label for="phone">
+            <i class="fas fa-mobile-alt user-data-icon tel-pocision"></i>
+        </label>
+        <input class = "user-date-inputs" placeholder="Numero de Contacto" type="tel" name="phone" id="phone">
+        </p>
+
+        <!-- BOTON PARA REGISTRARSE -->
+        <button type="submit" class="btn-save">REGISTRARME</button>
+     
+    </form>
+  </main>
+
+  <!-- LINK DEL JS DEL HEADER -->
+  <script src="js/header.js"></script>
+</body>
+</html>

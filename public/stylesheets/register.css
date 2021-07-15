@@ -1,0 +1,153 @@
+@import url(variables.css);
+
+a{
+    color: var(--color-azulOscuro);
+}
+/* BODY CON IMAGEN DE FONDO */
+.background-image{
+    background-image: url(/images/fondo-magic.jpg);
+}
+
+/* COMIENZA EL REGITRO DE USUARIO */
+.conteiner-main {
+    max-width: 400px;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+
+/*  FORMULARIO DE REGISTRO */
+
+/* IMAGEN DE USUARIO */
+.user {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.user-image {
+   
+    text-align: right;
+    width:fit-content ;
+}
+
+.user-image-item {
+    border-radius: 50%;
+    width: 30%;
+    max-height: 100px;
+}
+
+/* BARITA */
+.user-magic-wand {
+    width: 55%;
+}
+
+.user-magic-wand i {
+    font-size:  0.9rem;
+}
+
+/* NOMBRE DEL USUARIO */
+.user-name{
+    color: var(--color-azulOscuro);
+    position: relative;
+    left: 1rem;
+    width: fit-content;
+    margin: 1.5rem auto 2rem;
+    font-size: 12px;
+    font-family: var(--font-berkshire);
+}
+
+
+/* CAMPOS A LLENAR */
+
+/* PARA TODOS LOS IMPUTS */
+.user-data {
+    display: flex;
+    justify-content: space-between;
+    width: 75% ;
+    margin: 20px auto;
+    height: 50px;
+}
+
+.user-data-icon {
+    opacity: 0.8;
+    color: var(--color-Violeta);
+    font-size: 40px;
+    text-align: center;
+} 
+
+.user-date-inputs {
+    text-align: center;
+    max-height: 30px;
+    background: transparent;
+    border: none;
+    border-bottom: solid 3px var(--color-azulOscuro);
+    width: 70%;
+}
+.user-date-inputs::placeholder {
+    font-size: 12px ;
+    font-family:  var(--color-azulOscuro);
+    position: relative;
+    top: 3px;
+    opacity: 0.6;
+    background-color: var(--color-beige);
+    border-radius: 30px;
+}
+
+.confirmation {
+    justify-content: flex-end;
+    display: flex;
+    width: 74%;
+    margin-left: 13%;
+    margin-bottom: 32px;
+}
+
+/* NOMBRE */
+.user-pocision {
+    position: relative;
+    left: 3px;
+}
+
+
+/* NACIMIENTO */
+.image-icon {
+    position: relative;
+    right:24px ;
+    bottom: 3px;
+}
+
+.user-date-inputs-date {
+    max-height: 40px;
+    background: transparent;
+    border: none;
+   
+}
+
+.date-pocision {
+    position: relative;
+    right: 10px;
+}
+
+/* CONTRASEÑA */
+.pass-pocision {
+    position: relative;
+    left: 3px;
+}
+
+/* TELEFONO */
+.tel-pocision {
+    position: relative;
+    left: 8px;
+}
+
+
+/* BOTON DE GUARDAR */
+ .btn-save {
+    background-color: var(--color-Violeta);
+    border: none;
+    border-radius: 7px;
+    width: 10rem;
+    height: 2rem;
+    box-shadow: var(--box-shadow-button);
+    display: block;
+    margin: 2rem auto;
+ }

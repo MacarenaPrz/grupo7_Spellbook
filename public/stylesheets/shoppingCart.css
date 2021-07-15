@@ -1,16 +1,30 @@
 @import url(variables.css);
 
+
+/* OPERACIONES GENERALES */
 *{
     margin: 0;
     box-sizing: border-box;
+}
+body {
+    font-family: var(--font-roboto);
+    font-size: 62.5%;
+  }
+  li {
+    list-style-type: none;
+  }
+  a {
     text-decoration: none;
-    color: var(--color-azulOscuro);
+  }
+
+/* BODY CON IMAGEN DE FONDO */
+.background-image{
+    background-image: url(/images/fondo-magic.jpg);
 }
 
-body {
-    background-image: url(/images/fondo-magic.jpg);
-    background-size: 300px;
-    background-color: var(--color-beige);
+
+/* CLASES DEL CARRITO */
+.global{
     color: var(--color-azulOscuro);
     font-family: var(--font-roboto);
     padding: 20px;
@@ -18,56 +32,85 @@ body {
     margin: 0 auto;
     width: 100%;
 }
+
+/* TITULO DE PAGINA */
+
+.title {
+    font-size: var(--title);
+    font-family: var(--font-berkshire);
+    margin: 3vw 0;
+}
+
+
+/* SECCIÓN DE PRODUCTOS Y CANTIDAD */
+
+/* TODOS LOS PRODUCTOS A COMPRAR */
+.conteiner-item {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* IMAGEN DEL PRODUCTO A COMPRAR Y TITULO */
+.item-left{
+    text-align: center;
+    font-size:1rem;
+}
+
 .buy-image {
     border-radius: 15px;
-    height: 200px;
-    margin-bottom: 5px;
+    height: 10rem;
+    margin-bottom: 2rem;
     box-shadow:var(--box-shadow-images);
 }
 
-.title {
-    font-family: var(--font-berkshire);
-    margin-bottom: 25px;
+/* ICONO DE BASURA y PRECIO */
+.item-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0.5rem;
+    height: 55%;
+    width: 45%;
+    font-size: 0.8rem;
+
+}
+.right{
+   text-align: right;
+   margin-bottom: 1rem;
+   font-size: 1rem;
 }
 
+/* BOTON CANTIDAD DE UNIDADES */
 .quantity-button {
     background-color: var(--color-Violeta);
     border-radius: 7px;
-    width: 35px;
+    width: 2.3rem;
     height: 20px;
     box-shadow: var(--box-shadow-button);
 
 }
 
-.conteiner-item {
-    display: flex;
-    justify-content: space-evenly;
-    font-size: var(--paragraph);
-}
 
-.item-left{
+/* SECCIÓN DETALLE DE COMPRA */
+
+/* TÍTULO DE SECCIÓN */
+.detail-title {
+    background-color: var(--color-Violeta);
+    border-radius: 2.3rem;
+    font-size: 1rem;
+    margin: 30px auto;
+    padding: 5px 0;
     text-align: center;
-}
-.item-right {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 50%;
-    
-}
-.right{
-   text-align: right;
-   margin-bottom: 25px;
-   font-size: 15px;
+    width: 18rem;
 }
 
-/* Comienza la sección Detalle de la Compra */
-
+/* SECCIÓN DETALLE DE COMPRA */
 .conteiner-price{
     display: flex;
     justify-content: space-between;
+    font-size: 1rem;
     height: auto;
-    max-width: 280px;
+    max-width: 18rem;
     margin: 15px auto;
     padding: 5px;
 }
@@ -76,15 +119,7 @@ body {
     justify-content: space-evenly;
     max-width: 230px;
 }
-.detail-title {
-    background-color: var(--color-Violeta);
-    border-radius: 30px;
-    font-size: 15px;
-    margin: 30px auto;
-    padding: 5px 0;
-    text-align: center;
-    width: 280px;
-}
+
 .to-pay{
     display: block;
     background-color: var(--color-Violeta);
@@ -96,14 +131,15 @@ body {
     text-align: center;
     width: 180px;
 }
-/* Comienza la sección Recomendados para Vos */
+/* TÍTULO RECOMENDADOS */
 
 .recommended-title {
     font-family: var(--font-berkshire);
-    font-size: var(--prices);
+    font-size: var(--paragraph);
     margin: 50px auto 20px;
 }
 
+/* SECCIÓN RECOMENDADOS */
 .recommended-conteiner {
     display: flex;
     justify-content: space-evenly;
@@ -112,7 +148,7 @@ body {
 
 .recommended-item {
     text-align: center;
-    font-size: var(--paragraph);
+    font-size: 1rem;
     margin: 20px;
     width: 35%;
    height: 230px;
@@ -121,5 +157,68 @@ body {
     margin-bottom: 10px;
     box-shadow: var(--box-shadow-images);
     border-radius: 15px;
-    height: 70%;
+    height: 10rem;
+}
+
+/* MEDIA QUERIES */
+
+/* DESKTOP */
+@media (min-width: 768px ) {
+
+    /* CLASES DEL CARRITO */
+.global{
+    max-width: 100%;
+    margin: 30px auto;
+    width: 90%;
+    max-width: 1000px;
+}
+
+/* TODOS LOS PRODUCTOS A COMPRAR */
+
+ .conteiner-item {
+     width: 55%;
+     max-width: 480px ;
+ }
+/* IMAGEN DEL PRODUCTO A COMPRAR Y TITULO */
+.item-left{
+   font-size: 1.2rem;
+}
+
+.buy-image {
+    height: 12rem;
+}
+
+/* ICONO BASURA Y PRECIO */
+.item-right {
+    font-size: 1.2rem;
+}
+
+/* BOTON CANTIDAD DE UNIDADES */
+.quantity-button {
+    width: 2.7rem;
+    height: 1.5rem;
+    padding-left: 5px;
+    font-size:1rem ;
+}
+
+/* DETALLE DE COMPRA */
+.detail-buy {
+    position: absolute;
+    top: 200px;
+    left: 60%;
+    max-width: 400px;
+    display: inline-block;
+}
+
+/* TÍTULO RECOMENDADOS */
+.recommended-title {
+    font-size: 2rem;
+}
+
+/* SECCIÓN RECOMENDADOS */
+.recommended-conteiner {
+    justify-content: space-between;
+    flex-flow:row ;
+}
+
 }
