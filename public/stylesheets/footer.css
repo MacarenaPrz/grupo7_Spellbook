@@ -69,6 +69,22 @@ hr{
     color: var(--color-beige);
 }
 
+/* tablet */
+@media (min-width: 518px) {
+    .footer-main {
+        color: var(--color-beige);
+        font-size: 0.8rem;
+        padding: 0.5rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        opacity: 0.9;
+        
+        }
+
+
+}
+
 /* Desktop */
 
 @media (min-width: 769px) {
