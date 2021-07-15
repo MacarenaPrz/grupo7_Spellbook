@@ -41,7 +41,7 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-
+padding-bottom: 3rem;
 }
 
 .card {
@@ -146,6 +146,7 @@ h4 {
 .month-selection {
   display: flex;
   flex-direction: column;
+  padding-bottom: 3rem;
 }
 
 .month-selection .book {
@@ -182,8 +183,9 @@ h5 {
 
 /* MÁS TITULOS */
 .titles .more-titles {
+  padding-right: 1rem;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     flex-wrap: nowrap;
     font-size: 1rem;
@@ -200,6 +202,7 @@ h5 {
     width: 200px;
     height: 300px;
     margin: 0 auto 0 auto;
+    padding-bottom: 3rem;
   }
   
   @keyframes display {
@@ -283,6 +286,7 @@ h5 {
     align-items: center;
     flex-wrap: nowrap;
     justify-content: center;
+    padding-bottom: 6rem;
   }
 
   .month-selection {
@@ -291,6 +295,7 @@ h5 {
     align-items: center;
     flex-wrap: nowrap;
     justify-content: space-around;
+    padding-bottom: 6rem;
 
   }
 
@@ -351,6 +356,7 @@ h5 {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-bottom: 6rem;
   }
   .dots label {
     display: block;
