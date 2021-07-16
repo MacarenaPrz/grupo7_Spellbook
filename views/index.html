@@ -1,20 +1,325 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!-- GOOGLE FONT -->
     <!-- Roboto -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
     <!-- Berkshire Swash -->
     <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <script src="https://kit.fontawesome.com/fc00004fb4.js"crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/29f0a39c3c.js" crossorigin="anonymous"></script>
+
+    <!-- NORMALIZE Y ESTILOS -->
     
-    <link rel="stylesheet" href="/stylesheets/style.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/styles.css">
+
+    <!-- LINK CSS DEL HEADER -->
+    <link rel="stylesheet" href="stylesheets/header.css">
+
+     <!-- LINK DEL HOME -->
+     <link rel="stylesheet" href="stylesheets/home.css">
+
+    <title>SpellBook</title>
 </head>
 <body>
-    <h1>Home</h1>
-</body>
-</html>
+  <!-- HEADER -->
+ <!-- COMIENZA EL HEADER -->
+ <header class="header">
+
+  <!-- LOGO CON LINK AL HOME -->
+  <div class="logo">
+    <h1 class="logo__title"><a href="/" class="logo__link">SpellBook</a></h1>
+  </div>
+
+  <!-- BURGER MENU -->
+  <div class="btn">
+    <i class="fas fa-bars" id="icon"></i>
+  </div>
+
+  <!-- MENU DESPLEGABLE -->
+  <nav class="nav">
+    <ul class="menu">
+      <li class="menu__items">
+          <a href="#" class="menu__link">Inicio</a>
+      </li>
+      <li class="menu__items">
+          <a href="#" class="menu__link">Libros</a>
+      </li>
+      <li class="menu__items">
+        <a href="#" class="menu__link">Recomendados</a>
+      </li>
+      <li class="menu__items">
+        <a href="#" class="menu__link">Novedades</a>
+      </li>
+      <li class="menu__items">
+        <a href="#" class="menu__link">Nosotros</a>
+      </li>
+    </ul>
+
+    <!-- REGISTRO E INICIO DE SESIÓN -->
+    <div class="login">
+      <a class="login__btn">Registrate</a>
+      <a class="login__btn login--up">Iniciar sesion</a>
+    </div>
+  </nav>
+
+  <!-- HEADER VERSIÓN DESKTOP -->
+  
+  <!-- SE UTILIZA EL MISMO LOGO ORIENTADO EN EL CENTRO -->
+  
+      <!-- LUPA, CARRITO Y MAGO DE USUARIO -->
+  <div class="user__desk">
+
+      <!-- LUPA DE BUSQUEDA -->
+      <label name="search" id="search" >
+          <input class="user__search__desk" type="search" name="search" id="search" placeholder="">
+          <i class="fas fa-search user__icon__desk"></i>
+      </label>
+
+      <!-- HACIA EL CARRITO DE COMPRAS -->
+      <a href="/cart">
+          <i class="fas fa-shopping-cart user__icon__desk"></i>
+      </a>
+      <!-- MAGO PARA REGISTRARSE -->
+      <div class="wizard">    
+           <a href="/login" class="wizard__image">
+               <img src="images/wizard-icon.png" width="20px" alt="">
+           </a>
+           <a href="/login" class="wizard__login">
+              <p>Ingresar / </p>
+           </a>
+           <a href="/signup" class="wizard__login">
+               <p>Registrarse</p>
+           </a>
+      </div>
+  </div>
+
+  <!-- MENU POR DEBAJO DEL HEADER -->
+  <nav class="nav__desk">
+      <ul class="menu__desk">
+        <li class="menu__items__desk">
+            <a href="/" class="menu__link__desk">Inicio</a>
+        </li>
+        <li class="menu__items__desk">
+            <a href="/product" class="menu__link__desk">Libros</a>
+        </li>
+        <li class="menu__items__desk">
+          <a href="#" class="menu__link__desk">Recomendados</a>
+        </li>
+        <li class="menu__items__desk">
+          <a href="#" class="menu__link__desk__desk">Novedades</a>
+        </li>
+        <li class="menu__items__desk">
+          <a href="#" class="menu__link__desk">Nosotros</a>
+        </li>
+      </ul>
+  </nav>
+</header>
+
+<link rel="stylesheet" href="/stylesheets/normalize.css">
+
+
+
+
+<main>
+      <!-- CARROUSEL -->
+    <div class="carrousel">
+      <img src="/images/Libros/fuegoSangre.png" alt="" class="carrousel-book">
+      <img src="/images/Libros/ElLegadoMaldito.jpg" alt="" class="carrousel-book">
+      <img src="/images/Libros/laEspadaDelDestino.jpg" alt="" class="carrousel-book">
+      <img src="/images/Libros/El_talismán.jpg" alt="" class="carrousel-book">
+      <img src="/images/Libros/losCrimenesDeGrindelwald.jpg" alt="" class="carrousel-book">
+    </div>
+
+    <!-- SLIDER PARA DESKTOP -->
+    <div class="slider">
+      <input type="radio" name="testimonial" id="t-1">
+      <input type="radio" name="testimonial" id="t-2">
+      <input type="radio" name="testimonial" id="t-3" checked>
+      <input type="radio" name="testimonial" id="t-4">
+      <input type="radio" name="testimonial" id="t-5">
+      <div class="testimonials">
+        <label class="item" for="t-1">
+          <img src="/images/Libros/ElLegadoMaldito.jpg" alt="picture">
+        </label>
+        <label class="item" for="t-2">
+          <img src="/images/Libros/losCrimenesDeGrindelwald.jpg" alt="picture">
+  
+        </label>
+        <label class="item" for="t-3">
+          <img src="/images/Libros/corona de espadas.jpg" alt="picture">
+        
+        </label>
+        <label class="item" for="t-4">
+          <img src="/images/Libros/laEspadaDelDestino.jpg" alt="picture">
+          
+        </label>
+        <label class="item" for="t-5">
+          <img src="/images/Libros/El_talismán.jpg" alt="picture">
+        </label>
+      </div>
+      <div class="dots">
+        <label for="t-1"></label>
+        <label for="t-2"></label>
+        <label for="t-3"></label>
+        <label for="t-4"></label>
+        <label for="t-5"></label>
+      </div>
+    </div>
+
+
+    <!-- AUTORES DESTACADOS -->
+      <!-- ENCABEZADO -->
+    <div class="headline">
+    <img class="varita"src="/images/Recursos/varita.png" alt=" imágen de varita mágica">
+    <h1>Autores destacados</h1>
+    </div>
+    
+    <section class="authors">
+      <!-- TOLKIEN -->
+      <article class="card">
+        <div class="card-content">
+          <img class="writer-tolkien" src="/images/Autores/tolkien.png" alt="Imagen de J. R. R. Tolkien">
+          <h4 class="writer-name">J. R. R. Tolkien</h4>
+          <div class="card-text">
+          <img class="bio" src="/images/Recursos/gondortree.png" alt="árbol blanco">
+          <p class="bio-text">Escritor, poeta, filólogo, lingüista y profesor universitario británico, conocido principalmente por ser el autor de las novelas clásicas de fantasía heroica El hobbit, El Silmarillion y El Señor de los Anillos. </p>
+        </div>
+        </div>
+      </article>
+      <!-- ANDRZEJ SAPKOWSKI -->
+      <article class="card">
+        <div class="card-content">
+          <img class="writer-sapkowski" src="/images/Autores/sapkowsky.png" alt="Imágen de Andrzej Sapkowski">
+          <h4 class="writer-name">Andrzej Sapkowski</h4>
+          <div class="card-text">
+          <img class="bio" src="/images/Recursos/thewitcher.png" alt="Logo the witcher">
+          <p class="bio-text">Escritor polaco de fantasía heroica. Sus obras están fuertemente influenciadas por la cultura y mitología eslavas, así como por las narraciones tradicionales. Entre sus obras más populares se encuentra la saga del brujo Geralt de Rivia, compuesta por siete volúmenes.</p>
+          </div>
+        </div>
+      </article>
+      <!-- GEORGE R. R. MARTIN -->
+      <article class="card">
+        <div class="card-content">
+          <img class="writer-martin" src="/images/Autores/martin.png" alt="Imagen de George R. R. Martin">
+          <h4 class="writer-name">George R. R. Martin</h4>
+          <div class="card-text">
+          <img class="bio" src="/images/Recursos/targaryen.png" alt="Logo Casa Targaryen">
+          <p class="bio-text">Guionista y escritor estadounidense de literatura fantástica, ciencia ficción y terror. Es conocido por ser el autor de la serie de novelas Canción de hielo y fuego, adaptadas para la televisión con el título de Juego de tronos (Game of Thrones). </p>
+          </div>
+        </div>
+      </article>  
+    </section>
+
+    <!-- SELECCIÓN DEL MES -->
+    <div class="headline">
+      <img class="varita"src="/images/Recursos/varita.png" alt=" imágen de varita mágica">
+      <h1>La selección del mes</h1>
+      </div>
+    <section class="month-selection">
+      <!-- LIBRO 1 -->
+      <article class="book">
+        <div class="book-content">
+          <img class="book-cover" src="/images/Libros/el temor de un hombre sabio.jpg" alt="Portada de 'El temor de un hombre sabio'">
+          <h3>El Temor de un Hombre Sabio</h3>
+          <h5>Patrick Rothfus</h5>
+          <!-- Botón de comprar -->
+          <div class="shopping-btn"><input type="button" value="Comprar"></div>
+        </div>
+      </article>
+      <!-- LIBRO 2 -->
+      <article class="book">
+        <div class="book-content">
+          <img class="book-cover" src="/images/Libros/la morada - el exilio - el refugio.jpg" alt="Portada de 'La Morada - El exilio - El Refugio'">
+          <h3>La Morada - El Exilio - El Refugio</h3>
+          <h5>R. A. Salvatore</h5>
+          <!-- Botón de comprar -->
+          <div class="shopping-btn"><input type="button" value="Comprar"></div>
+          
+        </div>
+      </article>
+      <!-- LIBRO 3 -->
+      <article class="book">
+        <div class="book-content">
+          <img class="book-cover" src="/images/Libros/corona de espadas.jpg" alt="Portada de 'Corona de Espadas'">
+          <h3>Corona de Espadas</h3>
+          <h5>Robert Jordan</h5>
+          <!-- Botón de comprar -->
+          <div class="shopping-btn"><input type="button" value="Comprar"></div>
+          
+        </div>
+      </article>
+    </section>
+     <!-- MÁS TÍTULOS -->
+     <section class="titles">
+      <div class="more-titles">
+        <img class="varita"src="/images/Recursos/varita.png" alt=" imágen de varita mágica">
+        <h1>Más títulos</h1>
+        </div>
+     </section>
+    </main>
+    <!-- FOOTER -->
+        <footer>
+          <div class="footer-main">
+          <section class="footer-myAccount">
+            <div class="footer-header">
+              <p>Mi Cuenta</p>
+            </div>
+            <div class="footer-options">
+              <p>Ingresar</p>
+              <p>Ver Carrito</p>
+              <p>Finalizar Compra</p>
+            </div>
+            
+          </section>
+
+          <section class="footer-contactUs">
+            <div class="footer-header">
+              <p>Contacto</p>
+            </div>
+            <div class="footer-options">
+              <p><i class="fas fa-envelope"></i>  <a href="mailto:info@spellbook.com">mailto:info@spellbook.com</a></p>
+              <p><i class="fas fa-phone"></i>  0810 222 9686</p>
+              <p><i class="fab fa-facebook"></i> <i class="fab fa-instagram"></i> <i class="fab fa-twitter"></i></p>
+            </div>
+          </section>
+
+          <section class="footer-onlineStore">
+            <div class="footer-header">
+              <p>Online Store</p>
+            </div>
+            <div class="footer-options">
+              <p>Medios de pago</p>
+              <p>Envíos</p>
+              <p>Términos y Condiciones</p>
+            </div>
+            
+          </section>
+        </div>
+
+          <section class="footer-logo">
+           <p>SpellBook</p>
+
+          </section>
+        
+          
+          <div class="footer-copyright">
+            <hr>
+            <p>SPELLBOOK © 2021 MARCA REGISTRADA - TODOS LOS DERECHOS RESERVADOS - </p>
+          </div>
+          
+        </footer>
+
+<!-- LINK DEL JS DEL HEADER -->
+<script src="js/header.js"></script>
+       
+  </body>

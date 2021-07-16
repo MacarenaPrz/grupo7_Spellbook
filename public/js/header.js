@@ -1,4 +1,3 @@
-  
 const btn = document.querySelector('.btn');
 const nav = document.querySelector('.nav');
 const links = document.querySelectorAll('.menu__items');

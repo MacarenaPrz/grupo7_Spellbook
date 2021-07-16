@@ -1,13 +1,247 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylesheets/productDetail.css">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Detalle de Producto</h1>
-</body>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="stylesheets/productDetail.css" />
+    <title>SpellBook</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- LINK CSS DEL HEADER -->
+    <link rel="stylesheet" href="stylesheets/header.css">
+
+    <!-- LINK DEL FOOTER -->
+    <link rel="stylesheet" href="stylesheets/footer.css">
+
+    <!-- Berkshire Swash -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/fc00004fb4.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+     <!-- COMIENZA EL HEADER -->
+     <header class="header">
+
+      <!-- LOGO CON LINK AL HOME -->
+      <div class="logo">
+        <h1 class="logo__title"><a href="/" class="logo__link">SpellBook</a></h1>
+      </div>
+
+      <!-- BURGER MENU -->
+      <div class="btn">
+        <i class="fas fa-bars" id="icon"></i>
+      </div>
+
+      <!-- MENU DESPLEGABLE -->
+      <nav class="nav">
+        <ul class="menu">
+          <li class="menu__items">
+              <a href="#" class="menu__link">Inicio</a>
+          </li>
+          <li class="menu__items">
+              <a href="#" class="menu__link">Libros</a>
+          </li>
+          <li class="menu__items">
+            <a href="#" class="menu__link">Recomendados</a>
+          </li>
+          <li class="menu__items">
+            <a href="#" class="menu__link">Novedades</a>
+          </li>
+          <li class="menu__items">
+            <a href="#" class="menu__link">Nosotros</a>
+          </li>
+        </ul>
+
+        <!-- REGISTRO E INICIO DE SESIÓN -->
+        <div class="login">
+          <a class="login__btn">Registrate</a>
+          <a class="login__btn login--up">Iniciar sesion</a>
+        </div>
+      </nav>
+
+      <!-- HEADER VERSIÓN DESKTOP -->
+      
+      <!-- SE UTILIZA EL MISMO LOGO ORIENTADO EN EL CENTRO -->
+      
+          <!-- LUPA, CARRITO Y MAGO DE USUARIO -->
+      <div class="user__desk">
+
+          <!-- LUPA DE BUSQUEDA -->
+          <label name="search" id="search" >
+              <input class="user__search__desk" type="search" name="search" id="search" placeholder="">
+              <i class="fas fa-search user__icon__desk"></i>
+          </label>
+
+          <!-- HACIA EL CARRITO DE COMPRAS -->
+          <a href="/cart">
+              <i class="fas fa-shopping-cart user__icon__desk"></i>
+          </a>
+          <!-- MAGO PARA REGISTRARSE -->
+          <div class="wizard">    
+               <a href="/login" class="wizard__image">
+                   <img src="images/wizard-icon.png" width="20px" alt="">
+               </a>
+               <a href="/login" class="wizard__login">
+                  <p>Ingresar / </p>
+               </a>
+               <a href="/signup" class="wizard__login">
+                   <p>Registrarse</p>
+               </a>
+          </div>
+      </div>
+
+      <!-- MENU POR DEBAJO DEL HEADER -->
+      <nav class="nav__desk">
+          <ul class="menu__desk">
+            <li class="menu__items__desk">
+                <a href="/" class="menu__link__desk">Inicio</a>
+            </li>
+            <li class="menu__items__desk">
+                <a href="/product" class="menu__link__desk">Libros</a>
+            </li>
+            <li class="menu__items__desk">
+              <a href="#" class="menu__link__desk">Recomendados</a>
+            </li>
+            <li class="menu__items__desk">
+              <a href="#" class="menu__link__desk__desk">Novedades</a>
+            </li>
+            <li class="menu__items__desk">
+              <a href="#" class="menu__link__desk">Nosotros</a>
+            </li>
+          </ul>
+      </nav>
+    </header>
+
+    <main class="main">
+      <section class="product">
+        <article class="item">
+          <h2 class="item__title">Animales Fantasticos</h2>
+          <figure class="item__img">
+            <img
+              src="images/books/AnimalesFantasticosYDondeEncontrarlos.jpg"
+              alt=""
+            />
+          </figure>
+          <div class="descriptions">
+            <p class="descriptions__text">
+              Precio: <span class="description--gray">$1200</span>
+            </p>
+            <p class="descriptions__text">
+              Autor: <span class="description--gray">J.K Rowling</span>
+            </p>
+            <p class="descriptions__text">
+              Editorial:<span class="description--gray">Salamandra</span>
+            </p>
+            <p class="descriptions__text">
+              Año de edicion:<span class="description--gray">2017</span>
+            </p>
+            <p class="descriptions__text">
+              Idioma:<span class="description--gray">Castellaño</span>
+            </p>
+            <p class="descriptions__text">
+              Cantidad de páginas:<span class="description--gray">256</span>
+            </p>
+          </div>
+          <div class="card__box">
+          <button class="cart">
+            <i class="fas fa-cart-plus icon-cart"></i> Agregar al Carrito
+          </button>
+          </div>
+          <div class="descriptions descriptions--top">
+            <h3 class="descriptions__title">Sinopsis</h3>
+            <p class="descriptions__paragraph">
+              El explorador y magizoólogo Newt Scamander llega a Nueva York con
+              la intención de permanecer unos pocos días. Pero cuando pierde su
+              maleta y algunos de sus animales fantásticos se escapan de ella,
+              una serie de acontecimientos extraordinarios se desatan, poniendo
+              en vilo a la gran ciudad..
+            </p>
+          </div>
+        </article>
+        <article class="item item--secondary">
+          <div class="box__books"></div>
+          <h2 class="item__title item--secondary__title">Productos Relacionados</h2>
+          <figure class="books">
+            <img class="books__img" src="images/books/ElSeñorDeLosAnillos_LaComunidadDelAnillo.jpg" alt="">
+              <a href="" class="books__title">El señor de los anillos - La comunidad del anillo</a>
+          </figure>
+          <figure class="books">
+            <img class="books__img" src="images/books/AnimalesFantasticosYDondeEncontrarlos.jpg" alt="">
+              <a class="books__title" href="">Animales fantasticos - y donde encontrarlos</a>
+          </figure>
+          <figure class="books">
+            <img class="books__img" src="images/books/harry-potter-y la camara secreta (1).png" alt="">
+              <a class="books__title" href="">Harry Potter - y la camara secreta</a>
+          </figure>
+          <figure class="books">
+            <img class="books__img" src="images/books/1567730915_20.jpg" alt="">
+              <a class="books__title" href="">Harry Potter - y el caliz de fuego</a>
+          </figure>
+        </article>
+      </section>
+    </main>
+
+       <!-- FOOTER -->
+  <footer>
+    <div class="footer-main">
+    <section class="footer-myAccount">
+      <div class="footer-header">
+        <p>Mi Cuenta</p>
+      </div>
+      <div class="footer-options">
+        <p>Ingresar</p>
+        <p>Ver Carrito</p>
+        <p>Finalizar Compra</p>
+      </div>
+      
+    </section>
+
+    <section class="footer-contactUs">
+      <div class="footer-header">
+        <p>Contacto</p>
+      </div>
+      <div class="footer-options">
+        <p><i class="fas fa-envelope"></i>  <a href="mailto:info@spellbook.com">mailto:info@spellbook.com</a></p>
+        <p><i class="fas fa-phone"></i>  0810 222 9686</p>
+        <p><i class="fab fa-facebook"></i> <i class="fab fa-instagram"></i> <i class="fab fa-twitter"></i></p>
+      </div>
+    </section>
+
+    <section class="footer-onlineStore">
+      <div class="footer-header">
+        <p>Online Store</p>
+      </div>
+      <div class="footer-options">
+        <p>Medios de pago</p>
+        <p>Envíos</p>
+        <p>Términos y Condiciones</p>
+      </div>
+      
+    </section>
+  </div>
+
+    <section class="footer-logo">
+     <p>SpellBook</p>
+
+    </section>
+  
+    
+    <div class="footer-copyright">
+      <hr>
+      <p>SPELLBOOK © 2021 MARCA REGISTRADA - TODOS LOS DERECHOS RESERVADOS - </p>
+    </div>
+    
+  </footer>
+    <script src="js/header.js"></script>
+  </body>
 </html>
