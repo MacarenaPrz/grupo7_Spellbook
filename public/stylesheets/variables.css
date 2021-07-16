@@ -9,10 +9,10 @@
     --font-roboto : 'Roboto', sans-serif;
     
     /* Tamaños */
-    --paragraph : 1.2rem;
+    --paragraph : 1rem;
     --icon : 2rem;
     --title: 2.1rem;
-    --btn : 1.3rem;
+    --btn : 1.2rem;
     --discounts-descriptions : 1.4rem;
 
 
@@ -26,12 +26,12 @@ body {
     font-family: var(--font-roboto);
     font-size: 62.5%;
     color: var(--color-azulOscuro);
+   
   }
   li {
     list-style-type: none;
   }
   a {
     text-decoration: none;
-    
-    
+    color: var(--color-azulOscuro);
   }

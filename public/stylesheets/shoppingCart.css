@@ -6,20 +6,10 @@
     margin: 0;
     box-sizing: border-box;
 }
-body {
-    font-family: var(--font-roboto);
-    font-size: 62.5%;
-  }
-  li {
-    list-style-type: none;
-  }
-  a {
-    text-decoration: none;
-  }
 
 /* BODY CON IMAGEN DE FONDO */
 .background-image{
-    background-image: url(/images/fondo-magic.jpg);
+    background-color: var(--color-beige);
 }
 
 
@@ -57,7 +47,7 @@ body {
 }
 
 .buy-image {
-    border-radius: 15px;
+    border-radius: 3px;
     height: 10rem;
     margin-bottom: 2rem;
     box-shadow:var(--box-shadow-images);
@@ -156,7 +146,7 @@ body {
 .recommended-img {
     margin-bottom: 10px;
     box-shadow: var(--box-shadow-images);
-    border-radius: 15px;
+    border-radius: 3px;
     height: 10rem;
 }
 

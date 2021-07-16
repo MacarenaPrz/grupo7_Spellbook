@@ -1,12 +1,10 @@
 @import url(variables.css);
 
-a{
-    color: var(--color-azulOscuro);
-}
+
 /* BODY CON IMAGEN DE FONDO */
 .background-image{
-    background-image: url(/images/fondo-magic.jpg);
-}
+     background-color: var(--color-beige);
+ }
 
 /* COMIENZA EL REGITRO DE USUARIO */
 .conteiner-main {
@@ -44,6 +42,7 @@ a{
 .user-magic-wand i {
     font-size:  0.9rem;
 }
+
 /*  CONTENEDOR DE USER Y EMAIL */
 .conteiner-info-user{
     border: solid 1px grey;
@@ -65,7 +64,7 @@ a{
     font-family: var(--font-berkshire);
 }
 
-.user-name{
+/* .user-name{
     color: var(--color-azulOscuro);
     position: relative;
     left: 1rem;
@@ -73,9 +72,10 @@ a{
     margin: 1.5rem auto 2rem;
     font-size: 12px;
     font-family: var(--font-berkshire);
-}
+} */
 /* TÍTULO DE SECCIÓN */
 .title-seccion {
+    font-size: var(--discounts-descriptions);
     font-family: var(--font-berkshire);
     margin: 2rem ;
 
@@ -103,7 +103,7 @@ a{
 
 .user-data-icon {
     opacity: 0.8;
-    color: var(--color-Violeta);
+    color: var(--color-azulOscuro);
     font-size: 40px;
     text-align: center;
 } 
@@ -138,6 +138,19 @@ a{
 }
 
 
+
+/* LUGAR */
+.world-pocision {
+    position: relative;
+    right: 3px;
+}
+
+/* TELEFONO */
+.tel-pocision {
+    position: relative;
+    left: 4px;
+}
+
 /* NACIMIENTO */
 .image-icon {
     position: relative;
@@ -157,24 +170,14 @@ a{
     right: 10px;
 }
 
-/* CONTRASEÑA */
-.pass-pocision {
-    position: relative;
-    left: 3px;
-}
-
-/* TELEFONO */
-.tel-pocision {
-    position: relative;
-    left: 8px;
-}
 
 
 /* BOTON DE GUARDAR */
  .btn-save {
-    background-color: var(--color-Violeta);
+    background-color: var(--color-azulOscuro);
     border: none;
     border-radius: 7px;
+    color: var(--color-beige);
     width: 10rem;
     height: 2rem;
     box-shadow: var(--box-shadow-button);
@@ -182,8 +185,16 @@ a{
     margin: 2rem auto;
  }
 
+ /* LINEA HR */
+ .one-line {
+    background: linear-gradient(90deg, rgb(24, 24, 24), white);
+    height: 2px;
+    margin-bottom: 3rem;
+    width: 100%;
+ }
+
  /* NO HAZ REALIZADO COMPRA */
- .not-buy {
+ .now-buy {
      font-size: var(--paragraph);
      margin: 25px auto;
      text-align: center;
