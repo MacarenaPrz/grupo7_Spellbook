@@ -140,7 +140,7 @@ h4 {
   width: 200px;
   height: 300px;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
-  border-radius: 15px;
+  border-radius: 3px;
 }
 
 .month-selection {
@@ -153,13 +153,20 @@ h4 {
   margin-top: 0;
 }
 
+h3{
+  margin-top: 1.5rem;
+  font-size: 1rem;
+}
+
 h3, h5 {
   color: var(--color-azulOscuro);
   font-family: var(--font-roboto);
 }
 
 h5 {
-  margin: 0 auto 2rem auto;
+  margin: 0.5rem auto 2rem auto;
+  font-size: 0.9rem;
+  color: var(--color-violeta);
 }
 .month-selection .book .book-content {
   margin: 1rem auto;
@@ -244,7 +251,7 @@ h5 {
     opacity: 0;
     animation: display 10s infinite;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
-    border-radius: 15px;
+    border-radius: 3px;
   }
   
   img:nth-child(2) {
@@ -274,7 +281,7 @@ h5 {
 
 /* Desktop */
 
-@media (min-width: 769px) {
+@media (min-width: 768px) {
 
   .carrousel {
     display: none;
@@ -315,7 +322,7 @@ h5 {
   .slider {
     display: block;
     width: 100%;
-    margin-top: 1rem;
+    margin-top: 3rem;
   }
   .slider input {
     display: none;
@@ -347,7 +354,7 @@ h5 {
     width: 250px;
     height: 400px;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
-    border-radius: 15px;
+    border-radius: 3px;
   
   }
  
