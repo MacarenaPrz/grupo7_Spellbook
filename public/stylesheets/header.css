@@ -126,7 +126,14 @@ a {
     padding: 10px 20px 8px;
     flex-direction: column;
     padding-bottom: 0;
-    height: 7rem;
+    height: 10rem;
+  }
+  .logo {
+    display: flex;
+    justify-content: center;
+  }
+  .logo__link {
+    font-size: 3rem;
   }
 
    /* LUPA, CARRITO Y MAGO DE USUARIO */

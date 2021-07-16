@@ -283,6 +283,10 @@ h5 {
 
 @media (min-width: 768px) {
 
+  .headline h1 {
+    font-size: 3rem;
+  }
+
   .carrousel {
     display: none;
   }
@@ -309,6 +313,15 @@ h5 {
   .headline .varita {
     width: 3rem;
     height: 3rem;
+}
+
+.titles .varita {
+  width: 3rem;
+  height: 3rem;
+}
+
+.titles h1 {
+  font-size: 3rem;
 }
 
   h1 {
