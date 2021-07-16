@@ -32,7 +32,7 @@ a {
     font-size: var(--title);
     color: var(--color-beige);
     font-family: var(--font-berkshire);
-    letter-spacing: 0.1rem;
+    letter-spacing: 0.2rem;
   }
   .btn {
     width: 100px;

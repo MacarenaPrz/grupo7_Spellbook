@@ -64,15 +64,6 @@
     font-family: var(--font-berkshire);
 }
 
-/* .user-name{
-    color: var(--color-azulOscuro);
-    position: relative;
-    left: 1rem;
-    width: fit-content;
-    margin: 1.5rem auto 2rem;
-    font-size: 12px;
-    font-family: var(--font-berkshire);
-} */
 /* TÍTULO DE SECCIÓN */
 .title-seccion {
     font-size: var(--discounts-descriptions);
@@ -109,6 +100,7 @@
 } 
 
 .user-date-inputs {
+    outline: none;
     text-align: center;
     max-height: 30px;
     background: transparent;

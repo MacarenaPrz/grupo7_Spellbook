@@ -106,7 +106,7 @@
   font-size: 0.8rem;
 }
 .warning{
-    color: var(--color-azulOscuro);
+    color: darkred;
     font-size: .9rem;
     padding: 5px 0;
     font-weight: 600;
