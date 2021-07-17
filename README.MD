@@ -17,7 +17,7 @@ Si bien el único requisito a cumplir son funcionalidades básicas, nuestra idea
 <br>
 <li>Hola! Mí nombre es Cesar Tolaba tengo 23 años, soy de Capital Federal. Me considero una persona dinámica y creativa. Mis hobbies son el atlético, el fútbol y la programación</li>
 <br>
-<li>Hola, soy Elízabeth una colombiana de 25 años viviendo en Buenos Aires. Me gusta jugar sudoku, cuidar a mis gatitos y la cultura brasilera pero encontré mi mayor pasión en el desarrollo web, así que en mis tiempos libres me vas a encontrar asistiendo a eventos y clases de programación, como el de desarrollo Fullstack que estoy haciendo actualmente donde junto a mis compañeros estamos creando una e-commerce desde cero.</li>
+<li>Hola, soy Elízabeth una colombiana de 25 años viviendo en Buenos Aires. Me gusta jugar sudoku, cuidar a mis gatitos y la cultura brasilera pero encontré mi mayor pasión en el desarrollo web, así que en mis tiempos libres me vas a encontrar asistiendo a workshops y clases de programación, como el de desarrollo Fullstack que estoy haciendo actualmente donde junto a mis compañeros estamos creando una e-commerce desde cero.</li>
 </ul>
 
 <h3>Nuestra selección de sitios referentes:</h3>
