@@ -16,6 +16,8 @@ Si bien el único requisito a cumplir son funcionalidades básicas, nuestra idea
 <li>¡Hola a todxs! Me llamo Rocío Pérez, pero la verdad uso mi segundo nombre, así que: ¡Hola de nuevo! Soy Macarena. Tengo 30 años, soy de Quilmes, Bs. As. Tengo un amor incalculable por la literatura, la fotografía y mi hija de 4 años, Lucía. Gracias a la oportunidad que me dio Fundación Formar estoy descubriendo el desarrollo web, que sin duda también se está convirtiendo en una de mis pasiones más grandes. Me encantan los idiomas y conocer gente, lugares. Sé que la programación me va a permitir poder combinar todos los aspectos de la vida que me gustan en un solo lugar, así que ¡Ahí voy!</li>
 <br>
 <li>Hola! Mí nombre es Cesar Tolaba tengo 23 años, soy de Capital Federal. Me considero una persona dinámica y creativa. Mis hobbies son el atlético, el fútbol y la programación</li>
+<br>
+<li>Hola, soy Elízabeth una colombiana de 25 años viviendo en Buenos Aires. Me gusta jugar sudoku, cuidar a mis gatitos y la cultura brasilera pero encontré mi mayor pasión en el desarrollo web, así que en mis tiempos libres me vas a encontrar asistiendo a workshops y clases de programación, como el de desarrollo Fullstack que estoy haciendo actualmente donde junto a mis compañeros estamos creando una e-commerce desde cero.</li>
 </ul>
 
 <h3>Nuestra selección de sitios referentes:</h3>
