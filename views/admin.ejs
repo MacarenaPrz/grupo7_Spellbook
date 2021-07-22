@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpellBook</title>
+    
+    <!-- GOOGLE FONT -->
+    <!-- Roboto -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <!-- Berkshire Swash -->
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <script src="https://kit.fontawesome.com/fc00004fb4.js"crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/29f0a39c3c.js" crossorigin="anonymous"></script>
+
+    <!-- NORMALIZE Y ESTILOS -->
+    
+    <link rel="stylesheet" href="/stylesheets/styles.css">
+
+    <!-- LINK CSS DEL HEADER -->
+    <link rel="stylesheet" href="stylesheets/header.css">
+
+     <!-- LINK DEL HOME -->
+     <link rel="stylesheet" href="stylesheets/home.css">
+</head>
+<body>
+      <!-- HEADER -->
+ <header class="header">
+    <!-- LOGO CON LINK AL HOME -->
+    <div class="logo">
+      <h1 class="logo__title"><a href="/" class="logo__link">SpellBook</a></h1>
+    </div>
+    <!-- BURGER MENU -->
+    <a href="/signUp"><div class="btn">
+      <i class="far fa-user" id="icon"></i>
+    </div></a>
+  </header>
+  <main>
+    <section class="product-form">
+      <div class="add-btn"><input type="button" value="Agregar libro"></div>
+      <div class="errors">
+        <ul>
+          
+        </ul>
+      </div>
+      <form method="POST" enctype="multipart/form-data" id="product">
+        <fieldset>
+          <label for="image">Imagen :</label>
+          <input type="file" name="image" id="image" accept=".jpg, .png, .sgv" multiple/>
+        </fieldset>
+        <fieldset>
+          <label for="name">Título :</label>
+          <input
+            type="text"
+            name="title"
+            id="title"
+            sentence
+            value=""
+          />
+        </fieldset>
+        <fieldset>
+          <label for="name">Autor :</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            sentence
+            value=""
+          />
+        </fieldset>
+        <fieldset>
+          <label for="amount">Cantidad :</label>
+          <input
+          type="button"
+          name="amount"
+          id="amount"
+          value="+"
+          />
+          <input
+          type="number"
+          name="amount"
+          id="amount"
+          value=""
+          />
+          <input
+          type="button"
+          name="amount"
+          id="amount"
+          value="-"
+          />
+        </fieldset>
+        <fieldset>
+          <label for="price">Precio :</label>
+          <input
+            type="text"
+            id="price"
+            name="price"
+            value=""
+          />
+        </fieldset>
+        <fieldset>
+          <label for="description">Descripción :</label>
+          <input
+            type="textarea"
+            name="description"
+            id="description"
+            sentence
+            value=""
+          />
+        </fieldset>
+        <fieldset>
+          <input type="reset" value="Borrar">
+          <input type="submit" value="Guardar">
+        </fieldset>
+      </form>
+    </section>
+    <section class="product-list">
+      <div class="belluser">
+        <a href="/login"><div class="">
+          <i class="far fa-bell" id="icon"></i>
+        </div></a>
+        <a href="/login"><div class="">
+          <i class="far fa-user" id="icon"></i>
+        </div></a>
+      </div>
+      <hr>
+      <div class="">
+        <h2>Libros</h2>
+        <label name="search" id="search" >
+          <i class="fas fa-search "></i>
+          <input class="" type="search" name="search" id="search" placeholder="">
+        </label>
+      </div>
+      <div class="products-table">
+        <table>
+          <thead>
+            <tr>
+              <th><input type="checkbox"></th>
+              <th>Imagen</th>
+              <th>Título</th>
+              <th>Autor</th>
+              <th>Cantidad</th>
+              <th>Precio</th>
+              <th>Estado</th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead> 
+          <tbody>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td><img src="/images/Libros/el temor de un hombre sabio.jpg"</td>
+                <td>El temor de un hombre sabio</td>
+                <td>Patrick Rothfuss</td>
+                <td>2</td>
+                <td>450</td>
+                <td>Activo</td>
+                <td><a
+                      href="/products/edit/id"
+                      id="button-edit">
+                      <button class="edit">
+                       <i class="fas fa-pen"></i>
+                      </button>
+                     </a></td>
+                <td><form
+                        action="/products/delete/id?_method=DELETE"
+                        id="button-delete"
+                        method="POST">
+                        <button class="delete-btn">
+                          <i class="fas fa-times-circle"></i>
+                        </button>
+                      </form></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td><img src="/images/Libros/el temor de un hombre sabio.jpg"</td>
+                <td>El temor de un hombre sabio</td>
+                <td>Patrick Rothfuss</td>
+                <td>2</td>
+                <td>450</td>
+                <td>Activo</td>
+                <td><a
+                      href="/products/edit/id"
+                      id="button-edit">
+                      <button class="edit">
+                       <i class="fas fa-pen"></i>
+                      </button>
+                     </a></td>
+                <td><form
+                        action="/products/delete/id?_method=DELETE"
+                        id="button-delete"
+                        method="POST">
+                        <button class="delete-btn">
+                          <i class="fas fa-times-circle"></i>
+                        </button>
+                      </form></td>
+              </tr>
+            </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
