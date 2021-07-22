@@ -1,0 +1,67 @@
+main{
+    display: flex;
+    flex-direction: column;
+}
+section.product-form{
+    background-color: var(--color-azulClaro);
+    color: white;
+    text-align: center;
+}
+.add-btn{
+    width: 100%;
+    height: 3rem;
+    text-align: center;
+    padding: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.add-btn input{
+    width: 100%;
+    height: 1.8rem;
+    font-weight: bolder;
+    font-size: x-large;
+    border: none;
+    color: white;
+    background-color: transparent;
+}
+form#product{
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+form#product fieldset{
+    border: none;
+}
+form#product fieldset input{
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--color-azulOscuro);
+}
+section.product-list{
+    background-image: url(../images/Diseño\ y\ Logo/Logo\ para\ fondos\ oscuros.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+section .belluser{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 2px;
+}
+section .belluser a i{
+    font-size: 1.4rem;
+}
+table img{
+    width: 14%;
+    height: auto;
+}
+@media (min-width: 518px) {
+    main{
+        flex-direction: row;
+    }
+}
