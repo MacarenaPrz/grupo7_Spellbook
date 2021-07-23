@@ -77,7 +77,7 @@ body {
   text-align: center;
 }
 .item--secondary {
-  align-items: stretch;
+  align-items: flex-start;
   flex-flow: row wrap;
   justify-content: space-between;
 }
@@ -113,7 +113,7 @@ body {
   }
   .item {
     flex-flow: row wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
   }
   .item__title {
     width: 100%;
@@ -128,7 +128,7 @@ body {
   .descriptions--top {
     width: 80%;
   }
-  .cart__box {
+  .card__box {
     width: 100%;
   }
 }
