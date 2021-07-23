@@ -45,6 +45,9 @@ margin-top: 0.8rem;
 .footer-options p{
     margin: 0.2rem 0;
 }
+.footer-options a {
+    color: var(--color-beige)
+}
 
 
 /* LOGO */
