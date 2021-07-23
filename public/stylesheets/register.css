@@ -1,5 +1,10 @@
 @import url(variables.css);
 
+/* OPERACIONES GENERALES */
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
 
 /* BODY CON IMAGEN DE FONDO */
 .background-image{

@@ -19,7 +19,6 @@
     letter-spacing: 0.2rem;
   }
   .btn {
-    width: fit-content;
     text-align: end;
     font-size: var(--icon);
     color: var(--color-beige);
