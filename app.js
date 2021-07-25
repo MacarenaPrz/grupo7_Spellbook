@@ -48,7 +48,9 @@ app.get('/register', (req, res) => {
 app.get('/admin', (req, res) => {
   res.render(path.join(__dirname, './views/admin'))
 });
-
+app.get('/404', function(req, res) {
+  res.render(path.join(__dirname, './views/404'));
+});
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
