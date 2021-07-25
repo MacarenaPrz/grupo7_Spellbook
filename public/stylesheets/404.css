@@ -1,8 +1,9 @@
-.error-bg {
+/* .error-bg {
     background-color: #1b1b1d;
     min-height: 100vh;
     display: flex;
     align-items: center;
+    justify-content: center;
     padding: 1rem;
 }
   
@@ -16,41 +17,104 @@
     left: 0;
     bottom: 0;
     right: 0;
-    z-index: 999;
+    z-index: 99;
     pointer-events: none;
     opacity: 0.2;
     filter: invert(1);
     background-size: cover;
 }
+*/
+.error-bg{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: #000200;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.error-bg .star{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    animation: starss 8s ease-in-out infinite;
+}
+.error-bg .star1{
+    animation-delay: 0s;
+    background: url('../images/stars/star1.png');
+}
+.error-bg .star2{
+    animation-delay: -1s;
+    background: url('../images/stars/star2.png');
+}
+.error-bg .star3{
+    animation-delay: -2s;
+    background: url('../images/stars/star3.png');
+}
+.error-bg .star4{
+    animation-delay: -3s;
+    background: url('../images/stars/star4.png');
+}
+.error-bg .star5{
+    animation-delay: -4s;
+    background: url('../images/stars/star5.png');
+}
+.error-bg .star6{
+    animation-delay: -5s;
+    background: url('../images/stars/star6.png');
+}
+.error-bg .star7{
+    animation-delay: -6s;
+    background: url('../images/stars/star7.png');
+}
+.error-bg .star8{
+    animation-delay: -7s;
+    background: url('../images/stars/star8.png');
+}
+@keyframes starss{
+    0%,20%,40%,60%,80%{
+        opacity: 0;
+    }
+    10%,30%,50%,70%,90%{
+        opacity: 1;
+    }
+}
 .error-flex{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}    
+.error-flex h4{
+    text-align: center;
+    color: var(--color-violeta);
+    font-size: 5.5rem;
 }
-
-#quote, #quote1 {
+.quote {
     --weight: 10;
-    font-size: 6.5rem;
+    font-size: 1rem;
     font-weight: 170;
     background-size: contain;
     line-height: 0.8;
     margin: 0;
-    text-align: left;
+    text-align: center;
 }
-
-#quote1{
-    font-size: 5.5rem;
-}
-
 .magic{
-    color: goldenrod;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
-h4{
-    text-align: right;
-    color: grey;
+.magic h3{
+    color: var(--color-violeta);
+    font-family: var(--font-berkshire);
+    font-size: 1.5rem;
+    padding-bottom: 20px;
 }
-  
-#quote > * {
-    color: hsl(347, 7%, 29%);
-    font-variation-settings: 'wght' var(--weight);
+.magic img{
+    height: 35px;
+    width: auto;
 }
