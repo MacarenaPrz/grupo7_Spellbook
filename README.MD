@@ -2,7 +2,7 @@
 
 <h1> GRUPO 7 - SPELLBOOK </h1>
 
-<img src="https://github.com/MacarenaPrz/grupo_7_Spellbook/blob/master/public/images/Dise%C3%B1o%20y%20Logo/Logo%20para%20fondos%20oscuros.png" width="200" height="200" />
+<img src="https://github.com/MacarenaPrz/grupo_7_Spellbook/blob/master/public/images/Dise%C3%B1o%20y%20Logo/Logo-Berkshire.png?raw=true" width="980" height="200" />
 
 La web que nos solicitó nuestro cliente es un ecommerce de venta de libros del género fantástico. La audiencia a la que se apunta es amplia, sobretodo para personas con gusto por la literatura y el género en sí mismo.
 Si bien el único requisito a cumplir son funcionalidades básicas, nuestra idea es agregarle valor al pedido del cliente creando una aplicación llamativa y accesible, asociada a colores relacionados con lo mágico, que las decoraciones del mismo hagan alusión a distintos títulos icónicos del género, sea fácil de navegar y se acomode a las necesidades tanto del solicitante como del usuario.
