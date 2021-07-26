@@ -1,29 +1,3 @@
-/* .error-bg {
-    background-color: #1b1b1d;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
-}
-  
-.error-bg:after {
-    content: '';
-    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/756881/texture.svg);
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    z-index: 99;
-    pointer-events: none;
-    opacity: 0.2;
-    filter: invert(1);
-    background-size: cover;
-}
-*/
 .error-bg{
     position: relative;
     width: 100%;
