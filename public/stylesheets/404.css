@@ -8,7 +8,7 @@
     justify-content: center;
     align-items: center;
 }
-.error-bg .star{
+ .star{
     position: absolute;
     top: 0;
     left: 0;
@@ -17,35 +17,35 @@
     pointer-events: none;
     animation: starss 8s ease-in-out infinite;
 }
-.error-bg .star1{
+ .star1{
     animation-delay: 0s;
     background: url('../images/stars/star1.png');
 }
-.error-bg .star2{
+ .star2{
     animation-delay: -1s;
     background: url('../images/stars/star2.png');
 }
-.error-bg .star3{
+ .star3{
     animation-delay: -2s;
     background: url('../images/stars/star3.png');
 }
-.error-bg .star4{
+ .star4{
     animation-delay: -3s;
     background: url('../images/stars/star4.png');
 }
-.error-bg .star5{
+ .star5{
     animation-delay: -4s;
     background: url('../images/stars/star5.png');
 }
-.error-bg .star6{
+ .star6{
     animation-delay: -5s;
     background: url('../images/stars/star6.png');
 }
-.error-bg .star7{
+ .star7{
     animation-delay: -6s;
     background: url('../images/stars/star7.png');
 }
-.error-bg .star8{
+ .star8{
     animation-delay: -7s;
     background: url('../images/stars/star8.png');
 }
