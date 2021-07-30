@@ -22,7 +22,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 /* ROUTING */
 /* Home */
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, './views/index.html'))
+  res.render('index')
 });
 /* Detalle de producto */
 app.get('/product', (req, res) => {
