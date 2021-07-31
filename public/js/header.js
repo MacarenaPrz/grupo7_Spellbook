@@ -8,6 +8,6 @@ btn.addEventListener('click',()=>{
     nav.classList.toggle('open');
     links.forEach(link =>{
         link.classList.toggle('fade');
-    })
+    });
     icon.classList.toggle('fa-times');
 });

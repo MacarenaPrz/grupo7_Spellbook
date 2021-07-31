@@ -92,6 +92,7 @@
   letter-spacing: 0.1rem;
   border-radius: 5px;
   font-size: 1rem;
+  transition: all 1s ease-in-out;
 
 }
 .social__icon {
@@ -100,6 +101,7 @@
 .social__btn:hover,
 .btn__send:hover {
   background-color: var(--color-azulClaro);
+  border-radius: 12px;
 }
 
 .enlace_link {

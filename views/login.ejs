@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/login.css" />
+    <title>SpellBook</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+
+     <!-- LINK CSS DEL HEADER -->
+     <link rel="stylesheet" href="stylesheets/header.css">
+
+     <!-- LINK DEL FOOTER -->
+     <link rel="stylesheet" href="stylesheets/footer.css">
+    <!-- NORMALIZE Y ESTILOS -->
+    <link rel="stylesheet" href="/stylesheets/styles.css">
+     <!-- LINK DEL HOME -->
+     <link rel="stylesheet" href="stylesheets/home.css">
+
+    <!-- Berkshire Swash -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap"
+      rel="stylesheet"
+    />
+    <!-- fon icons -->
+    <script
+      src="https://kit.fontawesome.com/fc00004fb4.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+
+    <!-- COMIENZA EL HEADER -->
+    <header class="header">
+
+      <!-- LOGO CON LINK AL HOME -->
+      <div class="logo">
+        <h1 class="logo__title"><a href="/" class="logo__link">SpellBook</a></h1>
+      </div>
+
+      <!-- BURGER MENU -->
+      <div class="btn">
+        <i class="fas fa-bars" id="icon"></i>
+      </div>
+
+      <!-- MENU DESPLEGABLE -->
+      <nav class="nav">
+        <ul class="menu">
+          <li class="menu__items">
+              <a href="/" class="menu__link">Inicio</a>
+          </li>
+          <li class="menu__items">
+              <a href="#" class="menu__link">Libros</a>
+          </li>
+          <li class="menu__items">
+            <a href="#" class="menu__link">Recomendados</a>
+          </li>
+          <li class="menu__items">
+            <a href="#" class="menu__link">Novedades</a>
+          </li>
+          <li class="menu__items">
+            <a href="#" class="menu__link">Nosotros</a>
+          </li>
+          <li class="menu__items">
+            <a href="/cart" class="menu__link">Mi carrito</a>
+          </li>
+        </ul>
+
+        <!-- REGISTRO E INICIO DE SESIÓN -->
+        <div class="login">
+          <a href="/signup" class="login__btn">Registrate</a>
+          <a href="/login" class="login__btn login--up">Iniciar sesion</a>
+        </div>
+      </nav>
+
+      <!-- HEADER VERSIÓN DESKTOP -->
+      
+      <!-- SE UTILIZA EL MISMO LOGO ORIENTADO EN EL CENTRO -->
+      
+          <!-- LUPA, CARRITO Y MAGO DE USUARIO -->
+      <div class="user__desk">
+
+          <!-- LUPA DE BUSQUEDA -->
+          <label name="search" id="search" >
+              <input class="user__search__desk" type="search" name="search" id="search" placeholder="">
+              <i class="fas fa-search user__icon__desk"></i>
+          </label>
+
+          <!-- HACIA EL CARRITO DE COMPRAS -->
+          <a href="/cart">
+              <i class="fas fa-shopping-cart user__icon__desk"></i>
+          </a>
+          <!-- MAGO PARA REGISTRARSE -->
+          <div class="wizard">    
+               <a href="/login" class="wizard__image">
+                   <img src="images/wizard-icon.png" width="20px" alt="">
+               </a>
+               <a href="/login" class="wizard__login">
+                  <p>Ingresar / </p>
+               </a>
+               <a href="/signup" class="wizard__login">
+                   <p>Registrarse</p>
+               </a>
+          </div>
+      </div>
+
+      <!-- MENU POR DEBAJO DEL HEADER -->
+      <nav class="nav__desk">
+          <ul class="menu__desk">
+            <li class="menu__items__desk">
+                <a href="/" class="menu__link__desk">Inicio</a>
+            </li>
+            <li class="menu__items__desk">
+                <a href="/product" class="menu__link__desk">Libros</a>
+            </li>
+            <li class="menu__items__desk">
+              <a href="#" class="menu__link__desk">Recomendados</a>
+            </li>
+            <li class="menu__items__desk">
+              <a href="#" class="menu__link__desk__desk">Novedades</a>
+            </li>
+            <li class="menu__items__desk">
+              <a href="#" class="menu__link__desk">Nosotros</a>
+            </li>
+          </ul>
+      </nav>
+    </header>
+
+    <aside class="aside">
+      <figure class="logo-sticker">
+        <img
+          src="images/Diseño y Logo/Logo para fondos oscuros.png"
+          alt=""
+          class="logo-sticker__img"
+        />
+      </figure>
+      <form action="" method="POST" class="form">
+        <div class="box">
+          <h2 class="box__title">Iniciar sesion</h2>
+        </div>
+
+        <div class="user">
+          <input
+            type="text"
+            name="name"
+            placeholder="Nombre de Usuario"
+            class="user__info"
+          />
+          <span class="warning">Nombre de usuario incorrecto</span>
+        </div>
+
+        <div class="user">
+          <input
+            type="password"
+            name="password"
+            placeholder="Contraseña"
+            class="user__info"
+          />
+          <span class="warning">Contraseña incorrecta</span>
+        </div>
+        <div>
+          <label class="terminos" for="recuerdame">
+            <input type="checkbox" 
+            name="recuerdame" 
+            id="recuerdame">
+            Recordarme en este equipo
+          </label>
+        </div>
+        <button type="submit" value="Enviar" class="btn__send">Iniciar sesion</button>
+        <div class="user">
+          <a href="" class="enlace_link">¿Olvidate tu contraseña?</a>
+          <a href="/signup" class="enlace_link"  >¿No tenes cuenta?</a>
+        </div>
+        <div class="user social">
+          <a href="" class="social__btn"
+            ><i class="fab fa-google social__icon"></i>GOOGLE</a
+          >
+          <a href="" class="social__btn"
+            ><i class="fab fa-facebook-f social__icon"></i>FACEBOOK</a
+          >
+        </div>
+      </form>
+    </aside>
+
+   <!-- FOOTER -->
+   <%- include('./partials/footer') %>
+
+   <script src="js/header.js"></script>
+  </body>
+</html>

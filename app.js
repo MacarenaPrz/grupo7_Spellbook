@@ -26,30 +26,30 @@ app.get('/', (req, res) => {
 });
 /* Detalle de producto */
 app.get('/product', (req, res) => {
-  res.sendFile(path.join(__dirname, './views/productDetail.html'))
+  res.render('productDetail')
 });
 /* Shopping Cart */
 app.get('/cart', (req, res) => {
-  res.sendFile(path.join(__dirname, './views/shoppingCart.html'))
+  res.render('shoppingCart')
 });
 /* Registro */
 app.get('/signup', (req, res) => {
-  res.sendFile(path.join(__dirname, './views/signUp.html'))
+  res.render('signUp')
 });
 /* Login */
 app.get('/login', (req, res) => {
-  res.sendFile(path.join(__dirname, './views/login.html'))
+  res.render('login');
 });
 /* Info de Usuario */
 app.get('/register', (req, res) => {
-  res.sendFile(path.join(__dirname, './views/register.html'))
+  res.render('register')
 });
 /* Admin */
 app.get('/admin', (req, res) => {
-  res.render(path.join(__dirname, './views/admin'))
+  res.render('admin')
 });
 app.get('/404', function(req, res) {
-  res.render(path.join(__dirname, './views/404'));
+  res.render('404');
 });
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
