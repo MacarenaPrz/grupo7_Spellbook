@@ -90,10 +90,10 @@ section.product-form{
     text-align: center;
     margin: 1rem;
     padding: 1rem;
-    width: 100%;
+    width: fit-content;
     height: 33rem;
     border: 1px solid var(--color-violeta);
-    border-radius: 4px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     flex-direction: column;
