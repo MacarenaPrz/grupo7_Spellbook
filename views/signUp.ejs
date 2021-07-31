@@ -13,7 +13,10 @@
       href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
       rel="stylesheet"
     />
-
+    
+    <!-- NORMALIZE Y ESTILOS -->
+    <link rel="stylesheet" href="/stylesheets/styles.css">
+    
     <!-- LINK CSS DEL HEADER -->
     <link rel="stylesheet" href="stylesheets/header.css">
 
@@ -178,57 +181,9 @@
         </form>
       </aside>
 
-         <!-- FOOTER -->
-  <footer>
-    <div class="footer-main">
-    <section class="footer-myAccount">
-      <div class="footer-header">
-        <p>Mi Cuenta</p>
-      </div>
-      <div class="footer-options">
-        <p>Ingresar</p>
-        <p>Ver Carrito</p>
-        <p>Finalizar Compra</p>
-      </div>
-      
-    </section>
+  <!-- FOOTER -->
+  <%- include('./partials/footer') %>
 
-    <section class="footer-contactUs">
-      <div class="footer-header">
-        <p>Contacto</p>
-      </div>
-      <div class="footer-options">
-        <p><i class="fas fa-envelope"></i>  <a href="mailto:info@spellbook.com">info@spellbook.com</a></p>
-        <p><i class="fas fa-phone"></i>  0810 222 9686</p>
-        <p><i class="fab fa-facebook"></i> <i class="fab fa-instagram"></i> <i class="fab fa-twitter"></i></p>
-      </div>
-    </section>
-
-    <section class="footer-onlineStore">
-      <div class="footer-header">
-        <p>Online Store</p>
-      </div>
-      <div class="footer-options">
-        <p>Medios de pago</p>
-        <p>Envíos</p>
-        <p>Términos y Condiciones</p>
-      </div>
-      
-    </section>
-  </div>
-
-    <section class="footer-logo">
-     <p>SpellBook</p>
-
-    </section>
-  
-    
-    <div class="footer-copyright">
-      <hr>
-      <p>SPELLBOOK © 2021 MARCA REGISTRADA - TODOS LOS DERECHOS RESERVADOS - </p>
-    </div>
-    
-  </footer>
       <script src="js/header.js"></script>
 </body>
 </html>
