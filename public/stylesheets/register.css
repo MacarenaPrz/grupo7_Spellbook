@@ -21,7 +21,7 @@
 /*  FORMULARIO DE REGISTRO */
 
 /* IMAGEN DE USUARIO */
-.user {
+.register-user {
     display: flex;
     justify-content: center;
     margin-top: 15px;
@@ -112,6 +112,11 @@
     border: none;
     border-bottom: solid 3px var(--color-azulOscuro);
     width: 70%;
+    transition: all 0.5s;
+    
+}
+.user-date-inputs:focus {
+    border-bottom: solid 3px var(--color-violeta);
 }
 ::placeholder {
     color: gray;
@@ -127,6 +132,8 @@
     margin-left: 13%;
     margin-bottom: 32px;
 }
+
+
 
 /* NOMBRE */
 .user-pocision {
@@ -156,6 +163,10 @@
 }
 
 .user-date-inputs-date {
+    color: var(--color-azulOscuro);
+    font-size: 0.8rem;
+    font-family: var(--font-roboto);
+    outline: none;
     max-height: 40px;
     background: transparent;
     border: none;
@@ -184,7 +195,7 @@
 
  /* LINEA HR */
  .one-line {
-    background: linear-gradient(90deg, rgb(24, 24, 24), white);
+    background: linear-gradient(90deg, var(--color-azulOscuro), var(--color-beige));
     height: 2px;
     margin-bottom: 3rem;
     width: 100%;

@@ -82,15 +82,24 @@
 
 
 /* SECCIÓN DETALLE DE COMPRA */
+/* CONTENEDOR DE SECCIÓN */
+.detail-buy {
+    margin: 100px 0;
+}
+/* LINEA HR */
+.one-line {
+    background: linear-gradient(90deg, var(--color-azulOscuro), var(--color-beige));
+    height: 2px;
+    margin-bottom: 3rem;
+    width: 100%;
+ }
+
 
 /* TÍTULO DE SECCIÓN */
 .detail-title {
-    background-color: var(--color-violeta);
-    border-radius: 2.3rem;
-    font-size: 1rem;
-    margin: 30px auto;
+    font-family: var(--font-berkshire);
+    font-size: 1.3rem;
     padding: 5px 0;
-    text-align: center;
     width: 18rem;
 }
 
@@ -101,7 +110,7 @@
     font-size: 1rem;
     height: auto;
     max-width: 18rem;
-    margin: 15px auto;
+    margin: 25px auto;
     padding: 5px;
 }
 .total {
@@ -125,8 +134,8 @@
 
 .recommended-title {
     font-family: var(--font-berkshire);
-    font-size: var(--paragraph);
-    margin: 50px auto 20px;
+    font-size: 1.3rem;
+    margin-top: 100px;
 }
 
 /* SECCIÓN RECOMENDADOS */
@@ -165,7 +174,7 @@
 
 /* TODOS LOS PRODUCTOS A COMPRAR */
 
- .conteiner-item {
+.conteiner-item {
      width: 55%;
      max-width: 480px ;
  }
@@ -198,11 +207,12 @@
     left: 60%;
     max-width: 400px;
     display: inline-block;
+    margin-top: 0;
 }
 
 /* TÍTULO RECOMENDADOS */
 .recommended-title {
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 /* SECCIÓN RECOMENDADOS */
