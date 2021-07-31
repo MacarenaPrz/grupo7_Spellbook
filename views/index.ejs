@@ -4,136 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- GOOGLE FONT -->
-    <!-- Roboto -->
+    <title>SpellBook</title>
+    <!-- GOOGLE FONT Roboto-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-
     <!-- Berkshire Swash -->
     <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
-
     <!-- FONT AWESOME -->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <script src="https://kit.fontawesome.com/fc00004fb4.js"crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/29f0a39c3c.js" crossorigin="anonymous"></script>
 
     <!-- NORMALIZE Y ESTILOS -->
-    
     <link rel="stylesheet" href="/stylesheets/styles.css">
-
     <!-- LINK CSS DEL HEADER -->
     <link rel="stylesheet" href="stylesheets/header.css">
-
-     <!-- LINK DEL HOME -->
-     <link rel="stylesheet" href="stylesheets/home.css">
-
-    <title>SpellBook</title>
 </head>
 <body>
-  <!-- HEADER -->
- <!-- COMIENZA EL HEADER -->
- <header class="header error-bg">
-  <div class="star star1"></div>
-  <div class="star star2"></div>
-  <div class="star star3"></div>
-  <div class="star star4"></div>
-  <div class="star star5"></div>
-  <div class="star star6"></div>
-  <div class="star star7"></div>
-   <div class="star star8"></div>
-  <!-- LOGO CON LINK AL HOME -->
-  <div class="logo">
-    <h1 class="logo__title"><a href="/" class="logo__link">SpellBook</a></h1>
-  </div>
-
-  <!-- BURGER MENU -->
-  <div class="btn">
-    <i class="fas fa-bars" id="icon"></i>
-  </div>
-
-  <!-- MENU DESPLEGABLE -->
-  <nav class="nav">
-    <ul class="menu">
-      <li class="menu__items">
-          <a href="/" class="menu__link">Inicio</a>
-      </li>
-      <li class="menu__items">
-          <a href="#" class="menu__link">Libros</a>
-      </li>
-      <li class="menu__items">
-        <a href="#" class="menu__link">Recomendados</a>
-      </li>
-      <li class="menu__items">
-        <a href="#" class="menu__link">Novedades</a>
-      </li>
-      <li class="menu__items">
-        <a href="#" class="menu__link">Nosotros</a>
-      </li>
-      <li class="menu__items">
-        <a href="/cart" class="menu__link">Mi carrito</a>
-      </li>
-    </ul>
-
-    <!-- REGISTRO E INICIO DE SESIÓN -->
-    <div class="login">
-      <a href="/signup" class="login__btn">Registrate</a>
-      <a href="/login" class="login__btn login--up">Iniciar sesion</a>
-    </div>
-  </nav>
-
-  <!-- HEADER VERSIÓN DESKTOP -->
-  
-  <!-- SE UTILIZA EL MISMO LOGO ORIENTADO EN EL CENTRO -->
-  
-      <!-- LUPA, CARRITO Y MAGO DE USUARIO -->
-  <div class="user__desk">
-
-      <!-- LUPA DE BUSQUEDA -->
-      <label name="search" id="search" >
-          <input class="user__search__desk" type="search" name="search" id="search" placeholder="">
-          <i class="fas fa-search user__icon__desk"></i>
-      </label>
-
-      <!-- HACIA EL CARRITO DE COMPRAS -->
-      <a href="/cart">
-          <i class="fas fa-shopping-cart user__icon__desk"></i>
-      </a>
-      <!-- MAGO PARA REGISTRARSE -->
-      <div class="wizard">    
-           <a href="/login" class="wizard__image">
-               <img src="images/wizard-icon.png" width="20px" alt="">
-           </a>
-           <a href="/login" class="wizard__login">
-              <p>Ingresar / </p>
-           </a>
-           <a href="/signup" class="wizard__login">
-               <p>Registrarse</p>
-           </a>
-      </div>
-  </div>
-
-  <!-- MENU POR DEBAJO DEL HEADER -->
-  <nav class="nav__desk">
-      <ul class="menu__desk">
-        <li class="menu__items__desk">
-            <a href="/" class="menu__link__desk">Inicio</a>
-        </li>
-        <li class="menu__items__desk">
-            <a href="/product" class="menu__link__desk">Libros</a>
-        </li>
-        <li class="menu__items__desk">
-          <a href="#" class="menu__link__desk">Recomendados</a>
-        </li>
-        <li class="menu__items__desk">
-          <a href="#" class="menu__link__desk__desk">Novedades</a>
-        </li>
-        <li class="menu__items__desk">
-          <a href="#" class="menu__link__desk">Nosotros</a>
-        </li>
-      </ul>
-  </nav>
-</header>
+<!-- HEADER -->
+<%- include('./partials/header') %> 
 
 <link rel="stylesheet" href="/stylesheets/normalize.css">
 
