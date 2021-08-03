@@ -34,16 +34,6 @@
   color: var(--color-azulOscuro);
   letter-spacing: 0.1rem;
 }
-.close {
-  position: absolute;
-  top: 2%;
-  right: 4%;
-  transform: translate(-4%, -2%);
-  font-size: 1.4rem;
-  color: var(--color-azulOscuro);
-  z-index: 999;
-  cursor: pointer;
-}
 .user {
   width: 80%;
   height: 45px;
@@ -110,7 +100,7 @@
 .warning{
     color: darkred;
     font-size: .9rem;
-    padding: 5px 0;
+    padding: 10px 0;
     font-weight: 600;
 }
 @media (min-width: 500px) {
