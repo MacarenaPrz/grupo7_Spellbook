@@ -51,6 +51,19 @@ app.get('/admin', (req, res) => {
 app.get('/404', function(req, res) {
   res.render('404');
 });
+/* Books */
+app.get('/books', (req, res) => {
+  res.render('books')
+});
+/* Novelties */
+app.get('/novelties', (req, res) => {
+  res.render('novelties')
+});
+app.get('/aboutUs', (req, res) => {
+  res.render('aboutUs')
+});
+
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
