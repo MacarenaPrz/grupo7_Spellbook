@@ -1,0 +1,57 @@
+[
+    {
+        "titulo":"Fuego y Sangre",
+        "autor":"George R. R. Martin",
+        "cantidad":1,
+        "precio":749.99,
+        "descripcion":"George R. R. Martin narra la fascinante historia de los Targaryen, la dinastía que reinó en Poniente trescientos años antes del inicio de 'Canción de hielo y fuego', la saga que inspiró la serie de HBO: Juego de tronos. Siglos antes de que tuvieran lugar los acontecimientos que se relatan en 'Canción de hielo y fuego', la casa Targaryen, la única dinastía de señores dragón que sobrevivió a la Maldición de Valyria, se asentó en la isla de Rocadragón. Aquí tenemos el primero de los dos volúmenes en el que el autor de Juego de tronos nos cuenta, con todo lujo de detalles, la historia de tan fascinante familia: empezando por Aegon I Targaryen, creador del icónico Trono de Hierro, y seguido por el resto de las generaciones de Targaryens que lucharon con fiereza por conservar el poder, y el trono, hasta la llegada de la guerra civil que casi acaba con ellos. ¿Qué pasó realmente durante la Danzade dragones? ¿Por qué era tan peligroso acercarse a Valyria después de la Maldición? ¿Cómo era Poniente cuando los dragones dominaban los cielos? Estas, y otras muchas, son las preguntas a las que responde esta monumental crónica, narrada por un culto maestre de la Ciudadela, que anticipa el ya conocido universo de George R.R. Martin. Fuego y Sangre brindará a los lectores la oportunidad de tener otra visión de la fascinante historia de Poniente. Esta obra, magníficamente ilustrada con 85 láminas inéditas de Doug Wheatley, se convertirá, sin duda, en una lectura ineludible para todos los fans de la aclamada serie.",
+        "imagen":"fuegoSangre.jpg",
+        "edad":"adult",
+        "seleccionadoMes": 0
+
+    },
+    {
+        "titulo":"El legado Maltido",
+        "autor":"J. K. Rowling",
+        "cantidad":1,
+        "precio":890,
+        "descripcion":"Ser Harry Potter Nunca Ha Sido Tarea Fácil, Menos Aún Desde Que se Ha Convertido en un Ocupadísimo Empleado del Ministerio de Magia, un Hombre Casado y Padre de Tres Hijos. Mientras Harry Planta Cara a un Pasado Que se Resiste a Quedar Atrás, su Hijo Menor, Albus, Ha de Luchar Contra el Peso de una Herencia Familiar de la Que éL Nunca Ha Querido Saber Nada. Cuando el Destino Conecte el Pasado con el Presente, Padre E Hijo Deberán Afrontar una Verdad muy Incómoda: a Veces, la Oscuridad Surge de los Lugares Más Insospechados. Harry Potter y el Legado Maldito es una Obra de Teatro de Jack Thorne Basada en una Historia Original de J. K. Rowling, John Tiffany y Jack Thorne. es la Octava Historia de la Saga de Harry Potter y la Primera Que se Representa Oficialmente en los Escenarios. Esta Edición Especial del Texto Teatral Acerca a los Lectores la Continuación del Viaje de Harry Potter, sus Amigos y Familiares, Inmediatamente Después del Estreno Mundial de la Obra en el West End de Londres el 30 de Julio de 2016.",
+        "imagen":"ElLegadoMaldito.jpg",
+        "edad":"all",
+        "seleccionadoMes":0
+
+    },
+    {
+        "titulo":"La Espada del Destino",
+        "autor":"Andrzej Sapkowski",
+        "cantidad":1,
+        "precio":895,
+        "descripcion":"La vida de un brujo cazador de monstruos no es facil. Tan pronto puede uno tener que meterse hasta el cuello en un estercolero para eliminar a la bestia carronera que amenaza la ciudad; intentando no atrapar una infeccion incurable; como se puede encontrar unido a la caceria de uno de los ultimos dragones; en la que la cuestion no es si los cazadores conseguiran matar a la pobre bestia; sino que pasara cuando tengan que repartirse el botin. Magos; principes; estarostas; voievodas; druidas; vexlings; driadas; juglares y criaturas de todo pelaje pueblan esta tierra; enzarzados en conflictos de supervivencia; codicia y amor; y entre ellos avanza; solitario; el brujo Geralt de Rivia. Andrzej Sapkowski es el gran renovador de la literatura fantastica de nuestros tiempos; un genio del lenguaje y la caracterizacion cuya prosa ya ha hechizado a millones de lectores en todo el mundo.",
+        "imagen":"laEspadaDelDestino.jpg",
+        "edad":"all",
+        "seleccionadoMes":0
+
+    },
+    {
+        "titulo":"El Talismán",
+        "autor":"Stephen King Y Peter Straub",
+        "cantidad":1,
+        "precio":950,
+        "descripcion":"Una historia de mundos paralelos, peligros adultos y enfrentamientos mágicos que marcarán el destino futuro del joven. Vamos, como la vida misma. El talismán presenta en parte las mejores virtudes de ambos autores, Stephen King Y Peter Straub, Por un lado el uso, que aparece en ambos autores, de elementos banales acrecentados mágicamente para inquietar, las referencias a la cultura popular americana o la descripción de personajes y paisajes que ambos usan de manera parecida. Por otro lado, ya específicamente, King aporta al libro el ambiente fantástico que aparece en su propia serie de La Torre Oscura mientras Straub parece (aunque es difícil saber quién hace qué en este libro) aportar una sutil ironía, un poco más refinada que la habitual en King, sobre cómo contar una historia de este tipo cuando los personajes son conscientes de que forman parte de un tipo de historia determinado.",
+        "imagen":"El_talismán",
+        "edad":"adult",
+        "seleccionadoMes":0
+
+    },
+    {
+        "titulo":"Los",
+        "autor":"",
+        "cantidad":1,
+        "precio":930,
+        "descripcion":"Al final del primer episodio, el poderoso mago oscuro Gellert Grindelwald es capturado con la ayuda de Newt Scamander. Sin embargo, Grindelwald logra escapar y cumple con su amenaza de alistar nuevos seguidores, ocultándoles sus verdaderas intenciones: conseguir que los magos de sangre pura dominen a los muggles. En un esfuerzo por frustrar los planes de Grindelwald, Albus Dumbledore le pide ayuda a Newt, su ex alumno de Hogwarts, y éste acepta sin imaginar los peligros que le esperan. Así pues, cuando el amor y la lealtad son puestos a prueba, incluso entre amigos y familiares, el mundo mágico se muestra cada vez más dividido.",
+        "imagen":"losCrimenesDeGrindelwald.jpg",
+        "edad":"all",
+        "seleccionadoMes":0
+
+    }
+]
