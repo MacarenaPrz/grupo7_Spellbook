@@ -44,8 +44,8 @@
 
     },
     {
-        "titulo":"Los",
-        "autor":"",
+        "titulo":"Los Crimenes de Grindelwald",
+        "autor":"J. K. Rowling",
         "cantidad":1,
         "precio":930,
         "descripcion":"Al final del primer episodio, el poderoso mago oscuro Gellert Grindelwald es capturado con la ayuda de Newt Scamander. Sin embargo, Grindelwald logra escapar y cumple con su amenaza de alistar nuevos seguidores, ocultándoles sus verdaderas intenciones: conseguir que los magos de sangre pura dominen a los muggles. En un esfuerzo por frustrar los planes de Grindelwald, Albus Dumbledore le pide ayuda a Newt, su ex alumno de Hogwarts, y éste acepta sin imaginar los peligros que le esperan. Así pues, cuando el amor y la lealtad son puestos a prueba, incluso entre amigos y familiares, el mundo mágico se muestra cada vez más dividido.",
@@ -53,5 +53,89 @@
         "edad":"all",
         "seleccionadoMes":0
 
+    },
+    {
+        "titulo":"La Rueda del Tiempo",
+        "autor":"Robert Jordan",
+        "cantidad":1,
+        "precio":1150,
+        "descripcion":"Elayne, Nynaeve y Aviendha prosiguen con sus investigaciones en Ebou Dar para encontrar el ter’angreal con el que podrían frenar la espantosa ola de calor que azota el mundo. Para ello se reúnen con los Marinos, quienes dan el nombre de Cuenco de los Vientos al objeto. Egwene continúa con su lucha para ser la Sede Amyrlin escogida por las Aes Sedai rebeldes, y acabar con el control que sobre ella ejercen las Asentadas y otros grupos de hermanas. Entre tanto, en los distintos reinos, nobles y dirigentes continúan buscando su propio beneficio, sin tener presente que la mano del Oscuro está tocando el mundo y que la Última Batalla se acerca.        ",
+        "imagen":"corona de espadas.jpg",
+        "edad":"adult",
+        "seleccionadoMes":1
+
+    },
+    {
+        "titulo":"El Temor de un Hombre Sabio",
+        "autor":"Patrick Rothfuss",
+        "cantidad":1,
+        "precio":1310,
+        "descripcion":"Todo hombre sabio teme tres cosas: la tormenta en el mar, la noche sin luna y la ira de un hombre amable. El hombre había desaparecido. El mito no. Músico, mendigo, ladrón, estudiante, mago, trotamundos, héroe y asesino, Kvothe había borrado su rastro. Y ni siquiera ahora que le han encontrado, ni siquiera ni siquiera ahora que le han encontrado, ni siquiera ahora que las tinieblas invaden los rincones del mundo, está dispuesto a regresar. Pero su historia prosigue, la aventura continúa, y Kvothe seguirá contándola para revelar la verdad tras la leyenda.  «La nueva promesa de la literatura fantástica.",
+        "imagen":"corona de espadas.jpg",
+        "edad":"adult",
+        "seleccionadoMes":1
+
+    },
+    {
+        "titulo":"El Hobbit",
+        "autor":"J. R. R. Tolkien",
+        "cantidad":1,
+        "precio":1310,
+        "descripcion":"Smaug parecia profundamente dormido cuando Bilbo espio una vez mas desde la entrada. Pero fingia estar dormido! ¡Estaba vigilando la entrada del tunel!... Sacado de su comodo agujero-hobbit por Gandalf y una banda de enanos, Bilbo se encuentra de pronto en medio de una conspiracion que pretende apoderarse del tesoro de Smaug el Magnifico, un enorme y muy peligroso dragon...Todos los que aman esos libros para ninos que pueden ser leidos y releidos por adultos han de tomar buena cuenta de que una nueva estrella ha aparecido en esa constelacion",
+        "imagen":"el-hobbit.jpg",
+        "edad":"all",
+        "seleccionadoMes":0
+    
+    },
+    {
+        "titulo":"El Señor de los Anillos - La comunidad del anillo",
+        "autor":"J. R. R. Tolkien",
+        "cantidad":1,
+        "precio":1200,
+        "descripcion":"En la adormecida e idílica Comarca, un joven hobbit recibe un encargo: custodiar el Anillo Único y emprender el viaje para su destrucción en la Grieta del Destino. Acompañado por magos, hombres, elfos y enanos, atravesará la Tierra Media y se internará en las sombras de Mordor, perseguido siempre por las huestes de Sauron, el Señor Oscuro, dispuesto a recuperar su creación para establecer el dominio definitivo del Mal.",
+        "imagen":"ElSeñorDeLosAnillos_LaComunidadDelAnillo.jpg",
+        "edad":"all",
+        "seleccionadoMes":0
+    },
+    {
+        "titulo":"Harry Potter y el caliz de fuego",
+        "autor":"J. K. Rowling",
+        "cantidad":1,
+        "precio":1530,
+        "descripcion":"Tras otro abominable verano con los Dursley, Harry se dispone a iniciar el cuarto curso en Hogwarts, la famosa escuela de magia y hechicería. A sus catorce años, a Harry le gust aría ser un joven mago como los demás y dedicarse a aprend er nuevos sortilegios, encontrarse con sus amigos Ron y Herm ione y asistir con ellos a los Mundiales de quidditch. Sin e mbargo, al llegar al colegio le espera una gran sorpresa que lo obligará a enfrentarse a los desafíos más temibles de toda su vida. Si logra superarlos, habrá demostrado que ya no es un niño y que está preparado para vivir las nuevas y emocionantes experiencias que el futuro le depara.",
+        "imagen":"harry-potter-y-el-caliz-de-fuego.jpg",
+        "edad":"all",
+        "seleccionadoMes":0
+    },
+    {
+        "titulo":"Harry Potter y la camara secreta",
+        "autor":"J. K. Rowling",
+        "cantidad":1,
+        "precio":1530,
+        "descripcion":"Mientras Harry espera impaciente en casa de sus insoportabl es tíos el inicio del segundo curso del Colegio Hogwarts de Magia y Hechicería, un elfo aparece en su habitación y le advierte de que una amenaza mortal se cierne sobre la escue la. Harry no se lo piensa dos veces y, acompañado de Ron, s e dirige a Hogwarts en un coche volador. Pero, ¿puede un ap rendiz de mago defender la escuela de los malvados que prete nden destruirla? Sin saber que alguien ha abierto la Cámara de los Secretos, dejando escapar una serie de monstruos pel igrosos, Harry y sus amigos Ron y Hermione tendrán que enfr entarse con arañas gigantes, serpientes encantadas, fantasm as enfurecidos y, sobre todo, con la mismísima reencarnaci n de su más temible adversario.",
+        "imagen":"harry-potter-y-la-camara-secreta.jpg",
+        "edad":"all",
+        "seleccionadoMes":0
+    },
+    {
+        "titulo":"La Morada - El Exilio -El Refugio",
+        "autor":"R. A. SALVATORE",
+        "cantidad":1,
+        "precio":1530,
+        "descripcion":"Por primera vez, en un solo volumen, la trilogía El elfo Oscuro de R.A. Salvatore, que en su día se publicó en tes libros: La morada, EL Exilio y El refugio. Prizzt Do´Urden, el Elfo Oscuro, es uno de los personajes más emblemáticos del universo de los Reinos Olvidados. R. A. Salvatore nos cuenta sus orígenes en la exótica ciudad subterránea de Menzoberranzan, donde moran los elfos oscuros desde hace milenios, su posterior exilio y aventuras en los túneles de la Antípoda Oscura, siempre huyendo de la venganza de su familia y de la maligna Reina Araña, y, por último, su salida al mundo de la superficie, donde buscará ser aceptado como un igual entre las razas del exterior.",
+        "imagen":"la morada - el exilio - el refugio.jpg",
+        "edad":"all",
+        "seleccionadoMes":1
+    },
+    {
+        "titulo":"Animales Fantasticos y donde Encontrarlos",
+        "autor":"J. K. Rowling",
+        "cantidad":1,
+        "precio":1230,
+        "descripcion":"El explorador y magizoólogo Newt Scamander llega a Nueva York con la intención de permanecer unos pocos días. Pero cuando pierde su maleta y algunos de sus animales fantásticos se escapan de ella, una serie de acontecimientos extraordinarios se desatan, poniendo en vilo a la gran ciudad...",
+        "imagen":"AnimalesFantasticosYDondeEncontralos.jpg",
+        "edad":"all",
+        "seleccionadoMes":0
     }
+       
 ]
