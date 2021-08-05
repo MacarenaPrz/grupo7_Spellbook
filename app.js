@@ -24,35 +24,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter); // home
 app.use('/login' , usersRouter); // login
 
-// Detalle de producto 
-app.get('/product', (req, res) => { res.render('productDetail')});
-
-// Shopping Cart 
-app.get('/cart', (req, res) => { res.render('shoppingCart')});
-
-// Registro 
-app.get('/signup', (req, res) => { res.render('signUp')});
-
-// Login 
-app.get('/login', (req, res) => { res.render('login')});
-
-// Info de Usuario 
-app.get('/register', (req, res) => { res.render('register')});
-
-// Admin 
-app.get('/admin', (req, res) => { res.render('admin')});
-
-// Error 404
-app.get('/404', function(req, res) { res.render('404')});
-
-// Books 
-app.get('/books', (req, res) => { res.render('books')});
-
-// Novelties 
-app.get('/novelties', (req, res) => { res.render('novelties')});
-
-app.get('/aboutUs', (req, res) => { res.render('aboutUs')});
-
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) { next(createError(404))});

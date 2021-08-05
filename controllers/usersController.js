@@ -1,3 +1,6 @@
 module.exports={
-    login: (req,res)=>{res.render('login')}
+    login: (req,res)=>{res.render('login')},
+    signup: (req, res) => { res.render('signUp')},
+    register: (req, res) => { res.render('register')},
+    admin: (req, res) => { res.render('admin')}
 }
