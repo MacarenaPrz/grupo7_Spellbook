@@ -3,7 +3,7 @@
 
 <h3>Empezar a Hacer:</h3>
 <ul type="square">
-<li>REuniones 08:30hs</li>
+<li>Reuniones 08:30hs</li>
 <br>
 <li>Hacer reuniones más concisas.</li>
 <br>
