@@ -40,8 +40,8 @@
 .nav::after {
   content: "";
   display: block;
-  width: 50%;
-  height: 5px;
+  width: 95%;
+  height: 2px;
   background-color: var(--color-azulOscuro);
   position: absolute;
   top: 99%;
