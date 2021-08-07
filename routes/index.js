@@ -16,13 +16,4 @@ router.get('/novelties', controller.novelties);
 router.get('/aboutUs', controller.aboutUs);
 
 
-
-// GET users listing
-router.get('/login', controller.login);
-// Registro 
-router.get('/signup', controller.signup);
-// Info de Usuario 
-router.get('/register', controller.register);
-// Admin 
-router.get('/admin', controller.admin);
 module.exports = router;
