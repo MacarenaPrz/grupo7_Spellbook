@@ -88,6 +88,10 @@ table td button{
     color: var(--color-azulOscuro);
     border: none;
 }
+table td i{
+    font-size: 14px;
+    padding: 2.5rem 0.5rem;
+}
 section.product-form{
     width: 100%;
     height: 100%;
