@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+    <!-- HEAD -->
+    <%- include('../partials/head') %>
+<body>
+  <!-- HEADER -->
+ <header class="header error-bg">
+  <div class="star star1"></div>
+  <div class="star star2"></div>
+  <div class="star star3"></div>
+  <div class="star star4"></div>
+  <div class="star star5"></div>
+  <div class="star star6"></div>
+  <div class="star star7"></div>
+  <div class="star star8"></div>
+  <!-- LOGO CON LINK AL HOME -->
+  <div class="logo">
+      <h1 class="logo__title"><a href="/" class="logo__link">SpellBook</a></h1>
+  </div>
+    <!-- BURGER MENU -->
+    <a href="/signUp"><div class="btn">
+      <i class="far fa-user" id="icon"></i>
+    </div></a>
+  </header>
+  <main>
+    <!--LIST OF PRODUCTS SECTION-->
+    <section class="product-list">
+      <!--LINKS TO Agregar libro, Bell AND user-->
+      <div class="belluser">
+        <a href="#" class="display-shop" id="button-create">Agregar libro</a>
+        <a href="/login">
+          <div class="">
+            <i class="far fa-bell" id="icon"></i>
+          </div>
+        </a>
+        <a href="/login">
+          <div class="">
+            <i class="far fa-user" id="icon"></i>
+          </div>
+        </a>
+      </div>
+      <div class="search-table">
+        <h2>Libros</h2>
+        <label name="search" id="search" >
+          <i class="fas fa-search "></i>
+          <input class="" type="search" name="search" id="search" placeholder="">
+        </label>
+      </div>
+      <div class="products-table">
+        <table>
+          <thead>
+            <tr class="head-table">
+              <th><input type="checkbox"></th>
+              <th>Imagen</th>
+              <th>Título</th>
+              <th>Autor</th>
+              <th>Cantidad</th>
+              <th>Precio</th>
+              <th>Estado</th>
+              <th> </th>
+            </tr>
+          </thead> 
+          <tbody>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td><img src="/images/Libros/el temor de un hombre sabio.jpg"</td>
+                <td>El temor de un hombre sabio</td>
+                <td>Patrick Rothfuss</td>
+                <td>2</td>
+                <td>450</td>
+                <td>Activo</td>
+                <td><a
+                      href="#"
+                      class="button-edit">
+                       <i class="fas fa-pen"></i>
+                      
+                     </a>
+                    <form
+                        action="/products/delete/id?_method=DELETE"
+                        id="button-delete"
+                        method="POST">
+                        <button class="delete-btn">
+                          <i class="fas fa-times-circle"></i>
+                        </button>
+                      </form></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td><img src="/images/Libros/el temor de un hombre sabio.jpg"</td>
+                <td>El temor de un hombre sabio</td>
+                <td>Patrick Rothfuss</td>
+                <td>2</td>
+                <td>450</td>
+                <td>Activo</td>
+                <td><a
+                      href="#"
+                      class="button-edit">
+                       <i class="fas fa-pen"></i>
+                     </a>
+                    <form
+                        action="/products/delete/id?_method=DELETE"
+                        id="button-delete"
+                        method="POST">
+                        <button class="delete-btn">
+                          <i class="fas fa-times-circle"></i>
+                        </button>
+                      </form></td>
+              </tr>
+            </tbody>
+        </table>
+      </div>
+    </section>
+<!-- FORM -->
+    <section class="product-form">
+      <div class="internal-modal">
+        <div class="close-create">
+          <i class="fas fa-times" id="icon" aria-hidden="true"></i>
+        </div>
+        <div class="add-btn"><h2 id="shop-form">Agregar libro</h2></div>
+        <div class="errors">
+          <ul>
+          
+          </ul>
+        </div>
+        <form method="POST" enctype="multipart/form-data" id="product">
+          <fieldset>
+            <label for="image">Imagen :</label>
+            <input type="file" name="image" id="image" accept=".jpg, .png, .sgv" multiple/>
+          </fieldset>
+          <fieldset>
+            <label for="name">Título :</label>
+            <input
+              type="text"
+              name="title"
+              id="title"
+              sentence
+              value=""
+            />
+          </fieldset>
+          <fieldset>
+            <label for="name">Autor :</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              sentence
+              value=""
+            />
+          </fieldset>
+          <fieldset>
+            <label for="amount">Cantidad :</label>
+            <input
+              type="button"
+              name="amount"
+              id="amount"
+              value="-"
+            />
+            <input
+              type="number"
+              name="amount"
+              id="amount"
+              value=""
+            />
+            <input
+              type="button"
+              name="amount"
+              id="amount"
+              value="+"
+            />
+          </fieldset>
+          <fieldset>
+            <label for="price">Precio :</label>
+            <input
+                type="text"
+                id="price"
+                name="price"
+                value=""
+            />
+          </fieldset>
+          <fieldset>
+            <label for="description">Descripción :</label>
+            <input
+              type="textarea"
+              name="description"
+              id="description"
+              sentence
+              value=""
+            />
+          </fieldset>
+          <fieldset>
+            <input class="delete" type="reset" value="Borrar">
+            <input class="display-shop" type="submit" value="Guardar">
+          </fieldset>
+        </form>
+      </div>
+    </section>
+  </main>
+  <script src="/js/admin.js"></script>
+</body>
+</html>

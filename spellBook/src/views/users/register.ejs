@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+  <!-- HEAD -->
+  <%- include('../partials/head') %>
+<!-- BODY CON IMAGEN DE FONDO -->
+<body class="background-image">
+
+<!-- HEADER -->
+<%- include('../partials/header') %> 
+
+   <!-- COMIENZA EL REGITRO DE USUARIO -->
+
+  <main class="conteiner-main">
+     
+    <!-- FORMULARIO DE REGISTRO -->
+    <form action="/signup" method="POST">
+
+      <!-- IMAGEN DE USUARIO, BARITA -->
+      <section class="register-user">    
+        <div class="user-image">
+          <img  class= "user-image-item"src="/images/recursos/user-img.png"  alt="">
+        </div>  
+        <div class="user-magic-wand">
+          <img src="/images/recursos/varita.png" width="15%" alt="">
+        </div>    
+      </section>
+
+     <!-- NOMBRE DEL USUARIO -->
+     <!--  <h5 class="user-name">Nombre del Usuario</h5> -->
+        
+      <!-- CAMPOS A LLENAR -->
+      <div class="conteiner-info-user">
+        <!-- NOMBRE -->
+        <div class="info-user">
+          <img class="user-data-icon user-pocision" height="40px" src="/images/recursos/wizard-icon.png" alt="img de mago">
+          <p>Nombre del Usuario</p>
+        </div>
+
+        <!-- EMAIL -->
+        <div class="info-user">
+          <i class="fas fa-envelope user-data-icon"></i>
+          <p>example@exam.com</p>
+        </div>
+      </div>
+
+ 
+      <!-- TÍTULO DE SECCIÓN -->
+      <h2 class="title-seccion">Datos Personales</h2>
+      
+      
+      <!-- CAMPOS A LLENAR -->
+      <section class="conteiner-user-data">
+        <!-- NOMBRE -->
+        <p class="user-data">
+          <label for="name">
+              <img class="user-data-icon user-pocision" height="40px" src="/images/recursos/wizard-icon.png" alt="img de mago">
+          </label>
+          <input class = "user-date-inputs" placeholder="Nombre" type="text" name="name" id="name">
+          </p>
+          <!-- APELLIDO -->
+          <p class="confirmation">
+            <input class = "user-date-inputs " placeholder="Apellido" type="text" name="firstName" id="firstName">
+          </p>
+
+
+         <!-- LUGAR -->
+        <p class="user-data">    
+        <label for="location">
+            <i class="fas fa-globe-americas user-data-icon world-pocision"></i>
+        </label>
+        <input class = "user-date-inputs" placeholder="País de Residencia" type="text" name="location" id="location">
+        </p>
+        <!-- PROVINCIA -->
+        <p class="confirmation">
+          <input class = "user-date-inputs " placeholder="Provincia o Estado" type="text" name="firstName" id="firstName">
+        </p>
+
+
+        
+        <!-- TELEFONO -->
+        <p class="user-data">
+        <label for="phone">
+            <i class="fas fa-mobile-alt user-data-icon tel-pocision"></i>
+        </label>
+        <input class = "user-date-inputs" placeholder="Numero de Contacto" type="tel" name="phone" id="phone">
+        </p>
+
+
+         <!-- NACIMIENTO -->
+         <p class="user-data ">
+          <label for="date">
+              <i class="far fa-calendar user-data-icon "><img class="image-icon" height="18px" src="/images/recursos/wizard-icon.png" alt="img de mago"></i>
+          </label>
+          <input class ="user-date-inputs-date date-pocision" type="date" name="date" id="date">
+          </p>
+      
+        <!-- BOTON PARA DE GUARDAR -->
+        <button type="submit" class="btn-save">GUARDAR</button>
+      </section>
+      <h2 class="title-seccion">Tus ultimas Compras</h2>
+
+      <!-- LINEA HR -->
+      <hr class="one-line">
+
+      <section>
+        <p class="now-buy">No haz realizado ninguna compra aún</p>
+        <a href="#"><p class="now-buy">Empieza ahora</p></a>
+      </section>
+    </form>
+  </main>
+
+  <!-- FOOTER -->
+  <%- include('../partials/footer') %>
+  
+  <!-- LINK DEL JS DEL HEADER -->
+  <script src="/js/header.js"></script>
+</body>
+</html>

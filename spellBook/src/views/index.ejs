@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+  <!-- HEAD -->
+  <%- include('./partials/head') %>
+
+<body>
+<!-- HEADER -->
+<%- include('./partials/header') %> 
+
+ <main>
+      <!-- CARROUSEL -->
+    <div class="carrousel">
+      <img src="/images/Libros/fuegoSangre.png" alt="" class="carrousel-book">
+      <img src="/images/Libros/ElLegadoMaldito.jpg" alt="" class="carrousel-book">
+      <img src="/images/Libros/laEspadaDelDestino.jpg" alt="" class="carrousel-book">
+      <img src="/images/Libros/El_talismán.jpg" alt="" class="carrousel-book">
+      <img src="/images/Libros/losCrimenesDeGrindelwald.jpg" alt="" class="carrousel-book">
+    </div>
+
+    <!-- SLIDER PARA DESKTOP -->
+    <div class="slider">
+      <input type="radio" name="testimonial" id="t-1">
+      <input type="radio" name="testimonial" id="t-2">
+      <input type="radio" name="testimonial" id="t-3" checked>
+      <input type="radio" name="testimonial" id="t-4">
+      <input type="radio" name="testimonial" id="t-5">
+      <div class="testimonials">
+        <label class="item" for="t-1">
+          <img src="/images/Libros/ElLegadoMaldito.jpg" alt="picture">
+        </label>
+        <label class="item" for="t-2">
+          <img src="/images/Libros/losCrimenesDeGrindelwald.jpg" alt="picture">
+  
+        </label>
+        <label class="item" for="t-3">
+          <img src="/images/Libros/corona de espadas.jpg" alt="picture">
+        
+        </label>
+        <label class="item" for="t-4">
+          <img src="/images/Libros/laEspadaDelDestino.jpg" alt="picture">
+          
+        </label>
+        <label class="item" for="t-5">
+          <img src="/images/Libros/El_talismán.jpg" alt="picture">
+        </label>
+      </div>
+      <div class="dots">
+        <label for="t-1"></label>
+        <label for="t-2"></label>
+        <label for="t-3"></label>
+        <label for="t-4"></label>
+        <label for="t-5"></label>
+      </div>
+    </div>
+
+
+    <!-- AUTORES DESTACADOS -->
+      <!-- ENCABEZADO -->
+    <div class="headline">
+    <img class="varita"src="/images/Recursos/varita.png" alt=" imágen de varita mágica">
+    <h1>Autores destacados</h1>
+    </div>
+    
+    <section class="authors">
+      <!-- TOLKIEN -->
+      <article class="card">
+        <div class="card-content">
+          <img class="writer-tolkien" src="/images/Autores/tolkien.png" alt="Imagen de J. R. R. Tolkien">
+          <h4 class="writer-name">J. R. R. Tolkien</h4>
+          <div class="card-text">
+          <img class="bio" src="/images/Recursos/gondortree.png" alt="árbol blanco">
+          <p class="bio-text">Escritor, poeta, filólogo, lingüista y profesor universitario británico, conocido principalmente por ser el autor de las novelas clásicas de fantasía heroica El hobbit, El Silmarillion y El Señor de los Anillos. </p>
+        </div>
+        </div>
+      </article>
+      <!-- ANDRZEJ SAPKOWSKI -->
+      <article class="card">
+        <div class="card-content">
+          <img class="writer-sapkowski" src="/images/Autores/sapkowsky.png" alt="Imágen de Andrzej Sapkowski">
+          <h4 class="writer-name">Andrzej Sapkowski</h4>
+          <div class="card-text">
+          <img class="bio" src="/images/Recursos/thewitcher.png" alt="Logo the witcher">
+          <p class="bio-text">Escritor polaco de fantasía heroica. Sus obras están fuertemente influenciadas por la cultura y mitología eslavas, así como por las narraciones tradicionales. Entre sus obras más populares se encuentra la saga del brujo Geralt de Rivia, compuesta por siete volúmenes.</p>
+          </div>
+        </div>
+      </article>
+      <!-- GEORGE R. R. MARTIN -->
+      <article class="card">
+        <div class="card-content">
+          <img class="writer-martin" src="/images/Autores/martin.png" alt="Imagen de George R. R. Martin">
+          <h4 class="writer-name">George R. R. Martin</h4>
+          <div class="card-text">
+          <img class="bio" src="/images/Recursos/targaryen.png" alt="Logo Casa Targaryen">
+          <p class="bio-text">Guionista y escritor estadounidense de literatura fantástica, ciencia ficción y terror. Es conocido por ser el autor de la serie de novelas Canción de hielo y fuego, adaptadas para la televisión con el título de Juego de tronos (Game of Thrones). </p>
+          </div>
+        </div>
+      </article>  
+    </section>
+
+    <!-- SELECCIÓN DEL MES -->
+    <div class="headline">
+      <img class="varita"src="/images/Recursos/varita.png" alt=" imágen de varita mágica">
+      <h1>La selección del mes</h1>
+      </div>
+    <section class="month-selection">
+      <!-- LIBRO 1 -->
+      <article class="book">
+        <div class="book-content">
+          <img class="book-cover" src="/images/Libros/el temor de un hombre sabio.jpg" alt="Portada de 'El temor de un hombre sabio'">
+          <h3>El Temor de un Hombre Sabio</h3>
+          <h5>Patrick Rothfus</h5>
+        <div class="book-price">
+          <i class="fas fa-dollar-sign"></i>
+          <p>1200</p>
+        </div>
+          <!-- Botón de comprar -->
+          <div class="shopping-btn"><input type="button" value="Comprar"></div>
+        </div>
+      </article>
+      <!-- LIBRO 2 -->
+      <article class="book">
+        <div class="book-content">
+          <img class="book-cover" src="/images/Libros/la morada - el exilio - el refugio.jpg" alt="Portada de 'La Morada - El exilio - El Refugio'">
+          <h3>La Morada - El Exilio - El Refugio</h3>
+          <h5>R. A. Salvatore</h5>
+          <div class="book-price">
+            <i class="fas fa-dollar-sign"></i>
+            <p>1200</p>
+          </div>
+          <!-- Botón de comprar -->
+          <div class="shopping-btn"><input type="button" value="Comprar"></div>
+          
+        </div>
+      </article>
+      <!-- LIBRO 3 -->
+      <article class="book">
+        <div class="book-content">
+          <img class="book-cover" src="/images/Libros/corona de espadas.jpg" alt="Portada de 'Corona de Espadas'">
+          <h3>Corona de Espadas</h3>
+          <h5>Robert Jordan</h5>
+          <div class="book-price">
+            <i class="fas fa-dollar-sign"></i>
+            <p>1200</p>
+          </div>
+          <!-- Botón de comprar -->
+          <div class="shopping-btn"><input type="button" value="Comprar"></div>
+          
+        </div>
+      </article>
+    </section>
+     <!-- MÁS TÍTULOS -->
+     <section class="titles">
+      <div class="more-titles">
+        <img class="varita"src="/images/Recursos/varita.png" alt=" imágen de varita mágica">
+        <h1>Más títulos</h1>
+        </div>
+     </section>
+     <!-- MÁS TÍTULOS SE USA LA MISMA PLANTILLA UE LA SELECCIÓN DEL MES -->
+     <section class="month-selection">
+      <!-- LIBRO 1 -->
+      <article class="book">
+        <div class="book-content">
+          <img class="book-cover" src="/images/libros/el-hobbit.jpg" alt="Portada de 'El Hobbit'">
+          <h3>El Hobbit</h3>
+          <h5>J. R. R. Tolkien</h5>
+          <div class="book-price">
+            <i class="fas fa-dollar-sign"></i>
+            <p>1200</p>
+          </div>
+
+          <!-- Botón de comprar -->
+          <div class="shopping-btn"><input type="button" value="Comprar"></div>
+        </div>
+      </article>
+      <!-- LIBRO 2 -->
+      <article class="book">
+        <div class="book-content">
+          <img class="book-cover" src="/images/libros/ElSeñorDeLosAnillos_LaComunidadDelAnillo.jpg" alt="Portada de 'El señor de los anollos, la comunidad del anillo'">
+          <h3>El señor de los Anillos</h3>
+          <h5>J. R. R. Tolkien</h5>
+          <div class="book-price">
+            <i class="fas fa-dollar-sign"></i>
+            <p>1200</p>
+          </div>
+          <!-- Botón de comprar -->
+          <div class="shopping-btn"><input type="button" value="Comprar"></div>
+          
+        </div>
+      </article>
+      <!-- LIBRO 3 -->
+      <article class="book">
+        <div class="book-content">
+          <img class="book-cover" src="/images/libros/los-crimenes-de-grindelwald.jpg" alt="Portada de 'Los crimenes de Grindelwald'">
+          <h3>Los crimenes de Grindelwald</h3>
+          <h5>J. K. Rowling</h5>
+          <div class="book-price">
+            <i class="fas fa-dollar-sign"></i>
+            <p>1200</p>
+          </div>
+          
+          <!-- Botón de comprar -->
+          <div class="shopping-btn"><input type="button" value="Comprar"></div>
+          
+        </div>
+      </article>
+    </section>
+ </main>
+ <hr>
+ <section class="secure-buy-conteiner">
+  <div class="secure-buy-icon secure-buy-item">
+    <i class="fas fa-check-circle"></i>
+    <h5>Compra Segura</h5>
+  </div>
+  <div class="secure-buy-item">
+    <i class="secure-buy-icon fas fa-shipping-fast"></i>
+   <h5>Envio gratis a CABA</h5>
+ </div>
+ <div class="secure-buy-item">
+  <i class="secure-buy-icon fas fa-box-open"></i>
+   <h5>Devoluciones Gratis</h5>
+ </div>
+</section>
+
+  <!-- FOOTER -->
+  <%- include('./partials/footer') %>
+
+  <!-- LINK DEL JS DEL HEADER -->
+  <script src="js/header.js"></script>
+       
+</body>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+  <!-- HEAD -->
+  <%- include('../partials/head') %>
+<!-- BODY CON IMAGEN DE FONDO -->
+<body class="background-image">
+<!-- HEADER -->
+<%- include('../partials/header') %> 
+
+    <!-- COMIENZA EL CARRITO -->
+
+    <div class="global">
+
+        <!-- TITULO DE PAGINA -->
+    <h1 class="title">Mi Carrito</h1>
+
+<!-- SECCIÓN DE PRODUCTO Y CANTIDAD -->    
+    <section>
+        <!-- TODOS LOS PRODUCTOS A COMPRAR -->
+        <article class="conteiner-item">   
+            <div class="item-left">
+                <img class="buy-image" src="images/libros/harry-potter-y-el-caliz-de-fuego.jpg" alt="">
+                <p>Harry Potter y el caliz de fuego</p>
+            </div>
+            <div class="item-right">   
+                <i class="far fa-trash-alt right"></i>
+                <p>$ 1200</p>
+
+                <!-- BOTON DE CANTIDAD DE UNIDADES -->
+                <form action="/carrito" method="GET">
+                    <label>Cantidad: </label>
+                    <select  class="quantity-button" name="cantidad">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </form>
+            </div>
+        </article>
+    </section>
+
+    <!-- DETALLE DE COMPRA -->
+    <section class="detail-buy">
+        <!-- TÍTULO DE SECCIÓN -->
+        <h3 class="detail-title">Detalle de la Compra</h3>
+        <hr class="one-line">
+        <!-- SECCIÓN DETALLE DE COMPRA -->
+        <div class="conteiner-price">
+            <p>Harry Potter y el caliz de fuego</p>
+            <p>$ 1200</p>
+        </div>
+        <div class="conteiner-price">
+            <p>SubTotal </p>
+            <p>$ 1200</p>
+        </div>
+        <div class="conteiner-price total">
+            <p>Total</p>
+            <p>$ 1200</p>
+        </div>
+        <a href="#" >
+            <button class="to-pay" type="submit">Ir al Pago</button>
+        </a>
+    </section>
+
+    <!-- TÍTULO RECOMENDADOS -->
+    <h3 class="recommended-title">Recomendados para Vos</h3>
+
+
+    <!-- SECCIÓN RECOMENDADOS -->
+    <section class="recommended-conteiner">
+       
+        <article class="recommended-item">
+            <a href="">
+                <img class="recommended-img"src="images/libros/AnimalesFantasticosYDondeEncontrarlos.jpg" alt="">
+                <p>Animales Fantasticos y donde encontrarlos</p>
+            </a>    
+        </article>
+        <article class="recommended-item">
+            <a href="">
+                <img class="recommended-img" src="images/libros/ElSeñorDeLosAnillos_LaComunidadDelAnillo.jpg" alt="">
+                <p>El Señor de los anillos La comunidad del Anillo</p>
+            </a>
+        </article>
+        <article class="recommended-item">
+            <a href="">
+                <img class="recommended-img" src="images/libros/harry-potter-y-la-camara-secreta.png" alt="">
+                <p>Harry Potter y la Camara Secreta</p>
+            </a>
+        </article>
+        <article class="recommended-item">
+            <a href="">
+                <img class="recommended-img" src="images/libros/los-crimenes-de-grindelwald.jpg" alt="">
+                <p>Los Crimenes de Grindelwald</p>
+            </a>
+        </article>
+    </section>
+</div>
+
+  <!-- FOOTER -->
+  <%- include('../partials/footer') %>
+
+<!-- LINK DEL JS DEL HEADER -->
+<script src="js/header.js"></script>
+
+</body>
+</html>
