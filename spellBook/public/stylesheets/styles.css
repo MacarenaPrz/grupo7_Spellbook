@@ -16,16 +16,26 @@
 .book-cover {
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
     border-radius: 3px;
-    transition: 0.5s;
+    transition: all 0.5s ease-in-out;
 }
   
 .book-cover:hover{
-  
   -webkit-transform:scale(1);transform:scale(1.02);
-  transition-property: all;
-  transition-duration: 0.5s;
-  transition-timing-function: ease-in-out;
   box-shadow: 1em 1em 4rem 0px var(--color-azulOscuro), -1em -1em 4rem 0px var(--color-violeta);
   cursor: pointer;
   
+}
+
+/* BOTON EFECTO */
+.button {
+    background-color: var(--color-azulOscuro);
+    border: none;
+    border-radius: 12px;
+    color: var(--color-beige);
+   
+}
+.button:hover{
+    transition: all 0.5s ease-in-out;
+    background-color: var(--color-azulClaro);
+    cursor: pointer;
 }
