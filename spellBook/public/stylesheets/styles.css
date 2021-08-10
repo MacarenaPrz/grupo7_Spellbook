@@ -9,3 +9,33 @@
 @import url('admin.css');
 @import url('404.css'); 
 @import url('register.css');
+
+/* REGLAS GENERALES */
+
+/* EFECTO DE LOS LIBROS */
+.book-cover {
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+    border-radius: 3px;
+    transition: all 0.5s ease-in-out;
+}
+  
+.book-cover:hover{
+  -webkit-transform:scale(1);transform:scale(1.02);
+  box-shadow: 1em 1em 4rem 0px var(--color-azulOscuro), -1em -1em 4rem 0px var(--color-violeta);
+  cursor: pointer;
+  
+}
+
+/* BOTON EFECTO */
+.button {
+    background-color: var(--color-azulOscuro);
+    border: none;
+    border-radius: 12px;
+    color: var(--color-beige);
+   
+}
+.button:hover{
+    transition: all 0.5s ease-in-out;
+    background-color: var(--color-azulClaro);
+    cursor: pointer;
+}

@@ -143,26 +143,6 @@ h4 {
 }
 
 /* SELECCION DEL MES */
-.month-selection .book .book-content .book-cover {
-  width: 200px;
-  height: 300px;
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
-  border-radius: 3px;
-  transition: 0.5s;
-}
-
-.month-selection .book .book-content .book-cover:hover{
-  
-  -webkit-transform:scale(1);transform:scale(1.02);
-  transition-property: all;
-  transition-duration: 0.5s;
-  transition-timing-function: ease-in-out;
-  box-shadow: 1em 1em 4rem 0px var(--color-azulOscuro), -1em -1em 4rem 0px var(--color-violeta);
-  cursor: pointer;
-
-  
-}
-
 .month-selection {
   display: flex;
   flex-direction: column;
@@ -197,6 +177,12 @@ h5 {
   flex-wrap: nowrap;
   
 }
+
+.month-selection .book .book-content .book-cover {
+  width: 200px;
+  height: 300px;
+}
+
 .month-selection .book .book-content .book-price {
   display: flex;
   flex-direction: row;
@@ -215,11 +201,7 @@ h5 {
 
 .book .book-content input {
   font-family: var(--font-roboto);
-  border: 1px solid var(--color-azulOscuro);
-  background-color: var(--color-azulOscuro);
-  color: var(--color-beige);
   padding: 10px 25px;
-  border-radius: 3rem;
   font-size: 1rem;
 }
 
