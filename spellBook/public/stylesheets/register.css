@@ -1,14 +1,3 @@
-/* OPERACIONES GENERALES */
-*{
-    margin: 0;
-    box-sizing: border-box;
-}
-
-/* BODY CON IMAGEN DE FONDO */
-.background-image{
-     background-color: var(--color-beige);
- }
-
 /* COMIENZA EL REGITRO DE USUARIO */
 .conteiner-main {
     max-width: 400px;
