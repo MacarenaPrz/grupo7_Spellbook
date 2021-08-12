@@ -184,7 +184,7 @@
  .one-line {
     background: linear-gradient(90deg, var(--color-azulOscuro), var(--color-beige));
     height: 2px;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     width: 100%;
  }
 

@@ -9,8 +9,19 @@
 @import url('admin.css');
 @import url('404.css'); 
 @import url('register.css');
+@import url('novelities.css'); 
 
 /* REGLAS GENERALES */
+.d-inline {
+    display: inline;
+
+}
+.m-1 {
+    margin: 1rem 
+}
+.text-center {
+    text-align: center;
+}
 
 /* EFECTO DE LOS LIBROS */
 .book-cover {
