@@ -1,4 +1,39 @@
-.novelities-product {
+.nov-title{
+    margin: 20px;
+}
+.nov-product {
     display: flex ;
-    justify-content: space-around;
+    justify-content:space-evenly;
+    margin: 25px 0;
+}
+
+.nov-book {
+    width: 110px;
+    flex-shrink: 0;
+}
+.nov-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-basis: 40%;
+}
+.nov-text{
+    flex-basis: 40%;
+}
+.nov-autor{
+    align-self: flex-end;
+    font-size: 0.8rem;
+}
+.nov-price {
+    font-size: 1rem;
+    color: var(--color-azulClaro);
+}
+
+@media (min-width:500px){
+    .nov-description {
+        flex-basis: 60%;
+    }
+}
+@media (min-width: 768px){
+
 }

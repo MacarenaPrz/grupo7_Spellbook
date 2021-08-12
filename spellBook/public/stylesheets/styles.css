@@ -11,9 +11,10 @@
 @import url('register.css');
 @import url('novelities.css'); 
 
-/* REGLAS GENERALES */
+/* ESTILOS   GENERALES */
 .d-inline {
     display: inline;
+    margin: 5px;
 
 }
 .m-1 {
@@ -22,7 +23,9 @@
 .text-center {
     text-align: center;
 }
-
+.bg-blue{
+    background-color: var(--color-azulOscuro);
+}
 /* EFECTO DE LOS LIBROS */
 .book-cover {
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
