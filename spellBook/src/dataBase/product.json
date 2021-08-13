@@ -1,5 +1,6 @@
 [
     {
+        "id": 1,
         "titulo":"Fuego y Sangre",
         "autor":"George R. R. Martin",
         "cantidad":1,
@@ -11,6 +12,7 @@
 
     },
     {
+        "id": 2,
         "titulo":"El legado Maltido",
         "autor":"J. K. Rowling",
         "cantidad":1,
@@ -22,6 +24,7 @@
 
     },
     {
+        "id": 3,
         "titulo":"La Espada del Destino",
         "autor":"Andrzej Sapkowski",
         "cantidad":1,
@@ -33,6 +36,7 @@
 
     },
     {
+        "id": 4,
         "titulo":"El Talismán",
         "autor":"Stephen King Y Peter Straub",
         "cantidad":1,
@@ -44,6 +48,7 @@
 
     },
     {
+        "id": 5,
         "titulo":"Los Crimenes de Grindelwald",
         "autor":"J. K. Rowling",
         "cantidad":1,
@@ -55,6 +60,7 @@
 
     },
     {
+        "id": 6,
         "titulo":"La Rueda del Tiempo",
         "autor":"Robert Jordan",
         "cantidad":1,
@@ -66,6 +72,7 @@
 
     },
     {
+        "id": 7,
         "titulo":"El Temor de un Hombre Sabio",
         "autor":"Patrick Rothfuss",
         "cantidad":1,
@@ -77,6 +84,7 @@
 
     },
     {
+        "id": 8,
         "titulo":"El Hobbit",
         "autor":"J. R. R. Tolkien",
         "cantidad":1,
@@ -88,6 +96,7 @@
     
     },
     {
+        "id": 9,
         "titulo":"El Señor de los Anillos - La comunidad del anillo",
         "autor":"J. R. R. Tolkien",
         "cantidad":1,
@@ -98,6 +107,7 @@
         "seleccionadoMes":0
     },
     {
+        "id": 10,
         "titulo":"Harry Potter y el caliz de fuego",
         "autor":"J. K. Rowling",
         "cantidad":1,
@@ -108,16 +118,18 @@
         "seleccionadoMes":0
     },
     {
+        "id": 11,
         "titulo":"Harry Potter y la camara secreta",
         "autor":"J. K. Rowling",
         "cantidad":1,
         "precio":1530,
         "descripcion":"Mientras Harry espera impaciente en casa de sus insoportabl es tíos el inicio del segundo curso del Colegio Hogwarts de Magia y Hechicería, un elfo aparece en su habitación y le advierte de que una amenaza mortal se cierne sobre la escue la. Harry no se lo piensa dos veces y, acompañado de Ron, s e dirige a Hogwarts en un coche volador. Pero, ¿puede un ap rendiz de mago defender la escuela de los malvados que prete nden destruirla? Sin saber que alguien ha abierto la Cámara de los Secretos, dejando escapar una serie de monstruos pel igrosos, Harry y sus amigos Ron y Hermione tendrán que enfr entarse con arañas gigantes, serpientes encantadas, fantasm as enfurecidos y, sobre todo, con la mismísima reencarnaci n de su más temible adversario.",
-        "imagen":"harry-potter-y-la-camara-secreta.jpg",
+        "imagen":"harry-potter-y-la-camara-secreta.png",
         "edad":"all",
         "seleccionadoMes":0
     },
     {
+        "id": 12,
         "titulo":"La Morada - El Exilio -El Refugio",
         "autor":"R. A. SALVATORE",
         "cantidad":1,
@@ -128,6 +140,7 @@
         "seleccionadoMes":1
     },
     {
+        "id": 13,
         "titulo":"Animales Fantasticos y donde Encontrarlos",
         "autor":"J. K. Rowling",
         "cantidad":1,

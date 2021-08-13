@@ -15,16 +15,20 @@
     <h4 class="d-inline">SpellBook</h4><p class="d-inline">  te trae las últimas novedades en libros ...</p>
   </div>
   <p class="m-1"> Si estás buscando ultimos lanzamiento de libros estás en el lugar adecuado.</p>
-  <div class="nov-product">
-    <figure class="nov-book">
-      <img class="books__img book-cover" src="images/libros/AnimalesFantasticosYDondeEncontrarlos.jpg" alt="">       
-    </figure>
-    <div class="nov-description">
-      <p class="nov-text">Historia de la Saga de Harry Potter y la Primera Que se Representa Oficialmente en los Escenarios. Esta Edición Especial del Texto Teatral Acerca a los Lectores la Continuación del Viaje de Harry Potter, sus Amigos y Familiares, Inmediatamente Después del Estreno Mundial de la Obra en el West End de Londres el 30 de Julio de 2016."</p>
-      <a class="nov-autor" href="">Autor</a>
-      <span class="nov-price">$ PRECIO</span>
-    </div>
-  </div>
+  <% booksNovelties.forEach((book) => { %>
+      <div class="nov-product">
+        <figure class="nov-book">
+          <img class="books__img book-cover" src="images/libros/<%= book.imagen%>" alt="">       
+        </figure>
+        <div class="nov-description">
+          <p class="nov-text"><%= book.descripcion %> </p>
+          <a class="nov-autor" href=""><%= book.autor %> </a>
+          <span class="nov-price">$ <%= book.precio %> </span>
+        </div>
+      </div>
+   
+  <% }) %>
+  
   <div class="nov-product">
     <div class="nov-description">
       <p class="nov-text">Historia de la Saga de Harry Potter y la Primera Que se Representa Oficialmente en los Escenarios. Esta Edición Especial del Texto Teatral Acerca a los Lectores la Continuación del Viaje de Harry Potter, sus Amigos y Familiares, Inmediatamente Después del Estreno Mundial de la Obra en el West End de Londres el 30 de Julio de 2016."</p>
