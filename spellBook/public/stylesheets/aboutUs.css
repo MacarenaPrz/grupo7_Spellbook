@@ -1,0 +1,143 @@
+body{background: var(--color-beige);
+    margin:0}
+
+/* TEXTO DESCRIPTIVO */
+.main-AboutUs .text-AboutUs {
+  font-family: var(--font-roboto);
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 20px 0 20px;
+  text-align: justify;
+  line-height:30px;
+  align-items: center;
+
+}
+
+.main-AboutUs .text-AboutUs img {
+  display: none;
+}
+
+.wizards{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  
+}
+
+.wizards .wizards-Cesar, .wizards-Eli, .wizards-Maca, .wizards-Raul{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-berkshire);
+  margin: 15px auto;
+  font-size: 19px;
+}
+
+
+.wizards img {
+  height: 50px;
+  width: 50px;
+  margin-bottom: 4px;
+}
+.wizards img:hover{
+  -webkit-transform:scale(1);transform:scale(1.2);
+  transition-property: all;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+    /* FORM CONTACTO */
+  .contactUs-form{
+      width:340px;
+    height:380px;
+    background: var(--color-beige);
+    border-radius:8px;
+    box-shadow: 1em 1em 4rem 0px var(--color-azulOscuro), -1em -1em 4rem 0px var(--color-violeta);
+    margin:100px auto 150px auto;
+    padding:20px 30px 5px 30px;
+    max-width:calc(100vw - 40px);
+    box-sizing:border-box;
+    font-family: var(--font-berkshire);}
+  h2{
+    font-size: 20px;
+      margin:10px 0;
+    padding-bottom:10px;
+    width:180px;
+    color: var(--color-azulOscuro);
+    border-bottom:3px solid var(--color-azulOscuro)}
+  input{
+    width:100%;
+    padding:10px;
+    box-sizing:border-box;
+    background:none;
+    outline:none;
+    resize:none;
+    border:0;
+    font-family:var(--font-roboto);
+    transition:all .3s;
+    border-bottom:2px solid var(--color-azulOscuro)}
+  input:focus{border-bottom:2px solid var(--color-violeta)}
+  .p-form:before{content:attr(type);
+    display:block;
+    margin:28px 0 0;
+    font-size:14px;
+    color: var(--color-azulOscuro)}
+  .send-button{float:right;
+    padding:8px 12px;
+    margin:20px 0 20px 0;
+    font-family: var(--font-roboto);
+    border:2px solid var(--color-azulClaro);
+    background: var(--color-azulClaro);
+    color: var(--color-beige);
+    cursor:pointer;transition:all .3s;
+border-radius: 5px;
+}
+  .send-button:hover{background:var(--color-azulOscuro);
+    color:var(--color-beige)}
+
+
+    @media (min-width: 518px) {
+
+
+      
+      .main-AboutUs .text-AboutUs img {
+        display: flex;
+        height: 200px;
+        width: 200px;
+        
+      }
+
+      .wizards{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 50px 20px;
+      }
+
+      .wizards .wizards-Cesar, .wizards-Eli, .wizards-Maca, .wizards-Raul{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--font-berkshire);
+        margin: 15px auto;
+      }
+
+
+
+    }
