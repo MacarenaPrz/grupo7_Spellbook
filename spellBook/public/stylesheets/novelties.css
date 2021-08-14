@@ -4,7 +4,7 @@
 .nov-product {
     display: flex ;
     justify-content:space-evenly;
-    margin: 25px 0;
+    margin: 60px 0;
 }
 
 .nov-book {
@@ -16,6 +16,7 @@
     flex-direction: column;
     justify-content: space-between;
     flex-basis: 40%;
+    position: relative;
 }
 .nov-text{
     flex-basis: 40%;
@@ -32,6 +33,11 @@
 @media (min-width:500px){
     .nov-description {
         flex-basis: 60%;
+    }
+    .nov-price{
+        position: absolute;
+        left: 40%;
+        top: 90%;
     }
 }
 @media (min-width: 768px){
