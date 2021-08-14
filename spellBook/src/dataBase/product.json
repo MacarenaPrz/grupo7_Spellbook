@@ -78,7 +78,7 @@
         "cantidad":1,
         "precio":1310,
         "descripcion":"Todo hombre sabio teme tres cosas: la tormenta en el mar, la noche sin luna y la ira de un hombre amable. El hombre había desaparecido. El mito no. Músico, mendigo, ladrón, estudiante, mago, trotamundos, héroe y asesino, Kvothe había borrado su rastro. Y ni siquiera ahora que le han encontrado, ni siquiera ni siquiera ahora que le han encontrado, ni siquiera ahora que las tinieblas invaden los rincones del mundo, está dispuesto a regresar. Pero su historia prosigue, la aventura continúa, y Kvothe seguirá contándola para revelar la verdad tras la leyenda.  «La nueva promesa de la literatura fantástica.",
-        "imagen":"corona de espadas.jpg",
+        "imagen":"el temor de un hombre sabio.jpg",
         "edad":"adult",
         "seleccionadoMes":1
 
@@ -111,7 +111,7 @@
         "titulo":"Harry Potter y el caliz de fuego",
         "autor":"J. K. Rowling",
         "cantidad":1,
-        "precio":1530,
+        "precio":820,
         "descripcion":"Tras otro abominable verano con los Dursley, Harry se dispone a iniciar el cuarto curso en Hogwarts, la famosa escuela de magia y hechicería. A sus catorce años, a Harry le gust aría ser un joven mago como los demás y dedicarse a aprend er nuevos sortilegios, encontrarse con sus amigos Ron y Herm ione y asistir con ellos a los Mundiales de quidditch. Sin e mbargo, al llegar al colegio le espera una gran sorpresa que lo obligará a enfrentarse a los desafíos más temibles de toda su vida. Si logra superarlos, habrá demostrado que ya no es un niño y que está preparado para vivir las nuevas y emocionantes experiencias que el futuro le depara.",
         "imagen":"harry-potter-y-el-caliz-de-fuego.jpg",
         "edad":"all",
@@ -122,7 +122,7 @@
         "titulo":"Harry Potter y la camara secreta",
         "autor":"J. K. Rowling",
         "cantidad":1,
-        "precio":1530,
+        "precio":1200,
         "descripcion":"Mientras Harry espera impaciente en casa de sus insoportabl es tíos el inicio del segundo curso del Colegio Hogwarts de Magia y Hechicería, un elfo aparece en su habitación y le advierte de que una amenaza mortal se cierne sobre la escue la. Harry no se lo piensa dos veces y, acompañado de Ron, s e dirige a Hogwarts en un coche volador. Pero, ¿puede un ap rendiz de mago defender la escuela de los malvados que prete nden destruirla? Sin saber que alguien ha abierto la Cámara de los Secretos, dejando escapar una serie de monstruos pel igrosos, Harry y sus amigos Ron y Hermione tendrán que enfr entarse con arañas gigantes, serpientes encantadas, fantasm as enfurecidos y, sobre todo, con la mismísima reencarnaci n de su más temible adversario.",
         "imagen":"harry-potter-y-la-camara-secreta.png",
         "edad":"all",
@@ -146,7 +146,7 @@
         "cantidad":1,
         "precio":1230,
         "descripcion":"El explorador y magizoólogo Newt Scamander llega a Nueva York con la intención de permanecer unos pocos días. Pero cuando pierde su maleta y algunos de sus animales fantásticos se escapan de ella, una serie de acontecimientos extraordinarios se desatan, poniendo en vilo a la gran ciudad...",
-        "imagen":"AnimalesFantasticosYDondeEncontralos.jpg",
+        "imagen":"AnimalesFantasticosYDondeEncontrarlos.jpg",
         "edad":"all",
         "seleccionadoMes":0
     }
