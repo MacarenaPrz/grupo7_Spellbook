@@ -2,110 +2,110 @@
     {
         "nombre": "Hermione",
         "apellido": "Granger",
-        "email": "hermionegranger@harrypotter.com",
+        "email": "hermionegranger@hogwarts.com",
         "pais": "Inglaterra",
         "telefono": "6775638308",
         "fecha de nacimiento": "19/09/1979",
-        "imagen": "",
+        "imagen": "Hermione-Granger",
         "contrasenia": "Obliviate45"
         
     },
     {
         "nombre": "Ginevra",
         "apellido": "Weasley",
-        "email": "ginnyweasley@harrypotter.com",
+        "email": "ginnyweasley@hogwarts.com",
         "pais": "Inglaterra",
-        "telefono": "",
+        "telefono": "1548757861",
         "fecha de nacimiento": "11/08/1981",
-        "imagen": "4966672276",
+        "imagen": "Ginevra-Weasley",
         "contrasenia": "36Titillando"
         
     },
     {
         "nombre": "Minerva",
         "apellido": "McGonagall",
-        "email": "@harrypotter.com",
+        "email": "minervamcgonagall@hogwarts.com",
         "pais": "Escocia",
         "telefono": "1863376669",
         "fecha de nacimiento": "04/10/1935",
-        "imagen": "",
+        "imagen": "Minerva-McGonagall",
         "contrasenia": "Herb1fors"
         
     },
     {
         "nombre": "Ronald",
         "apellido": "Weasley",
-        "email": "@harrypotter.com",
+        "email": "ronweasley@hogwarts.com",
         "pais": "Inglaterra",
         "telefono": "7502566527",
         "fecha de nacimiento": "01/03/1980",
-        "imagen": "",
+        "imagen": "Ronald-Wasley",
         "contrasenia": "xEvanesc0"
         
     },
     {
         "nombre": "Severus",
         "apellido": "Snape",
-        "email": "@harrypotter.com",
+        "email": "severussnape@hogwarts.com",
         "pais": "Inglaterra",
         "telefono": "3967284369",
         "fecha de nacimiento": "09/01/1960",
-        "imagen": "",
+        "imagen": "Severus-Snape",
         "contrasenia": "Colovari4"
         
     },
     {
         "nombre": "Tom",
         "apellido": "Riddle",
-        "email": "@harrypotter.com",
+        "email": "hewhomustnotbenamed@hogwarts.com",
         "pais": "Inglaterra",
         "telefono": "9165916915",
         "fecha de nacimiento": "31/12/1926",
-        "imagen": "",
+        "imagen": "Tom-Riddle",
         "contrasenia": "crucio96"
         
     },
     {
         "nombre": "Luna",
         "apellido": "Lovegood",
-        "email": "lunalovegood@harrypotter.com",
+        "email": "lunalovegood@hogwarts.com",
         "pais": "Irlanda",
         "telefono": "5427335021",
         "fecha de nacimiento": "13/02/1981",
-        "imagen": "",
+        "imagen": "Luna-Lovegood",
         "contrasenia": "Annihilare89"
         
     },
     {
         "nombre": "Draco",
         "apellido": "Malfoy",
-        "email": "@harrypotter.com",
-        "pais": "",
+        "email": "dracomalfoy@hogwarts.com",
+        "pais": "Inglaterra",
         "telefono": "5832618935",
-        "fecha de nacimiento": "",
-        "imagen": "",
+        "fecha de nacimiento": "05/06/1980",
+        "imagen": "Draco-Malfoy",
         "contrasenia": "Wingard1umLevios4"
         
     },
     {
         "nombre": "Sirius",
         "apellido": "Black",
-        "email": "@harrypotter.com",
+        "email": "siriusblack@hogwarts.com",
         "pais": "Inglaterra",
         "telefono": "6609112482",
         "fecha de nacimiento": "03/11/1959",
-        "imagen": "",
+        "imagen": "Sirius-Black",
         "contrasenia": "verd1llious"
         
     },
     {
         "nombre": "Lily",
         "apellido": "Evans",
-        "email": "@harrypotter.com",
+        "email": "lilyevans@hogwarts.com",
         "pais": "Inglaterra",
         "telefono": "1446342337",
         "fecha de nacimiento": "30/01/1960",
-        "imagen": "",
+        "imagen": "Lily-Evans",
         "contrasenia": "Fulgar1"
         
     }
