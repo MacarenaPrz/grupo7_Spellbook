@@ -12,28 +12,28 @@
           <h2 class="item__title">Animales Fantasticos</h2>
           <figure class="item__img">
             <img
-              src="images/libros/AnimalesFantasticosYDondeEncontrarlos.jpg"
+              src="/images/libros/<%=idBook.imagen%>"
               alt=""
             />
           </figure>
           <div class="descriptions">
             <p class="descriptions__text">
-              Precio: <span class="description--gray">$1200</span>
+              Precio: <span class="description--gray">$<%= idBook.precio %> </span>
             </p>
             <p class="descriptions__text">
-              Autor: <span class="description--gray">J.K Rowling</span>
+              Autor: <span class="description--gray"><%= idBook.autor %></span>
             </p>
             <p class="descriptions__text">
-              Editorial:<span class="description--gray">Salamandra</span>
+              Editorial:<span class="description--gray"><%= idBook.editorial %></span>
             </p>
             <p class="descriptions__text">
-              Año de edicion:<span class="description--gray">2017</span>
+              Año de edicion:<span class="description--gray"><%= idBook.edicion %></span>
             </p>
             <p class="descriptions__text">
-              Idioma:<span class="description--gray">Castellano</span>
+              Idioma:<span class="description--gray"><%= idBook.idioma %></span>
             </p>
             <p class="descriptions__text">
-              Cantidad de páginas:<span class="description--gray">256</span>
+              Cantidad de páginas:<span class="description--gray"><%= idBook.pag %></span>
             </p>
           </div>
           <div class="card__box">
@@ -44,33 +44,22 @@
           <div class="descriptions descriptions--top">
             <h3 class="descriptions__title">Sinopsis</h3>
             <p class="descriptions__paragraph">
-              El explorador y magizoólogo Newt Scamander llega a Nueva York con
-              la intención de permanecer unos pocos días. Pero cuando pierde su
-              maleta y algunos de sus animales fantásticos se escapan de ella,
-              una serie de acontecimientos extraordinarios se desatan, poniendo
-              en vilo a la gran ciudad..
+              <%= idBook.descripcion %>
             </p>
           </div>
         </article>
         <article class="item item--secondary">
           <div class="box__books"></div>
           <h2 class="item__title item--secondary__title">Productos Relacionados</h2>
-          <figure class="books">
-            <img class="books__img book-cover" src="images/libros/ElSeñorDeLosAnillos_LaComunidadDelAnillo.jpg" alt="">
-              <a href="" class="books__title">El señor de los anillos - La comunidad del anillo</a>
-          </figure>
-          <figure class="books">
-            <img class="books__img book-cover" src="images/libros/AnimalesFantasticosYDondeEncontrarlos.jpg" alt="">
-              <a class="books__title" href="">Animales fantasticos - y donde encontrarlos</a>
-          </figure>
-          <figure class="books">
-            <img class="books__img book-cover" src="images/libros/harry-potter-y-la-camara-secreta.png" alt="">
-              <a class="books__title" href="">Harry Potter - y la camara secreta</a>
-          </figure>
-          <figure class="books">
-            <img class="books__img book-cover" src="images/libros/harry-potter-y-el-caliz-de-fuego.jpg" alt="">
-              <a class="books__title" href="">Harry Potter - y el caliz de fuego</a>
-          </figure>
+
+          <% relatedBook.forEach(book => { %>
+            <figure class="books">
+              <img class="books__img book-cover" src="/images/libros/<%= book.imagen %> " alt="">
+                <a href="" class="books__title"><%= book.titulo %> </a>
+            </figure>
+          <% }) %>
+          
+        
         </article>
       </section>
     </main>

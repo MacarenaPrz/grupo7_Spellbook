@@ -5,7 +5,7 @@ const controller = require('../controllers/indexController')
 //  Home 
 router.get('/', controller.index);
 // Detalle de producto 
-router.get('/product', controller.product);
+router.get('/product/:id', controller.product);
 // Shopping Cart 
 router.get('/cart', controller.cart);
 // Books 
