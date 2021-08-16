@@ -18,45 +18,41 @@
   <% booksNovelties.forEach((book, i) => { %>
     <% if (i % 2 == 0) { %>
 
-          <div class="nov-product">
-            <figure class="nov-book">
-              <img class="books__img book-cover" src="images/libros/<%= book.imagen%>" alt="">       
-            </figure>
-            <div class="nov-description">
-              <p class="nov-text">
-                <% if (book.descripcion.length > 250) { %>
-                  <% let descriptionLow = book.descripcion.slice(0 , 250) %>
-                  <%= descriptionLow %> ... 
-                <% } else { %>
-                  <%= book.descripcion %> </p>
-                <% } %>
-              </p>
-              <a class="nov-autor" href=""><%= book.autor %> </a>
-              <span class="nov-price">$ <%= book.precio %> </span>
-            </div>
-          </div>
-
-      <% } else { %>
-        <div class="nov-product">
-          <div class="nov-description">
-            <p class="nov-text">
-              <% if (book.descripcion.length > 250) { %>
-               <% let descriptionLow = book.descripcion.slice(0 , 250) %>
-               <%= descriptionLow %> ... 
-              <% } else { %>
-                <%= book.descripcion %> </p>
-              <% } %>
-            </p>
-            <a class="nov-autor" href=""><%= book.autor %> </a>
-            <span class="nov-price">$ <%= book.precio %> </span>
-          </div>
-          <figure class="nov-book">
-            <img class="books__img book-cover" src="images/libros/<%= book.imagen%>" alt="aca va una imagen">       
-          </figure>
+      <div class="nov-product">
+        <figure class="nov-book">
+          <img class="books__img book-cover" src="images/libros/<%= book.imagen%>" alt="">       
+        </figure>
+        <div class="nov-description">
+          <p class="nov-text">      
+              <% let descriptionLow = book.descripcion.slice(0 , 250) %>
+              <%= descriptionLow %> ...               
+          </p>
+          <p class="nov-text-d">
+            <%= book.descripcion %>
+          </p>
+          <a class="nov-autor" href=""><%= book.autor %> </a>
+          <span class="nov-price">$ <%= book.precio %> </span>
         </div>
-    <% } %>
-   
-   
+      </div>
+  
+  <% } else { %>
+    <div class="nov-product">
+      <div class="nov-description">
+        <p class="nov-text">      
+          <% let descriptionLow = book.descripcion.slice(0 , 250) %>
+          <%= descriptionLow %> ...               
+        </p>
+        <p class="nov-text-d">
+          <%= book.descripcion %>
+        </p>
+        <a class="nov-autor" href=""><%= book.autor %> </a>
+        <span class="nov-price">$ <%= book.precio %> </span>
+      </div>
+      <figure class="nov-book">
+        <img class="books__img book-cover" src="images/libros/<%= book.imagen%>" alt="aca va una imagen">       
+      </figure>
+    </div>
+  <% } %>   
   <% }) %>
   
 </seccion>
@@ -79,14 +75,13 @@
               <img class="books__img book-cover" src="images/libros/<%= book.imagen%>" alt="">       
             </figure>
             <div class="nov-description">
-              <p class="nov-text">
-                 <% if (book.descripcion.length > 250) { %>
-                  <% let descriptionLow = book.descripcion.slice(0 , 250) %>
-                  <%= descriptionLow %> ... 
-                <% } else { %>
-                  <%= book.descripcion %> </p>
-                <% } %>
-               </p>
+              <p class="nov-text">      
+                <% let descriptionLow = book.descripcion.slice(0 , 250) %>
+                <%= descriptionLow %> ...               
+            </p>
+            <p class="nov-text-d">
+              <%= book.descripcion %>
+            </p>
               <a class="nov-autor" href=""><%= book.autor %> </a>
               <span class="nov-price">$ <%= book.precio %> </span>
             </div>
@@ -95,14 +90,13 @@
       <% } else { %>
         <div class="nov-product">
           <div class="nov-description">
-            <p class="nov-text">
-               <% if (book.descripcion.length > 250) { %>
-                  <% let descriptionLow = book.descripcion.slice(0 , 250) %>
-                  <%= descriptionLow %> ... 
-                <% } else { %>
-                  <%= book.descripcion %> </p>
-                <% } %>
-               </p>
+            <p class="nov-text">      
+              <% let descriptionLow = book.descripcion.slice(0 , 250) %>
+              <%= descriptionLow %> ...               
+          </p>
+          <p class="nov-text-d">
+            <%= book.descripcion %>
+          </p>
             <a class="nov-autor" href=""><%= book.autor %> </a>
             <span class="nov-price">$ <%= book.precio %> </span>
           </div>
@@ -110,10 +104,9 @@
             <img class="books__img book-cover" src="images/libros/<%= book.imagen%>" alt="aca va una imagen">       
           </figure>
         </div>
-    <% } %>
-   
-   
+    <% } %>   
   <% }) %>
+
 </seccion>
 
 <seccion class="conteiner-main">
@@ -141,14 +134,13 @@
               <img class="books__img book-cover" src="images/libros/<%= book.imagen%>" alt="">       
             </figure>
             <div class="nov-description">
-              <p class="nov-text">
-                 <% if (book.descripcion.length > 250) { %>
-                  <% let descriptionLow = book.descripcion.slice(0 , 250) %>
-                  <%= descriptionLow %> ... 
-                <% } else { %>
-                  <%= book.descripcion %> </p>
-                <% } %>
-               </p>
+              <p class="nov-text">      
+                <% let descriptionLow = book.descripcion.slice(0 , 250) %>
+                <%= descriptionLow %> ...               
+            </p>
+            <p class="nov-text-d">
+              <%= book.descripcion %>
+            </p>
               <a class="nov-autor" href=""><%= book.autor %> </a>
               <span class="nov-price">$ <%= book.precio %> </span>
             </div>
@@ -157,14 +149,13 @@
       <% } else { %>
         <div class="nov-product">
           <div class="nov-description">
-            <p class="nov-text">
-               <% if (book.descripcion.length > 250) { %>
-                  <% let descriptionLow = book.descripcion.slice(0 , 250) %>
-                  <%= descriptionLow %> ... 
-                <% } else { %>
-                  <%= book.descripcion %> </p>
-                <% } %>
-               </p>
+            <p class="nov-text">      
+              <% let descriptionLow = book.descripcion.slice(0 , 250) %>
+              <%= descriptionLow %> ...               
+            </p>
+            <p class="nov-text-d">
+              <%= book.descripcion %>
+            </p>
             <a class="nov-autor" href=""><%= book.autor %> </a>
             <span class="nov-price">$ <%= book.precio %> </span>
           </div>

@@ -21,6 +21,9 @@
 .nov-text{
     flex-basis: 40%;
 }
+.nov-text-d{
+    display: none;
+}
 .nov-autor{
     align-self: flex-end;
     font-size: 0.8rem;
@@ -38,6 +41,12 @@
         position: absolute;
         left: 40%;
         top: 90%;
+    }
+    .nov-text{
+        display: none;
+    }
+    .nov-text-d{
+        display: block;
     }
 }
 @media (min-width: 768px){
