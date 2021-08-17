@@ -10,11 +10,11 @@
  <main>
       <!-- CARROUSEL -->
     <div class="carrousel">
-      <img src="/images/Libros/fuegoSangre.png" alt="" class="carrousel-book">
-      <img src="/images/Libros/ElLegadoMaldito.jpg" alt="" class="carrousel-book">
-      <img src="/images/Libros/laEspadaDelDestino.jpg" alt="" class="carrousel-book">
-      <img src="/images/Libros/El_talismán.jpg" alt="" class="carrousel-book">
-      <img src="/images/Libros/losCrimenesDeGrindelwald.jpg" alt="" class="carrousel-book">
+
+      <% booksCarrousel.forEach((book, i) => { %>
+        <a href="/product/<%= book.id %>"><img src="/images/Libros/<%=book.imagen%>" alt="" class="carrousel-book"></a>
+      <% }) %>
+
     </div>
 
     <!-- SLIDER PARA DESKTOP -->
@@ -26,22 +26,22 @@
       <input type="radio" name="testimonial" id="t-5">
       <div class="testimonials">
         <label class="item" for="t-1">
-          <img src="/images/Libros/ElLegadoMaldito.jpg" alt="picture">
+          <img src="/images/Libros/<%= booksCarrousel[0].imagen %>" alt="picture">
         </label>
         <label class="item" for="t-2">
-          <img src="/images/Libros/losCrimenesDeGrindelwald.jpg" alt="picture">
+          <img src="/images/Libros/<%= booksCarrousel[1].imagen %>" alt="picture">
   
         </label>
         <label class="item" for="t-3">
-          <img src="/images/Libros/corona de espadas.jpg" alt="picture">
+          <img src="/images/Libros/<%= booksCarrousel[2].imagen %>" alt="picture">
         
         </label>
         <label class="item" for="t-4">
-          <img src="/images/Libros/laEspadaDelDestino.jpg" alt="picture">
+          <img src="/images/Libros/<%= booksCarrousel[3].imagen %>" alt="picture">
           
         </label>
         <label class="item" for="t-5">
-          <img src="/images/Libros/El_talismán.jpg" alt="picture">
+          <img src="/images/Libros/<%= booksCarrousel[4].imagen %>" alt="picture">
         </label>
       </div>
       <div class="dots">
@@ -101,52 +101,31 @@
     <div class="headline">
       <img class="varita"src="/images/Recursos/varita.png" alt=" imágen de varita mágica">
       <h1>La selección del mes</h1>
-      </div>
+    </div>
     <section class="month-selection">
-      <!-- LIBRO 1 -->
+  
+     <% monthSelection.forEach(book => { %>
+
       <article class="book">
         <div class="book-content">
-          <img class="book-cover" src="/images/Libros/el temor de un hombre sabio.jpg" alt="Portada de 'El temor de un hombre sabio'">
-          <h3>El Temor de un Hombre Sabio</h3>
-          <h5>Patrick Rothfus</h5>
+          <a href="/product/<%= book.id %> ">
+            <img class="book-cover" src="/images/Libros/<%= book.imagen %> " alt="Portada de 'El temor de un hombre sabio'">
+          </a>
+          <h3><%= book.nombre %> </h3>
+          <h5><%= book.autor %> </h5>
         <div class="book-price">
           <i class="fas fa-dollar-sign"></i>
-          <p>1200</p>
+          <p><%= book.precio %> </p>
         </div>
           <!-- Botón de comprar -->
-          <div><input class="button" type="button" value="Comprar"></div>
+        <div>
+          <input class="button" type="button" value="Comprar">
         </div>
+      </div>
       </article>
-      <!-- LIBRO 2 -->
-      <article class="book">
-        <div class="book-content">
-          <img class="book-cover" src="/images/Libros/la morada - el exilio - el refugio.jpg" alt="Portada de 'La Morada - El exilio - El Refugio'">
-          <h3>La Morada - El Exilio - El Refugio</h3>
-          <h5>R. A. Salvatore</h5>
-          <div class="book-price">
-            <i class="fas fa-dollar-sign"></i>
-            <p>1200</p>
-          </div>
-          <!-- Botón de comprar -->
-          <div><input class="button" type="button" value="Comprar"></div>
-          
-        </div>
-      </article>
-      <!-- LIBRO 3 -->
-      <article class="book">
-        <div class="book-content">
-          <img class="book-cover" src="/images/Libros/corona de espadas.jpg" alt="Portada de 'Corona de Espadas'">
-          <h3>Corona de Espadas</h3>
-          <h5>Robert Jordan</h5>
-          <div class="book-price">
-            <i class="fas fa-dollar-sign"></i>
-            <p>1200</p>
-          </div>
-          <!-- Botón de comprar -->
-          <div><input class="button" type="button" value="Comprar"></div>
-          
-        </div>
-      </article>
+
+     <% }) %>
+
     </section>
      <!-- MÁS TÍTULOS -->
      <section class="titles">
@@ -157,52 +136,29 @@
      </section>
      <!-- MÁS TÍTULOS SE USA LA MISMA PLANTILLA UE LA SELECCIÓN DEL MES -->
      <section class="month-selection">
-      <!-- LIBRO 1 -->
-      <article class="book">
-        <div class="book-content">
-          <img class="book-cover" src="/images/libros/el-hobbit.jpg" alt="Portada de 'El Hobbit'">
-          <h3>El Hobbit</h3>
-          <h5>J. R. R. Tolkien</h5>
-          <div class="book-price">
-            <i class="fas fa-dollar-sign"></i>
-            <p>1200</p>
-          </div>
+   
+     <% booksNovelties.forEach(book => { %>
 
-          <!-- Botón de comprar -->
-          <div><input class="button" type="button" value="Comprar"></div>
-        </div>
-      </article>
-      <!-- LIBRO 2 -->
       <article class="book">
         <div class="book-content">
-          <img class="book-cover" src="/images/libros/ElSeñorDeLosAnillos_LaComunidadDelAnillo.jpg" alt="Portada de 'El señor de los anollos, la comunidad del anillo'">
-          <h3>El señor de los Anillos</h3>
-          <h5>J. R. R. Tolkien</h5>
-          <div class="book-price">
-            <i class="fas fa-dollar-sign"></i>
-            <p>1200</p>
-          </div>
-          <!-- Botón de comprar -->
-          <div><input class="button"  type="button" value="Comprar"></div>
-          
+          <a href="/product/<%= book.id %> ">
+            <img class="book-cover" src="/images/Libros/<%= book.imagen %> " alt="Portada de 'El temor de un hombre sabio'">
+          </a>
+          <h3><%= book.nombre %> </h3>
+          <h5><%= book.autor %> </h5>
+        <div class="book-price">
+          <i class="fas fa-dollar-sign"></i>
+          <p><%= book.precio %> </p>
         </div>
-      </article>
-      <!-- LIBRO 3 -->
-      <article class="book">
-        <div class="book-content">
-          <img class="book-cover" src="/images/libros/los-crimenes-de-grindelwald.jpg" alt="Portada de 'Los crimenes de Grindelwald'">
-          <h3>Los crimenes de Grindelwald</h3>
-          <h5>J. K. Rowling</h5>
-          <div class="book-price">
-            <i class="fas fa-dollar-sign"></i>
-            <p>1200</p>
-          </div>
-          
           <!-- Botón de comprar -->
-          <div><input class="button" type="button" value="Comprar"></div>
-          
+        <div>
+          <input class="button" type="button" value="Comprar">
         </div>
+      </div>
       </article>
+
+     <% }) %>
+
     </section>
  </main>
  <hr>

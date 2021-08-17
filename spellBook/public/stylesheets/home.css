@@ -249,9 +249,8 @@ h5 {
     margin-top: 15px;
   }
   
-  .carrousel img {
-    width: 200px;
-    height: 300px;
+  .carrousel a{
+  
     position: absolute;
     top: 0;
     left: calc(50% - 100px);
@@ -260,17 +259,22 @@ h5 {
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
     border-radius: 3px;
   }
+
+  .carrousel a img {
+    width: 200px;
+    height: 300px;
+  }
   
-  img:nth-child(2) {
+  a:nth-child(2) {
     animation-delay: 2s;
   }
-  img:nth-child(3) {
+  a:nth-child(3) {
     animation-delay: 4s;
   }
-  img:nth-child(4) {
+  a:nth-child(4) {
     animation-delay: 6s;
   }
-  img:nth-child(5) {
+  a:nth-child(5) {
     animation-delay: 8s;
   }
 

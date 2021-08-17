@@ -4,12 +4,12 @@ const controller = require('../controllers/indexController')
 
 //  Home 
 router.get('/', controller.index);
+// Productos 
+router.get('/product', controller.books);
 // Detalle de producto 
 router.get('/product/:id', controller.product);
 // Shopping Cart 
 router.get('/cart', controller.cart);
-// Books 
-router.get('/books', controller.books);
 // Novelties 
 router.get('/novelties', controller.novelties);
 // About us
