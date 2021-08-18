@@ -73,7 +73,7 @@ body{background: var(--color-beige);
     max-width:calc(100vw - 40px);
     box-sizing:border-box;
     font-family: var(--font-berkshire);}
-  h2{
+  .aboutUs-h2{
     font-size: 20px;
       margin:10px 0;
     padding-bottom:10px;
