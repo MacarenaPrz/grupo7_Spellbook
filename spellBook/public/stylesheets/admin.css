@@ -104,6 +104,18 @@ section.product-form{
     overflow: hidden;
     display: none;
 }
+section.productEdit-form{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    display: none;
+}
 .internal-modal {
     padding: 20px;
     background-color: var(--color-azulClaro);
@@ -168,6 +180,13 @@ form#product fieldset input.display-shop{
 }
 /* MODALES CSS */
   .close-create {
+    position: absolute;
+    top: 4px;
+    right: 14px;
+    font-size: 30px;
+    cursor: pointer;
+}
+  .closeEdit-create {
     position: absolute;
     top: 4px;
     right: 14px;

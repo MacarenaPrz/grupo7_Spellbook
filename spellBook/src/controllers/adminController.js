@@ -39,6 +39,27 @@ module.exports={
 
                 
     },
+    editProduct:(req, res)=>{
+        let {titulo,
+            autor, 
+			cantidad, 
+			precio,
+			descripcion } = req.body;
+
+        products.forEach(product => {
+            if(product.id === +req.params.id){
+                product.id = product.id,
+                product.titulo = titulo,
+                product.autor = autor,
+                product.cantidad = cantidad,
+                product.precio = precio,
+                product.descripcion = descripcion,
+                product.image = arrayImages.length > 0 ? arrayImages : product.imagen 
+                }
+            })
+        writeProductsJSON(products);
+        res.redirect("/admin/addProduct")
+    },
     deleteProduct: (req, res) =>{
         products.forEach(product =>{
             if(product.id == +req.params.id){

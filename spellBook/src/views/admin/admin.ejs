@@ -75,14 +75,82 @@
                         href="#"
                         class="button-edit">
                          <i class="fas fa-pen"></i>
-                        
                        </a>
-                      <form action="/admin/deleteProduct/<%=book.id%>?_method=DELETE" id="button-delete" method="POST">
+
+                      <form action="admin/deleteProduct/<%=book.id%>?_method=DELETE" id="button-delete" method="POST">
                           <button class="delete-btn" type="submit">Eliminar
                          <!--    <i class="fas fa-times-circle"></i> -->
                           </button>
                         </form></td>
                       </tr>
+
+                      <!-- EDIT FORM -->
+<section class="productEdit-form">
+  <div class="internal-modal">
+    <div class="closeEdit-create">
+      <i class="fas fa-times" id="icon" aria-hidden="true"></i>
+    </div>
+    <div class="add-btn"><h2 id="shop-form">Editar libro <%= book.titulo %></h2></div>
+    <div class="errors">
+    </div>
+    <form method="POST" action="/admin/editProduct/<%= book.id %>?_method=PUT" enctype="multipart/form-data" id="product">
+      <fieldset>
+        <label for="image">Imagen:</label>
+        <input type="file" name="imagen" id="image" />
+      </fieldset>
+      <fieldset>
+        <label for="title">Título:</label>
+        <input
+          type="text"
+          name="titulo"
+          id="title"
+          value="<%= book.titulo %> "
+        />
+      </fieldset>
+      <fieldset>
+        <label for="autor">Autor :</label>
+        <input
+          type="text"
+          name="autor"
+          id="autor"  
+          value="<%= book.autor %> "
+        />
+      </fieldset>
+      <fieldset>
+        <label for="amount">Cantidad :</label>
+        <input
+          type="number"
+          name="cantidad"
+          id="amount"
+          value="<%= book.cantidad %>"
+        />
+      </fieldset>
+      <fieldset>
+        <label for="price">Precio :</label>
+        <input
+            type="text"
+            id="price"
+            name="precio"
+            value="<%= book.precio %>"
+        />
+      </fieldset>
+      <fieldset>
+        <label for="descripcion">Descripción :</label>
+        <input
+          type="textarea"
+          name="descripcion"
+          id="descripion"
+          value="<%= book.descripcion %>"
+          
+        />
+      </fieldset>
+      <fieldset>
+        <input class="delete" type="reset" value="Borrar">
+        <button class="display-shop" type="submit" > Guardar</button>
+      </fieldset>
+    </form>
+  </div>
+</section>
                 <% }) %>
                 
               
@@ -91,7 +159,7 @@
         </table>
       </div>
     </section>
-<!-- FORM -->
+<!-- CREATE FORM -->
     <section class="product-form">
       <div class="internal-modal">
         <div class="close-create">
@@ -158,6 +226,10 @@
         </form>
       </div>
     </section>
+
+
+    
+
   </main>
   <script src="/js/admin.js"></script>
 </body>
