@@ -24,7 +24,9 @@ module.exports={
         })},
 
     cart: (req, res) => { res.render('products/shoppingCart')},
-    books: (req, res) => { res.render('products/books')},
+    books: (req, res) => { res.render('products/books',{
+        products
+    })},
     novelties: (req, res) => { 
         let booksNovelties = products.slice(products.length-4);
         let booksRecommended = products.filter(product => product.seleccionadoMes == 1);

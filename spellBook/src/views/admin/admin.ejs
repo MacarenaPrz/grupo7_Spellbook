@@ -18,7 +18,7 @@
       <h1 class="logo__title"><a href="/" class="logo__link">SpellBook</a></h1>
   </div>
     <!-- BURGER MENU -->
-    <a href="/signUp"><div class="btn">
+    <a href="/user/signUp"><div class="btn">
       <i class="far fa-user" id="icon"></i>
     </div></a>
   </header>
@@ -27,7 +27,7 @@
     <section class="product-list">
       <!--LINKS TO Agregar libro, Bell AND user-->
       <div class="belluser">
-        <a href="#" class="display-shop" id="button-create">Agregar libro</a>
+        <button class="display-shop" id="button-create">Agregar libro</button>
         <a href="/login">
           <div class="">
             <i class="far fa-bell" id="icon"></i>
@@ -61,51 +61,35 @@
             </tr>
           </thead> 
           <tbody>
-              <tr>
-                <td><input type="checkbox"></td>
-                <td><img src="/images/Libros/el temor de un hombre sabio.jpg"</td>
-                <td>El temor de un hombre sabio</td>
-                <td>Patrick Rothfuss</td>
-                <td>2</td>
-                <td>450</td>
-                <td>Activo</td>
-                <td><a
-                      href="#"
-                      class="button-edit">
-                       <i class="fas fa-pen"></i>
-                      
-                     </a>
-                    <form
-                        action="/products/delete/id?_method=DELETE"
-                        id="button-delete"
-                        method="POST">
-                        <button class="delete-btn">
-                          <i class="fas fa-times-circle"></i>
-                        </button>
-                      </form></td>
-              </tr>
-              <tr>
-                <td><input type="checkbox"></td>
-                <td><img src="/images/Libros/el temor de un hombre sabio.jpg"</td>
-                <td>El temor de un hombre sabio</td>
-                <td>Patrick Rothfuss</td>
-                <td>2</td>
-                <td>450</td>
-                <td>Activo</td>
-                <td><a
-                      href="#"
-                      class="button-edit">
-                       <i class="fas fa-pen"></i>
-                     </a>
-                    <form
-                        action="/products/delete/id?_method=DELETE"
-                        id="button-delet"
-                        method="POST">
-                        <button class="delete-btn">
-                          <i class="fas fa-times-circle"></i>
-                        </button>
-                      </form></td>
-              </tr>
+             
+                <% products.forEach(book => { %>
+                  <tr>
+                  <td><input type="checkbox"></td>
+                  <td><img src="/images/Libros/<%= book.imagen%>"></td>
+                  <td><%= book.titulo%></td>
+                  <td><%= book.autor%></td>
+                  <td><%= book.cantidad%></td>
+                  <td><%= book.precio%></td>
+                  <td>Activo</td>
+                  <td><a
+                        href="#"
+                        class="button-edit">
+                         <i class="fas fa-pen"></i>
+                        
+                       </a>
+                      <form
+                          action="/products/delete/id?_method=DELETE"
+                          id="button-delete"
+                          method="POST">
+                          <button class="delete-btn">
+                            <i class="fas fa-times-circle"></i>
+                          </button>
+                        </form></td>
+                      </tr>
+                <% }) %>
+                
+              
+              
             </tbody>
         </table>
       </div>
@@ -118,23 +102,19 @@
         </div>
         <div class="add-btn"><h2 id="shop-form">Agregar libro</h2></div>
         <div class="errors">
-          <% if(locals.errors && errors.name){%>
-            <ul><%= errors.name %>  </ul>
-          <% } %>
         </div>
-        <form method="POST" action="/login/admin" enctype="multipart/form-data" id="product">
+        <form method="POST" action="" enctype="multipart/form-data" id="product">
           <fieldset>
             <label for="image">Imagen :</label>
-            <input type="file" name="image" id="image" accept=".jpg, .png, .sgv" multiple/>
+            <input type="file" name="imagen" id="image" accept=".jpg, .png, .sgv" multiple/>
           </fieldset>
           <fieldset>
             <label for="title">Título :</label>
             <input
               type="text"
-              name="title"
+              name="titulo"
               id="title"
-              sentence
-              value=""
+            
             />
           </fieldset>
           <fieldset>
@@ -142,18 +122,17 @@
             <input
               type="text"
               name="autor"
-              id="autor"
-              sentence
-              value="<%= locals.old && old.autor %> "
+              id="autor"  
+              
             />
           </fieldset>
           <fieldset>
             <label for="amount">Cantidad :</label>
             <input
               type="number"
-              name="amount"
+              name="cantidad"
               id="amount"
-              value=""
+              
             />
           </fieldset>
           <fieldset>
@@ -161,18 +140,18 @@
             <input
                 type="text"
                 id="price"
-                name="price"
-                value=""
+                name="precio"
+                
             />
           </fieldset>
           <fieldset>
-            <label for="description">Descripción :</label>
+            <label for="descripcion">Descripción :</label>
             <input
               type="textarea"
-              name="description"
-              id="description"
-              sentence
-              value=""
+              name="descripcion"
+              id="descripion"
+              
+              
             />
           </fieldset>
           <fieldset>

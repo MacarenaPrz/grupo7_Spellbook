@@ -6,6 +6,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var adminRouter = require('./routes/admin')
 
 var app = express();
 
@@ -22,7 +23,8 @@ app.use(express.static('public'));
 //                     RUTAS
 
 app.use('/', indexRouter); // home
-app.use('/login' , usersRouter); // login
+app.use('/user' , usersRouter); // login
+app.use('/admin', adminRouter)
 
 
 // catch 404 and forward to error handler
