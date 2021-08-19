@@ -99,7 +99,7 @@
                      </a>
                     <form
                         action="/products/delete/id?_method=DELETE"
-                        id="button-delete"
+                        id="button-delet"
                         method="POST">
                         <button class="delete-btn">
                           <i class="fas fa-times-circle"></i>
@@ -118,17 +118,17 @@
         </div>
         <div class="add-btn"><h2 id="shop-form">Agregar libro</h2></div>
         <div class="errors">
-          <ul>
-          
-          </ul>
+          <% if(locals.errors && errors.name){%>
+            <ul><%= errors.name %>  </ul>
+          <% } %>
         </div>
-        <form method="POST" enctype="multipart/form-data" id="product">
+        <form method="POST" action="/login/admin" enctype="multipart/form-data" id="product">
           <fieldset>
             <label for="image">Imagen :</label>
             <input type="file" name="image" id="image" accept=".jpg, .png, .sgv" multiple/>
           </fieldset>
           <fieldset>
-            <label for="name">Título :</label>
+            <label for="title">Título :</label>
             <input
               type="text"
               name="title"
@@ -138,34 +138,22 @@
             />
           </fieldset>
           <fieldset>
-            <label for="name">Autor :</label>
+            <label for="autor">Autor :</label>
             <input
               type="text"
-              name="name"
-              id="name"
+              name="autor"
+              id="autor"
               sentence
-              value=""
+              value="<%= locals.old && old.autor %> "
             />
           </fieldset>
           <fieldset>
             <label for="amount">Cantidad :</label>
             <input
-              type="button"
-              name="amount"
-              id="amount"
-              value="-"
-            />
-            <input
               type="number"
               name="amount"
               id="amount"
               value=""
-            />
-            <input
-              type="button"
-              name="amount"
-              id="amount"
-              value="+"
             />
           </fieldset>
           <fieldset>
@@ -189,7 +177,7 @@
           </fieldset>
           <fieldset>
             <input class="delete" type="reset" value="Borrar">
-            <input class="display-shop" type="submit" value="Guardar">
+            <button class="display-shop" type="submit" > Guardar</button>
           </fieldset>
         </form>
       </div>
