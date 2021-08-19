@@ -1,5 +1,5 @@
 const {products, writeProductsJSON} = require('../dataBase/dataBase');
-const {validationResult} = require('express-validator');
+const {validationResult, body} = require('express-validator');
 
 module.exports={
     admin: (req, res) => { res.render('admin/admin')},
