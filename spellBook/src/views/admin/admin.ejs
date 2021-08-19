@@ -77,12 +77,9 @@
                          <i class="fas fa-pen"></i>
                         
                        </a>
-                      <form
-                          action="/products/delete/id?_method=DELETE"
-                          id="button-delete"
-                          method="POST">
-                          <button class="delete-btn">
-                            <i class="fas fa-times-circle"></i>
+                      <form action="/admin/deleteProduct/<%=book.id%>?_method=DELETE" id="button-delete" method="POST">
+                          <button class="delete-btn" type="submit">Eliminar
+                         <!--    <i class="fas fa-times-circle"></i> -->
                           </button>
                         </form></td>
                       </tr>
@@ -103,13 +100,13 @@
         <div class="add-btn"><h2 id="shop-form">Agregar libro</h2></div>
         <div class="errors">
         </div>
-        <form method="POST" action="" enctype="multipart/form-data" id="product">
+        <form method="POST" action="/admin/addProduct" enctype="multipart/form-data" id="product">
           <fieldset>
-            <label for="image">Imagen :</label>
-            <input type="file" name="imagen" id="image" accept=".jpg, .png, .sgv" multiple/>
+            <label for="image">Imagen:</label>
+            <input type="file" name="imagen" id="image" />
           </fieldset>
           <fieldset>
-            <label for="title">Título :</label>
+            <label for="title">Título:</label>
             <input
               type="text"
               name="titulo"

@@ -1,4 +1,5 @@
 const {products, writeProductsJSON} = require('../dataBase/dataBase');
+const { product } = require('./indexController');
 /* const {validationResult, body} = require('express-validator'); */
 
 module.exports={
@@ -8,7 +9,6 @@ module.exports={
              products
     })}, 
      newProduct: (req, res) => {
-        res.send(req.body) //aca tendria que mostrar en el navegador el req.body osea lo que esta en el formulario pero no aparece, creo que hay un problema en el form
         let lastId = 1;
         
 		products.forEach(product => {
@@ -17,8 +17,7 @@ module.exports={
 			}
 		}); // el codigo anterior con la variable lastID es para agregar el nuevo id al producto sin pisar ninguno
        
-        let {imagen,
-            titulo,
+        let {titulo,
             autor, 
 			cantidad, 
 			precio,
@@ -31,14 +30,32 @@ module.exports={
                 cantidad,
                 precio,
                 descripcion,
-                imagen:"default-image.jpg"};
+                imagen: req.file?req.file.filename:"default-image.jpg"};
 
             products.push(newProduct);
             writeProductsJSON(products);
     
-            res.redirect('/admin');
+            res.redirect('/admin/addProduct');
+
                 
+    },
+    deleteProduct: (req, res) =>{
+        products.forEach(product =>{
+            if(product.id == +req.params.id){
+                let eraseProduct = products.indexOf(product)
+                products.splice(eraseProduct, 1)
+               
+            }
+        })
+
+       
+        writeProductsJSON(products);
+    
+        res.redirect('/admin/addProduct');
+
+
     } 
+
 }
        /* 
             else{
