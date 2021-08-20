@@ -12,25 +12,24 @@
   <hr class="bg-blue">
 </div>
 
+<% products.forEach(book => { %>
 
-  
-  <% products.forEach(book => { %>
-    <section class="month-selection">
-   <article class="book">
-     <div class="book-content">
-       <a href="/product/<%= book.id %> ">
-         <img class="book-cover" src="/images/Libros/<%= book.imagen %>" alt="">
-       </a>
-       <h3><%= book.nombre %> </h3>
-       <h5><%= book.autor %> </h5>
-     <div class="book-price">
+<section class="month-selection">
+  <article class="book">
+    <div class="book-content">
+      <a href="/product/<%= book.id %> ">
+        <img class="book-cover" src="/images/Libros/<%= book.imagen %>" alt="">
+      </a>
+      <h3><%= book.nombre %> </h3>
+      <h5><%= book.autor %> </h5>
+      <div class="book-price">
        <i class="fas fa-dollar-sign"></i>
        <p><%= book.precio %> </p>
-     </div>
-       <!-- Botón de comprar -->
-     <div>
-       <input class="button" type="button" value="Comprar">
-     </div>
+      </div>
+   <!-- Botón de comprar -->
+      <div>
+        <input class="button" type="button" value="Comprar">
+      </div>
    </div>
    </article>
   </section>

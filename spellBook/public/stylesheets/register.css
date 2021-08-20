@@ -74,6 +74,7 @@
     margin: 0 auto;
     box-shadow: var(--box-shadow-images);
     margin-top: 1rem;
+    position: relative;
 }
 /* PARA TODOS LOS IMPUTS */
 .user-data {
@@ -145,8 +146,7 @@
 /* NACIMIENTO */
 .image-icon {
     position: relative;
-    right:24px ;
-    bottom: 3px;
+    bottom: 43px;
 }
 
 .user-date-inputs-date {
