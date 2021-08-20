@@ -14,6 +14,8 @@ let {
 router.get('/addProduct', admin);
 // Admin, new product
 router.post('/addProduct', upload.single('imagen'), newProduct);
+// Admin, edit view
+router.get('/editProduct/:id', editView);
 // Admin, edit product
 router.put('/editProduct/:id', upload.single('imagen'), editProduct);
 //Admin delete product

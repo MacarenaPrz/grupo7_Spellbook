@@ -114,7 +114,7 @@ section.productEdit-form{
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    display: none;
+    /* display: none;*/
 }
 .internal-modal {
     padding: 20px;

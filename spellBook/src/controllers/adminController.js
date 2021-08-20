@@ -39,6 +39,12 @@ module.exports={
 
                 
     },
+    editView:(req, res)=>{
+        let idBook = products.find(book => book.id === +req.params.id);
+        res.render("admin/editForm",{
+            idBook    
+        })
+    },
     editProduct:(req, res)=>{
         let {titulo,
             autor, 
@@ -54,7 +60,7 @@ module.exports={
                 product.cantidad = cantidad,
                 product.precio = precio,
                 product.descripcion = descripcion,
-                product.image = arrayImages.length > 0 ? arrayImages : product.imagen 
+                product.imagen = req.file?req.file.filename: product.imagen 
                 }
             })
         writeProductsJSON(products);
