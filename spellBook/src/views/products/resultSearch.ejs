@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- HEAD -->
+<%- include('../partials/head') %>
+
+<body>
+<!-- HEADER -->
+<%- include('../partials/header') %> 
+
+<!-- Titulo de pagina -->
+<div class="nov-title">
+  <h1>Resultados de la Busqueda de: <%= search %> </h1>
+  <hr class="bg-blue">
+</div>
+<!-- Si hay productos que coincida con la busqueda los lista -->
+<% if (result.length !== 0) { %>
+  <% result.forEach(book => { %>
+    
+    <div class="nov-product">
+      <figure class="nov-book">
+        <img class="books__img book-cover" src="images/libros/<%= book.imagen%>" alt="">       
+      </figure>
+      <div class="nov-description">
+        <p class="nov-text">      
+            <% let descriptionLow = book.descripcion.slice(0 , 250) %>
+            <%= descriptionLow %> ...               
+        </p>
+        <p class="nov-text-d">
+          <%= book.descripcion %>
+        </p>
+        <a class="nov-autor" href=""><%= book.autor %> </a>
+        <span class="nov-price">$ <%= book.precio %> </span>
+      </div>
+    </div>
+    <% }) %>
+<!-- Este es el msj si no encuentra coincidencia -->
+<% } else { %>
+  <br><br><br><br>  
+  <div class="nov-title">
+    <h1>No tenemos Libros con ese nombre </h1>
+  </div>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <% } %>  
+<!-- FOOTER -->
+<%- include('../partials/footer') %>
+
+<!-- LINK DEL JS DEL HEADER -->
+<script src="/js/header.js"></script>
+
+  </body>
+</html>

@@ -37,5 +37,21 @@ module.exports={
             booksRecommended
         })},
     aboutUs: (req, res) => { res.render('aboutUs')},
-
+    search: (req, res) => {
+        /* Se guarda lo que manda el input en la variable sarch */
+        let search = req.query.search.toLowerCase();
+        /* En la variable result vamos a pushear todo lo que coincida con search */
+		let result = [];
+		products.forEach( product => {
+			if(product.titulo.toLowerCase().includes(search)){
+				result.push(product)
+			}
+		});
+        /* En la vista le mandamos las dos variables asi las listamos */
+		res.render('products/resultSearch', {
+			search,
+			result
+		})
+	},
 }
+

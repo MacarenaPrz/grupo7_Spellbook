@@ -56,11 +56,14 @@
     <div class="user__desk">
   
         <!-- LUPA DE BUSQUEDA -->
-        <label name="search" id="search" >
+        <form action="/search" method="get">
+          <label name="search" id="search" >
             <input class="user__search__desk" type="search" name="search" id="search" placeholder="">
-            <i class="fas fa-search user__icon__desk"></i>
+            <i class="fas fa-search user__icon__desk"></i> 
+            <button type="submit"  class="btn"></button> 
         </label>
-  
+        </form>
+        
         <!-- HACIA EL CARRITO DE COMPRAS -->
         <a href="/cart">
             <i class="fas fa-shopping-cart user__icon__desk"></i>

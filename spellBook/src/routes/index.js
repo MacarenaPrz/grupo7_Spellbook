@@ -14,6 +14,8 @@ router.get('/cart', controller.cart);
 router.get('/novelties', controller.novelties);
 // About us
 router.get('/aboutUs', controller.aboutUs);
+//Search
+router.get('/search', controller.search); 
 
 
 module.exports = router;
