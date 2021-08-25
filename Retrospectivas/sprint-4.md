@@ -1,30 +1,38 @@
 <h1>Retrospectiva Sprint 4:</h1>
 
 <h3>Empezar a Hacer:</h3>
+
 <ul type="square">
 <br>
-<li>Mantener comunicación.</li>
+<li>Pushear codigo funcionando/terminado.</li>
 <br>
 <li>Reuniones 11.20.</li>
 <br>
 <li>Si no vamos a poder estar en una reunión, avisar con anticipación.</li>
+<br>
+<li>Seguir protocolo de reunión.</li>
+<br>
 </ul>
 
 <h3>Hacer más:</h3>
 <ul type="square">
-  <li>Avisar cuando estamos trabajando en el código.</li>
   <br>
   <li>Hacer reuniones más concisas.</li> 
   <br>
-  <li>Contestar el whatsapp.</li>
+  <li>Ordenar estilos/codigo.</li>
   <br>
-  <li>Ordenar estilos.</li>
-  <br>
-  <li>Ayudar a los compañeros con sus tareas.</li>
 </ul>
 
 <h3>Seguir haciendo:</h3>
 <ul type="square">
+ <li>Ayudar a los compañeros con sus tareas.</li>
+ <br>
+  <li>Contestar el whatsapp.</li>
+  <br>
+  <li>Avisar cuando estamos trabajando en el código.</li>
+  <br>
+  <li>Mantener comunicación.</li> 
+  <br>
   <li>Adelantar trabajo entre sprints.</li>
   <br>
   <li>Estar atento al chat si alguien está trabajando.</li>
