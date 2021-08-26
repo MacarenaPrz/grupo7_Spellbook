@@ -45,7 +45,7 @@
 .button {
     background-color: var(--color-azulOscuro);
     border: none;
-    border-radius: 12px;
+    border-radius: 2px;
     color: var(--color-beige);
    
 }
