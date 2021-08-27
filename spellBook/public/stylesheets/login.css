@@ -3,7 +3,7 @@
   margin: 5vh auto;
   min-width: 300px;
   max-width: 450px;
-  height: 80vh;
+  height: 90vh;
   display: flex;
   border-radius: 12px;
 }
@@ -18,6 +18,7 @@
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
+  gap: 25px;
   background-color: var(--color-beige);
   border-radius: 0 12px 12px 0;
 }
@@ -53,7 +54,7 @@
 }
 .btn__send {
   width: 60%;
-  height: 40px;
+  height: 50px;
   background-color: var(--color-azulOscuro);
   border: none;
   color: var(--color-beige);
@@ -61,11 +62,13 @@
   letter-spacing: 0.1rem;
   border-radius: 5px;
   cursor: pointer;
+  padding: 5px;
 }
 .terminos {
   display: flex;
   align-items: center;
   gap: 2px;
+  width: fit-content;
 }
 .social {
   width: 85%;
@@ -96,7 +99,7 @@
 }
 .warning{
     color: darkred;
-    font-size: .9rem;
+    font-size: 0.9rem;
     font-weight: 600;
 }
 @media (min-width: 500px) {

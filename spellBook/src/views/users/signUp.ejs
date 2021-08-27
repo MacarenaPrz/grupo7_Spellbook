@@ -59,20 +59,19 @@
         <button type="submit" class="btn__send button">Registrate</button>
 
         <div class="terminos">
-          <input type="checkbox"  name="terminos" id="check"/>
-          <label for="ckeck">Acepto los terminos <a href="">Terminos y condiciones </a></label>
-          <% if (locals.errors && errors.terminos) { %>
-            <span class="warning"><%= errors.terminos.msg %> </span>
-        <% } %>
+          <input class="fit-content" type="checkbox"  name="terminos" id="check"/>
+          <label class="fit-content" for="ckeck">Acepto los <a href="">Terminos y condiciones </a></label>
         </div>
-
+        <% if (locals.errors && errors.terminos) { %>
+          <span class="warning"><%= errors.terminos.msg %> </span>
+        <% } %>
         <div class="user social">
           <a href="" class="social__btn button"><i class="fab fa-google social__icon"></i>GOOGLE</a>
           <a href="" class="social__btn button"><i class="fab fa-facebook-f social__icon"></i>FACEBOOK</a>
         </div>
 
         <div class="user">
-          <a href="/login" class="enlace_link">¿Ya tengo una cuenta?</a>
+          <a href="/user" class="enlace_link">¿Ya tengo una cuenta?</a>
         </div>
       </form>
     </aside>

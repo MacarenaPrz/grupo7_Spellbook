@@ -16,7 +16,6 @@
 .d-inline {
     display: inline;
     margin: 5px;
-
 }
 .m-1 {
     margin: 1rem 
@@ -26,6 +25,9 @@
 }
 .bg-blue{
     background-color: var(--color-azulOscuro);
+}
+.fit-content{
+    width: fit-content;
 }
 /* EFECTO DE LOS LIBROS */
 .book-cover {

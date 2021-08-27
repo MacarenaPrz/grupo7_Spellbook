@@ -5,6 +5,20 @@ const bcrypt = require('bcryptjs')
 
 module.exports = {
     login: (req, res) => { res.render('users/login') },
+    checkLogin: (req, res) => {        
+        let errors = validationResult(req);
+   
+        if(errors.isEmpty()) {
+
+            let user = user.find(user => user.email === req.body.name)
+            
+        }else{
+            res.render('users/login', {
+                errors : errors.mapped(),
+                old: req.body
+            })
+        }
+    },
 
     signup: (req, res) => { res.render('users/signUp') },
 

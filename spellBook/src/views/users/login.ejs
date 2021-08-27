@@ -21,19 +21,26 @@
           alt=""
           class="logo-sticker__img">
       </figure>
-      <form action="" method="POST" class="form">
+      <form action="/user" method="POST" class="form">
         <div class="box">
           <h2 class="box__title">Iniciar sesion</h2>
         </div>
 
-        <div class="user">
+        <div class="user">++++++++++++.
+          362
           <input
             type="text"
             name="name"
             placeholder="Nombre de Usuario"
             class="user__info"
-          />
-          <span class="warning">Nombre de usuario incorrecto</span>
+            value="<%= locals.old && old.name %>"
+          >  
+          <% if (locals.errors && errors.name) { %>
+            <% if (errors.name.msg  !== 'El usuario o la contraseña no coinciden') { %>
+              <span class="warning"><%= errors.name.msg %> </span>
+            <% } %>         
+          <% } %>
+        
         </div>
 
         <div class="user">
@@ -42,12 +49,25 @@
             name="password"
             placeholder="Contraseña"
             class="user__info"
-          />
-          <span class="warning">Contraseña incorrecta</span>
+          >   
+          <% if (locals.errors && errors.password) { %>
+            <% if (errors.password.msg  !== 'El usuario o la contraseña no coinciden') { %>
+            <span class="warning"><%= errors.password.msg %> </span>
+            <% } %>
+          <% } %>
+          
         </div>
+        <% if (locals.errors) { %>
+          <% if (errors.name.msg == " ") { %>
+           <% if (errors.password.msg == " ") { %>
+            <span class="warning">E-mail o contraseña incorrectos </span>
+           <% } %>
+          <% } %>           
+        <% } %>        
+
         <div>
           <label class="terminos" for="recuerdame">
-            <input type="checkbox" 
+            <input class="fit-content" type="checkbox" 
             name="recuerdame" 
             id="recuerdame">
             Recordarme en este equipo
@@ -56,7 +76,7 @@
         <button type="submit" value="Enviar" class="btn__send button">Iniciar sesion</button>
         <div class="user">
           <a href="" class="enlace_link">¿Olvidate tu contraseña?</a>
-          <a href="/signup" class="enlace_link"  >¿No tenes cuenta?</a>
+          <a href="/user/signup" class="enlace_link"  >¿No tenes cuenta?</a>
         </div>
         <div class="user social">
           <a href="" class="social__btn button"
