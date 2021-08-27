@@ -1,30 +1,33 @@
 var createError = require('http-errors');
 var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-const methodOverride = require('method-override')
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var adminRouter = require('./routes/admin')
-
-var app = express();
+const app = express();
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const methodOverride = require('method-override');
+const session = require('express-session');
+//Routers
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
+const adminRouter = require('./routes/admin');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+//Middlewar
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static('public'));
-app.use(methodOverride('_method'))
-//                     RUTAS
+app.use(methodOverride('_method'));
+app.use(session({ secret: "mySecret", resave: false,  saveUninitialized: true }));
 
+//Ruter
 app.use('/', indexRouter); // home
-app.use('/user' , usersRouter); // login
-app.use('/admin', adminRouter)
+app.use('/user', usersRouter); // login
+app.use('/admin', adminRouter);//admin
 
 
 

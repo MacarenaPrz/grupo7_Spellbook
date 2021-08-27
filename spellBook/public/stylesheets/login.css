@@ -97,7 +97,6 @@
 .warning{
     color: darkred;
     font-size: .9rem;
-    padding: 10px 0;
     font-weight: 600;
 }
 @media (min-width: 500px) {
