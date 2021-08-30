@@ -11,7 +11,6 @@ let {
     editProduct,
     deleteProduct
         } = require('../controllers/adminController');
-const userSession = require('../middleware/userSession');
 
 // Admin 
 router.get('/addProduct', userSession, userAdmin, admin);
