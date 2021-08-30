@@ -28,12 +28,14 @@
 
         <div class="user">
           <input
-            type="text"
-            name="name"
-            placeholder="Nombre de Usuario"
+            type="email"
+            name="email"
+            placeholder="Correo de Usuario"
             class="user__info"
           />
-          <span class="warning">Nombre de usuario incorrecto</span>
+          <% if(locals.errors && errors.email) { %> 
+          <span class="warning"><%= errors.email.msg %></span>
+          <% } %> 
         </div>
 
         <div class="user">
@@ -43,7 +45,9 @@
             placeholder="Contraseña"
             class="user__info"
           />
-          <span class="warning">Contraseña incorrecta</span>
+          <% if(locals.errors && errors.password) { %> 
+            <span class="warning"><%= errors.password.msg %></span>
+          <% } %> 
         </div>
         <div>
           <label class="terminos" for="recuerdame">
