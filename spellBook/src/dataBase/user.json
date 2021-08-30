@@ -120,5 +120,11 @@
         "nombre": "RaulEscobar",
         "email": "emailDePrueba@gmail.com",
         "contrasenia": "$2a$10$9MMbYgRF5EwYVI7L8XnEH.rYMBFZ5ldkZ6Tc4fZIiF4AiMF2/40W."
+    },
+    {
+        "id": 13,
+        "nombre": "RaulEscobar",
+        "email": "prueba@prueba.com",
+        "contrasenia": "$2a$10$UhrLmdnSdXtu59bLQbrlL.2jjcwbBkrJZ9tnWgdTMNL59gk8IMfue"
     }
 ]

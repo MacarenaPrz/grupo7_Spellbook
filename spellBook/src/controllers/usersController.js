@@ -7,11 +7,25 @@ module.exports = {
     login: (req, res) => { res.render('users/login') },
     checkLogin: (req, res) => {        
         let errors = validationResult(req);
-   
+        res.send(errors)
         if(errors.isEmpty()) {
-
+            
             let user = user.find(user => user.email === req.body.name)
             
+            req.session.user = {
+                id: user.id,
+                nombre: user.nombre,
+                email: user.email,
+               
+
+            }
+            if(req.body.recuerdame){
+                res.cookie('userLogin', req.session.user, {maxAge: 1000*60*60});
+            }
+
+            res.locals.user = req.session.user;
+
+            res.redirect('/')
         }else{
             res.render('users/login', {
                 errors : errors.mapped(),
