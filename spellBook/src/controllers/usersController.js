@@ -18,7 +18,7 @@ module.exports = {
                 res.cookie('', req.session.userLog, {maxAge: 1000*60*2})
             }
             res.locals.user = req.session.userLog; */
-            res.redirect('/'); 
+            res.redirect('/user/register'); 
         } else {
             res.render('users/login', {
                 errors: errors.mapped(),
@@ -68,5 +68,11 @@ module.exports = {
     },
 
 
-    register: (req, res) => { res.render('users/register') },
+    register: (req, res) => {
+        let userL = user.find(userL => userL.id === req.session.userLog.id) 
+        res.render('users/register',{
+            session: req.session,
+            userL
+        }) 
+    },
 }
