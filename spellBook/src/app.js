@@ -22,7 +22,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static('public'));
 app.use(methodOverride('_method'));
-app.use(session({ secret: "mySecret", resave: false,  saveUninitialized: true }));
+app.use(session({ secret: "mySecret",
+ resave: false,  
+ saveUninitialized: true,
+ cookie: {maxAge:6000}}));
 
 //Ruter
 app.use('/', indexRouter); // home
