@@ -4,37 +4,35 @@ const bcrypt = require('bcryptjs')
 
 
 module.exports = {
-    login: (req, res) => { res.render('users/login') },
-    checkLogin: (req, res) => {        
+    login: (req, res) => { res.render('users/login', {
+        session: req.session.user
+    }) },
+    processLogin: (req, res) => {
         let errors = validationResult(req);
-        res.send(errors)
-        if(errors.isEmpty()) {
-            
-            let user = user.find(user => user.email === req.body.name)
-            
-            req.session.user = {
-                id: user.id,
-                nombre: user.nombre,
-                email: user.email,
-               
-
+        if(errors.isEmpty()){
+            let userLog = user.find(userL => userL.email === req.body.email)
+            req.session.userLog = {
+                id: userLog.id,
+                email: userLog.email,
+                nombre: userLog.nombre
             }
+ 
             if(req.body.recuerdame){
-                res.cookie('userLogin', req.session.user, {maxAge: 1000*60*60});
+                res.cookie('logSpellbook', req.session.userLog, {expires: new Date(Date.now() + 900000), httpOnly: true})
             }
-
-            res.locals.user = req.session.user;
-
-            res.redirect('/')
-        }else{
+            res.locals.user = req.session.userLog;
+            res.redirect('/user/register'); 
+        } else {
             res.render('users/login', {
-                errors : errors.mapped(),
-                old: req.body
+                errors: errors.mapped(),
+                session: req.session
             })
         }
     },
 
-    signup: (req, res) => { res.render('users/signUp') },
+    signup: (req, res) => { res.render('users/signUp', {
+        session: req.session
+    }) },
 
     createUser: (req, res) => {
 
@@ -69,11 +67,20 @@ module.exports = {
         } else {
             res.render('users/signUp', {
                 errors: errors.mapped(),
+                session: req.session
             })
 
         }
     },
 
 
-    register: (req, res) => { res.render('users/register') },
+    
+    register: (req, res) => {
+        let userL = user.find(userL => userL.id === req.session.userLog.id) 
+
+        res.render('users/register',{
+            session: req.session,
+            userL
+        }) 
+    },
 }

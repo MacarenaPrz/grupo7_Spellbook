@@ -13,7 +13,7 @@
   <main class="conteiner-main">
      
     <!-- FORMULARIO DE REGISTRO -->
-    <form action="/signup" method="POST">
+    <form action="/user/register" method="POST">
 
       <!-- IMAGEN DE USUARIO, BARITA -->
       <section class="register-user">    
@@ -33,13 +33,13 @@
         <!-- NOMBRE -->
         <div class="info-user">
           <img class="user-data-icon user-pocision" height="40px" src="/images/recursos/wizard-icon.png" alt="img de mago">
-          <p>Nombre del Usuario</p>
+          <p><%= userL.nombre %> </p>
         </div>
 
         <!-- EMAIL -->
         <div class="info-user">
           <i class="fas fa-envelope user-data-icon"></i>
-          <p>example@exam.com</p>
+          <p><%= userL.email %></p>
         </div>
       </div>
 

@@ -17,29 +17,25 @@
         <div class="star star7"></div>
         <div class="star star8"></div>
         <img
-          src="images/Diseño y Logo/Logo-Berkshire.png"
+          src="/images/Diseño y Logo/Logo-Berkshire.png"
           alt=""
           class="logo-sticker__img">
       </figure>
-      <form action="/user" method="POST" class="form">
+      <form action="/user/login" method="POST" class="form">
         <div class="box">
           <h2 class="box__title">Iniciar sesion</h2>
         </div>
 
         <div class="user">
           <input
-            type="text"
-            name="name"
-            placeholder="Nombre de Usuario"
+            type="email"
+            name="email"
+            placeholder="Correo de Usuario"
             class="user__info"
-            value="<%= locals.old && old.name %>"
-          >  
-          <% if (locals.errors && errors.name) { %>
-            <% if (errors.name.msg  !== 'El usuario o la contraseña no coinciden') { %>
-              <span class="warning"><%= errors.name.msg %> </span>
-            <% } %>         
-          <% } %>
-        
+          />
+          <% if(locals.errors && errors.email) { %> 
+          <span class="warning"><%= errors.email.msg %></span>
+          <% } %> 
         </div>
 
         <div class="user">
@@ -48,22 +44,12 @@
             name="password"
             placeholder="Contraseña"
             class="user__info"
-          >   
-          <% if (locals.errors && errors.password) { %>
-            <% if (errors.password.msg  !== 'El usuario o la contraseña no coinciden') { %>
-            <span class="warning"><%= errors.password.msg %> </span>
-            <% } %>
-          <% } %>
-          
+          />
+          <% if(locals.errors && errors.password) { %> 
+            <span class="warning"><%= errors.password.msg %></span>
+          <% } %> 
         </div>
-        <% if (locals.errors) { %>
-          <% if (errors.name.msg == " ") { %>
-           <% if (errors.password.msg == " ") { %>
-            <span class="warning">E-mail o contraseña incorrectos </span>
-           <% } %>
-          <% } %>           
-        <% } %>        
-
+    
         <div>
           <label class="terminos" for="recuerdame">
             <input class="fit-content" type="checkbox" 
