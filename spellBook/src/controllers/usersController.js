@@ -14,10 +14,10 @@ module.exports = {
                 email: userLog.email
             }
  
-            /*if(req.body.recuerdame){
-                res.cookie('', req.session.userLog, {maxAge: 1000*60*2})
+            if(req.body.recuerdame){
+                res.cookie('logSpellbook', req.session.userLog, {maxAge: 1000*60*2})
             }
-            res.locals.user = req.session.userLog; */
+            res.locals.user = req.session.userLog;
             res.redirect('/user/register'); 
         } else {
             res.render('users/login', {
