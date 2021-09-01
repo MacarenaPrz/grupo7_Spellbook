@@ -1,5 +1,5 @@
 function userAdmin (req, res, next) {
-    if (req.session.user.rol === "Admin") {
+    if (req.session.userLog.rol === "admin") {
         next()
     } else {
         res.redirect('/')

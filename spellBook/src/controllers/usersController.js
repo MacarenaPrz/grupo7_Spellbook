@@ -21,7 +21,7 @@ module.exports = {
                 res.cookie('logSpellbook', req.session.userLog, {expires: new Date(Date.now() + 900000), httpOnly: true})
             }
             res.locals.user = req.session.userLog;
-            res.redirect('/user/register'); 
+            res.redirect('/user/profile'); 
         } else {
             res.render('users/login', {
                 errors: errors.mapped(),
@@ -49,7 +49,8 @@ module.exports = {
             let {
                 name,
                 email,
-                password
+                password,
+                
             } = req.body;
 
             let newUser = {
@@ -57,6 +58,7 @@ module.exports = {
                 nombre: name,
                 email: email,
                 contrasenia: bcrypt.hashSync(password.trim(), 10),
+                rol: "user"
             }
 
             user.push(newUser);
@@ -75,10 +77,10 @@ module.exports = {
 
 
     
-    register: (req, res) => {
+    profile: (req, res) => {
         let userL = user.find(userL => userL.id === req.session.userLog.id) 
 
-        res.render('users/register',{
+        res.render('users/profile',{
             session: req.session,
             userL
         }) 
