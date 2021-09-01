@@ -11,10 +11,10 @@ router.get('/signup', controller.signup);
 router.post('/signup', sUpValidator, controller.createUser);// logiarse y validaciones  
 
 // GET users listing
-router.get('/login', userSession, controller.login);
+router.get('/login', controller.login);
 router.post('/login', loginValidator, controller.processLogin);
 
 // Info de Usuario 
-router.get('/register', controller.register);
+router.get('/register', userSession,  controller.register);
 
 module.exports = router

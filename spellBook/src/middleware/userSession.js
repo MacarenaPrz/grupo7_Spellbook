@@ -1,8 +1,8 @@
- function userSession (req, res, next) {
-    if (req.session.user) {
+ function userSession (req, res, next){
+    if (req.session.userLog) {
         next()
     } else {
-        res.redirect('/users/login')
+        res.redirect('/user/login')
     }
 }
 

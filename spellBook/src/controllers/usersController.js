@@ -5,7 +5,7 @@ const bcrypt = require('bcryptjs')
 
 module.exports = {
     login: (req, res) => { res.render('users/login', {
-        session: req.session.user
+       
     }) },
     processLogin: (req, res) => {
         let errors = validationResult(req);
