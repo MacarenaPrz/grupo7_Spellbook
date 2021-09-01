@@ -24,8 +24,8 @@ app.use(express.static('public'));
 app.use(methodOverride('_method'));
 app.use(session({ secret: "mySecret",
  resave: false,  
- saveUninitialized: true,
- cookie: {maxAge:6000}}));
+ saveUninitialized: false
+}));
 
 //Ruter
 app.use('/', indexRouter); // home

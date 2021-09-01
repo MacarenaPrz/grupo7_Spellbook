@@ -11,7 +11,7 @@ module.exports={
             monthSelection,
             booksNovelties,
             booksCarrousel,
-            session: req.session
+            session: req.session.userLog
         })},
     product: (req, res) => {
         let id =+req.params.id
@@ -21,16 +21,16 @@ module.exports={
         res.render('products/productDetail',{
             idBook: idBook[0],
             relatedBook,
-            session: req.session
+            session: req.session.userLog
             
         })},
 
     cart: (req, res) => { res.render('products/shoppingCart', {
-        session: req.session
+        session: req.session.userLog
     })},
     books: (req, res) => { res.render('products/books',{
         products,
-        session: req.session
+        session: req.session.userLog
     })},
     novelties: (req, res) => { 
         let booksNovelties = products.slice(products.length-4);
@@ -40,10 +40,10 @@ module.exports={
         res.render('products/novelties', {
             booksNovelties,
             booksRecommended,
-            session: req.session
+            session: req.session.userLog
         })},
     aboutUs: (req, res) => { res.render('aboutUs', {
-        session: req.session
+        session: req.session.userLog
     })},
     search: (req, res) => {
         /* Se guarda lo que manda el input en la variable sarch */
@@ -59,7 +59,7 @@ module.exports={
 		res.render('products/resultSearch', {
 			search,
 			result,
-            session: req.session
+            session: req.session.userLog
 		})
 	},
 }

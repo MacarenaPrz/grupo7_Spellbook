@@ -1,4 +1,4 @@
- function userSession (req, res, next){
+ function userSession (req, res, next) {
     if (req.session.userLog) {
         next()
     } else {

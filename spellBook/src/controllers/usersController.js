@@ -1,13 +1,17 @@
 const { user, writeUserJSON } = require('../dataBase/dataBase.js');
 const { validationResult } = require('express-validator');
-const bcrypt = require('bcryptjs')
+const bcrypt = require('bcryptjs');
+const session = require('express-session');
 
 
 module.exports = {
-    login: (req, res) => { res.render('users/login', {
+    login: (req, res) => {       
+        res.render('users/login', {
+        session: req.session.userLog
        
     }) },
     processLogin: (req, res) => {
+        
         let errors = validationResult(req);
         if(errors.isEmpty()){
             let userLog = user.find(userL => userL.email === req.body.email)
@@ -18,20 +22,21 @@ module.exports = {
             }
  
             if(req.body.recuerdame){
-                res.cookie('logSpellbook', req.session.userLog, {expires: new Date(Date.now() + 900000), httpOnly: true})
-            }
-            res.locals.user = req.session.userLog;
-            res.redirect('/user/register'); 
+                res.cookie('logSpellbook', req.session.userLog, {maxAge : (1000*60) * 20} )
+            }//{expires: new Date(Date.now() + 900000), httpOnly: true}
+            /* res.locals.user = req.session.userLog;
+ */
+            res.redirect('/user/profile'); 
         } else {
             res.render('users/login', {
                 errors: errors.mapped(),
-                session: req.session
+                session: req.session.userLog
             })
         }
     },
 
     signup: (req, res) => { res.render('users/signUp', {
-        session: req.session
+        session: req.session.userLog
     }) },
 
     createUser: (req, res) => {
@@ -49,7 +54,8 @@ module.exports = {
             let {
                 name,
                 email,
-                password
+                password,
+                
             } = req.body;
 
             let newUser = {
@@ -57,6 +63,7 @@ module.exports = {
                 nombre: name,
                 email: email,
                 contrasenia: bcrypt.hashSync(password.trim(), 10),
+                rol: "user"
             }
 
             user.push(newUser);
@@ -67,20 +74,19 @@ module.exports = {
         } else {
             res.render('users/signUp', {
                 errors: errors.mapped(),
-                session: req.session
+                session: req.session.userLog
             })
 
         }
-    },
-
-
-    
-    register: (req, res) => {
-        let userL = user.find(userL => userL.id === req.session.userLog.id) 
-
-        res.render('users/register',{
-            session: req.session,
-            userL
+    },    
+    profile: (req, res) => {
+        res.render('users/profile',{
+            session: req.session.userLog,
+           
         }) 
     },
+    logout: (req, res) => {
+        req.session.destroy();
+        res.redirect('/')
+    }
 }

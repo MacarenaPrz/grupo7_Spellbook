@@ -71,15 +71,16 @@
         <!-- MAGO PARA REGISTRARSE -->
         <div class="wizard">
           <% if (typeof session !== 'undefined') { %>
-            <a href="/user/register" class="wizard__image">
+            <a href="/user/profile" class="wizard__image">
                 <img src="/images/recursos/wizard-icon.png" width="20px" alt="">
-            </a>
-            <a href="/user/login" class="wizard__login">
-              <p>Aca tendria que ir un nombre </p>
+            </a>            
+            <a href="/user/profile" class="wizard__login">
+              <p><%= session.nombre %>  /</p>
            </a>
-           <a href="/user/signUp" class="wizard__login">
-               <p></p>
+           <a href="/user/logout" class="wizard__login">
+               <p> Cerrar sesión</p>
            </a>
+           
           <% } else { %>
             <a href="/user/login" class="wizard__image">
               <img src="/images/recursos/wizard-icon.png" width="20px" alt="">
