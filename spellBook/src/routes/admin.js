@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 let upload = require('../middleware/uploadProducts');
 let userSession = require('../middleware/userSession');
-let userAdmin = require('../middleware/userAdmin');
+let userAdminCheck = require('../middleware/userAdminCheck')
 
 let {
     admin,
@@ -12,8 +12,9 @@ let {
     deleteProduct
         } = require('../controllers/adminController');
 
+
 // Admin 
-router.get('/addProduct', userAdmin, admin);
+router.get('/addProduct', admin);
 // Admin, new product
 router.post('/addProduct', upload.single('imagen'), newProduct);
 // Admin, edit view
