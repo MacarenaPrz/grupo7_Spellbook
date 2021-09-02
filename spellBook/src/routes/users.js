@@ -4,10 +4,11 @@ const controller = require('../controllers/usersController');
 const sUpValidator = require('../middleware/signupValidator');
 const loginValidator = require('../middleware/loginValidator');
 let userSession = require('../middleware/userSession');
+let userSessionCheck = require('../middleware/userSessionCheck')
 
 
 // Registro 
-router.get('/signup', controller.signup);
+router.get('/signup', userSessionCheck, controller.signup);
 router.post('/signup', sUpValidator, controller.createUser);// logiarse y validaciones  
 
 // GET users listing
