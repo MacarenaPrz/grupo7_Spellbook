@@ -44,11 +44,7 @@
       <!-- REGISTRO E INICIO DE SESIÓN -->
       <div class="login">
         <a href="/user/signUp" class="login__btn">Registrate</a>
-<<<<<<< HEAD
-        <a href="/user" class="login__btn login--up">Iniciar sesion</a>
-=======
         <a href="/user/login" class="login__btn login--up">Iniciar sesion</a>
->>>>>>> 00271d5dfb3dad3849ca340c849a20234ce80403
       </div>
     </nav>
   
@@ -73,24 +69,30 @@
             <i class="fas fa-shopping-cart user__icon__desk"></i>
         </a>
         <!-- MAGO PARA REGISTRARSE -->
-        <div class="wizard">    
-          <% if (session !== undefined) { %>
-            <a href="/user/register" class="wizard__image">
+        <div class="wizard">
+          <% if (typeof session !== 'undefined') { %>
+            <a href="/user/profile" class="wizard__image">
                 <img src="/images/recursos/wizard-icon.png" width="20px" alt="">
-            </a>
+            </a>            
+            <a href="/user/profile" class="wizard__login">
+              <p><%= session.nombre %>  /</p>
+           </a>
+           <a href="/user/logout" class="wizard__login">
+               <p> Cerrar sesión</p>
+           </a>
+           
           <% } else { %>
             <a href="/user/login" class="wizard__image">
               <img src="/images/recursos/wizard-icon.png" width="20px" alt="">
-            </a>
+            </a>                        
+            <a href="/user/login" class="wizard__login">
+              <p>Ingresar / </p>
+           </a>
+           <a href="/user/signUp" class="wizard__login">
+               <p>Registrarse</p>
+           </a>
           <% } %>
-             
-           
-             <a href="/user/login" class="wizard__login">
-                <p>Ingresar / </p>
-             </a>
-             <a href="/user/signUp" class="wizard__login">
-                 <p>Registrarse</p>
-             </a>
+            
         </div>
     </div>
   

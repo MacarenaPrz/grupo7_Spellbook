@@ -13,7 +13,7 @@ let {
         } = require('../controllers/adminController');
 
 // Admin 
-router.get('/addProduct', userSession, userAdmin, admin);
+router.get('/addProduct', admin);
 // Admin, new product
 router.post('/addProduct', upload.single('imagen'), newProduct);
 // Admin, edit view
