@@ -138,7 +138,7 @@
         "nombre": "RaulEscobar",
         "email": "mail1@mail.com",
         "contrasenia": "$2a$10$.WbQ0VVN8S/4bGtmgz6n2..Yj3YlJMV2XZBlmA932IkGZiUuMfSFC",
-        "rol": "user"
+        "rol": "admin"
     },
     {
         "id": 14,

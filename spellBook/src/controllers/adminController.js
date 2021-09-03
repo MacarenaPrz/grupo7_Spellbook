@@ -4,9 +4,9 @@ const { product } = require('./indexController');
 
 module.exports={
     admin: (req, res) => {
-         res.render('admin/admin', {
-             
-             products
+         res.render('admin/admin', {             
+             products,
+             session: req.session.userLog
     })}, 
      newProduct: (req, res) => {
         let lastId = 1;
@@ -42,7 +42,8 @@ module.exports={
     editView:(req, res)=>{
         let idBook = products.find(book => book.id === +req.params.id);
         res.render("admin/editForm",{
-            idBook    
+            idBook,
+            session: req.session.userLog    
         })
     },
     editProduct:(req, res)=>{

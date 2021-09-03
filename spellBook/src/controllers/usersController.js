@@ -18,7 +18,8 @@ module.exports = {
             req.session.userLog = {
                 id: userLog.id,
                 email: userLog.email,
-                nombre: userLog.nombre
+                nombre: userLog.nombre,
+                rol: userLog.rol
             }
  
             if(req.body.recuerdame){
