@@ -1,12 +1,9 @@
 const {products, writeProductsJSON} = require('../dataBase/dataBase');
-const { product } = require('./indexController');
-/* const {validationResult, body} = require('express-validator'); */
 
 module.exports={
     admin: (req, res) => {
          res.render('admin/admin', {             
-             products,
-             session: req.session.userLog
+             products
     })}, 
      newProduct: (req, res) => {
         let lastId = 1;
@@ -42,8 +39,7 @@ module.exports={
     editView:(req, res)=>{
         let idBook = products.find(book => book.id === +req.params.id);
         res.render("admin/editForm",{
-            idBook,
-            session: req.session.userLog    
+            idBook    
         })
     },
     editProduct:(req, res)=>{
@@ -85,18 +81,3 @@ module.exports={
     } 
 
 }
-       /* 
-            else{
-             res.render('/admin', {errors: errors.mapped(), old: req.body})
-         } */
-
-
- /*  let errors = validationResult(req);
-        console.log(errors);
-        if(errors.isEmpty()){
-            let lastId = 1;
-            products.forEach(product => {
-			    if(product.id > lastId){
-				lastId = product.id
-			}
-		}); */

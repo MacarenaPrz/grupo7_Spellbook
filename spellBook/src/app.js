@@ -6,6 +6,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const methodOverride = require('method-override');
 const session = require('express-session');
+const inLogged = require('./middleware/inLogged')
 //Routers
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
@@ -26,6 +27,8 @@ app.use(session({ secret: "mySecret",
  resave: false,  
  saveUninitialized: false
 }));
+app.use(inLogged)
+
 
 //Ruter
 app.use('/', indexRouter); // home

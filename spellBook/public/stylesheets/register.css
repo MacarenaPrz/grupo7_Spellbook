@@ -146,7 +146,7 @@
 /* NACIMIENTO */
 .image-icon {
     position: relative;
-    bottom: 43px;
+    right: 24px;;
 }
 
 .user-date-inputs-date {
@@ -157,6 +157,7 @@
     max-height: 40px;
     background: transparent;
     border: none;
+    width: 70%;
    
 }
 

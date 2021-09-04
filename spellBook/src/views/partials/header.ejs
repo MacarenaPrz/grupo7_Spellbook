@@ -42,10 +42,18 @@
       </ul>
   
       <!-- REGISTRO E INICIO DE SESIÓN -->
-      <div class="login">
-        <a href="/user/signUp" class="login__btn">Registrate</a>
-        <a href="/user/login" class="login__btn login--up">Iniciar sesion</a>
-      </div>
+      <% if (locals.inLogged) { %>
+        <div class="login">
+          <a href="/user/profile" class="login__btn">Mi perfil</a>
+          <a href="/user/logout" class="login__btn login--up">Cerrar sesion</a>
+        </div>
+        <% } else { %>
+          <div class="login">
+            <a href="/user/signUp" class="login__btn">Registrate</a>
+            <a href="/user/login" class="login__btn login--up">Iniciar sesion</a>
+          </div>
+      <% } %>
+      
     </nav>
   
     <!-- HEADER VERSIÓN DESKTOP -->
@@ -70,12 +78,12 @@
         </a>
         <!-- MAGO PARA REGISTRARSE -->
         <div class="wizard">
-          <% if (typeof session !== 'undefined') { %>
+          <% if (locals.inLogged) { %>
             <a href="/user/profile" class="wizard__image">
                 <img src="/images/recursos/wizard-icon.png" width="20px" alt="">
             </a>            
             <a href="/user/profile" class="wizard__login">
-              <p><%= session.nombre %>  /</p>
+              <p><%= locals.userLog.nombre %>  /</p>
            </a>
            <a href="/user/logout" class="wizard__login">
                <p> Cerrar sesión</p>

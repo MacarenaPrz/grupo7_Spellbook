@@ -1,15 +1,10 @@
 const { user, writeUserJSON } = require('../dataBase/dataBase.js');
 const { validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
-const session = require('express-session');
-
 
 module.exports = {
     login: (req, res) => {       
-        res.render('users/login', {
-        session: req.session.userLog
-       
-    }) },
+        res.render('users/login') },
     processLogin: (req, res) => {
         
         let errors = validationResult(req);
@@ -23,10 +18,8 @@ module.exports = {
             }
  
             if(req.body.recuerdame){
-                res.cookie('logSpellbook', req.session.userLog, {maxAge : (1000*60) * 20} )
-            }//{expires: new Date(Date.now() + 900000), httpOnly: true}
-            /* res.locals.user = req.session.userLog;
- */
+                res.cookie('logSpellbook', req.session.userLog, {maxAge: (1000*60) * 60} )
+            }
             res.redirect('/user/profile'); 
         } else {
             res.render('users/login', {
@@ -74,8 +67,7 @@ module.exports = {
             res.redirect('/');
         } else {
             res.render('users/signUp', {
-                errors: errors.mapped(),
-                session: req.session.userLog
+                errors: errors.mapped()
             })
 
         }
@@ -87,6 +79,7 @@ module.exports = {
         }) 
     },
     logout: (req, res) => {
+        res.clearCookie('logSpellbook')
         req.session.destroy();
         res.redirect('/')
     }

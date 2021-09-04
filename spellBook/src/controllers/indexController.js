@@ -10,8 +10,7 @@ module.exports={
         res.render('index', {
             monthSelection,
             booksNovelties,
-            booksCarrousel,
-            session: req.session.userLog
+            booksCarrousel
         })},
     product: (req, res) => {
         let id =+req.params.id
@@ -20,8 +19,7 @@ module.exports={
 
         res.render('products/productDetail',{
             idBook: idBook[0],
-            relatedBook,
-            session: req.session.userLog
+            relatedBook
             
         })},
 
@@ -29,8 +27,7 @@ module.exports={
         session: req.session.userLog
     })},
     books: (req, res) => { res.render('products/books',{
-        products,
-        session: req.session.userLog
+        products
     })},
     novelties: (req, res) => { 
         let booksNovelties = products.slice(products.length-4);
@@ -39,12 +36,9 @@ module.exports={
      
         res.render('products/novelties', {
             booksNovelties,
-            booksRecommended,
-            session: req.session.userLog
+            booksRecommended
         })},
-    aboutUs: (req, res) => { res.render('aboutUs', {
-        session: req.session.userLog
-    })},
+    aboutUs: (req, res) => { res.render('aboutUs')},
     search: (req, res) => {
         /* Se guarda lo que manda el input en la variable sarch */
         let search = req.query.search.toLowerCase();
@@ -58,8 +52,7 @@ module.exports={
         /* En la vista le mandamos las dos variables asi las listamos */
 		res.render('products/resultSearch', {
 			search,
-			result,
-            session: req.session.userLog
+			result
 		})
 	},
 }
