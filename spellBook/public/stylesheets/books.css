@@ -1,6 +1,7 @@
 .month-selection-books {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
   }
   
   .month-selection-books .book {
@@ -47,7 +48,7 @@
         display: flex;
         margin: auto 40px;
         align-items: center;
-       
+        flex-direction: row;
        justify-content: space-between;
        align-items: center;
       }

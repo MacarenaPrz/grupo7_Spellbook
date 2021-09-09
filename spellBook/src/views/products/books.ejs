@@ -12,10 +12,10 @@
   <h1>Nuestros Libros</h1>
   <hr class="bg-blue">
 </div>
-
+<section class="month-selection-books">
 <% products.forEach(book => { %>
 
-<section class="month-selection-books">
+
   <article class="book">
     <div class="book-content">
       <a href="/product/<%= book.id %> ">
@@ -33,8 +33,9 @@
       </div>
    </div>
    </article>
+   <% }) %>
   </section>
-  <% }) %>
+  
 
 
 
