@@ -40,20 +40,28 @@
     color: var(--color-violeta);
   }
 
-
+  .month-selection-books .book .book-content .h5{
+    font-size: 20px;
+  }
 
 
 @media (min-width: 768px) {
     .month-selection-books {
         display: flex;
         margin: auto 40px;
-        align-items: center;
         flex-direction: row;
-       justify-content: space-between;
-       align-items: center;
+
       }
 
-      .month-selection-books .book{
-          margin: 0;
+      .month-selection-books .book .book-content{
+        margin: 80px 50px;
+        
       }
+
+      .month-selection-books .book .book-content .book-cover{
+        width: 250px;
+        height: 400px;
+      }
+
+
 }
