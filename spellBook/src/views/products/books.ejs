@@ -7,14 +7,15 @@
 <!-- HEADER -->
 <%- include('../partials/header') %> 
 
-<div class="nov-title">
+<div class="headline">
+  <img class="varita"src="/images/Recursos/varita.png" alt=" imágen de varita mágica">
   <h1>Nuestros Libros</h1>
   <hr class="bg-blue">
 </div>
 
 <% products.forEach(book => { %>
 
-<section class="month-selection">
+<section class="month-selection-books">
   <article class="book">
     <div class="book-content">
       <a href="/product/<%= book.id %> ">
