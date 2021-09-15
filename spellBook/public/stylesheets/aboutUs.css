@@ -5,7 +5,7 @@ body{background: var(--color-beige);
 .main-AboutUs .text-AboutUs {
   font-family: var(--font-roboto);
   font-size: 15px;
-  font-weight: 700;
+  font-weight: 7;
   display: flex;
   flex-direction: column;
   margin: 0 20px 0 20px;
