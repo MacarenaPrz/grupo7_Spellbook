@@ -12,11 +12,15 @@ body{background: var(--color-beige);
   text-align: justify;
   line-height:30px;
   align-items: center;
+  
 
 }
-
+.text-AboutUs .AboutUs-p {
+  width: 50%;
+}
 .main-AboutUs .text-AboutUs img {
   display: none;
+
 }
 
 .wizards{
