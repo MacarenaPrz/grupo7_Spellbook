@@ -111,7 +111,7 @@ padding-bottom: 3rem;
 
 .card .card-content .card-text .bio-text {
     color: var(--color-azulOscuro);
-    font-size: 1rem;
+    font-size: 0.9rem;
     position: absolute;
     top: 50%;
     left: 50%;
