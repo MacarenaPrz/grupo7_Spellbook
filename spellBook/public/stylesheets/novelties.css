@@ -1,6 +1,20 @@
-.nov-title{
-    margin: 20px;
+p{
+    font-size: 0.9rem;
+    font-weight: bold;
+    line-height: 20px;
 }
+
+p.m-1{
+    margin: 50px auto;
+    width: 80%;
+    font-size: 2rem;
+    line-height: 40px;
+    text-align: center;
+    font-weight: bolder;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
+
+}
+
 .nov-product {
     display: flex ;
     justify-content:space-evenly;
@@ -8,8 +22,9 @@
 }
 
 .nov-book {
-    width: 110px;
-    flex-shrink: 0;
+  margin: 0.5rem 2rem;
+  display: flex;
+  align-items: center;
 }
 .nov-description {
     display: flex;
@@ -31,6 +46,10 @@
 .nov-price {
     font-size: 1rem;
     color: var(--color-azulClaro);
+}
+
+.books__img{
+    width: 10rem;
 }
 
 @media (min-width:500px){
