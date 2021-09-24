@@ -1,0 +1,67 @@
+.month-selection-books {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .month-selection-books .book {
+    margin-top: 0;
+  }
+
+
+
+.month-selection-books .book .book-content {
+    margin: 3rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    
+    
+  }
+  
+  .month-selection-books .book .book-content .book-cover {
+    width: 200px;
+    height: 300px;
+  }
+  
+  .month-selection-books .book .book-content .book-price {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 15px;
+    font-size: var(--discounts-descriptions);
+    align-items: baseline;
+    
+  }
+  
+  .month-selection-books .book .book-content .book-price i {
+    margin-right: 5px;
+    color: var(--color-violeta);
+  }
+
+  .month-selection-books .book .book-content .h5{
+    font-size: 20px;
+  }
+
+
+@media (min-width: 768px) {
+    .month-selection-books {
+        display: flex;
+        margin: auto 40px;
+        flex-direction: row;
+
+      }
+
+      .month-selection-books .book .book-content{
+        margin: 80px 50px;
+        
+      }
+
+      .month-selection-books .book .book-content .book-cover{
+        width: 250px;
+        height: 400px;
+      }
+
+
+}
