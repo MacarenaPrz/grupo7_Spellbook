@@ -71,14 +71,10 @@ DROP TABLE IF EXISTS `book_images`;
 CREATE TABLE `book_images` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
-<<<<<<< HEAD
-  PRIMARY KEY (`id`)
-=======
   `book_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_5f5526cd-489d-4e0e-b4d7-5adb44d1520a` (`book_id`),
   CONSTRAINT `FK_5f5526cd-489d-4e0e-b4d7-5adb44d1520a` FOREIGN KEY (`book_id`) REFERENCES `books` (`id`)
->>>>>>> 931bf34 (cambio de nombres en models)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -104,12 +100,7 @@ CREATE TABLE `books` (
   `books_author` int(11) NOT NULL,
   `stock` int(11) NOT NULL,
   `price` int(11) NOT NULL,
-<<<<<<< HEAD
-  `description` varchar(255) DEFAULT NULL,
-  `image_id` int(11) DEFAULT NULL,
-=======
   `description` text DEFAULT NULL,
->>>>>>> 931bf34 (cambio de nombres en models)
   `recommendedAge_id` int(11) NOT NULL,
   `month_selection` binary(1) DEFAULT NULL,
   `publisher` varchar(100) DEFAULT NULL,
@@ -118,20 +109,11 @@ CREATE TABLE `books` (
   `pages` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_badd7c11-0e39-4679-97fc-7722f26d7f08` (`recommendedAge_id`),
-<<<<<<< HEAD
-  KEY `FK_d1a4d6e0-4179-4344-a22e-6df11ea53f6d` (`image_id`),
-=======
->>>>>>> 931bf34 (cambio de nombres en models)
   KEY `FK_05fa88a5-7108-479f-a100-2f3f72d9a9a8` (`stock`),
   KEY `FK_ab01af3e-f402-4878-b690-4573c7e0d3fb` (`books_author`),
   CONSTRAINT `FK_05fa88a5-7108-479f-a100-2f3f72d9a9a8` FOREIGN KEY (`stock`) REFERENCES `stocks` (`id`),
   CONSTRAINT `FK_ab01af3e-f402-4878-b690-4573c7e0d3fb` FOREIGN KEY (`books_author`) REFERENCES `books_authors` (`id`),
-<<<<<<< HEAD
-  CONSTRAINT `FK_badd7c11-0e39-4679-97fc-7722f26d7f08` FOREIGN KEY (`recommendedAge_id`) REFERENCES `recommendedages` (`id`),
-  CONSTRAINT `FK_d1a4d6e0-4179-4344-a22e-6df11ea53f6d` FOREIGN KEY (`image_id`) REFERENCES `book_images` (`id`)
-=======
   CONSTRAINT `FK_badd7c11-0e39-4679-97fc-7722f26d7f08` FOREIGN KEY (`recommendedAge_id`) REFERENCES `recommended_ages` (`id`)
->>>>>>> 931bf34 (cambio de nombres en models)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -188,11 +170,7 @@ CREATE TABLE `carts` (
   KEY `FK_52217f2b-2482-4c93-beb7-bb7ddfeec942` (`user_id`),
   KEY `FK_0762ef1c-dde7-479f-8ec7-06a274d748a8` (` purchaseDetail_id`),
   KEY `FK_af7ed11e-1b81-4001-b522-9c7f1802467c` (` payment_id`),
-<<<<<<< HEAD
-  CONSTRAINT `FK_0762ef1c-dde7-479f-8ec7-06a274d748a8` FOREIGN KEY (` purchaseDetail_id`) REFERENCES ` purchasedetails` (`id`),
-=======
   CONSTRAINT `FK_0762ef1c-dde7-479f-8ec7-06a274d748a8` FOREIGN KEY (` purchaseDetail_id`) REFERENCES `purchase_details` (`id`),
->>>>>>> 931bf34 (cambio de nombres en models)
   CONSTRAINT `FK_52217f2b-2482-4c93-beb7-bb7ddfeec942` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
   CONSTRAINT `FK_af7ed11e-1b81-4001-b522-9c7f1802467c` FOREIGN KEY (` payment_id`) REFERENCES ` payments` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -236,17 +214,6 @@ LOCK TABLES `favorite` WRITE;
 UNLOCK TABLES;
 
 --
-<<<<<<< HEAD
--- Table structure for table `recommendedages`
---
-
-DROP TABLE IF EXISTS `recommendedages`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `recommendedages` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nambre` varchar(50) NOT NULL,
-=======
 -- Table structure for table `purchase_details`
 --
 
@@ -286,27 +253,17 @@ DROP TABLE IF EXISTS `recommended_ages`;
 CREATE TABLE `recommended_ages` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
->>>>>>> 931bf34 (cambio de nombres en models)
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
-<<<<<<< HEAD
--- Dumping data for table `recommendedages`
---
-
-LOCK TABLES `recommendedages` WRITE;
-/*!40000 ALTER TABLE `recommendedages` DISABLE KEYS */;
-/*!40000 ALTER TABLE `recommendedages` ENABLE KEYS */;
-=======
 -- Dumping data for table `recommended_ages`
 --
 
 LOCK TABLES `recommended_ages` WRITE;
 /*!40000 ALTER TABLE `recommended_ages` DISABLE KEYS */;
 /*!40000 ALTER TABLE `recommended_ages` ENABLE KEYS */;
->>>>>>> 931bf34 (cambio de nombres en models)
 UNLOCK TABLES;
 
 --
@@ -348,11 +305,7 @@ CREATE TABLE `users` (
   `last_name` varchar(50) DEFAULT NULL,
   `email` varchar(50) NOT NULL,
   `country` varchar(50) DEFAULT NULL,
-<<<<<<< HEAD
-  `password` varchar(70) DEFAULT NULL,
-=======
   `password` varchar(70) NOT NULL,
->>>>>>> 931bf34 (cambio de nombres en models)
   `birthday` date DEFAULT NULL,
   `avatar` varchar(100) DEFAULT NULL,
   `rol` varchar(10) NOT NULL,
@@ -360,11 +313,7 @@ CREATE TABLE `users` (
   PRIMARY KEY (`id`),
   KEY `FK_0494c7ba-8ecf-49ee-966e-12c96c1070fd` (`shopping_id`),
   CONSTRAINT `FK_0494c7ba-8ecf-49ee-966e-12c96c1070fd` FOREIGN KEY (`shopping_id`) REFERENCES `favorite` (`id`)
-<<<<<<< HEAD
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
-=======
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
->>>>>>> 931bf34 (cambio de nombres en models)
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -373,10 +322,6 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-<<<<<<< HEAD
-INSERT INTO `users` VALUES (1,'raul','escobar','raul@mail.com','Argentina','123456',NULL,NULL,'admin',NULL);
-=======
->>>>>>> 931bf34 (cambio de nombres en models)
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -393,8 +338,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
-<<<<<<< HEAD
--- Dump completed on 2021-09-24 12:06:58
-=======
 -- Dump completed on 2021-09-27 11:34:29
->>>>>>> 931bf34 (cambio de nombres en models)
