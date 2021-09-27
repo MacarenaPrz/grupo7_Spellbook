@@ -26,7 +26,7 @@ module.exports = (sequelize,dataTypes) => {
         },
         password:{
             type: dataTypes.STRING(70),
-            allowNull: true
+            allowNull: false
         },
         birthday:{
             type: dataTypes.DATEONLY,
