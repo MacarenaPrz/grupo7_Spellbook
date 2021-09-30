@@ -3,7 +3,7 @@ let {products} = require('../dataBase/dataBase.js');
 module.exports={
     index: (req, res) => { 
         let monthSelection = products.filter(product => product.seleccionadoMes === 1);
-        let booksNovelties = products.slice(products.length-3);
+        let booksNovelties = products.slice(products.length-4);
         let mitadDeArray = products.length / 3;
         let booksCarrousel = products.slice(mitadDeArray, mitadDeArray + 5);
 
