@@ -28,10 +28,6 @@ module.exports = (sequelize,dataTypes) => {
             type: dataTypes.STRING(255),
             allowNull: true
         },
-        image_id:{
-            type: dataTypes.INTEGER(11),
-            allowNull: true
-        },
         recommendedAge_id:{
             type: dataTypes.INTEGER(11),
             allowNull: false
