@@ -3,26 +3,26 @@ module.exports = (sequelize,dataTypes) => {
 
     let cols = {
         id:{
-            type: dataTypes.INTEGER(11).UNSIGNED, //unsigned significa que no va permitir valores negativos
+            type: dataTypes.INTEGER(11), 
             allowNull: false,
             autoIncrement: true,
             primaryKey: true
         },
         name:{
-            type: dataTypes.STRING(50),
+            type: dataTypes.STRING(100),
             allowNull: false
         },
         last_name:{
-            type: dataTypes.STRING(50),
-            allowNull: true
+            type: dataTypes.STRING(100),
+            allowNull: false
         },
         email:{
-            type: dataTypes.STRING(50),
+            type: dataTypes.STRING(100),
             allowNull: false
         },
         country:{
             type: dataTypes.STRING(50),
-            allowNull: true
+            allowNull: false
         },
         password:{
             type: dataTypes.STRING(70),
@@ -30,38 +30,25 @@ module.exports = (sequelize,dataTypes) => {
         },
         birthday:{
             type: dataTypes.DATEONLY,
-            allowNull: true
+            allowNull: false
         },
         avatar:{
             type: dataTypes.STRING(100),
-            allowNull: true
-        },
-        rol:{
-            type: dataTypes.STRING(10),
             allowNull: false
         },
-        shopping_id:{
-            type: dataTypes.INTEGER(11),
-            allowNull: true
-        }
+        rol:{
+            type: dataTypes.STRING(50),
+            allowNull: false
+        },
+      
     }
+
     let config = {
-        tablename: "users",
+        tableName: "users",
         timestamps: false
     }
 
     const Users = sequelize.define(alias,cols,config)
-
-    Users.associate = models => {
-        Users.belongsTo(models.Favorites,{
-            as:"favorite",
-            foreignKey:"user_id"
-        })
-        Users.hasMany(models.Carts,{
-            as:"carts",
-            foreignKey:"user_id"
-        })
-    }
 
     return Users
 

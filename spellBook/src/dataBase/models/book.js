@@ -1,19 +1,19 @@
 module.exports = (sequelize,dataTypes) => {
-    let alias = "Books"
+    let alias = "Book"
 
     let cols = {
         id:{
-            type: dataTypes.INTEGER(11).UNSIGNED, //unsigned significa que no va permitir valores negativos
-            allowNull: false,
+            type: dataTypes.INTEGER(11), 
             autoIncrement: true,
-            primaryKey: true
+            primaryKey: true,
+            allowNull: false
         },
         title:{
             type: dataTypes.STRING(100),
             allowNull: false
         },
-        books_author:{
-            type: dataTypes.INTEGER(11).UNSIGNED,
+        author_id:{
+            type: dataTypes.INTEGER(11),
             allowNull: false
         },
         stock:{
@@ -25,71 +25,50 @@ module.exports = (sequelize,dataTypes) => {
             allowNull: false
         },
         description:{
-            type: dataTypes.STRING(255),
-            allowNull: true
+            type: dataTypes.TEXT,
+            allowNull: false
         },
-        image_id:{
-            type: dataTypes.INTEGER(11),
-            allowNull: true
+        image:{
+            type: dataTypes.STRING(100),
+            allowNull: false
         },
-        recommendedAge_id:{
+        recommended_age_id:{
             type: dataTypes.INTEGER(11),
             allowNull: false
         },
-        month_selection:{
-            type: dataTypes.BOOLEAN,
-            allowNull: true
-        },
         publisher:{
-            type: dataTypes.STRING(100),
-            allowNull: true
+            type: dataTypes.STRING(50),
+            allowNull: false
         },
-        lenguage:{
-            type: dataTypes.STRING(100),
+        language:{
+            type: dataTypes.STRING(20),
             allowNull: false
         },
         publication_year:{
-            type: dataTypes.DATEONLY,
+            type: dataTypes.INTEGER(11),
             allowNull: false
         },
         pages:{
             type: dataTypes.INTEGER(11),
-            allowNull: true
+            allowNull: false
         }
     }
+
     let config = {
-        tablename: "books",
+        tableName: "books",
         timestamps: false
     }
 
     const Books = sequelize.define(alias,cols,config)
 
     Books.associate = models => {
-        Books.hasMany(models.Book_Image,{
-            as:"book_images",
-            foreignKey:"image_id"
+        Books.belongsTo(models.Authors, {
+            as: 'author',
+            foreignKey: 'author_id'
         })
-        Books.belongsTo(models.Recommended_Ages,{
-            as:"recommended_ages",
-            foreignKey:"recommendedAge_id"
-        })
-        Books.belongsToMany(models.Users,{
-            as:"users",
-            through:"Favorites",
-            foreignKey: "book_id",
-            otherKey:"user_id",
-            timestamps: false
-        })
-        Books.belongsToMany(models.Authors,{
-            as:"authors",
-            through:"Books_Authors",
-            foreignKey: "books_author",
-            otherKey:"id_authors",
-            timestamps: false
-        })
-        Books.hasMany(models.Stock,{
-            as:"stocks",
-            foreignKey: "book_id"
+        Books.belongsTo(models.RecommendedAges, {
+            as: 'recommended_age',
+            foreignKey: 'recommended_age_id'
         })
     }
 
