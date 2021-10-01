@@ -8,3 +8,5 @@ insert into recommended_ages (age) values ('0 - 5');
 insert into recommended_ages (age) values ('6 - 10');
 insert into recommended_ages (age) values ('11 - 17');
 insert into recommended_ages (age) values ('+ 18');
+
+
