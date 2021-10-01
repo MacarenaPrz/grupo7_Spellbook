@@ -79,7 +79,7 @@ module.exports={
          } = req.body;
 
             db.Book.update({
-                title: titulo,
+            title: titulo,
             author_id: autor, 
 			stock: cantidad, 
 			price: precio,
