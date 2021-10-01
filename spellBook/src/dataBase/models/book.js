@@ -69,8 +69,8 @@ module.exports = (sequelize,dataTypes) => {
             as:"book_images",
             foreignKey:"image_id"
         })
-        Books.belongsTo(models.RecommendedAges,{
-            as:"recommendedages",
+        Books.belongsTo(models.Recommended_Ages,{
+            as:"recommended_ages",
             foreignKey:"recommendedAge_id"
         })
         Books.belongsToMany(models.Users,{

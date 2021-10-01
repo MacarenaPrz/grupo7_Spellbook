@@ -33,8 +33,8 @@ module.exports = (sequelize,dataTypes) => {
             as:"payments",
             foreignKey:"payment_id"
         })
-        Carts.belongsTo(models.PurchaseDetails,{
-            as:"purchasedetails",
+        Carts.belongsTo(models.Purchase_Details,{
+            as:"purchase_details",
             foreignKey:"purchaseDetail_id"
         })
         Carts.belongsTo(models.Users,{
