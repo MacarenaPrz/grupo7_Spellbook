@@ -3,15 +3,7 @@ const db = require('../database/models')
 
 module.exports={
     index: (req, res) => { 
-        db.Users.findAll()
-        .then(books => {      
-            res.send(books)
-    })
-
-
-
-
-       /*  let monthSelection = products.filter(product => product.seleccionadoMes === 1);
+         let monthSelection = products.filter(product => product.seleccionadoMes === 1);
         let booksNovelties = products.slice(products.length-4);
         let mitadDeArray = products.length / 3;
         let booksCarrousel = products.slice(mitadDeArray, mitadDeArray + 5);
@@ -20,7 +12,7 @@ module.exports={
             monthSelection,
             booksNovelties,
             booksCarrousel
-        }) */},
+        }) },
     product: (req, res) => {
         let id =+req.params.id
         let idBook = products.filter(book => book.id === id)

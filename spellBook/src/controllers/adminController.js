@@ -1,9 +1,25 @@
 const {products, writeProductsJSON} = require('../dataBase/dataBase');
+const db = require('../dataBase/models');
 
 module.exports={
     admin: (req, res) => {
-         res.render('admin/admin', {             
-             products
+       const products = db.Book.findAll()
+       const recommended_age = db.RecommendedAges.findAll()
+        const authors = db.Authors.findAll()
+
+        Promise.all([
+            products,
+            recommended_age,
+            authors
+        ])
+
+        .then(([products, recommended_age, authors] )=> {
+            res.render('admin/admin', {             
+                products,
+                recommended_age,
+                authors
+        })
+      
     })}, 
      newProduct: (req, res) => {
         let lastId = 1;

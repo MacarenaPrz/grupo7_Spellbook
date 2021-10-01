@@ -1,6 +1,7 @@
 const { user, writeUserJSON } = require('../dataBase/dataBase.js');
 const { validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
+const db = require('../dataBase/models')
 
 module.exports = {
     login: (req, res) => {       
@@ -9,18 +10,27 @@ module.exports = {
         
         let errors = validationResult(req);
         if(errors.isEmpty()){
-            let userLog = user.find(userL => userL.email === req.body.email)
-            req.session.userLog = {
-                id: userLog.id,
-                email: userLog.email,
-                nombre: userLog.nombre,
-                rol: userLog.rol
-            }
- 
-            if(req.body.recuerdame){
-                res.cookie('logSpellbook', req.session.userLog, {maxAge: (1000*60) * 60} )
-            }
-            res.redirect('/user/profile'); 
+            db.Users.findOne({
+                where: {
+                    email: req.body.email
+                }
+            })
+            .then(userLog => {
+                req.session.userLog = {
+                    id: userLog.id,
+                    email: userLog.email,
+                    nombre: userLog.nombre,
+                    rol: userLog.rol
+                }
+     
+                if(req.body.recuerdame){
+                    res.cookie('logSpellbook', req.session.userLog, {maxAge: (1000*60) * 60} )
+                }
+                res.redirect('/user/profile'); 
+                
+            })
+            .catch(err => console.log(err))
+            
         } else {
             res.render('users/login', {
                 errors: errors.mapped(),
@@ -38,12 +48,6 @@ module.exports = {
         let errors = validationResult(req);
 
         if (errors.isEmpty()) {
-            let idUser = 1;
-            user.forEach(element => {
-                if (element.id > idUser) {
-                    idUser = element.id
-                }
-            });
 
             let {
                 name,
@@ -52,19 +56,20 @@ module.exports = {
                 
             } = req.body;
 
-            let newUser = {
-                id: ++idUser,
-                nombre: name,
-                email: email,
-                contrasenia: bcrypt.hashSync(password.trim(), 10),
-                rol: "user"
-            }
+            db.Users.create({
+                name,
+                email,
+                password : bcrypt.hashSync(password.trim(), 10),
+                country : '',
+                birthday : '',
+                avatar : 'user-image.png',
+                rol: 'user'
+            })
+            .then(()=>{
+                res.redirect('/user/login')
+            })
+            .catch(err => console.log(err))
 
-            user.push(newUser);
-
-            writeUserJSON(user);
-
-            res.redirect('/');
         } else {
             res.render('users/signUp', {
                 errors: errors.mapped()
