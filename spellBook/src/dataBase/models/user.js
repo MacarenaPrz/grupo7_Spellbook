@@ -51,7 +51,7 @@ module.exports = (sequelize,dataTypes) => {
     }
 
     const Users = sequelize.define(alias,cols,config)
-
+/* 
     Users.associate = models => {
         Users.belongsTo(models.Favorites,{
             as:"favorite",
@@ -62,7 +62,7 @@ module.exports = (sequelize,dataTypes) => {
             foreignKey:"user_id"
         })
     }
-
+ */
     return Users
 
 }   

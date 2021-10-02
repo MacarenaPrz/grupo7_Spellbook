@@ -24,12 +24,12 @@ module.exports = (sequelize,dataTypes) => {
 
     const Stock = sequelize.define(alias,cols,config)
 
-    Stock.associate = models => {
+    /* Stock.associate = models => {
         Stock.belongsTo(models.Books,{
             as:"books",
             foreignKey:"book_id"
         })
-    }
+    } */
 
     return Stock
 

@@ -28,7 +28,7 @@ module.exports = (sequelize,dataTypes) => {
 
     const Carts = sequelize.define(alias,cols,config)
 
-    Carts.associate = models => {
+    /* Carts.associate = models => {
         Carts.belongsTo(models.Payments,{
             as:"payments",
             foreignKey:"payment_id"
@@ -41,7 +41,7 @@ module.exports = (sequelize,dataTypes) => {
             as:"users",
             foreignKey:"user_id"
         })
-    }
+    } */
 
     return Carts
 

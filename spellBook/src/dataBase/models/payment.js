@@ -20,12 +20,12 @@ module.exports = (sequelize,dataTypes) => {
 
     const Payments = sequelize.define(alias,cols,config)
 
-    Payments.associate = models => {
+    /* Payments.associate = models => {
         Payments.hasMany(models.Carts,{
             as:"carts",
             foreignKey:"payment_id"
         })
-    }
+    } */
 
     return Payments
 

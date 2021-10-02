@@ -1,17 +1,29 @@
 let {products} = require('../dataBase/dataBase.js');
+const db = require('../dataBase/models')
+const { Op } = require('sequelize')
 
 module.exports={
     index: (req, res) => { 
-        let monthSelection = products.filter(product => product.seleccionadoMes === 1);
+        let monthSelection = db.Books.findAll({ where: { month_selection: 1 }})
+        /* let booksNovelties = db.Books.findAll({ where: { [Op.between]: [1 , 4]}})
+        let booksCarrousel = db.Books.findAll({ where: { [Op.between]: [1 , 5]}}) */
+       /*  let monthSelection = products.filter(product => product.seleccionadoMes === 1);
         let booksNovelties = products.slice(products.length-3);
         let mitadDeArray = products.length / 3;
-        let booksCarrousel = products.slice(mitadDeArray, mitadDeArray + 5);
+        let booksCarrousel = products.slice(mitadDeArray, mitadDeArray + 5); */
 
-        res.render('index', {
-            monthSelection,
-            booksNovelties,
-            booksCarrousel
-        })},
+        Promise.all([monthSelection])
+        .then(([monthSelection, booksNovelties, booksCarrousel]) => {
+            console.log(monthSelection, booksNovelties, booksCarrousel)
+          /*   res.render('index', {
+                monthSelection,
+                booksNovelties,
+                booksCarrousel
+        }) */
+            
+        })
+        .catch(err => console.log(err))    
+    },
     product: (req, res) => {
         let id =+req.params.id
         let idBook = products.filter(book => book.id === id)

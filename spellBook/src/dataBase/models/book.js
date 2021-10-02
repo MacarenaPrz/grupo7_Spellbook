@@ -64,7 +64,7 @@ module.exports = (sequelize,dataTypes) => {
 
     const Books = sequelize.define(alias,cols,config)
 
-    Books.associate = models => {
+  /*   Books.associate = models => {
         Books.hasMany(models.Book_Image,{
             as:"book_images",
             foreignKey:"image_id"
@@ -92,7 +92,7 @@ module.exports = (sequelize,dataTypes) => {
             foreignKey: "book_id"
         })
     }
-
+ */
     return Books
 
 }   

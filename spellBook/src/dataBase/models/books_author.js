@@ -24,7 +24,7 @@ module.exports = (sequelize,dataTypes) => {
 
     const Books_Authors = sequelize.define(alias,cols,config)
 
-    Books_Authors.associate = models => {
+    /* Books_Authors.associate = models => {
         Books_Authors.belongsTo(models.Authors,{
             as:"authors",
             foreignKey:"id_authors"
@@ -33,7 +33,7 @@ module.exports = (sequelize,dataTypes) => {
             as:"books",
             foreignKey:"id_books"
         })
-    }
+    } */
 
     return Books_Authors
 

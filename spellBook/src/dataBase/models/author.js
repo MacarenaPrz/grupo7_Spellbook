@@ -20,12 +20,12 @@ module.exports = (sequelize,dataTypes) => {
 
     const Authors = sequelize.define(alias,cols,config)
 
-    Authors.associate = models => {
+    /* Authors.associate = models => {
         Authors.hasMany(models.Books_Authors,{
             as:"books_authors",
             foreignKey:"id_authors"
         })
-    }
+    } */
 
     return Authors
 }

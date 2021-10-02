@@ -30,12 +30,12 @@ module.exports = (sequelize,dataTypes) => {
     }
     const Purchase_Details = sequelize.define(alias,cols,config)
 
-    Purchase_Details.associate = models => {
+    /* Purchase_Details.associate = models => {
         Purchase_Details.hasMany(models.Carts,{
             as:"carts",
             foreignKey:"purchaseDetail_id"
         })
-    }
+    } */
 
     return Purchase_Details
 }

@@ -24,7 +24,7 @@ module.exports = (sequelize,dataTypes) => {
 
     const Favorites = sequelize.define(alias,cols,config)
 
-    Favorites.associate = models => {
+    /* Favorites.associate = models => {
         Favorites.belongsTo(models.Books,{
             as:"books",
             foreignKey:"book_id"
@@ -34,7 +34,7 @@ module.exports = (sequelize,dataTypes) => {
             foreignKey:"user_id"
         })
     
-    }
+    } */
 
     return Favorites
 
