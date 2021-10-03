@@ -178,5 +178,40 @@
         "idioma": "Castellano",
         "edicion": 2020,
         "pag": 256
+    },
+    {
+        "id": 14,
+        "titulo": "",
+        "autor": "1",
+        "cantidad": "",
+        "precio": "",
+        "imagen": "default-image.jpg"
+    },
+    {
+        "id": 15,
+        "titulo": "ergergergre",
+        "autor": "2",
+        "cantidad": "2",
+        "precio": "566",
+        "descripcion": "ergergaerg",
+        "imagen": "img-1633117593414.png"
+    },
+    {
+        "id": 16,
+        "titulo": "arwegaerg",
+        "autor": "4",
+        "cantidad": "2",
+        "precio": "654",
+        "descripcion": "aergargarg",
+        "imagen": "img-1633117917066.jpg"
+    },
+    {
+        "id": 17,
+        "titulo": "aergerg",
+        "autor": "4",
+        "cantidad": "2",
+        "precio": "89",
+        "descripcion": "eragaerg",
+        "imagen": "img-1633118002038.jpg"
     }
 ]

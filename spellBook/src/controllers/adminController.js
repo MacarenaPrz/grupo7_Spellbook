@@ -1,81 +1,129 @@
 const {products, writeProductsJSON} = require('../dataBase/dataBase');
+const db = require('../dataBase/models');
 
 module.exports={
     admin: (req, res) => {
-         res.render('admin/admin', {             
-             products
+       const products = db.Book.findAll()
+       const recommended_age = db.RecommendedAges.findAll()
+        const authors = db.Authors.findAll()
+
+        Promise.all([
+            products,
+            recommended_age,
+            authors
+        ])
+
+        .then(([products, recommended_age, authors] )=> {
+            res.render('admin/admin', {             
+                products,
+                recommended_age,
+                authors
+        })
+      
     })}, 
      newProduct: (req, res) => {
-        let lastId = 1;
-        
-		products.forEach(product => {
-			if(product.id > lastId){
-				lastId = product.id
-			}
-		}); // el codigo anterior con la variable lastID es para agregar el nuevo id al producto sin pisar ninguno
-       
         let {titulo,
             autor, 
 			cantidad, 
 			precio,
-			descripcion } = req.body;
+			descripcion,
+            recommended_age,
+            publisher,
+            language,
+            publication_year,
+            pages
+         } = req.body;
 
-            let newProduct = {
-                id: lastId + 1,
-                titulo, 
-                autor,
-                cantidad,
-                precio,
-                descripcion,
-                imagen: req.file?req.file.filename:"default-image.jpg"};
+         db.Book.create({
+            title: titulo,
+            author_id: autor, 
+			stock: cantidad, 
+			price: precio,
+			description: descripcion,
+            recommended_age_id : recommended_age,
+            publisher,
+            language,
+            publication_year,
+            pages,
+            image: req.file?req.file.filename:"default-image.jpg"
+         })
+         .then(()=>{
+             res.redirect('/admin/addProduct')
+         })
 
-            products.push(newProduct);
-            writeProductsJSON(products);
-    
-            res.redirect('/admin/addProduct');
+         .catch(err => console.log(err));
 
                 
     },
     editView:(req, res)=>{
-        let idBook = products.find(book => book.id === +req.params.id);
-        res.render("admin/editForm",{
-            idBook    
+        db.Book.findByPk(req.params.id) 
+        .then(book=>{
+          return res.render("admin/editForm",{
+                idBook : book    
+            })
+
         })
+        
     },
     editProduct:(req, res)=>{
         let {titulo,
             autor, 
 			cantidad, 
 			precio,
-			descripcion } = req.body;
+			descripcion,
+            recommended_age,
+            publisher,
+            language,
+            publication_year,
+            pages
+         } = req.body;
 
-        products.forEach(product => {
-            if(product.id === +req.params.id){
-                product.id = product.id,
-                product.titulo = titulo,
-                product.autor = autor,
-                product.cantidad = cantidad,
-                product.precio = precio,
-                product.descripcion = descripcion,
-                product.imagen = req.file?req.file.filename: product.imagen 
+            db.Book.update({
+            title: titulo,
+            author_id: autor, 
+			stock: cantidad, 
+			price: precio,
+			description: descripcion,
+            recommended_age_id : recommended_age,
+            publisher,
+            language,
+            publication_year,
+            pages,
+            image: req.file?req.file.filename:"default-image.jpg"
+            },
+            {
+                where: {
+                    id: req.params.id
                 }
             })
-        writeProductsJSON(products);
-        res.redirect("/admin/addProduct")
+            .then(()=>{
+                res.redirect('/product')
+            })
+
+
     },
     deleteProduct: (req, res) =>{
-        products.forEach(product =>{
-            if(product.id == +req.params.id){
-                let eraseProduct = products.indexOf(product)
-                products.splice(eraseProduct, 1)
-               
+        db.Book.destroy({
+            where: {
+                id: req.params.id
             }
         })
+        .then(()=>{
+            res.redirect('/product')
+        })
+
+        // products.forEach(product =>{
+        //     if(product.id == +req.params.id){
+        //         let eraseProduct = products.indexOf(product)
+        //         products.splice(eraseProduct, 1)
+               
+        //     }
+       // })
 
        
-        writeProductsJSON(products);
+        // writeProductsJSON(products);
     
-        res.redirect('/admin/addProduct');
+        // res.redirect('/admin/addProduct');
 
 
     } 

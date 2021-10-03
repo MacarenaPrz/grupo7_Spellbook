@@ -59,7 +59,6 @@
               <th>Imagen</th>
               <th class="description-on">Descripcion</th>
               <th>Título</th>
-              <th>Autor</th>
               <th>Cantidad</th>
               <th>Precio</th>
               <th>Estado</th>
@@ -72,12 +71,11 @@
                 <% products.forEach(book => { %>
                 <tr>
                   <td><input type="checkbox"></td>
-                  <td><img src="/images/Libros/<%= book.imagen%>"></td>
-                  <td class="description-on"><%=  book.descripcion.slice(0 , 200) %> ...</td>
-                  <td><%= book.titulo%></td>
-                  <td><%= book.autor%></td>
-                  <td><%= book.cantidad%></td>
-                  <td><%= book.precio%></td>
+                  <td><img src="/images/Libros/<%= book.image%>"></td>
+                  <td class="description-on"><%=  book.description.slice(0 , 200) %> ...</td>
+                  <td><%= book.title%></td>
+                  <td><%= book.stock%></td>
+                  <td><%= book.price%></td>
                   <td>Activo</td>
                   <td>
                     <a href="/admin/editProduct/<%= book.id %>" class="button-edit">
@@ -120,16 +118,15 @@
             />
           </fieldset>
           <fieldset>
-            <label for="autor">Autor :</label>
-            <input
-              type="text"
-              name="autor"
-              id="autor"  
-              
-            />
+            <label for="autor">Autor:</label>
+            <select name="autor" id="" class="select-fcm border-fcm">
+              <% authors.forEach(author => { %>
+                  <option value="<%= author.id %>" ><%= author.name %></option>
+              <% }); %>
+          </select>
           </fieldset>
           <fieldset>
-            <label for="amount">Cantidad :</label>
+            <label for="amount">Stock:</label>
             <input
               type="number"
               name="cantidad"
@@ -138,7 +135,7 @@
             />
           </fieldset>
           <fieldset>
-            <label for="price">Precio :</label>
+            <label for="price">Precio:</label>
             <input
                 type="text"
                 id="price"
@@ -147,15 +144,72 @@
             />
           </fieldset>
           <fieldset>
-            <label for="descripcion">Descripción :</label>
+            <label for="descripcion">Descripción:</label>
             <input
               type="textarea"
               name="descripcion"
-              id="descripion"
+              id="description"
               
               
             />
           </fieldset>
+
+          <fieldset>
+            <label for="descripcion">Edad Recomendada:</label>
+            <select name="recommended_age" id="" class="select-fcm border-fcm">
+              <% recommended_age.forEach(age => { %>
+                  <option value="<%= age.id %>"><%= age.age %></option>
+              <% }); %>
+          </select>
+          </fieldset>
+
+          <fieldset>
+            <label for="descripcion">Editorial:</label>
+            <input
+              type="textarea"
+              name="publisher"
+              id="publisher"
+              
+              
+            />
+          </fieldset>
+
+          <fieldset>
+            <label for="descripcion">Idioma:</label>
+            <input
+              type="textarea"
+              name="language"
+              id="language"
+              
+              
+            />
+          </fieldset>
+
+          <fieldset>
+            <label for="descripcion">Año de Publicación:</label>
+            <input
+              type="textarea"
+              name="publication_year"
+              id="publication_year"
+              
+              
+            />
+          </fieldset>
+
+          <fieldset>
+            <label for="descripcion">Nro de Páginas:</label>
+            <input
+              type="textarea"
+              name="pages"
+              id="pages"
+              
+              
+            />
+          </fieldset>
+
+
+
+          
           <fieldset>
             <input class="delete" type="reset" value="Borrar">
             <button class="display-shop" type="submit" > Guardar</button>

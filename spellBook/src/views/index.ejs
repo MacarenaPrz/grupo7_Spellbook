@@ -12,7 +12,7 @@
     <div class="carrousel">
 
       <% booksCarrousel.forEach((book, i) => { %>
-        <a href="/product/<%= book.id %>"><img src="/images/Libros/<%=book.imagen%>" alt="" class="carrousel-book"></a>
+        <a href="/product/<%= book.id %>"><img src="/images/Libros/<%=book.image%>" alt="" class="carrousel-book"></a>
       <% }) %>
 
     </div>
@@ -26,22 +26,22 @@
       <input type="radio" name="testimonial" id="t-5">
       <div class="testimonials">
         <label class="item" for="t-1">
-          <img src="/images/Libros/<%= booksCarrousel[0].imagen %>" alt="picture">
+          <img src="/images/Libros/<%= booksCarrousel[0].image %>" alt="picture">
         </label>
         <label class="item" for="t-2">
-          <img src="/images/Libros/<%= booksCarrousel[1].imagen %>" alt="picture">
+          <img src="/images/Libros/<%= booksCarrousel[1].image %>" alt="picture">
   
         </label>
         <label class="item" for="t-3">
-          <img src="/images/Libros/<%= booksCarrousel[2].imagen %>" alt="picture">
+          <img src="/images/Libros/<%= booksCarrousel[2].image %>" alt="picture">
         
         </label>
         <label class="item" for="t-4">
-          <img src="/images/Libros/<%= booksCarrousel[3].imagen %>" alt="picture">
+          <img src="/images/Libros/<%= booksCarrousel[3].image %>" alt="picture">
           
         </label>
         <label class="item" for="t-5">
-          <img src="/images/Libros/<%= booksCarrousel[4].imagen %>" alt="picture">
+          <img src="/images/Libros/<%= booksCarrousel[4].image %>" alt="picture">
         </label>
       </div>
       <div class="dots">
@@ -109,7 +109,7 @@
       <article class="book">
         <div class="book-content">
           <a href="/product/<%= book.id %> ">
-            <img class="book-cover" src="/images/Libros/<%= book.imagen %> " alt="Portada de 'El temor de un hombre sabio'">
+            <img class="book-cover" src="/images/Libros/<%= book.image %> " alt="Portada de 'El temor de un hombre sabio'">
           </a>
           <h3><%= book.titulo %> </h3>
           <h5><%= book.autor %> </h5>
@@ -142,7 +142,7 @@
       <article class="book">
         <div class="book-content">
           <a href="/product/<%= book.id %> ">
-            <img class="book-cover" src="/images/Libros/<%= book.imagen %> " alt="Portada de 'El temor de un hombre sabio'">
+            <img class="book-cover" src="/images/Libros/<%= book.image %> " alt="Portada de 'El temor de un hombre sabio'">
           </a>
           <h3><%= book.titulo %> </h3>
           <h5><%= book.autor %> </h5>
