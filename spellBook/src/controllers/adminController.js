@@ -2,7 +2,7 @@ const db = require('../dataBase/models');
 
 module.exports={
     admin: (req, res) => {
-        const products = db.Book.findAll()
+        const products = db.Book.findAll({ order: [[ "id", "DESC"]]})
         const recommended_age = db.RecommendedAges.findAll()
         const authors = db.Authors.findAll()
 

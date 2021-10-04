@@ -40,7 +40,7 @@ module.exports = {
         })
     },
     books: (req, res) => {
-        db.Book.findAll()
+        db.Book.findAll({ limit : 9 })
         .then(products => {
             res.render('products/books', {
                 products
@@ -65,7 +65,8 @@ module.exports = {
         let search = req.query.search.toLowerCase();
        
         db.Book.findAll({
-            where: { title : {[Op.substring]: search } }
+            where: { title : {[Op.substring]: search } },
+            limit : 9
         })
         .then(result => {
             res.render('products/resultSearch', {
