@@ -1,12 +1,11 @@
-let { products } = require('../dataBase/dataBase.js');
 const db = require('../database/models');
 const { Op } = require('sequelize')
 
 module.exports = {
     index: (req, res) => {
-        const monthSelection = db.Book.findAll({ where: { id: [1, 6, 3] } })
-        const booksCarrousel = db.Book.findAll({ where: { id: [1, 6, 3, 4, 5] } })
-        const booksNovelties = db.Book.findAll({ where: { id: [1, 6, 3, 4, 5] } })
+        const monthSelection = db.Book.findAll({ where: { id: [1, 6, 3] }, include: [{ association: "author"}] })
+        const booksCarrousel = db.Book.findAll({ where: { id: [1, 6, 3, 4, 5] }, include: [{ association: "author"}]  })
+        const booksNovelties = db.Book.findAll({ where: { id: [7, 8, 9, 10] }, include: [{ association: "author"}]  })
         Promise.all([monthSelection, booksCarrousel, booksNovelties])
             .then(([monthSelection, booksCarrousel, booksNovelties]) => {
                 res.render('index', {
@@ -47,7 +46,6 @@ module.exports = {
                 products
             })
         })
-      
     },
     novelties: (req, res) => {
         const booksNovelties = db.Book.findAll({ where: { id: [1, 3, 4, 5 ] } })
@@ -59,7 +57,7 @@ module.exports = {
                 booksNovelties,
                 booksRecommended
             })
-        })       
+        })
     },
     aboutUs: (req, res) => { res.render('aboutUs') },
     search: (req, res) => {

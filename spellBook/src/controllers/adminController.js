@@ -1,17 +1,12 @@
-const {products, writeProductsJSON} = require('../dataBase/dataBase');
 const db = require('../dataBase/models');
 
 module.exports={
     admin: (req, res) => {
-       const products = db.Book.findAll()
-       const recommended_age = db.RecommendedAges.findAll()
+        const products = db.Book.findAll()
+        const recommended_age = db.RecommendedAges.findAll()
         const authors = db.Authors.findAll()
 
-        Promise.all([
-            products,
-            recommended_age,
-            authors
-        ])
+        Promise.all([ products, recommended_age, authors ])
 
         .then(([products, recommended_age, authors] )=> {
             res.render('admin/admin', {             
@@ -34,7 +29,7 @@ module.exports={
             pages
          } = req.body;
 
-         db.Book.create({
+        db.Book.create({
             title: titulo,
             author_id: autor, 
 			stock: cantidad, 
@@ -46,22 +41,21 @@ module.exports={
             publication_year,
             pages,
             image: req.file?req.file.filename:"default-image.jpg"
-         })
-         .then(()=>{
+        })
+        .then(()=>{
              res.redirect('/admin/addProduct')
-         })
-
-         .catch(err => console.log(err));
-
-                
+        })
+        .catch(err => console.log(err));               
     },
     editView:(req, res)=>{
-        db.Book.findByPk(req.params.id) 
-        .then(book=>{
+        const authors = db.Authors.findAll()
+        const idBook = db.Book.findByPk(req.params.id) 
+        Promise.all([ authors, idBook])
+        .then(([ authors, idBook ])=>{
           return res.render("admin/editForm",{
-                idBook : book    
+                idBook, 
+                authors    
             })
-
         })
         
     },
@@ -78,7 +72,7 @@ module.exports={
             pages
          } = req.body;
 
-            db.Book.update({
+        db.Book.update({
             title: titulo,
             author_id: autor, 
 			stock: cantidad, 
@@ -90,17 +84,13 @@ module.exports={
             publication_year,
             pages,
             image: req.file?req.file.filename:"default-image.jpg"
-            },
-            {
-                where: {
-                    id: req.params.id
-                }
-            })
-            .then(()=>{
-                res.redirect('/product')
-            })
-
-
+        },
+        {
+            where: {
+                id: req.params.id
+            }
+        })
+        .then(()=>{ res.redirect( '/product' )})
     },
     deleteProduct: (req, res) =>{
         db.Book.destroy({
@@ -111,21 +101,5 @@ module.exports={
         .then(()=>{
             res.redirect('/product')
         })
-
-        // products.forEach(product =>{
-        //     if(product.id == +req.params.id){
-        //         let eraseProduct = products.indexOf(product)
-        //         products.splice(eraseProduct, 1)
-               
-        //     }
-       // })
-
-       
-        // writeProductsJSON(products);
-    
-        // res.redirect('/admin/addProduct');
-
-
     } 
-
 }

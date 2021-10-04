@@ -1,4 +1,3 @@
-const { user, writeUserJSON } = require('../dataBase/dataBase.js');
 const { validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
 const db = require('../dataBase/models')
@@ -11,9 +10,7 @@ module.exports = {
         let errors = validationResult(req);
         if(errors.isEmpty()){
             db.Users.findOne({
-                where: {
-                    email: req.body.email
-                }
+                where: { email: req.body.email }
             })
             .then(userLog => {
                 req.session.userLog = {
@@ -29,8 +26,7 @@ module.exports = {
                 res.redirect('/user/profile'); 
                 
             })
-            .catch(err => console.log(err))
-            
+            .catch(err => console.log(err))            
         } else {
             res.render('users/login', {
                 errors: errors.mapped(),
@@ -38,22 +34,16 @@ module.exports = {
             })
         }
     },
-
     signup: (req, res) => { res.render('users/signUp', {
         session: req.session.userLog
     }) },
-
     createUser: (req, res) => {
-
         let errors = validationResult(req);
-
         if (errors.isEmpty()) {
-
             let {
                 name,
                 email,
-                password,
-                
+                password,                
             } = req.body;
 
             db.Users.create({
@@ -69,18 +59,15 @@ module.exports = {
                 res.redirect('/user/login')
             })
             .catch(err => console.log(err))
-
         } else {
             res.render('users/signUp', {
                 errors: errors.mapped()
             })
-
         }
     },    
     profile: (req, res) => {
         res.render('users/profile',{
-            session: req.session.userLog,
-           
+            session: req.session.userLog,           
         }) 
     },
     logout: (req, res) => {

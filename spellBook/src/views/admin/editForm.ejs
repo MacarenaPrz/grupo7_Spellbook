@@ -56,17 +56,16 @@
               type="text"
               name="titulo"
               id="title"
-              value="<%= idBook.titulo %> "
+              value="<%= idBook.title %> "
             />
           </fieldset>
           <fieldset class="user-data">
             <label for="autor">Autor:</label>
-            <input
-              type="text"
-              name="autor"
-              id="autor"  
-              value="<%= idBook.autor %> "
-            />
+            <select name="autor" id="autor" class="select-fcm border-fcm" >
+              <% authors.forEach(author => { %>
+                  <option value="<%= author.id %>" ><%= author.name %></option>
+              <% }); %>
+          </select>
           </fieldset>
           <fieldset class="user-data">
             <label for="amount">Cantidad:</label>
@@ -74,7 +73,7 @@
               type="number"
               name="cantidad"
               id="amount"
-              value="<%= idBook.cantidad %>"
+              value="<%= idBook.stock %>"
             />
           </fieldset>
           <fieldset class="user-data">
@@ -83,7 +82,7 @@
                 type="text"
                 id="price"
                 name="precio"
-                value="<%= idBook.precio %>"
+                value="<%= idBook.price %>"
             />
           </fieldset>
           <fieldset class="user-data">
@@ -92,7 +91,7 @@
               type="textarea"
               name="descripcion"
               id="descripcion"
-              value="<%= idBook.descripcion %>"              
+              value="<%= idBook.description %>"              
             />
           </fieldset>
           <fieldset>
