@@ -9,31 +9,31 @@
     <main class="main">
       <section class="product">
         <article class="item">
-          <h2 class="item__title"><%=idBook.titulo%></h2>
+          <h2 class="item__title"><%=idBook.title%></h2>
           <figure class="item__img">
             <img
-              src="/images/libros/<%=idBook.imagen%>"
+              src="/images/libros/<%=idBook.image%>"
               alt=""
             />
           </figure>
           <div class="descriptions">
             <p class="descriptions__text">
-              Precio: <span class="description--gray">$<%= idBook.precio %> </span>
+              Precio: <span class="description--gray">$<%= idBook.price %> </span>
             </p>
             <p class="descriptions__text">
-              Autor: <span class="description--gray"><%= idBook.autor %></span>
+              Autor: <span class="description--gray"><%= idBook.author.name %></span>
             </p>
             <p class="descriptions__text">
-              Editorial:<span class="description--gray"><%= idBook.editorial %></span>
+              Editorial:<span class="description--gray"><%= idBook.publisher %></span>
             </p>
             <p class="descriptions__text">
-              Año de edicion:<span class="description--gray"><%= idBook.edicion %></span>
+              Año de edicion:<span class="description--gray"><%= idBook.publication_year %></span>
             </p>
             <p class="descriptions__text">
-              Idioma:<span class="description--gray"><%= idBook.idioma %></span>
+              Idioma:<span class="description--gray"><%= idBook.language %></span>
             </p>
             <p class="descriptions__text">
-              Cantidad de páginas:<span class="description--gray"><%= idBook.pag %></span>
+              Cantidad de páginas:<span class="description--gray"><%= idBook.pages %></span>
             </p>
           </div>
           <div class="card__box">
@@ -44,7 +44,7 @@
           <div class="descriptions descriptions--top">
             <h3 class="descriptions__title">Sinopsis</h3>
             <p class="descriptions__paragraph">
-              <%= idBook.descripcion %>
+              <%= idBook.description %>
             </p>
           </div>
         </article>
@@ -54,8 +54,8 @@
 
           <% relatedBook.forEach(book => { %>
             <figure class="books">
-              <img class="books__img book-cover" src="/images/libros/<%= book.imagen %> " alt="">
-                <a href="" class="books__title"><%= book.titulo %> </a>
+              <img class="books__img book-cover" src="/images/libros/<%= book.image %> " alt="">
+                <a href="" class="books__title"><%= book.title %> </a>
             </figure>
           <% }) %>
           

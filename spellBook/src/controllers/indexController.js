@@ -1,74 +1,80 @@
-let {products} = require('../dataBase/dataBase.js');
-const db = require('../dataBase/models');
-const { Op } = require('sequelize');
+const db = require('../database/models');
+const { Op } = require('sequelize')
 
-module.exports={
-    index: (req, res) => { 
-        let monthSelection = db.Books.findAll({
-            where : { month_selection : 1 }
-        })       
-        let booksNovelties = db.Books.findAll({
-                order : [["id" , "DESC"]],
-                limit : 3 
+module.exports = {
+    index: (req, res) => {
+        const monthSelection = db.Book.findAll({ where: { id: [1, 6, 3] }, include: [{ association: "author"}] })
+        const booksCarrousel = db.Book.findAll({ where: { id: [1, 6, 3, 4, 5] }, include: [{ association: "author"}]  })
+        const booksNovelties = db.Book.findAll({ where: { id: [7, 8, 9, 10] }, include: [{ association: "author"}]  })
+        Promise.all([monthSelection, booksCarrousel, booksNovelties])
+            .then(([monthSelection, booksCarrousel, booksNovelties]) => {
+                res.render('index', {
+                    monthSelection,
+                    booksNovelties,
+                    booksCarrousel
+                })
             })
-        let booksCarrousel = db.Books.findAll({ offset: 5, limit: 5 })
-        
-        Promise.all([monthSelection, booksNovelties, booksCarrousel ])
-        .then(([monthSelection, booksNovelties, booksCarrousel]) => {
-            res.render('index', {
-                monthSelection ,
-                booksNovelties,
-                booksCarrousel
+    },
+    product: (req, res) => {
+        let id = +req.params.id
+        db.Book.findAll({
+            where: { id: id },
+            include: [{
+                association: "author",
+                include: [{
+                    association: "books"
+                }]
+            }]
+        })
+        .then(idBook => {
+            res.render('products/productDetail', {
+                idBook: idBook[0],
+                relatedBook: idBook[0].author.books
             })
         })
-        //let monthSelection = products.filter(product => product.seleccionadoMes === 1);
-        //let booksNovelties = products.slice(products.length-3);
-        //let mitadDeArray = products.length / 3;
-        //let booksCarrousel = products.slice(mitadDeArray, mitadDeArray + 5);
+    },
 
-       },
-    product: (req, res) => {
-        let id =+req.params.id
-        let idBook = products.filter(book => book.id === id)
-        let relatedBook = products.filter(book => book.autor === idBook[0].autor);
+    cart: (req, res) => {
+        res.render('products/shoppingCart', {
+            session: req.session.userLog
+        })
+    },
+    books: (req, res) => {
+        db.Book.findAll()
+        .then(products => {
+            res.render('products/books', {
+                products
+            })
+        })
+    },
+    novelties: (req, res) => {
+        const booksNovelties = db.Book.findAll({ where: { id: [1, 3, 4, 5 ] } })
+        const booksRecommended = db.Book.findAll({ where: { id: [ 3, 4, 5 ] } })
 
-        res.render('products/productDetail',{
-            idBook: idBook[0],
-            relatedBook
-            
-        })},
-
-    cart: (req, res) => { res.render('products/shoppingCart', {
-        session: req.session.userLog
-    })},
-    books: (req, res) => { res.render('products/books',{
-        products
-    })},
-    novelties: (req, res) => { 
-        let booksNovelties = products.slice(products.length-4);
-        let booksRecommended = products.filter(product => product.seleccionadoMes == 1);
-
-     
-        res.render('products/novelties', {
-            booksNovelties,
-            booksRecommended
-        })},
-    aboutUs: (req, res) => { res.render('aboutUs')},
+        Promise.all([ booksNovelties, booksRecommended ])
+        .then(([ booksNovelties, booksRecommended ]) => {
+            res.render('products/novelties', {
+                booksNovelties,
+                booksRecommended
+            })
+        })
+    },
+    aboutUs: (req, res) => { res.render('aboutUs') },
     search: (req, res) => {
         /* Se guarda lo que manda el input en la variable sarch */
         let search = req.query.search.toLowerCase();
-        /* En la variable result vamos a pushear todo lo que coincida con search */
-		let result = [];
-		products.forEach( product => {
-			if(product.titulo.toLowerCase().includes(search)){
-				result.push(product)
-			}
-		});
+       
+        db.Book.findAll({
+            where: { title : {[Op.substring]: search } }
+        })
+        .then(result => {
+            res.render('products/resultSearch', {
+                search,
+                result
+            })
+        })
         /* En la vista le mandamos las dos variables asi las listamos */
-		res.render('products/resultSearch', {
-			search,
-			result
-		})
-	},
+        
+    },
 }
 

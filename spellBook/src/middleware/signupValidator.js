@@ -1,22 +1,25 @@
 const { body } = require('express-validator');
-const { user } = require('../dataBase/dataBase.js')
+const { user } = require('../dataBase/dataBase.js');
+const db = require('../dataBase/models')
+
 
 module.exports = [
     body('name')
         .notEmpty().withMessage('Este campo no puede quedar vacio').bail()
         .isLength({ min: 3 }).withMessage('minimo de 3 caracteres'),
 
-    body('email')
-        .notEmpty().withMessage('Este campo no puede quedar vacio').bail()
-        .isEmail().withMessage('Debes ingresar un email válido').bail()
-        .custom(value => {
-            let validEmail = user.filter(element => element.email == value)
-            if (validEmail == false) {
-                return true
-            } else {
-                return false
-            }
-        }).withMessage('El email ya está registrado'),
+        body('email').custom(value => {
+            return db.Users.findOne({
+                where : {
+                    email: value
+                }
+            })
+            .then(user => {
+                if(user){
+                    return Promise.reject("El email ya esta registrado")
+                }
+            })
+            }),
 
     body('password')
         .notEmpty().withMessage('Debes escribir tu contraseña').bail()

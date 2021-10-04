@@ -18,18 +18,18 @@
     
     <div class="nov-product">
       <figure class="nov-book">
-        <img class="books__img book-cover" src="images/libros/<%= book.imagen%>" alt="">       
+        <img class="books__img book-cover" src="images/libros/<%= book.image%>" alt="">       
       </figure>
       <div class="nov-description">
         <p class="nov-text">      
-            <% let descriptionLow = book.descripcion.slice(0 , 250) %>
+            <% let descriptionLow = book.description.slice(0 , 250) %>
             <%= descriptionLow %> ...               
         </p>
         <p class="nov-text-d">
-          <%= book.descripcion %>
+          <%= book.description %>
         </p>
-        <a class="nov-autor" href=""><%= book.autor %> </a>
-        <span class="nov-price">$ <%= book.precio %> </span>
+        <a class="nov-autor" href=""><%= book.author %> </a>
+        <span class="nov-price">$ <%= book.price %> </span>
       </div>
     </div>
     <% }) %>
