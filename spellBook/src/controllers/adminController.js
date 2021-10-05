@@ -48,11 +48,13 @@ module.exports={
         .catch(err => console.log(err));               
     },
     editView:(req, res)=>{
+        const recommended_age = db.RecommendedAges.findAll()
         const authors = db.Authors.findAll()
         const idBook = db.Book.findByPk(req.params.id) 
-        Promise.all([ authors, idBook])
-        .then(([ authors, idBook ])=>{
+        Promise.all([ recommended_age, authors, idBook])
+        .then(([ recommended_age, authors, idBook ])=>{
           return res.render("admin/editForm",{
+                recommended_age,
                 idBook, 
                 authors    
             })
