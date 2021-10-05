@@ -5,9 +5,10 @@ module.exports = {
     index: (req, res) => {
         const monthSelection = db.Book.findAll({ where: { id: [1, 6, 3] }, include: [{ association: "author"}] })
         const booksCarrousel = db.Book.findAll({ where: { id: [1, 6, 3, 4, 5] }, include: [{ association: "author"}] })
-        const booksNovelties = db.Book.findAll({ where: { id: [7, 8, 9, 10] }, include: [{ association: "author"}] })
-        Promise.all([monthSelection, booksCarrousel, booksNovelties])
-            .then(([monthSelection, booksCarrousel, booksNovelties]) => {
+        const books = db.Book.findAll({ include: [{ association: "author"}] })
+        Promise.all([monthSelection, booksCarrousel, books])
+            .then(([monthSelection, booksCarrousel, books]) => {
+                let booksNovelties = books.slice( books.length - 4 )
                 res.render('index', {
                     monthSelection,
                     booksNovelties,
