@@ -20,16 +20,18 @@ module.exports = {
         db.Book.findAll({
             where: { id: id },
             include: [{
-                association: "author",
+                association: "author",                
                 include: [{
                     association: "books"
                 }]
             }]
         })
-        .then(idBook => {
+       
+        .then( idBook => {
+            let relatedBook = idBook[0].author.books.slice( 0, 3 )
             res.render('products/productDetail', {
                 idBook: idBook[0],
-                relatedBook: idBook[0].author.books
+                relatedBook
             })
         })
     },
