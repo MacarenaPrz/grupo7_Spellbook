@@ -28,15 +28,11 @@ module.exports = (sequelize,dataTypes) => {
             type: dataTypes.TEXT,
             allowNull: false
         },
-<<<<<<< HEAD
-        recommendedAge_id:{
-=======
         image:{
             type: dataTypes.STRING(100),
             allowNull: false
         },
         recommended_age_id:{
->>>>>>> raul
             type: dataTypes.INTEGER(11),
             allowNull: false
         },
