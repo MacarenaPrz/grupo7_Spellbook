@@ -1,6 +1,7 @@
 const { validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
-const db = require('../dataBase/models')
+const db = require('../dataBase/models');
+const session = require('express-session');
 
 module.exports = {
     login: (req, res) => {       
@@ -17,6 +18,7 @@ module.exports = {
                     id: userLog.id,
                     email: userLog.email,
                     name: userLog.name,
+                    last_name: userLog.last_name,
                     rol: userLog.rol
                 }
      
@@ -48,6 +50,7 @@ module.exports = {
 
             db.Users.create({
                 name,
+                last_name: '',
                 email,
                 password : bcrypt.hashSync(password.trim(), 10),
                 country : '',
@@ -66,9 +69,34 @@ module.exports = {
         }
     },    
     profile: (req, res) => {
-        res.render('users/profile',{
-            session: req.session.userLog,           
-        }) 
+        db.Users.findOne({ where: { id: res.locals.userLog.id }})
+        .then(user => {
+            res.render('users/profile',{
+                session: req.session.userLog,
+                user
+            }) 
+        })      
+    },
+    editProfile: ( req, res) => {
+        let {
+            name,
+            firstName,
+            location,
+            date
+        } = req.body
+        db.Users.update({
+            name: name ,
+            last_name : firstName ,          
+            country: location ,
+            birthday: date ,
+        },{
+            where: {
+                id: req.session.userLog.id
+            }
+        })
+        .then(() =>{ 
+            res.redirect('/user/profile' ) })
+        .catch(err => {console.log(err)})        
     },
     logout: (req, res) => {
         res.clearCookie('logSpellbook')

@@ -13,7 +13,7 @@
   <main class="conteiner-main">
      
     <!-- FORMULARIO DE REGISTRO -->
-    <form action="/user/register" method="POST">
+    <form action="/user/profile?_method=PUT" method="POST" id="editForm">
 
       <!-- IMAGEN DE USUARIO, BARITA -->
       <section class="register-user">    
@@ -33,13 +33,13 @@
         <!-- NOMBRE -->
         <div class="info-user">
           <img class="user-data-icon user-pocision" height="40px" src="/images/recursos/wizard-icon.png" alt="img de mago">
-          <p><%= session.name %> </p>
+          <p><%= user.name %> </p>
         </div>
 
         <!-- EMAIL -->
         <div class="info-user">
           <i class="fas fa-envelope user-data-icon"></i>
-          <p><%= session.email %></p>
+          <p><%= user.email %></p>
         </div>
       </div>
 
@@ -55,48 +55,33 @@
           <label for="name">
               <img class="user-data-icon user-pocision" height="40px" src="/images/recursos/wizard-icon.png" alt="img de mago">
           </label>
-          <input class = "user-date-inputs" placeholder="Nombre" type="text" name="name" id="name">
+          <input class = "user-date-inputs" placeholder="Nombre" type="text" name="name" id="name" value="<%= user.name %>">
           </p>
           <!-- APELLIDO -->
           <p class="confirmation">
-            <input class = "user-date-inputs " placeholder="Apellido" type="text" name="firstName" id="firstName">
+            <input class = "user-date-inputs " placeholder="Apellido" type="text" name="firstName" id="firstName" value="<%= user.last_name %>">
           </p>
-
 
          <!-- LUGAR -->
         <p class="user-data">    
         <label for="location">
             <i class="fas fa-globe-americas user-data-icon world-pocision"></i>
         </label>
-        <input class = "user-date-inputs" placeholder="País de Residencia" type="text" name="location" id="location">
+        <input class = "user-date-inputs" placeholder="País de Residencia" type="text" name="location" id="location" value="<%= user.country %>">
         </p>
-        <!-- PROVINCIA -->
-        <p class="confirmation">
-          <input class = "user-date-inputs " placeholder="Provincia o Estado" type="text" name="firstName" id="firstName">
-        </p>
-
-
-        
-        <!-- TELEFONO -->
-        <p class="user-data">
-        <label for="phone">
-            <i class="fas fa-mobile-alt user-data-icon tel-pocision"></i>
-        </label>
-        <input class = "user-date-inputs" placeholder="Numero de Contacto" type="tel" name="phone" id="phone">
-        </p>
-
 
          <!-- NACIMIENTO -->
          <p class="user-data ">
           <label for="date">
               <i class="far fa-calendar user-data-icon "><img class="image-icon" height="18px" src="/images/recursos/wizard-icon.png" alt="img de mago"></i>
           </label>
-          <input class ="user-date-inputs-date date-pocision" type="date" name="date" id="date">
+          <input class ="user-date-inputs-date date-pocision" type="date" name="date" id="date" value="">
           </p>
       
         <!-- BOTON PARA DE GUARDAR -->
         <button type="submit" class="btn-save button">GUARDAR</button>
       </section>
+    </form>
       <h2 class="title-seccion">Tus ultimas Compras</h2>
 
       <!-- LINEA HR -->
@@ -106,7 +91,6 @@
         <p class="now-buy">No haz realizado ninguna compra aún</p>
         <a href="#"><p class="now-buy">Empieza ahora</p></a>
       </section>
-    </form>
   </main>
 
   <!-- FOOTER -->

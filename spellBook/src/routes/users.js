@@ -16,6 +16,7 @@ router.post('/login', loginValidator, controller.processLogin);
 
 // Info de Usuario 
 router.get('/profile', userSession, controller.profile);
+router.put('/profile', controller.editProfile )
 
 //GET Logout
 router.get ('/logout', controller.logout)
