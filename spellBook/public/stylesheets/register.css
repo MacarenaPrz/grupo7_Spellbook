@@ -14,16 +14,14 @@
     margin-top: 15px;
 }
 
-.user-image {
-   
+/* .user-image {   
     text-align: right;
     width:fit-content ;
-}
+} */
 
 .user-image-item {
     border-radius: 50%;
-    width: 40%;
-    max-height: 300px;
+    width: 150px;
 }
 
 /* BARITA */

@@ -13,20 +13,16 @@
   <main class="conteiner-main">
      
     <!-- FORMULARIO DE REGISTRO -->
-    <form action="/user/profile?_method=PUT" method="POST" id="editForm">
+    <form action="/user/profile?_method=PUT" method="POST"  enctype="multipart/form-data" id="editForm">
 
       <!-- IMAGEN DE USUARIO, BARITA -->
       <section class="register-user">    
         <div class="user-image">
-          <img  class= "user-image-item"src="/images/recursos/user-img.png"  alt="">
-        </div>  
-        <div class="user-magic-wand">
-          <img src="/images/recursos/varita.png" width="15%" alt="">
+          <img  class= "user-image-item"src="/images/Imagenes de perfil/<%= user.avatar %>"  alt="">
         </div>    
       </section>
 
      <!-- NOMBRE DEL USUARIO -->
-     <!--  <h5 class="user-name">Nombre del Usuario</h5> -->
         
       <!-- CAMPOS A LLENAR -->
       <div class="conteiner-info-user">
@@ -71,12 +67,22 @@
         </p>
 
          <!-- NACIMIENTO -->
-         <p class="user-data ">
+        <p class="user-data ">
           <label for="date">
-              <i class="far fa-calendar user-data-icon "><img class="image-icon" height="18px" src="/images/recursos/wizard-icon.png" alt="img de mago"></i>
+            <i class="far fa-calendar user-data-icon "><img class="image-icon" height="18px" src="/images/recursos/wizard-icon.png" alt="img de mago"></i>
           </label>
           <input class ="user-date-inputs-date date-pocision" type="date" name="date" id="date" value="">
-          </p>
+        </p>
+
+        <!-- AVATAR -->
+        <p class="user-data ">
+          <label for="avatar" class="cont-flex-column">
+            <img class="user-data-icon user-pocision" height="25px" src="/images/recursos/wizard-icon.png" alt="img de mago">
+           <spam class=''> Avatar </spam>
+          </label>
+          <input class ="user-date-inputs-date " type="file" name="avatar" id="avatar" value="<%= user.avatar %> ">
+        </p>
+
       
         <!-- BOTON PARA DE GUARDAR -->
         <button type="submit" class="btn-save button">GUARDAR</button>

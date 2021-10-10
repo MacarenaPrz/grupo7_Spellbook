@@ -29,6 +29,11 @@
 .fit-content{
     width: fit-content;
 }
+.cont-flex-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 /* EFECTO DE LOS LIBROS */
 .book-cover {
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);

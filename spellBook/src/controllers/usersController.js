@@ -19,6 +19,7 @@ module.exports = {
                     email: userLog.email,
                     name: userLog.name,
                     last_name: userLog.last_name,
+                    avatar: userLog.avatar,
                     rol: userLog.rol
                 }
      
@@ -78,24 +79,27 @@ module.exports = {
         })      
     },
     editProfile: ( req, res) => {
-        let {
+        db.Users.findOne({ where :{ id : req.session.userLog.id}})
+        .then(user => { 
+            let {
             name,
             firstName,
             location,
-            date
+            date,
         } = req.body
         db.Users.update({
             name: name ,
             last_name : firstName ,          
             country: location ,
             birthday: date ,
+            avatar: req.file ? req.file.filename : user.avatar
         },{
             where: {
                 id: req.session.userLog.id
             }
         })
         .then(() =>{ 
-            res.redirect('/user/profile' ) })
+            res.redirect('/user/profile' ) })})
         .catch(err => {console.log(err)})        
     },
     logout: (req, res) => {
