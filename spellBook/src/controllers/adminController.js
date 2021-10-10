@@ -103,5 +103,14 @@ module.exports={
         .then(()=>{
             res.redirect('/product')
         })
-    } 
+    },
+    adminUser: ( req, res ) => {
+        db.Users.findAll()
+        .then(users => {
+           // res.send(users)
+            res.render('admin/userAdmin', {
+                users
+            })
+        })
+    }
 }
