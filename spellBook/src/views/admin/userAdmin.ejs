@@ -22,7 +22,7 @@
     <!--LIST OF PRODUCTS SECTION-->
     <section class="product-list">
       <!--LINKS TO Agregar libro, Bell AND user-->
-      <h1>Hola  </h1>
+      <h1>Hola <%= locals.userLog.name %> </h1>
       <div class="belluser">
         <a href="/admin/addProduct" class="display-shop" >Ir a libros</a>
         <a href="/user/login">
@@ -47,7 +47,6 @@
         <table class="f-1rem">
           <thead class="text-center">
             <tr class="head-table">
-              <th><input type="checkbox"></th>
               <th>avatar</th>
               <th>Email</th>
               <th>Nombre</th>
@@ -59,7 +58,6 @@
           <tbody class="text-center">             
             <% users.forEach(user => { %>
             <tr>
-              <td><input type="checkbox"></td>
               <td><img src="/images/Imagenes de perfil/<%= user.avatar%>" class="admin-avatars"></td>
               <td><%= user.email%></td>
               <td><%= user.name%></td>

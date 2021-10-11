@@ -32,6 +32,7 @@
       <!--LINKS TO Agregar libro, Bell AND user-->
       <h1>Hola <%= locals.userLog.name %>  </h1>
       <div class="belluser">
+        <a href="/admin/users" class="display-shop" >Ir a usuarios</a>
         <button class="display-shop" id="button-create">Agregar libro</button>
         <a href="/user/login">
           <div class="">
@@ -55,7 +56,6 @@
         <table>
           <thead>
             <tr class="head-table">
-              <th><input type="checkbox"></th>
               <th>Imagen</th>
               <th class="description-on">Descripcion</th>
               <th>Título</th>
@@ -69,14 +69,16 @@
           <tbody>
              
                 <% products.forEach(book => { %>
+                  
                 <tr>
-                  <td><input type="checkbox"></td>
-                  <td><img src="/images/Libros/<%= book.image%>"></td>
-                  <td class="description-on"><%=  book.description.slice(0 , 200) %> ...</td>
-                  <td><%= book.title%></td>
-                  <td><%= book.stock%></td>
-                  <td><%= book.price%></td>
-                  <td>Activo</td>
+                 
+                  <td>  <a href="/product/<%= book.id %>"><img src="/images/Libros/<%= book.image%>"></a></td>
+                  <td class="description-on"><a href="/product/<%= book.id %>"><%=  book.description.slice(0 , 200) %> ...</a></td>
+                  <td><a href="/product/<%= book.id %>"><%= book.title%></a></td>
+                  <td><a href="/product/<%= book.id %>"><%= book.stock%></a></td>
+                  <td><a href="/product/<%= book.id %>"><%= book.price%></a></td>
+                  <td><a href="/product/<%= book.id %>">Activo</a></td>
+                
                   <td>
                     <a href="/admin/editProduct/<%= book.id %>" class="button-edit">
                         <i class="fas fa-pen"></i>
@@ -87,7 +89,10 @@
                       <button class="delete-btn" type="submit"><i class="far fa-trash-alt"></i></button>
                     </form>
                   </td>
+                  
                 </tr>
+           
+                 
                 <% }) %>
 
             </tbody>
