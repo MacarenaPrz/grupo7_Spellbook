@@ -107,10 +107,16 @@ module.exports={
     adminUser: ( req, res ) => {
         db.Users.findAll()
         .then(users => {
-           // res.send(users)
             res.render('admin/userAdmin', {
                 users
             })
+        })
+    },
+    deleteUser: ( req, res ) => {
+        db.Users.destroy({ where : { id : req.params.id }})
+        .then(() => { 
+            
+            res.redirect('/admin/users')
         })
     }
 }

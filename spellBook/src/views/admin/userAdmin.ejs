@@ -15,16 +15,8 @@
   <div class="star star8"></div>
   <!-- LOGO CON LINK AL HOME -->
   <div class="logo">
-      <h1 class="logo__title"><a href="/" class="logo__link">SpellBook</a></h1>
-      
-  </div >
-  
-    <!-- BURGER MENU -->
-  <a href="/admin/addProduct">
-    <div class="">
-      <i class="far fa-user" id="icon"></i>
-    </div>
-  </a>
+      <h1 class="logo__title"><a href="/" class="logo__link">SpellBook</a></h1>      
+  </div>  
   </header>
   <main>
     <!--LIST OF PRODUCTS SECTION-->
@@ -75,7 +67,7 @@
               <td><%= user.country%></td>
               <td><%= user.rol%></td>
               <td>
-                <form action="deleteUser/<%=user.id%>?_method=DELETE" id="button-delete" method="POST">
+                <form action="deleteUser/<%=user.id%>?_method=DELETE" id="button-delete-user" method="POST">
                   <button class="delete-btn" type="submit"><i class="far fa-trash-alt"></i></button>
                 </form>
               </td>

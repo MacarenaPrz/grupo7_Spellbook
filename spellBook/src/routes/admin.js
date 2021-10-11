@@ -10,7 +10,8 @@ let {
     editView,
     editProduct,
     deleteProduct,
-    adminUser
+    adminUser,
+    deleteUser,
         } = require('../controllers/adminController');
 
 
@@ -26,7 +27,8 @@ router.put('/editProduct/:id', upload.single('imagen'), editProduct);
 router.delete('/deleteProduct/:id', deleteProduct);
 
 //ADMIN USUARIOS
-router.get('/users', adminUser)
-
+router.get('/users',  userAdminCheck, adminUser)
+//ADMIN ELIMINAR USUSARIO
+router.delete('/deleteUser/:id', userAdminCheck, deleteUser);
 
 module.exports = router;
