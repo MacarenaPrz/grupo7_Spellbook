@@ -222,6 +222,14 @@ form#product fieldset input.display-shop{
 .description-on{
     display: none;
 }
+
+/* ESTILOS PARA USERS ADMIN */
+/* AVATAR DE USUARIOS */
+.admin-avatars {
+    border-radius: 50%;
+    width: 100px;
+}
+
 @media (min-width: 515px) {
     table {
         border-spacing: 7px;

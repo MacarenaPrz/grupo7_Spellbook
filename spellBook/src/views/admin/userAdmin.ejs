@@ -32,7 +32,7 @@
       <!--LINKS TO Agregar libro, Bell AND user-->
       <h1>Hola  </h1>
       <div class="belluser">
-        <button class="display-shop" id="button-create">Agregar libro</button>
+        <a href="/admin/addProduct" class="display-shop" >Ir a libros</a>
         <a href="/user/login">
           <div class="">
             <i class="far fa-bell" id="icon"></i>
@@ -52,8 +52,8 @@
         </label>
       </div>
       <div class="products-table">
-        <table>
-          <thead>
+        <table class="f-1rem">
+          <thead class="text-center">
             <tr class="head-table">
               <th><input type="checkbox"></th>
               <th>avatar</th>
@@ -62,39 +62,29 @@
               <th>Apellido</th>
               <th>Provincia</th>
               <th>Rol</th>
-              <th> </th>
-              <th> </th>
             </tr>
-          </thead> 
-          <tbody>
-             
-                <% users.forEach(user => { %>
-                <tr>
-                  <td><input type="checkbox"></td>
-                  <td><img src="/images/Imagenes de perfil/<%= user.avatar%>"></td>
-                  <td><%= user.email%></td>
-                  <td><%= user.name%></td>
-                  <td><%= user.last_name%></td>
-                  <td><%= user.country%></td>
-                  <td><%= user.rol%></td>
-                  <td>
-                    <a href="/admin/editProduct/<%= user.id %>" class="button-edit">
-                        <i class="fas fa-pen"></i>
-                    </a>
-                  </td>
-                  <td>
-                    <form action="deleteUser/<%=user.id%>?_method=DELETE" id="button-delete" method="POST">
-                      <button class="delete-btn" type="submit"><i class="far fa-trash-alt"></i></button>
-                    </form>
-                  </td>
-                </tr>
-                <% }) %>
-
-            </tbody>
+          </thead>
+          <tbody class="text-center">             
+            <% users.forEach(user => { %>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td><img src="/images/Imagenes de perfil/<%= user.avatar%>" class="admin-avatars"></td>
+              <td><%= user.email%></td>
+              <td><%= user.name%></td>
+              <td><%= user.last_name%></td>
+              <td><%= user.country%></td>
+              <td><%= user.rol%></td>
+              <td>
+                <form action="deleteUser/<%=user.id%>?_method=DELETE" id="button-delete" method="POST">
+                  <button class="delete-btn" type="submit"><i class="far fa-trash-alt"></i></button>
+                </form>
+              </td>
+            </tr>
+            <% }) %>
+          </tbody>
         </table>
       </div>
     </section> 
   </main>
-  <script src="/js/admin.js"></script>
 </body>
 </html>
