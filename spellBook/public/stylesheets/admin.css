@@ -229,6 +229,13 @@ form#product fieldset input.display-shop{
     border-radius: 50%;
     width: 100px;
 }
+/* ROL DE USUARIO */
+.rol-user{
+    display: flex;
+    text-align: center;
+    font-size: 1rem;
+    align-items: center;
+}
 
 @media (min-width: 515px) {
     table {

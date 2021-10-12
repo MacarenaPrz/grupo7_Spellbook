@@ -1,3 +1,4 @@
+const { body } = require('express-validator');
 const db = require('../dataBase/models');
 
 module.exports={
@@ -118,5 +119,39 @@ module.exports={
             
             res.redirect('/admin/users')
         })
+    },
+    infoUser: ( req, res ) => {
+        db.Users.findOne({ where : { id : req.params.id }})
+        .then( user => {
+            res.render('admin/editUser', {
+                user
+            })
+        })
+    },
+    editUser: ( req, res ) => {
+        db.Users.findOne({ where :{ id : req.params.id}})
+        .then(user => { 
+            let {
+            name,
+            firstName,
+            location,
+            date,
+            rol
+        } = req.body
+        db.Users.update({
+            name: name ,
+            last_name : firstName ,          
+            country: location ,
+            birthday: date ,
+            avatar: req.file ? req.file.filename : user.avatar,
+            rol
+        },{
+            where: {
+                id: req.params.id
+            }
+        })
+        .then(() =>{ 
+            res.redirect('/admin/users' ) })})
+        .catch(err => {console.log(err)})  
     }
 }
