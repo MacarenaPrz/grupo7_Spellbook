@@ -110,10 +110,6 @@
         </div>
         <form method="POST" action="/admin/addProduct" enctype="multipart/form-data" id="product">
           <fieldset>
-            <label for="image">Imagen:</label>
-            <input type="file" name="imagen" id="image" />
-          </fieldset>
-          <fieldset>
             <label for="title">Título:</label>
             <input
               type="text"
@@ -148,17 +144,6 @@
                 
             />
           </fieldset>
-          <fieldset>
-            <label for="descripcion">Descripción:</label>
-            <input
-              type="textarea"
-              name="descripcion"
-              id="description"
-              
-              
-            />
-          </fieldset>
-
           <fieldset>
             <label for="descripcion">Edad Recomendada:</label>
             <select name="recommended_age" id="" class="select-fcm border-fcm">
@@ -207,16 +192,29 @@
               type="textarea"
               name="pages"
               id="pages"
-              
-              
+            />
+          </fieldset>
+          <fieldset>
+            <label for="image">Imagen:</label>
+            <input type="file" name="imagen" id="image" />
+          </fieldset>
+
+          <fieldset>
+            <label for="descripcion">Descripción:</label>
+            <input
+              type="textarea"
+              name="descripcion"
+              id="description"
+              cols = "30"
+              rows = "8"
             />
           </fieldset>
 
 
-
           
           <fieldset>
-            <input class="delete" type="reset" value="Borrar">
+            <!-- <input class="delete" type="reset" value="Borrar"> -->
+            <button class="display-shop button" type="reset" id="cancel"> Cancelar </button>
             <button class="display-shop" type="submit" > Guardar</button>
           </fieldset>
         </form>
