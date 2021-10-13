@@ -87,7 +87,7 @@ body{background: var(--color-beige);
     width:180px;
     color: var(--color-azulOscuro);
     border-bottom:3px solid var(--color-azulOscuro)}
-  input{
+  /* input{
     width:100%;
     padding:10px;
     box-sizing:border-box;
@@ -103,7 +103,7 @@ body{background: var(--color-beige);
     display:block;
     margin:28px 0 0;
     font-size:14px;
-    color: var(--color-azulOscuro)}
+    color: var(--color-azulOscuro)} */
   .send-button{float:right;
     padding:8px 12px;
     margin:20px 0 20px 0;

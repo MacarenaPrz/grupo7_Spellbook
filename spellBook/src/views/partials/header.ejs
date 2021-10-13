@@ -1,141 +1,76 @@
-<!-- COMIENZA EL HEADER -->
-<header class="header error-bg">
-    <div class="star star1"></div>
-    <div class="star star2"></div>
-    <div class="star star3"></div>
-    <div class="star star4"></div>
-    <div class="star star5"></div>
-    <div class="star star6"></div>
-    <div class="star star7"></div>
-    <div class="star star8"></div>
-    
-    <!-- LOGO CON LINK AL HOME -->
-    <div class="logo">
-      <h1 class="logo__title"><a href="/" class="logo__link">SpellBook</a></h1>
-    </div>
-  
-    <!-- BURGER MENU -->
-    <div class="btn">
-      <i class="fas fa-bars" id="icon"></i>
-    </div>
-  
-    <!-- MENU DESPLEGABLE -->
-    <nav class="nav">
-      <ul class="menu">
-        <li class="menu__items">
-            <a href="/" class="menu__link">Inicio</a>
-        </li>
-        <li class="menu__items">
-            <a href="/product" class="menu__link">Libros</a>
-        </li>
-        <li class="menu__items">
+<!-- COMIENZA EL HEADER -->    
+    <div class="wrap">
+      <header class="header error-bg">
+        <!-- <div class="star star1"></div>
+        <div class="star star2"></div>
+        <div class="star star3"></div>
+        <div class="star star4"></div>
+        <div class="star star5"></div>
+        <div class="star star6"></div>
+        <div class="star star7"></div>
+        <div class="star star8"></div> -->
+        <!-- LOGO CON LINK AL HOME -->
+        <div class="logo">
+          <h1 class="logo__title"><a href="/" class="logo__link">SpellBook</a></h1>
+        </div>
+        <!-- BURGER MENU -->
+        <div class="burger">
+          <span class="line line1"></span>
+          <span class="line line2"></span>
+          <span class="line line3"></span>
+        </div>
+        <!-- MENU DESPLEGABLE -->
+        <nav class="menu">
+          <a href="/" class="menu__link">Inicio</a>
+          <a href="/product" class="menu__link">Libros</a>
           <a href="/novelties" class="menu__link">Recomendados</a>
-        </li>
-        <li class="menu__items">
           <a href="/novelties" class="menu__link">Novedades</a>
-        </li>
-        <li class="menu__items">
-          <a href="/aboutUs" class="menu__link">Nosotros</a>
-        </li>
-        <li class="menu__items">
-          <a href="/cart" class="menu__link">Mi carrito</a>
-        </li>
-      </ul>
-  
-      <!-- REGISTRO E INICIO DE SESIÓN -->
-      <% if (locals.inLogged) { %>
-        <div class="login">
-          <a href="/user/profile" class="login__btn">Mi perfil</a>
-          <a href="/user/logout" class="login__btn login--up">Cerrar sesion</a>
-        </div>
-        <% } else { %>
-          <div class="login">
-            <a href="/user/signUp" class="login__btn">Registrate</a>
-            <a href="/user/login" class="login__btn login--up">Iniciá sesión</a>
+          <a href="/aboutUs" class="menu__link">Nosotros</a> 
+        </nav>
+          <!-- LUPA, CARRITO Y MAGO DE USUARIO -->
+        <div class="icons">
+          <div class="search-icon">
+            <i class="fas fa-search"></i>
           </div>
-      <% } %>
-      
-    </nav>
-  
-    <!-- HEADER VERSIÓN DESKTOP -->
-    
-    <!-- SE UTILIZA EL MISMO LOGO ORIENTADO EN EL CENTRO -->
-    
-        <!-- LUPA, CARRITO Y MAGO DE USUARIO -->
-    <div class="user__desk">
-  
-        <!-- LUPA DE BUSQUEDA -->
-        <form action="/search" method="get">
-          <label name="search" id="search" >
-            <input class="user__search__desk" type="search" name="search" id="search" placeholder="">
-            <i class="fas fa-search user__icon__desk"></i> 
-            <button type="submit"  class="btn"></button> 
-        </label>
-        </form>
-        
-        <!-- HACIA EL CARRITO DE COMPRAS -->
-        <a class="header-cart" href="/cart">
-            <i class="fas fa-shopping-cart user__icon__desk"></i>
-        </a>
-        <!-- MAGO PARA REGISTRARSE -->
-        <div class="wizard">
-       
-          <% if (locals.inLogged) { %>
-            <% if (locals.userLog.rol === "admin") { %>
-              <a href="/user/profile" class="wizard__image">
-                <img src="/images/recursos/wizard-icon.png" width="20px" alt="">
-            </a>            
-            <a href="/admin/addProduct" class="wizard__login">
-              <p><%= locals.userLog.name %>  / </p>
-           </a>
-           <a href="/user/logout" class="wizard__login">
-               <p> Cerrar sesión</p>
-           </a>
-            <% } else if (locals.userLog.rol === "user") { %>
-
-            <a href="/user/profile" class="wizard__image">
-                <img src="/images/recursos/wizard-icon.png" width="20px" alt="">
-            </a>            
-            <a href="/user/profile" class="wizard__login">
-              <p><%= locals.userLog.name %>  / </p>
-           </a>
-           <a href="/user/logout" class="wizard__login">
-               <p> Cerrar sesión</p>
-           </a>            
-          <% } %>
-          <% } else { %>
-            <a href="/user/login" class="wizard__image">
-              <img src="/images/recursos/wizard-icon.png" width="20px" alt="">
-            </a>                        
-            <a href="/user/login" class="wizard__login">
-              <p>Ingresar/</p>
-           </a>
-           <a href="/user/signUp" class="wizard__login">
-               <p> Registrarse</p>
-           </a> 
-          <% } %>
-            
+          <div class="cart-icon">
+            <a href="/cart"><i class="fas fa-shopping-cart cart-icon"></i></a>
+          </div>
+          <div >
+             <img class="wizard" src="/images/Recursos/wizard-icon.png" alt="" />
+          </div>
         </div>
-    </div>
-  
-    <!-- MENU POR DEBAJO DEL HEADER -->
-    <nav class="nav__desk">
-        <ul class="menu__desk">
-          <li class="menu__items__desk">
-              <a href="/" class="menu__link__desk"> Inicio </a>
-          </li>
-          <li class="menu__items__desk">
-              <a href="/product" class="menu__link__desk"> Libros </a>
-          </li>
-          <li class="menu__items__desk">
-            <a href="/novelties" class="menu__link__desk"> Recomendados </a>
-          </li>
-          <li class="menu__items__desk">
-            <a href="/novelties" class="menu__link__desk__desk"> Novedades </a>
-          </li>
-          <li class="menu__items__desk">
-            <a href="/aboutUs" class="menu__link__desk">Nosotros </a>
-          </li>
-        </ul>
-    </nav>
-  </header>
+        <!-- LUPA DE BUSQUEDA -->
+        <form action="/search" method="get" class="search">
+            <input type="search" name="search" placeholder="Buscar">
+           <button type="submit"  class="fas fa-search"></button> 
+        </form>
+        <!-- HACIA EL CARRITO DE COMPRAS -->
+      
+        <!-- MAGO PARA REGISTRARSE -->
+          <div class="card-user">
+        <% if (locals.inLogged) { %> <% if (locals.userLog.rol === "admin") { %>
+                  <a href="/admin/addProduct">
+                    <p><%= locals.userLog.name %>  </p>
+                  </a>
+                 <a href="/user/logout" >
+                     <p> Cerrar sesión</p>
+                 </a>
+        <% } else if (locals.userLog.rol === "user") { %>            
+                  <a href="/user/profile" >
+                    <p><%= locals.userLog.name %> </p>
+                 </a>
+                 <a href="/user/logout">
+                     <p> Cerrar sesión</p>
+                 </a>             
+        <% } %> <% } else { %>
+                  </a>                        
+                  <a href="/user/login">
+                    <p>Ingresar</p>
+                 </a>
+                 <a href="/user/signUp" >
+                     <p> Registrarse</p>
+                 </a> 
+        <% } %>
+      </div>
+      </header>
+      </div>
