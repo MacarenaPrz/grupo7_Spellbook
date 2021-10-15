@@ -1,5 +1,6 @@
 const { body } = require('express-validator');
 const db = require('../dataBase/models');
+const fs = require('fs')
 
 module.exports={
     admin: (req, res) => {
@@ -96,14 +97,22 @@ module.exports={
         .then(()=>{ res.redirect( '/product' )})
     },
     deleteProduct: (req, res) =>{
-        db.Book.destroy({
-            where: {
-                id: req.params.id
+        db.Book.findByPk(req.params.id)
+        .then(product => {
+                fs.existsSync("./public/images/Libros/", product.image)
+                ? fs.unlinkSync("./public/images/Libros/" + product.image)
+                : console.log("-- No se encontró")
+                db.Book.destroy({
+                    where: {
+                        id: req.params.id
+                    }
+                })
+                .then(()=>{ 
+                    res.redirect('/admin/addProduct')
+                })
             }
-        })
-        .then(()=>{
-            res.redirect('/product')
-        })
+        )
+      
     },
     adminUser: ( req, res ) => {
         db.Users.findAll()
