@@ -37,10 +37,16 @@
             </p>
           </div>
           <div class="card__box">
-          <button class="cart button">
+          <button class="cart text-center fit-content">
             <i class="fas fa-cart-plus icon-cart"></i> Agregar al Carrito
           </button>
           </div>
+          <% if (locals.inLogged) { %>
+            <% if (locals.userLog.rol === "admin") { %>
+          <div class="card__box">
+            <a href="/admin/editProduct/<%= idBook.id %>" class="cart text-center fit-content"> Editar </a>
+          </div>
+          <% }} %> 
           <div class="descriptions descriptions--top">
             <h3 class="descriptions__title">Sinopsis</h3>
             <p class="descriptions__paragraph">

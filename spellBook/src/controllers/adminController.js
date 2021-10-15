@@ -1,4 +1,6 @@
+const { body } = require('express-validator');
 const db = require('../dataBase/models');
+const fs = require('fs')
 
 module.exports={
     admin: (req, res) => {
@@ -48,11 +50,13 @@ module.exports={
         .catch(err => console.log(err));               
     },
     editView:(req, res)=>{
+        const recommended_age = db.RecommendedAges.findAll()
         const authors = db.Authors.findAll()
         const idBook = db.Book.findByPk(req.params.id) 
-        Promise.all([ authors, idBook])
-        .then(([ authors, idBook ])=>{
+        Promise.all([ recommended_age, authors, idBook])
+        .then(([ recommended_age, authors, idBook ])=>{
           return res.render("admin/editForm",{
+                recommended_age,
                 idBook, 
                 authors    
             })
@@ -93,13 +97,70 @@ module.exports={
         .then(()=>{ res.redirect( '/product' )})
     },
     deleteProduct: (req, res) =>{
-        db.Book.destroy({
+        db.Book.findByPk(req.params.id)
+        .then(product => {
+                fs.existsSync("./public/images/Libros/", product.image)
+                ? fs.unlinkSync("./public/images/Libros/" + product.image)
+                : console.log("-- No se encontró")
+                db.Book.destroy({
+                    where: {
+                        id: req.params.id
+                    }
+                })
+                .then(()=>{ 
+                    res.redirect('/admin/addProduct')
+                })
+            }
+        )
+      
+    },
+    adminUser: ( req, res ) => {
+        db.Users.findAll()
+        .then(users => {
+            res.render('admin/userAdmin', {
+                users
+            })
+        })
+    },
+    deleteUser: ( req, res ) => {
+        db.Users.destroy({ where : { id : req.params.id }})
+        .then(() => { 
+            
+            res.redirect('/admin/users')
+        })
+    },
+    infoUser: ( req, res ) => {
+        db.Users.findOne({ where : { id : req.params.id }})
+        .then( user => {
+            res.render('admin/editUser', {
+                user
+            })
+        })
+    },
+    editUser: ( req, res ) => {
+        db.Users.findOne({ where :{ id : req.params.id}})
+        .then(user => { 
+            let {
+            name,
+            firstName,
+            location,
+            date,
+            rol
+        } = req.body
+        db.Users.update({
+            name: name ,
+            last_name : firstName ,          
+            country: location ,
+            birthday: date ,
+            avatar: req.file ? req.file.filename : user.avatar,
+            rol
+        },{
             where: {
                 id: req.params.id
             }
         })
-        .then(()=>{
-            res.redirect('/product')
-        })
-    } 
+        .then(() =>{ 
+            res.redirect('/admin/users' ) })})
+        .catch(err => {console.log(err)})  
+    }
 }

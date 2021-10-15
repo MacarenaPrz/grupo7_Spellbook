@@ -8,7 +8,7 @@ module.exports = (req, res, next) => {
 
     if(req.session.userLog) {           //Si hay alguien en session
         res.locals.inLogged = true;     // la variable local va ser true y
-        res.locals.userLog = req.session.userLog    // creo otra variable den locals con los datos del ususario en sesion
+        res.locals.userLog = req.session.userLog    // creo otra variable de locals con los datos del ususario en sesion
     }     
     next(); 
 }

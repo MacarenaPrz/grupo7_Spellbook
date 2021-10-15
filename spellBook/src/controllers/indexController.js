@@ -4,10 +4,11 @@ const { Op } = require('sequelize')
 module.exports = {
     index: (req, res) => {
         const monthSelection = db.Book.findAll({ where: { id: [1, 6, 3] }, include: [{ association: "author"}] })
-        const booksCarrousel = db.Book.findAll({ where: { id: [1, 6, 3, 4, 5] }, include: [{ association: "author"}]  })
-        const booksNovelties = db.Book.findAll({ where: { id: [7, 8, 9, 10] }, include: [{ association: "author"}]  })
-        Promise.all([monthSelection, booksCarrousel, booksNovelties])
-            .then(([monthSelection, booksCarrousel, booksNovelties]) => {
+        const booksCarrousel = db.Book.findAll({ where: { id: [1, 6, 3, 4, 5] }, include: [{ association: "author"}] })
+        const books = db.Book.findAll({ include: [{ association: "author"}] })
+        Promise.all([monthSelection, booksCarrousel, books])
+            .then(([monthSelection, booksCarrousel, books]) => {
+                let booksNovelties = books.slice( books.length - 4 )
                 res.render('index', {
                     monthSelection,
                     booksNovelties,
@@ -25,11 +26,12 @@ module.exports = {
                     association: "books"
                 }]
             }]
-        })
-        .then(idBook => {
+        })       
+        .then( idBook => {
+            let relatedBook = idBook[0].author.books.slice( 0, 3 )
             res.render('products/productDetail', {
                 idBook: idBook[0],
-                relatedBook: idBook[0].author.books
+                relatedBook
             })
         })
     },
@@ -48,16 +50,15 @@ module.exports = {
         })
     },
     novelties: (req, res) => {
-        const booksNovelties = db.Book.findAll({ where: { id: [1, 3, 4, 5 ] } })
-        const booksRecommended = db.Book.findAll({ where: { id: [ 3, 4, 5 ] } })
-
-        Promise.all([ booksNovelties, booksRecommended ])
-        .then(([ booksNovelties, booksRecommended ]) => {
+        db.Book.findAll({ include: [{ association : "author" }]})
+        .then( books => {
+            let booksNovelties = books.slice( books.length - 4 )
+            let booksRecommended = books.slice( 0, 3 )
             res.render('products/novelties', {
                 booksNovelties,
                 booksRecommended
             })
-        })
+        })      
     },
     aboutUs: (req, res) => { res.render('aboutUs') },
     search: (req, res) => {

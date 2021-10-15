@@ -68,7 +68,7 @@
           </select>
           </fieldset>
           <fieldset class="user-data">
-            <label for="amount">Cantidad:</label>
+            <label for="amount">Stock:</label>
             <input
               type="number"
               name="cantidad"
@@ -94,6 +94,51 @@
               value="<%= idBook.description %>"              
             />
           </fieldset>
+          <fieldset>
+            <label for="descripcion">Edad Recomendada:</label>
+            <select name="recommended_age" id="" class="select-fcm border-fcm">
+              <% recommended_age.forEach(age => { %>
+                  <option value="<%= age.id %>"><%= age.age %></option>
+              <% }); %>
+          </select>
+          </fieldset>
+          <fieldset>
+            <label for="descripcion">Editorial:</label>
+            <input
+              type="textarea"
+              name="publisher"
+              id="publisher"           
+              value="<%= idBook.publisher%>"
+            />
+          </fieldset>
+          <fieldset>
+            <label for="descripcion">Idioma:</label>
+            <input
+              type="textarea"
+              name="language"
+              id="language"
+              value="<%= idBook.language %>"              
+            />
+          </fieldset>
+          <fieldset>
+            <label for="descripcion">Año de Publicación:</label>
+            <input
+              type="textarea"
+              name="publication_year"
+              id="publication_year"              
+              value="<%= idBook.publication_year %>"
+            />
+          </fieldset>
+          <fieldset>
+            <label for="descripcion">Nro de Páginas:</label>
+            <input
+              type="textarea"
+              name="pages"
+              id="pages"
+              value="<%= idBook.pages %>"              
+            />
+          </fieldset>
+
           <fieldset>
             <input class="delete" type="reset" value="Borrar">
             <button class="display-shop" type="submit" > Guardar</button>

@@ -5,6 +5,7 @@ const sUpValidator = require('../middleware/signupValidator');
 const loginValidator = require('../middleware/loginValidator');
 let userSession = require('../middleware/userSession');
 const notLogin = require('../middleware/notLogin')
+let upload = require('../middleware/uploadAvatars');
 
 // Registro 
 router.get('/signup', notLogin, controller.signup);
@@ -16,6 +17,7 @@ router.post('/login', loginValidator, controller.processLogin);
 
 // Info de Usuario 
 router.get('/profile', userSession, controller.profile);
+router.put('/profile', upload.single('avatar'), controller.editProfile )
 
 //GET Logout
 router.get ('/logout', controller.logout)

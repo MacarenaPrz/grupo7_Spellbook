@@ -3,13 +3,18 @@ var router = express.Router();
 let upload = require('../middleware/uploadProducts');
 let userSession = require('../middleware/userSession');
 let userAdminCheck = require('../middleware/userAdminCheck')
+let uploadUser = require('../middleware/uploadAvatars')
 
 let {
     admin,
     newProduct,
     editView,
     editProduct,
-    deleteProduct
+    deleteProduct,
+    adminUser,
+    deleteUser,
+    infoUser,
+    editUser,
         } = require('../controllers/adminController');
 
 
@@ -24,5 +29,13 @@ router.put('/editProduct/:id', upload.single('imagen'), editProduct);
 //Admin delete product
 router.delete('/deleteProduct/:id', deleteProduct);
 
+//ADMIN USUARIOS
+router.get('/users',  userAdminCheck, adminUser)
+//ADMIN ELIMINAR USUSARIO
+router.delete('/deleteUser/:id', userAdminCheck, deleteUser);
+//ADMIN DATOS DEL USUSARIO
+router.get('/users/:id', userAdminCheck, infoUser)
+//ADMIN EDITAR USUSARIO
+router.put('/users/:id', uploadUser.single('avatar'), userAdminCheck, editUser)
 
 module.exports = router;
