@@ -150,7 +150,7 @@ input[type="search"] {
 }
 .card-user a p {
   color: var(--color-beige);
-  font-size: var(--paragraph);
+  font-size: 1.2rem;
   letter-spacing: 0.1rem;
 }
 .card-user a p:hover {
@@ -170,6 +170,20 @@ input[type="search"] {
   padding-left: 0;
 }
 .menu__link:hover:after {
+  width: 100%;
+}
+
+.card-user a p:after{
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-beige);
+  will-change: width;
+  transition: all 0.4s ease-in-out;
+}
+
+.card-user a p:hover:after{
   width: 100%;
 }
 
