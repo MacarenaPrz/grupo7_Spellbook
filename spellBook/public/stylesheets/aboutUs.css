@@ -113,6 +113,7 @@ body{background: var(--color-beige);
     color: var(--color-beige);
     cursor:pointer;transition:all .3s;
 border-radius: 5px;
+font-size: 15px;
 }
   .send-button:hover{background:var(--color-azulOscuro);
     color:var(--color-beige)}
