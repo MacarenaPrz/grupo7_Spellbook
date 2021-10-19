@@ -5,8 +5,8 @@ const db = require('../dataBase/models')
 
 module.exports = [
     body('name')
-        .notEmpty().withMessage('Este campo no puede quedar vacio').bail()
-        .isLength({ min: 3 }).withMessage('minimo de 3 caracteres'),
+        .notEmpty().withMessage('Este campo no puede quedar vacío').bail()
+        .isLength({ min: 3 }).withMessage('mínimo de 3 caracteres'),
 
         body('email').custom(value => {
             return db.Users.findOne({
@@ -30,5 +30,5 @@ module.exports = [
         .withMessage('Las contraseñas no coinciden'),
 
     body('terminos')
-        .isString('on').withMessage('Debes aceptar las bases y condiciones')
+        .isString('on').withMessage('Debes aceptar los términos y condiciones')
 ]
