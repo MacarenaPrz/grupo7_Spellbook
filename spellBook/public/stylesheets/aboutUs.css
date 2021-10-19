@@ -16,7 +16,7 @@ body{background: var(--color-beige);
 
 }
 .text-AboutUs .AboutUs-p {
-  width: 50%;
+  width: 80%;
 }
 .main-AboutUs .text-AboutUs img {
   display: none;
@@ -26,7 +26,7 @@ body{background: var(--color-beige);
 .wizards{
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
 
   
 }
@@ -71,7 +71,7 @@ body{background: var(--color-beige);
     /* FORM CONTACTO */
   .contactUs-form{
       width:340px;
-    height:380px;
+    height:400px;
     background: var(--color-beige);
     border-radius:8px;
     box-shadow: 1em 1em 4rem 0px var(--color-azulOscuro), -1em -1em 4rem 0px var(--color-violeta);
@@ -142,9 +142,14 @@ border-radius: 5px;
         align-items: center;
         justify-content: center;
         font-family: var(--font-berkshire);
-        margin: 15px auto;
+        margin: 20px auto;
       }
 
+      .text-AboutUs .AboutUs-p {
+        width: 50%;
+        font-size: 1.2rem;
+        line-height: 25px;
+      }
 
 
     }
