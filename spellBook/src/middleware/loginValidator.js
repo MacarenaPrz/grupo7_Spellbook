@@ -17,7 +17,7 @@ module.exports = [
     
               })
               .catch(() => {
-                return Promise.reject("Credenciales invalidas!");
+                return Promise.reject("Credenciales inválidas!");
               });
           })
 ]
