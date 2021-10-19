@@ -1,6 +1,5 @@
 body{background: var(--color-beige);
-    margin:0;
-    margin-top: 65px}
+    margin:0}
 
 /* TEXTO DESCRIPTIVO */
 .main-AboutUs .text-AboutUs {
@@ -148,7 +147,4 @@ border-radius: 5px;
 
 
 
-    }
-    @media (min-width: 768px){
-    
     }
