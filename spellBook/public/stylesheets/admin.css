@@ -127,7 +127,6 @@ section.product-form{
     justify-content: center;
     overflow: hidden;
     display: none;
-    top: 50px;
 }
 section.productEdit-form{
     width: 100%;
@@ -255,7 +254,7 @@ form#product fieldset input.display-shop{
         width: 25%;
         height: auto;
     }
-    
+}
 @media (min-width: 768px ){
     table {
         border-spacing: 0px;
@@ -269,10 +268,13 @@ form#product fieldset input.display-shop{
         display: table-cell;
         width: 45%;
     }
-    section.product-form{
-        top: 120px;
 }
+
+section.product-form{
+    top: 120px;
 }
+
+
 @media (min-width: 1024px ){
     .products-table{
        font-size: 0.8rem;
