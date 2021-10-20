@@ -13,6 +13,9 @@
 @import url('books.css');
 
 /* ESTILOS   GENERALES */
+.relative {
+    position: relative;
+}
 .d-inline {
     display: inline;
     margin: 5px;

@@ -15,3 +15,13 @@ document.querySelector('.button-edit').addEventListener('click', function() {
 document.querySelector('.closeEdit-create').addEventListener('click', function() {
     document.querySelector('.productEdit-form').style.display = 'none';
 })
+let $deleteBtn = document.querySelector('.delete-btn')
+    $deleteBtn.addEventListener('click', (event) => {
+    event.preventDefault()
+    let okDelete = confirm('Estas eguro de eliminar este producto')
+    if (okDelete) {
+        $deleteBtn.submit()
+    }else {
+        console.log('safaste')
+    }
+})
