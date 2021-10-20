@@ -59,8 +59,9 @@
 .title-seccion {
     font-size: 2rem;
     font-family: var(--font-berkshire);
-    margin: 2rem ;
+    margin: 3rem 1rem ;
     text-shadow: 1px 1px 2px grey;
+    text-align: center;
 
 }
 
@@ -78,9 +79,9 @@
 .user-data {
     display: flex;
     justify-content: space-between;
-    width: 75% ;
+    width: 100% ;
     margin: 20px auto;
-    height: 50px;
+    height: 80px;
 }
 
 .user-data-icon {
