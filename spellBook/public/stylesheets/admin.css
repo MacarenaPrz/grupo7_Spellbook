@@ -15,6 +15,9 @@
     height: 10rem;
     align-items: center;
 }
+.btn-delete {
+    cursor: pointer;
+}
 .edit-btn {
     font-size: var(--icon);
     color: var(--color-beige);

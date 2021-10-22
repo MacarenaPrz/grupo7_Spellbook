@@ -30,11 +30,11 @@ router.put('/editProduct/:id', upload.single('imagen'), editProduct);
 router.delete('/deleteProduct/:id', deleteProduct);
 
 //ADMIN USUARIOS
-router.get('/users',  userAdminCheck, adminUser)
+router.get('/users',   userSession, userAdminCheck, adminUser)
 //ADMIN ELIMINAR USUSARIO
-router.delete('/deleteUser/:id', userAdminCheck, deleteUser);
+router.delete('/deleteUser/:id', deleteUser);
 //ADMIN DATOS DEL USUSARIO
-router.get('/users/:id', userAdminCheck, infoUser)
+router.get('/users/:id',  userSession, userAdminCheck, infoUser)
 //ADMIN EDITAR USUSARIO
 router.put('/users/:id', uploadUser.single('avatar'), userAdminCheck, editUser)
 
