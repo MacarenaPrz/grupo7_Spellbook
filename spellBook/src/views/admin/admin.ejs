@@ -30,7 +30,7 @@
     <!--LIST OF PRODUCTS SECTION-->
     <section class="product-list">
       <!--LINKS TO Agregar libro, Bell AND user-->
-      <h1>Hola <%= locals.userLog.name %>  </h1>
+      <h1>Hola <%= /* locals.userLog.name */ %>  </h1>
       <div class="belluser">
         <a href="/admin/users" class="display-shop" >Ir a usuarios</a>
         <button class="display-shop" id="button-create">Agregar libro</button>
@@ -52,6 +52,14 @@
           <input class="" type="search" name="search" id="" placeholder="">
         </label>
       </div>
+      <% if (locals.errors) { %>
+        <% errors.forEach(err => { %>
+          <p class="warning"><%= err.msg %> </p> 
+        <% }) %>
+        
+      <% } %>
+      
+      <div></div>
       <div class="products-table">
         <table>
           <thead>
@@ -112,10 +120,10 @@
             <input
               type="text"
               name="titulo"
-              id="title"
-            
+              id="title"            
             />
           </fieldset>
+        
           <fieldset>
             <label for="autor">Autor:</label>
             <select name="autor" id="" class="select-fcm border-fcm">

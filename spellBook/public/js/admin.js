@@ -21,7 +21,7 @@ $deleteBtn.forEach(book => {
         event.preventDefault()
         let okDelete = confirm('Estas eguro de eliminar este producto')
         if (okDelete) {
-            user.submit()
+            book.submit()
         }else {
             console.log('No se elimino')
         }
