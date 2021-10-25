@@ -4,7 +4,7 @@ let upload = require('../middleware/uploadProducts');
 let userSession = require('../middleware/userSession');
 let userAdminCheck = require('../middleware/userAdminCheck')
 let uploadUser = require('../middleware/uploadAvatars')
-
+let bookValidator = require('../middleware/createBookValidator')
 let {
     admin,
     newProduct,
@@ -21,7 +21,7 @@ let {
 // Admin 
 router.get('/addProduct', userSession, userAdminCheck, admin);
 // Admin, new product
-router.post('/addProduct', upload.single('imagen'), newProduct);
+router.post('/addProduct', bookValidator, upload.single('imagen'), newProduct);
 // Admin, edit view
 router.get('/editProduct/:id', userSession, userAdminCheck, editView);
 // Admin, edit product

@@ -13,6 +13,13 @@
 @import url('books.css');
 
 /* ESTILOS   GENERALES */
+.invalid {
+    border-bottom: solid 2px red;
+
+}
+.valid {
+    border-bottom: solid 2px greenyellow;
+}
 .relative {
     position: relative;
 }

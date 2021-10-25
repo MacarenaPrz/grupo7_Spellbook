@@ -195,12 +195,12 @@ form#product input#image{
     border: none;
     color: var(--color-violeta);
 }
-form#product fieldset input{
+.product-inputs{
     background-color: transparent;
     border: none;
     border-bottom: 2px solid var(--color-azulOscuro);
     font-size: 0.8rem;
-    width: 65%;
+    width: 100%;
 }
 form#product fieldset select{
     width: 60%;
