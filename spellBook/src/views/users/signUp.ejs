@@ -29,30 +29,36 @@
         </div>
 
         <div class="user">
-          <input type="text" name="name" placeholder="Nombre de Usuario" class="user__info"/>
+          <input id="register-name" type="text" name="name" placeholder="Nombre de Usuario" class="user__info-name"/>
+          <span class="warning" id="errorsName"></span>
           <% if (locals.errors && errors.name) { %>
-          <span class="warning"><%= errors.name.msg %> </span>
+            <span class="warning"><i class="fas fa-exclamation-circle"></i><%= errors.name.msg %> </span>
           <%}%>
         </div>
 
         <div class="user">
-          <input type="email" name="email" placeholder="Correo Electronico" class="user__info" />
+          <input id="register-email" type="email" name="email" placeholder="Correo Electronico" class="user__info-email" />
+          <span class="warning" id="errorsEmail"></span>
           <% if (locals.errors && errors.email) { %>
-            <span class="warning"><%= errors.email.msg %></span>
+            <span class="warning"><i class="fas fa-exclamation-circle"></i><%= errors.email.msg %> </span>
             <%}%>
         </div>
 
         <div class="user">
-          <input type="password" name="password" placeholder="Contraseña" class="user__info"/>
+          
+          <input id="register-password" type="password" name="password" placeholder="Contraseña" class="user__info-password"/>
+          <span class="warning" id="errorsPass"></span>
           <% if (locals.errors && errors.password) { %>
-            <span class="warning"><%= errors.password.msg %> </span>
+           <span class="warning"><i class="fas fa-exclamation-circle"></i><%= errors.password.msg %> </span>
+      
             <%}%>
         </div>
 
         <div class="user">
-          <input type="password" name="repeat_password" placeholder="Confimar contraseña" class="user__info"/>
+          <input id="register-confirm" type="password" name="repeat_password" placeholder="Confimar contraseña" class="user__info-password-confirm"/>
+          <span class="warning" id="errorsPass2"></span>
           <% if (locals.errors && errors.repeat_password) { %>
-            <span class="warning"><%= errors.repeat_password.msg %> </span>
+            <span class="warning"><i class="fas fa-exclamation-circle"></i><%= errors.repeat_password.msg %> </span>
             <%}%>
         </div>
 
@@ -65,13 +71,10 @@
         <% if (locals.errors && errors.terminos) { %>
           <span class="warning"><%= errors.terminos.msg %> </span>
         <% } %>
-        <div class="user social">
-          <a href="" class="social__btn button"><i class="fab fa-google social__icon"></i>GOOGLE</a>
-          <a href="" class="social__btn button"><i class="fab fa-facebook-f social__icon"></i>FACEBOOK</a>
-        </div>
+       
 
         <div class="user">
-          <a href="/user/login" class="enlace_link">¿Ya tengo una cuenta?</a>
+          <a href="/user/login" class="enlace_link">¿Ya tenés cuenta?</a>
         </div>
       </form>
     </aside>
@@ -81,3 +84,5 @@
     <script src="/js/header.js"></script>
   </body>
 </html>
+
+<script src="/js/signUpValidator.js"></script>

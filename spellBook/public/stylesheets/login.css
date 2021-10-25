@@ -39,7 +39,7 @@
   align-items: center;
   flex-direction: column;
 }
-.user__info {
+.user__info-name, .user__info-email, .user__info-password, .user__info-password-confirm {
   background-color: var(--color-beige);
   outline: none;
   border: none;
@@ -70,29 +70,7 @@
   gap: 2px;
   width: fit-content;
 }
-.social {
-  width: 85%;
-  flex-direction: row;
-  justify-content: space-between;
-}
-.social__btn {
-  padding: 8px 10px;
-  background-color: var(--color-azulOscuro);
-  color: var(--color-beige);
-  letter-spacing: 0.1rem;
-  border-radius: 5px;
-  font-size: 1rem;
-  transition: all 1s ease-in-out;
 
-}
-.social__icon {
-  padding-right: 10px;
-}
-.social__btn:hover,
-.btn__send:hover {
-  background-color: var(--color-azulClaro);
-  border-radius: 12px;
-}
 
 .enlace_link {
   font-size: 0.8rem;
