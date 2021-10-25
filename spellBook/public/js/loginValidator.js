@@ -40,15 +40,13 @@ window.addEventListener("load",()=>{
         for (let index = 0; index < elementosForm.length - 1; index++) {
             if (elementosForm[index].value.trim() == "" ) {
                 elementosForm[index].style.borderColor = "red"
-                //llenar un span con errores
-                
                 error = true
             }
             
         }
-        if (!error) {
-            
-            $form.submit() 
+        if(!error){
+            console.log('Todo bien');
+            $formProduct.submit()
         }
     } )
 })
