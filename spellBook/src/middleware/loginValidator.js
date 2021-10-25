@@ -6,7 +6,6 @@ module.exports = [
     check('email')
         .notEmpty().withMessage('Eres un mago?? Por que desaparecio tu E-mail').bail()
         .isEmail().withMessage('Ups!!! creo que te confundiste Muggle').bail(),
-
       body('password')
         .notEmpty().withMessage('Ups!!! olvidaste tus palabras magicas').bail(), 
 

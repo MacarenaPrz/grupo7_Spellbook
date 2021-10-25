@@ -1,4 +1,4 @@
-const { validationResult } = require('express-validator');
+const { body, validationResult } = require('express-validator');
 const db = require('../dataBase/models');
 const fs = require('fs')
 
@@ -57,12 +57,12 @@ module.exports={
              res.redirect('/admin/addProduct')
         })
         .catch(err => console.log(err));               
-    }else{ /* res.send(req.body) */
+    }else{ /* res.send(errors.array()) */
             res.render('admin/admin', {             
                 products,
                 recommended_age,
                 authors,
-                errors : Object.values(errors.mapped())
+                errors : errors.array()/* Object.values(errors.mapped()) */
             })
     }
     })
@@ -112,7 +112,7 @@ module.exports={
                 id: req.params.id
             }
         })
-        .then(()=>{ res.redirect( '/product' )})
+        .then(()=>{ res.redirect( '/admin/addProduct' )})
     },
     deleteProduct: (req, res) =>{
         db.Book.findByPk(req.params.id)
