@@ -11,25 +11,18 @@ const storage = multer.diskStorage({
         cb(null, newFileName)
     }
 })
-function checkFileType(file, cb){
-    // Los permitidos
-    const filetypes = /jpeg|jpg|png/;
-    // Chequear que se cumpla
-    const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
-    // Chequear mime
-    const mimetype = filetypes.test(file.mimetype);
-  
-    if(mimetype && extname){
-      return cb(null,true);
-    } else {
-      cb('Error: Images Only!');
-    }
-}
+
 const uploadFile = multer({
     storage: storage,
-    fileFilter: (req, file, cb)=>{
-        checkFileType(file, cb);
-    }
+    fileFilter: (req, file, cb) => {
+        if (file.mimetype == "image/png" || file.mimetype == "image/jpg" || file.mimetype == "image/jpeg") {
+          cb(null, true);
+        } else {
+          cb(null, false);
+          /*cb(new Error('Solo se permite extensión .png, .jpg y .jpeg'));*/
+          
+        }
+      }
 });
 
 module.exports = uploadFile;
