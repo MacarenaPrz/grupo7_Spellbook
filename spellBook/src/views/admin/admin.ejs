@@ -30,7 +30,7 @@
     <!--LIST OF PRODUCTS SECTION-->
     <section class="product-list">
       <!--LINKS TO Agregar libro, Bell AND user-->
-      <h1>Hola <%= locals.userLog.name %>  </h1>
+      <h1>Hola <%= /* locals.userLog.name */ %>  </h1>
       <div class="belluser">
         <a href="/admin/users" class="display-shop" >Ir a usuarios</a>
         <button class="display-shop" id="button-create">Agregar libro</button>
@@ -52,6 +52,14 @@
           <input class="" type="search" name="search" id="" placeholder="">
         </label>
       </div>
+      <% if (locals.errors) { %>
+        <% errors.forEach(err => { %>
+          <p class="warning">X  <%= err.msg %> </p> 
+        <% }) %>
+        
+      <% } %>
+      
+      <div></div>
       <div class="products-table">
         <table>
           <thead>
@@ -108,113 +116,169 @@
         </div>
         <form method="POST" action="/admin/addProduct" enctype="multipart/form-data" id="product">
           <fieldset>
-            <label for="title">Título:</label>
-            <input
+            <label for="titulo">Título:</label>
+            <div class="cont-flex-column">
+              <input class="product-inputs"
               type="text"
               name="titulo"
-              id="title"
+              id="titulo"            
+            />
+            <p class="warning" id="titulo-error"></p>
+            </div>
             
-            />
           </fieldset>
-          <fieldset>
-            <label for="autor">Autor:</label>
-            <select name="autor" id="" class="select-fcm border-fcm">
-              <% authors.forEach(author => { %>
-                  <option value="<%= author.id %>" ><%= author.name %></option>
-              <% }); %>
-          </select>
-          </fieldset>
-          <fieldset>
-            <label for="amount">Stock:</label>
-            <input
-              type="number"
-              name="cantidad"
-              id="amount"
-              
-            />
-          </fieldset>
-          <fieldset>
-            <label for="price">Precio:</label>
-            <input
+        
+
+            <fieldset>
+              <label for="autor">Autor:</label>
+              <div class="cont-flex-column">
+              <select name="autor" id="autor" class="select-fcm border-fcm">
+                <% authors.forEach(author => { %>
+                    <option value="<%= author.id %>" ><%= author.name %></option>
+                <% }); %>
+            </select>
+          </div>
+            </fieldset>
+          
+         
+ 
+            <fieldset>
+              <label for="amount">Stock:</label>
+              <div class="cont-flex-column">
+              <input class="product-inputs"
+                type="number"
+                name="cantidad"
+                id="amount"              
+              />
+              <p class="warning" id="cantidad-error"></p>
+              </div>    
+            </fieldset>
+          
+          
+        
+            <fieldset>
+              <label for="precio">Precio:</label>
+               
+              <div class="cont-flex-column">  
+              <input class="product-inputs"
+                  type="number"
+                  id="precio"
+                  name="precio"                
+              /> 
+              <p class="warning" id="precio-error"></p>
+            </div>           
+            </fieldset>
+
+            <fieldset>
+              <label for="recommended_age">Edad Recomendada:</label>
+              <div class="cont-flex-column">
+              <select name="recommended_age" id="recommended_age" class="select-fcm border-fcm">
+                <% recommended_age.forEach(age => { %>
+                    <option value="<%= age.id %>"><%= age.age %></option>
+                <% }); %>
+            </select>
+            </div>
+          
+            </fieldset>
+         
+
+          
+            <fieldset>
+              <label for="publisher">Editorial:</label>
+              <div class="cont-flex-column">
+              <input class="product-inputs"
                 type="text"
-                id="price"
-                name="precio"
-                
-            />
-          </fieldset>
-          <fieldset>
-            <label for="descripcion">Edad Recomendada:</label>
-            <select name="recommended_age" id="" class="select-fcm border-fcm">
-              <% recommended_age.forEach(age => { %>
-                  <option value="<%= age.id %>"><%= age.age %></option>
-              <% }); %>
-          </select>
-          </fieldset>
+                name="publisher"
+                id="publisher"
+              />
+              <p class="warning" id="publisher-error"></p>
+            </div>
+            </fieldset>
+         
+         
 
-          <fieldset>
-            <label for="descripcion">Editorial:</label>
-            <input
-              type="textarea"
-              name="publisher"
-              id="publisher"
-              
-              
-            />
-          </fieldset>
+         
+            <fieldset>
+              <label for="language">Idioma:</label>
+              <div class="cont-flex-column">
+              <input class="product-inputs"
+                type="text"
+                name="language"
+                id="language"
+              />
+              <p class="warning" id="language-error"></p>
+            </div>
+            </fieldset>
+         
+          
 
-          <fieldset>
-            <label for="descripcion">Idioma:</label>
-            <input
-              type="textarea"
-              name="language"
-              id="language"
-              
-              
-            />
-          </fieldset>
+        
+            <fieldset>
+              <label for="publication_year">Año de Publicación:</label>
+              <div class="cont-flex-column">
+              <input class="product-inputs"
+                type="number"
+                name="publication_year"
+                id="publication_year"
+              />
+              <p class="warning" id="publication_year-error"></p>
+  
+            </div>
+            </fieldset>
+     
+         
+         
+            <fieldset>
+              <label for="pages">Nro de Páginas:</label>
+              <div class="cont-flex-column">
+              <input class="product-inputs"
+                type="number"
+                name="pages"
+                id="pages"
+              />
+              <p class="warning" id="pages-error"></p>
+            </div>
+            </fieldset>
+            
+        
+         
+            <fieldset>
+              <label for="image">Imagen:</label>
+              <div class="cont-flex-column">
+              <input class="product-inputs" type="file" name="imagen" id="image" />
+              <p class="warning" id="image-error"></p>
+            </div>  
+            </fieldset>
+          
 
-          <fieldset>
-            <label for="descripcion">Año de Publicación:</label>
-            <input
-              type="textarea"
-              name="publication_year"
-              id="publication_year"
-              
-              
-            />
-          </fieldset>
-
-          <fieldset>
-            <label for="descripcion">Nro de Páginas:</label>
-            <input
-              type="textarea"
-              name="pages"
-              id="pages"
-            />
-          </fieldset>
-          <fieldset>
-            <label for="image">Imagen:</label>
-            <input type="file" name="imagen" id="image" />
-          </fieldset>
-
-          <fieldset>
-            <label for="descripcion">Descripción:</label>
-            <input
-              type="textarea"
-              name="descripcion"
-              id="description"
-              cols = "30"
-              rows = "8"
-            />
-          </fieldset>
+          
+            <fieldset>
+              <label for="description">Descripción:</label>
+              <div class="cont-flex-column">
+              <input class="product-inputs"
+                type="textarea"
+                name="descripcion"
+                id="description"
+                cols = "30"
+                rows = "8"
+              />
+              <p class="warning" id="description-error"></p>
+            </div>
+            </fieldset>
+         
+         
 
 
           
-          <fieldset>
-            <!-- <input class="delete" type="reset" value="Borrar"> -->
-            <button class="display-shop button" type="reset" id="cancel"> Cancelar </button>
-            <button class="display-shop" type="submit" > Guardar</button>
-          </fieldset>
+          
+            <fieldset>
+              <!-- <input class="delete" type="reset" value="Borrar"> -->
+              
+              <button class="display-shop button" type="reset" id="cancel"> Cancelar </button>
+              <button class="display-shop" type="submit" > Guardar</button>                         
+             </fieldset>
+             <p class="warning" id="submit-error"></p>
+         
         </form>
       </div>
     </section>
