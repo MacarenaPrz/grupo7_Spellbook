@@ -1,33 +1,3 @@
-
-let $buttonCreate = document.getElementById('button-create')//Boton que abre la ventana modal para agregar un producto
-let $deleteBtn = document.querySelectorAll('#button-delete')//Boton de eliminar producto
-//CREAR PRODUCTO
-$buttonCreate.addEventListener('click', function() {
-    document.querySelector('.product-form').style.display = 'flex';
-});
-document.querySelector('.close-create').addEventListener('click', function() {
-    document.querySelector('.product-form').style.display = 'none';
-    })
-document.querySelector('#cancel').addEventListener('click', function() {
-    document.querySelector('.product-form').style.display = 'none';
-    })
-//EDITAR PRODUCTO
-document.querySelector('.button-edit').addEventListener('click', function() {
-    document.querySelector('.productEdit-form').style.display = 'flex';
-    });
-//Alert para reafirmar si esta seguro de eliminar un producto
-$deleteBtn.forEach(book => {
-    book.addEventListener('submit', function(event){
-        event.preventDefault()
-        let okDelete = confirm('¿Estás seguro de eliminar este producto?')
-        if (okDelete) {
-            book.submit()
-        }else {
-            console.log('No se eliminó')
-        }
-    })
-});
-
 //VALIDACIONES DEL FORMULARIO
 // FUNCION PARA EVITAR REPETIR document.querySelector
 function qs(element) {
@@ -61,13 +31,13 @@ regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/;
 let icono = "<i class='fas fa-exclamation-circle'></i>"
 
 //
-$buttonCreate.addEventListener('click', () => {
+
     console.log($titulo)
     $titulo.addEventListener('blur', function(){
         console.log($titulo.value.trim())
         switch (true) {
             case !$titulo.value.trim():
-                $tituloError.innerHTML =  `${icono}El campo título es obligatorio`
+                $tituloError.innerHTML = `${icono}El campo titulo es obligatorio`
                $titulo.classList.add('invalid')
                 break;
             case !regExAlpha.test($titulo.value):
@@ -86,7 +56,7 @@ $buttonCreate.addEventListener('click', () => {
         console.log($cantidad.value.trim())
         switch (true) {
             case !$cantidad.value.trim():
-                $cantidadError.innerHTML =  `${icono}El Stock es obligatorio`
+                $cantidadError.innerHTML = `${icono}El Stock es obligatorio`
                 $cantidad.classList.add('invalid')
                 break;  
             default:
@@ -142,7 +112,7 @@ $buttonCreate.addEventListener('click', () => {
         console.log($publicationYear.value.trim())
         switch (true) {
             case !$publicationYear.value.trim():
-                $publicationYearError.innerHTML =`${icono}El año de publicación es obligatorio`
+                $publicationYearError.innerHTML = `${icono}El año de publicación es obligatorio`
                 $publicationYear.classList.add('invalid')
                 break;  
             default:
@@ -156,7 +126,7 @@ $buttonCreate.addEventListener('click', () => {
         console.log($pages.value.trim())
         switch (true) {
             case !$pages.value.trim():
-                $pagesError.innerHTML =`${icono}La cantidad de páginas es obligatorio`
+                $pagesError.innerHTML = `${icono}La cantidad de páginas es obligatorio`
                 $pages.classList.add('invalid')
                 break;  
             default:
@@ -170,7 +140,7 @@ $buttonCreate.addEventListener('click', () => {
         console.log($descripcion.value.trim())
         switch (true) {
             case !$descripcion.value.trim():
-                $descripcionError.innerHTML =  `${icono}La descripción es obligatorio`
+                $descripcionError.innerHTML = `${icono}La descripción es obligatorio`
                 $descripcion.classList.add('invalid')
                 break;  
             default:
@@ -217,7 +187,7 @@ $buttonCreate.addEventListener('click', () => {
         for (let index = 0; index < elementosFormProduct.length-1; index++) {
             if(elementosFormProduct[index].value == ""){
                elementosFormProduct[index].classList.add('invalid');
-                $submitError.innerHTML = `${icono}Los campos señalados son obligatorios`;
+                $submitError.innerHTML = `${icono}Los campos señalados son obligatorios`
                 error = true;
             }
         }
@@ -227,5 +197,4 @@ $buttonCreate.addEventListener('click', () => {
         }
 
     })
-})
 

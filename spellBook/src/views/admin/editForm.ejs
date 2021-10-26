@@ -52,13 +52,17 @@
           </fieldset>
           <fieldset class="user-data">
             <label for="title">Título:</label>
-            <input
+            <div>
+              <input
               type="text"
               name="titulo"
-              id="title"
+              id="titulo"
               value="<%= idBook.title %> "
             />
+            <p id="titulo-error" class="warning"></p>
+            </div>     
           </fieldset>
+          
           <fieldset class="user-data">
             <label for="autor">Autor:</label>
             <select name="autor" id="autor" class="select-fcm border-fcm" >
@@ -69,33 +73,48 @@
           </fieldset>
           <fieldset class="user-data">
             <label for="amount">Stock:</label>
-            <input
+            <div>
+              <input
               type="number"
               name="cantidad"
               id="amount"
               value="<%= idBook.stock %>"
             />
+            <p id="cantidad-error" class="warning"></p>
+            </div>            
           </fieldset>
+          
           <fieldset class="user-data">
-            <label for="price">Precio:</label>
-            <input
-                type="text"
-                id="price"
-                name="precio"
-                value="<%= idBook.price %>"
-            />
+            <label for="precio">Precio:</label>
+            <div>
+              <input
+              type="number"
+              id="precio"
+              name="precio"
+              value="<%= idBook.price %>"
+          />
+          <p id="precio-error" class="warning"></p>
+            </div>
+            
           </fieldset>
+          
           <fieldset class="user-data">
             <label for="descripcion">Descripción:</label>
-            <input
+            <div>
+              <input
               type="textarea"
               name="descripcion"
-              id="descripcion"
+              id="description"
               value="<%= idBook.description %>"              
             />
+            <p id="description-error" class="warning"></p>
+            </div>
+            
           </fieldset>
+          
           <fieldset>
-            <label for="descripcion">Edad Recomendada:</label>
+            <label for="recommended_age">Edad Recomendada:</label>
+                       
             <select name="recommended_age" id="" class="select-fcm border-fcm">
               <% recommended_age.forEach(age => { %>
                   <option value="<%= age.id %>"><%= age.age %></option>
@@ -103,42 +122,59 @@
           </select>
           </fieldset>
           <fieldset>
-            <label for="descripcion">Editorial:</label>
-            <input
-              type="textarea"
+            <label for="publisher">Editorial:</label>
+            <div>
+              <input
+              type="text"
               name="publisher"
               id="publisher"           
               value="<%= idBook.publisher%>"
             />
+            <p id="publisher-error" class="warning"></p>
+            </div>
+            
           </fieldset>
+          
           <fieldset>
-            <label for="descripcion">Idioma:</label>
-            <input
-              type="textarea"
+            <label for="language">Idioma:</label>
+            <div>
+             <input
+              type="text"
               name="language"
               id="language"
               value="<%= idBook.language %>"              
             />
+            <p id="language-error" class="warning"></p>
+            </div>            
           </fieldset>
+         
           <fieldset>
-            <label for="descripcion">Año de Publicación:</label>
-            <input
-              type="textarea"
+            <label for="publication_year">Año de Publicación:</label>
+            
+            <div>
+              <input
+              type="number"
               name="publication_year"
               id="publication_year"              
               value="<%= idBook.publication_year %>"
             />
+            <p id="publication_year-error" class="warning"></p>
+            </div>
           </fieldset>
+         
           <fieldset>
-            <label for="descripcion">Nro de Páginas:</label>
-            <input
-              type="textarea"
+            <label for="pages">Nro de Páginas:</label>
+            <div>
+              <input
+              type="number"
               name="pages"
               id="pages"
               value="<%= idBook.pages %>"              
             />
+            <p id="pages-error" class="warning"></p>
+            </div>            
           </fieldset>
-
+          
           <fieldset>
             <input class="delete" type="reset" value="Borrar">
             <button class="display-shop" type="submit" > Guardar</button>
@@ -146,7 +182,7 @@
         </form>
       </div>
     </section>
-
+    <script src="/js/editForm.js"></script>
   </main>
 </body>
 </html>

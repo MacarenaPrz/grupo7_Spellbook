@@ -5,6 +5,7 @@ window.addEventListener("load",()=>{
     $emailError = document.querySelector("#emailError"),
     $passwordError = document.querySelector("#passwordError"),
     icono = "<i class='fas fa-exclamation-circle'></i>"
+    regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i//expresión regular para validar email
     
     $email.addEventListener("blur" , () => {
         switch (true) {
@@ -12,7 +13,10 @@ window.addEventListener("load",()=>{
                 $emailError.innerHTML = `${icono} Debes ingresar un email`
                 $email.style.borderColor = "red"
                 break;
-        
+            case !regExEmail.test($email.value):
+                $emailError.innerHTML = `${icono}Debe ingresar un email válido`
+                $email.classList.add('invalid')
+                break;   
             default:
                 $emailError.innerHTML = ``
                 $email.style.borderColor = "#C1A1D3"
