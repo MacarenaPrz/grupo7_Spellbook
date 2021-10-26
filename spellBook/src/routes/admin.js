@@ -21,7 +21,7 @@ let {
 // Admin 
 router.get('/addProduct', userSession, userAdminCheck, admin);
 // Admin, new product
-router.post('/addProduct', bookValidator, upload.single('imagen'), newProduct);
+router.post('/addProduct', /* bookValidator, */ upload.single('imagen'), newProduct);
 // Admin, edit view
 router.get('/editProduct/:id', userSession, userAdminCheck, editView);
 // Admin, edit product
