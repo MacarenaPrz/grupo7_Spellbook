@@ -19,11 +19,11 @@ document.querySelector('.button-edit').addEventListener('click', function() {
 $deleteBtn.forEach(book => {
     book.addEventListener('submit', function(event){
         event.preventDefault()
-        let okDelete = confirm('Estas eguro de eliminar este producto')
+        let okDelete = confirm('¿Estás seguro de eliminar este producto?')
         if (okDelete) {
             book.submit()
         }else {
-            console.log('No se elimino')
+            console.log('No se eliminó')
         }
     })
 });

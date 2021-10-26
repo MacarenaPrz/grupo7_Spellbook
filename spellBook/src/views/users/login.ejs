@@ -27,26 +27,30 @@
         </div>
 
         <div class="user">
-          <input
+          <input 
+          id="email"
             type="email"
             name="email"
             placeholder="Correo de Usuario"
             class="user__info"
           />
+          <span class="warning" id="emailError"></span>
           <% if(locals.errors && errors.email) { %> 
-          <span class="warning"><%= errors.email.msg %></span>
+            <span class="warning"><i class="fas fa-exclamation-circle"></i><%= errors.email.msg %> </span>
           <% } %> 
         </div>
 
         <div class="user">
           <input
+          id="password"
             type="password"
             name="password"
             placeholder="Contraseña"
             class="user__info"
           />
+          <span class="warning" id="passwordError"></span>
           <% if(locals.errors && errors.password) { %> 
-            <span class="warning"><%= errors.password.msg %></span>
+            <span class="warning"><i class="fas fa-exclamation-circle"></i><%= errors.password.msg %> </span>
           <% } %> 
         </div>
     
@@ -54,7 +58,7 @@
           <label class="terminos" for="recuerdame">
             <input class="fit-content" type="checkbox" 
             name="recuerdame" 
-            id="recuerdame">
+            id="remember">
             Recordarme en este equipo
           </label>
         </div>
@@ -80,3 +84,5 @@
    <script src="/js/header.js"></script>
   </body>
 </html>
+
+<script src="/js/loginValidator.js"></script>
