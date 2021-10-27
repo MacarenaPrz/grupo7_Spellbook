@@ -70,7 +70,7 @@ module.exports={
     editView:(req, res)=>{
         const recommended_age = db.RecommendedAges.findAll()
         const authors = db.Authors.findAll()
-        const idBook = db.Book.findByPk(req.params.id) 
+        const idBook = db.Book.findOne({ where : { id : req.params.id }}) 
         Promise.all([ recommended_age, authors, idBook])
         .then(([ recommended_age, authors, idBook ])=>{
           return res.render("admin/editForm",{

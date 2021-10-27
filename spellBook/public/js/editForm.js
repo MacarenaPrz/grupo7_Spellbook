@@ -1,5 +1,6 @@
 //VALIDACIONES DEL FORMULARIO
 // FUNCION PARA EVITAR REPETIR document.querySelector
+
 function qs(element) {
     return document.querySelector(element)
 }
@@ -28,9 +29,8 @@ regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
 regExDNI = /^[0-9]{7,8}$/,
 regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,
 regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/;
-let icono = "<i class='fas fa-exclamation-circle'></i>"
+let icono = "<i class='fas fa-exclamation-circle'></i>"//icono de alerta (!)
 
-//
 
     console.log($titulo)
     $titulo.addEventListener('blur', function(){
@@ -53,7 +53,6 @@ let icono = "<i class='fas fa-exclamation-circle'></i>"
     })
 
     $cantidad.addEventListener('blur', function(){
-        console.log($cantidad.value.trim())
         switch (true) {
             case !$cantidad.value.trim():
                 $cantidadError.innerHTML = `${icono}El Stock es obligatorio`
@@ -67,7 +66,6 @@ let icono = "<i class='fas fa-exclamation-circle'></i>"
         }
     })
     $precio.addEventListener('blur', function(){
-        console.log($precio.value.trim())
         switch (true) {
             case !$precio.value.trim():
                 $precioError.innerHTML = `${icono}El precio es obligatorio`
@@ -81,7 +79,6 @@ let icono = "<i class='fas fa-exclamation-circle'></i>"
         }
     })
     $publisher.addEventListener('blur', function(){
-        console.log($publisher.value.trim())
         switch (true) {
             case !$publisher.value.trim():
                 $publisherError.innerHTML = `${icono}La editorial es obligatorio`
@@ -95,7 +92,6 @@ let icono = "<i class='fas fa-exclamation-circle'></i>"
         }
     })
     $language.addEventListener('blur', function(){
-        console.log($language.value.trim())
         switch (true) {
             case !$language.value.trim():
                 $languageError.innerHTML = `${icono}El idioma es obligatorio`
@@ -109,7 +105,6 @@ let icono = "<i class='fas fa-exclamation-circle'></i>"
         }
     })
     $publicationYear.addEventListener('blur', function(){
-        console.log($publicationYear.value.trim())
         switch (true) {
             case !$publicationYear.value.trim():
                 $publicationYearError.innerHTML = `${icono}El año de publicación es obligatorio`
@@ -123,7 +118,6 @@ let icono = "<i class='fas fa-exclamation-circle'></i>"
         }
     })
     $pages.addEventListener('blur', function(){
-        console.log($pages.value.trim())
         switch (true) {
             case !$pages.value.trim():
                 $pagesError.innerHTML = `${icono}La cantidad de páginas es obligatorio`
@@ -137,7 +131,6 @@ let icono = "<i class='fas fa-exclamation-circle'></i>"
         }
     })
     $descripcion.addEventListener('blur', function(){
-        console.log($descripcion.value.trim())
         switch (true) {
             case !$descripcion.value.trim():
                 $descripcionError.innerHTML = `${icono}La descripción es obligatorio`
@@ -179,22 +172,32 @@ let icono = "<i class='fas fa-exclamation-circle'></i>"
 
     $formProduct.addEventListener('submit',function(event){
         let error = false;
-        event.preventDefault()
-        confirm("estas seguro")
-        console.log($formProduct.elements)
-        let elementosFormProduct = this.elements
+        event.preventDefault()      
+        let elementosFormProduct = this.elements      
         
-        for (let index = 0; index < elementosFormProduct.length-1; index++) {
-            if(elementosFormProduct[index].value == ""){
+        for (let index = 0; index < elementosFormProduct.length-2; index++) {
+            if(elementosFormProduct[index].value == "" ){
+                console.log(elementosFormProduct[index])
                elementosFormProduct[index].classList.add('invalid');
                 $submitError.innerHTML = `${icono}Los campos señalados son obligatorios`
                 error = true;
             }
         }
         if(!error){
-            console.log('Todo bien');
-            $formProduct.submit()
+            confirm('¿Desea guardar los cambios?')
+            if(confirm){
+                console.log('Todo bien');
+                $formProduct.submit()
+            }           
         }
 
     })
-
+//CANCELAR LA MODIFICACION
+let $buttonCancel = qs('#cancel-edit')
+$buttonCancel.addEventListener('click', function(event) {
+    event.preventDefault()
+     confirm('Si acepta no se guardaran los cambios')
+    if(confirm){
+       window.location.href = "http://localhost:3030/admin/addProduct"
+    }
+    })

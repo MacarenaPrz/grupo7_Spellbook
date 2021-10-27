@@ -1,292 +1,232 @@
 <!DOCTYPE html>
 <html lang="es">
-    <!-- HEAD -->
-    <%- include('../partials/head') %>
-<body>
-  <!-- HEADER -->
- <header class="header error-bg relative">
-  <div class="star star1"></div>
-  <div class="star star2"></div>
-  <div class="star star3"></div>
-  <div class="star star4"></div>
-  <div class="star star5"></div>
-  <div class="star star6"></div>
-  <div class="star star7"></div>
-  <div class="star star8"></div>
-  <!-- LOGO CON LINK AL HOME -->
-  <div class="logo">
-      <h1 class="logo__title"><a href="/" class="logo__link">SpellBook</a></h1>
-      
-  </div >
-  
-    <!-- BURGER MENU -->
-  <a href="/admin/addProduct">
-    <div class="">
-      <i class="far fa-user" id="icon"></i>
-    </div>
-  </a>
-  </header>
-  <main>
-    <!--LIST OF PRODUCTS SECTION-->
-    <section class="product-list">
-      <!--LINKS TO Agregar libro, Bell AND user-->
-      <h1>Hola <%= /* locals.userLog.name */ %>  </h1>
-      <div class="belluser">
-        <a href="/admin/users" class="display-shop" >Ir a usuarios</a>
-        <button class="display-shop" id="button-create">Agregar libro</button>
-        <a href="/user/login">
-          <div class="">
-            <i class="far fa-bell" id="icon"></i>
-          </div>
-        </a>
-        <a href="/user/login">
-          <div class="">
-            <i class="far fa-user" id="icon"></i>
-          </div>
-        </a>
-      </div>
-      <div class="search-table">
-        <h2>Libros</h2>
-        <label name="search" id="search" >
-          <i class="fas fa-search "></i>
-          <input class="" type="search" name="search" id="" placeholder="">
-        </label>
-      </div>
-      <% if (locals.errors) { %>
-        <% errors.forEach(err => { %>
-          <p class="warning">X  <%= err.msg %> </p> 
-        <% }) %>
-        
-      <% } %>
-      
-      <div></div>
-      <div class="products-table">
-        <table>
-          <thead>
-            <tr class="head-table">
-              <th>Imagen</th>
-              <th class="description-on">Descripcion</th>
-              <th>Título</th>
-              <th>Cantidad</th>
-              <th>Precio</th>
-              <th>Estado</th>
-              <th> </th>
-              <th> </th>
-            </tr>
-          </thead> 
-          <tbody>
-             
-                <% products.forEach(book => { %>
-                  
-                <tr>
-                 
-                  <td>  <a href="/product/<%= book.id %>"><img src="/images/Libros/<%= book.image%>"></a></td>
-                  <td class="description-on"><a href="/product/<%= book.id %>"><%=  book.description.slice(0 , 200) %> ...</a></td>
-                  <td><a href="/product/<%= book.id %>"><%= book.title%></a></td>
-                  <td><a href="/product/<%= book.id %>"><%= book.stock%></a></td>
-                  <td><a href="/product/<%= book.id %>"><%= book.price%></a></td>
-                  <td><a href="/product/<%= book.id %>">Activo</a></td>
-                
-                  <td>
-                    <a href="/admin/editProduct/<%= book.id %>" class="button-edit">
-                        <i class="fas fa-pen"></i>
-                    </a>
-                  </td>
-                  <td>
-                    <form action="deleteProduct/<%=book.id%>?_method=DELETE" id="button-delete" method="POST">
-                      <button class="btn-delete" type="submit"><i class="far fa-trash-alt"></i></button>
-                    </form>
-                  </td>   
-                                 
-                </tr>       
-                <% }) %>
+<!-- HEAD -->
+<%- include('../partials/head') %>
 
-            </tbody>
-        </table>
+  <body>
+    <!-- HEADER -->
+    <header class="header error-bg relative">
+      <div class="star star1"></div>
+      <div class="star star2"></div>
+      <div class="star star3"></div>
+      <div class="star star4"></div>
+      <div class="star star5"></div>
+      <div class="star star6"></div>
+      <div class="star star7"></div>
+      <div class="star star8"></div>
+      <!-- LOGO CON LINK AL HOME -->
+      <div class="logo">
+        <h1 class="logo__title"><a href="/" class="logo__link">SpellBook</a></h1>
+
       </div>
-    </section>
-<!-- CREATE FORM -->
-    <section class="product-form">
-      <div class="internal-modal">
-        <div class="close-create">
-          <i class="fas fa-times" id="icon" aria-hidden="true"></i>
+
+      <!-- BURGER MENU -->
+      <a href="/admin/addProduct">
+        <div class="">
+          <i class="far fa-user" id="icon"></i>
         </div>
-        <div class="add-btn"><h2 id="shop-form">Agregar libro</h2></div>
-        <div class="errors">
-        </div>
-        <form method="POST" action="/admin/addProduct" enctype="multipart/form-data" id="product">
-          <fieldset>
-            <label for="titulo">Título:</label>
-            <div class="cont-flex-column">
-              <input class="product-inputs"
-              type="text"
-              name="titulo"
-              id="titulo"            
-            />
-            <p class="warning" id="titulo-error"></p>
+      </a>
+    </header>
+    <main>
+      <!--LIST OF PRODUCTS SECTION-->
+      <section class="product-list">
+        <!--LINKS TO Agregar libro, Bell AND user-->
+        <h1>Hola <%= /* locals.userLog.name */ %>
+        </h1>
+        <div class="belluser">
+          <a href="/admin/users" class="display-shop">Ir a usuarios</a>
+          <button class="display-shop" id="button-create">Agregar libro</button>
+          <a href="/user/login">
+            <div class="">
+              <i class="far fa-bell" id="icon"></i>
             </div>
-            
-          </fieldset>
-        
+          </a>
+          <a href="/user/login">
+            <div class="">
+              <i class="far fa-user" id="icon"></i>
+            </div>
+          </a>
+        </div>
+        <div class="search-table">
+          <h2>Libros</h2>
+          <label name="search" id="search">
+            <i class="fas fa-search "></i>
+            <input class="" type="search" name="search" id="" placeholder="">
+          </label>
+        </div>
+        <% if (locals.errors) { %>
+          <% errors.forEach(err=> { %>
+            <p class="warning">X <%= err.msg %>
+            </p>
+            <% }) %>
 
+              <% } %>
+
+                <div></div>
+                <div class="products-table">
+                  <table>
+                    <thead>
+                      <tr class="head-table">
+                        <th>Imagen</th>
+                        <th class="description-on">Descripcion</th>
+                        <th>Título</th>
+                        <th>Cantidad</th>
+                        <th>Precio</th>
+                        <th>Estado</th>
+                        <th> </th>
+                        <th> </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+
+                      <% products.forEach(book=> { %>
+                        <tr>
+                          <td> <a href="/product/<%= book.id %>"><img src="/images/Libros/<%= book.image%>"></a></td>
+                          <td class="description-on"><a href="/product/<%= book.id %>">
+                              <%= book.description.slice(0 , 200) %> ...
+                            </a></td>
+                          <td><a href="/product/<%= book.id %>">
+                              <%= book.title%>
+                            </a></td>
+                          <td><a href="/product/<%= book.id %>">
+                              <%= book.stock%>
+                            </a></td>
+                          <td><a href="/product/<%= book.id %>">
+                              <%= book.price%>
+                            </a></td>
+                          <td><a href="/product/<%= book.id %>">Activo</a></td>
+
+                          <td>
+                            <a href="/admin/editProduct/<%= book.id %>" class="button-edit">
+                              <i class="fas fa-pen"></i>
+                            </a>
+                          </td>
+                          <td>
+                            <form action="deleteProduct/<%=book.id%>?_method=DELETE" id="button-delete" method="POST">
+                              <button class="btn-delete" type="submit"><i class="far fa-trash-alt"></i></button>
+                            </form>
+                          </td>
+
+                        </tr>
+                        <% }) %>
+
+                    </tbody>
+                  </table>
+                </div>
+      </section>
+      <!-- CREATE FORM -->
+      <section class="product-form">
+        <div class="internal-modal">
+          <div class="close-create">
+            <i class="fas fa-times" id="icon" aria-hidden="true"></i>
+          </div>
+          <div class="add-btn">
+            <h2 id="shop-form">Agregar libro</h2>
+          </div>
+          <div class="errors">
+          </div>
+          <form method="POST" action="/admin/addProduct" enctype="multipart/form-data" id="product">
+            <fieldset>
+              <label for="titulo">Título:</label>
+              <div class="cont-flex-column">
+                <input class="product-inputs" type="text" name="titulo" id="titulo" />
+                <p class="warning" id="titulo-error"></p>
+              </div>
+
+            </fieldset>
             <fieldset>
               <label for="autor">Autor:</label>
               <div class="cont-flex-column">
-              <select name="autor" id="autor" class="select-fcm border-fcm">
-                <% authors.forEach(author => { %>
-                    <option value="<%= author.id %>" ><%= author.name %></option>
-                <% }); %>
-            </select>
-          </div>
+                <select name="autor" id="autor" class="select-fcm border-fcm">
+                  <% authors.forEach(author=> { %>
+                    <option value="<%= author.id %>">
+                      <%= author.name %>
+                    </option>
+                    <% }); %>
+                </select>
+              </div>
             </fieldset>
-          
-         
- 
             <fieldset>
               <label for="amount">Stock:</label>
               <div class="cont-flex-column">
-              <input class="product-inputs"
-                type="number"
-                name="cantidad"
-                id="amount"              
-              />
-              <p class="warning" id="cantidad-error"></p>
-              </div>    
+                <input class="product-inputs" type="number" name="cantidad" id="amount" />
+                <p class="warning" id="cantidad-error"></p>
+              </div>
             </fieldset>
-          
-          
-        
             <fieldset>
               <label for="precio">Precio:</label>
-               
-              <div class="cont-flex-column">  
-              <input class="product-inputs"
-                  type="number"
-                  id="precio"
-                  name="precio"                
-              /> 
-              <p class="warning" id="precio-error"></p>
-            </div>           
-            </fieldset>
 
+              <div class="cont-flex-column">
+                <input class="product-inputs" type="number" id="precio" name="precio" />
+                <p class="warning" id="precio-error"></p>
+              </div>
+            </fieldset>
             <fieldset>
               <label for="recommended_age">Edad Recomendada:</label>
               <div class="cont-flex-column">
-              <select name="recommended_age" id="recommended_age" class="select-fcm border-fcm">
-                <% recommended_age.forEach(age => { %>
-                    <option value="<%= age.id %>"><%= age.age %></option>
-                <% }); %>
-            </select>
-            </div>
-          
-            </fieldset>
-         
+                <select name="recommended_age" id="recommended_age" class="select-fcm border-fcm">
+                  <% recommended_age.forEach(age=> { %>
+                    <option value="<%= age.id %>">
+                      <%= age.age %>
+                    </option>
+                    <% }); %>
+                </select>
+              </div>
 
-          
+            </fieldset>
             <fieldset>
               <label for="publisher">Editorial:</label>
               <div class="cont-flex-column">
-              <input class="product-inputs"
-                type="text"
-                name="publisher"
-                id="publisher"
-              />
-              <p class="warning" id="publisher-error"></p>
-            </div>
+                <input class="product-inputs" type="text" name="publisher" id="publisher" />
+                <p class="warning" id="publisher-error"></p>
+              </div>
             </fieldset>
-         
-         
-
-         
             <fieldset>
               <label for="language">Idioma:</label>
               <div class="cont-flex-column">
-              <input class="product-inputs"
-                type="text"
-                name="language"
-                id="language"
-              />
-              <p class="warning" id="language-error"></p>
-            </div>
+                <input class="product-inputs" type="text" name="language" id="language" />
+                <p class="warning" id="language-error"></p>
+              </div>
             </fieldset>
-         
-          
-
-        
             <fieldset>
               <label for="publication_year">Año de Publicación:</label>
               <div class="cont-flex-column">
-              <input class="product-inputs"
-                type="number"
-                name="publication_year"
-                id="publication_year"
-              />
-              <p class="warning" id="publication_year-error"></p>
-  
-            </div>
+                <input class="product-inputs" type="number" name="publication_year" id="publication_year" />
+                <p class="warning" id="publication_year-error"></p>
+              </div>
             </fieldset>
-     
-         
-         
             <fieldset>
               <label for="pages">Nro de Páginas:</label>
               <div class="cont-flex-column">
-              <input class="product-inputs"
-                type="number"
-                name="pages"
-                id="pages"
-              />
-              <p class="warning" id="pages-error"></p>
-            </div>
+                <input class="product-inputs" type="number" name="pages" id="pages" />
+                <p class="warning" id="pages-error"></p>
+              </div>
             </fieldset>
-            
-        
-         
             <fieldset>
               <label for="image">Imagen:</label>
               <div class="cont-flex-column">
-              <input class="product-inputs" type="file" name="imagen" id="image" />
-              <p class="warning" id="image-error"></p>
-            </div>  
+                <input class="product-inputs" type="file" name="imagen" id="image" />
+                <p class="warning" id="image-error"></p>
+              </div>
             </fieldset>
-          
-
-          
             <fieldset>
               <label for="description">Descripción:</label>
               <div class="cont-flex-column">
-              <input class="product-inputs"
-                type="textarea"
-                name="descripcion"
-                id="description"
-                cols = "30"
-                rows = "8"
-              />
-              <p class="warning" id="description-error"></p>
-            </div>
+                <input class="product-inputs" type="textarea" name="descripcion" id="description" cols="30" rows="8" />
+                <p class="warning" id="description-error"></p>
+              </div>
             </fieldset>
-         
-         
-
-
-          
-          
             <fieldset>
-              <!-- <input class="delete" type="reset" value="Borrar"> -->
-              
               <button class="display-shop button" type="reset" id="cancel"> Cancelar </button>
-              <button class="display-shop" type="submit" > Guardar</button>                         
-             </fieldset>
-             <p class="warning" id="submit-error"></p>
-         
-        </form>
-      </div>
-    </section>
+              <button class="display-shop" type="submit"> Guardar</button>
+            </fieldset>
+            <p class="warning" id="submit-error"></p>
 
+          </form>
+        </div>
+      </section>
+    </main>
+    <script src="/js/admin.js"></script>
+  </body>
 
-    
-
-  </main>
-  <script src="/js/admin.js"></script>
-</body>
 </html>

@@ -5,17 +5,24 @@
 @import url('productDetail.css');
 @import url('shoppingCart.css');
 @import url('footer.css');
-@import url('404.css'); 
+@import url('404.css');
 @import url('admin.css');
 @import url('register.css');
-@import url('novelties.css'); 
+@import url('novelties.css');
 @import url('aboutUs.css');
 @import url('books.css');
 
 /* ESTILOS   GENERALES */
+.flex-between {
+    display: flex;
+    align-content: space-between;
+}
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
 .invalid {
     border-bottom: solid 2px red;
-
 }
 .valid {
     border-bottom: solid 2px greenyellow;
@@ -71,8 +78,8 @@
     background: var(--color-azulClaro);
     color: var(--color-beige);
     cursor:pointer;transition:all .3s;
-border-radius: 5px;
-font-size: 15px;
+    border-radius: 5px;
+    font-size: 15px;
    
 }
 .button:hover{

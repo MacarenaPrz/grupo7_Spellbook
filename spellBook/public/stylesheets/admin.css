@@ -176,13 +176,14 @@ section.productEdit-form{
     color: white;
     background-color: transparent;
 }
-form#product{
+.form-product-admin{
     height: 80%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     gap: 20px;
 }
+
 form#product fieldset{
     border: none;
     font-size: 0.8rem;
@@ -233,6 +234,9 @@ form#product fieldset input.display-shop{
 .description-on{
     display: none;
 }
+section.product-form{
+    top: 120px;
+}
 
 /* ESTILOS PARA USERS ADMIN */
 /* AVATAR DE USUARIOS */
@@ -246,6 +250,34 @@ form#product fieldset input.display-shop{
     text-align: center;
     font-size: 1rem;
     align-items: center;
+}
+/* EDIT PRODUCT */
+/* IMAGEN DE EDIT PRODUCT */
+.cont-image-edit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.edit-form-image {
+    height: 10rem;
+    box-shadow:var(--box-shadow-images)
+}
+.edit-conteiner-main {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 50px 0;
+    flex-grow: 1;
+    text-align: center;
+    font-size: 0.9rem;
+}
+.edit-submit {
+    display: flex;
+    justify-content: space-evenly;
+}
+.edit-button-submit {
+    width: 20%;
+    min-width: 100px;
 }
 
 @media (min-width: 515px) {
@@ -271,13 +303,12 @@ form#product fieldset input.display-shop{
         display: table-cell;
         width: 45%;
     }
+    .edit-container {
+        display: flex;
+        flex-direction: row;
+        align-items: unset;
+    }
 }
-
-section.product-form{
-    top: 120px;
-}
-
-
 @media (min-width: 1024px ){
     .products-table{
        font-size: 0.8rem;
