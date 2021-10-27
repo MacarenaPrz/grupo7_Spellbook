@@ -117,6 +117,7 @@ module.exports={
     deleteProduct: (req, res) =>{
         db.Book.findByPk(req.params.id)
         .then(product => {
+            if(product.image !== "default-image.jpg" ){
                 fs.existsSync("./public/images/Libros/", product.image)
                 ? fs.unlinkSync("./public/images/Libros/" + product.image)
                 : console.log("-- No se encontró")
@@ -128,9 +129,19 @@ module.exports={
                 .then(()=>{ 
                     res.redirect('/admin/addProduct')
                 })
+            }else {
+                db.Book.destroy({
+                    where: {
+                        id: req.params.id
+                    }
+                })
+                .then(()=>{ 
+                    res.redirect('/admin/addProduct')
+                })
             }
-        )
-      
+                
+            }          
+        )      
     },
     adminUser: ( req, res ) => {
         db.Users.findAll()
@@ -141,10 +152,22 @@ module.exports={
         })
     },
     deleteUser: ( req, res ) => {
-        db.Users.destroy({ where : { id : req.params.id }})
-        .then(() => { 
-            
-            res.redirect('/admin/users')
+        db.Users.findByPk(req.params.id)
+        .then(user => {
+            if (user.avatar !== "user-image.png") {
+                fs.existsSync("./public/images/Imagenes de perfil/", user.avatar)
+            ? fs.unlinkSync("./public/images/Imagenes de perfil/" + user.avatar)
+            : console.log("-- No se encontró")
+            db.Users.destroy({ where : { id : req.params.id }})
+            .then(() => {             
+                res.redirect('/admin/users')
+            }) 
+            } else {
+                db.Users.destroy({ where : { id : req.params.id }})
+                .then(() => {             
+                    res.redirect('/admin/users')
+            })}
+                       
         })
     },
     infoUser: ( req, res ) => {

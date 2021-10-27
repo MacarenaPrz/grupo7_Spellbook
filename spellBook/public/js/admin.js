@@ -214,7 +214,7 @@ $buttonCreate.addEventListener('click', () => {
         console.log($formProduct.elements)
         let elementosFormProduct = this.elements
         
-        for (let index = 0; index < elementosFormProduct.length-1; index++) {
+        for (let index = 0; index < elementosFormProduct.length-2; index++) {
             if(elementosFormProduct[index].value == ""){
                elementosFormProduct[index].classList.add('invalid');
                 $submitError.innerHTML = `${icono}Los campos señalados son obligatorios`;
