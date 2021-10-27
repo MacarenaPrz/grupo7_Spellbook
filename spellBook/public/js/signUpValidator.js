@@ -55,7 +55,7 @@ window.addEventListener("load", () => {
                 $errorsPass.innerHTML = `${icono} El campo contraseña es obligatorio`
                 $inputPassword.style.borderColor = "red"
                 break;
-            case !regExPass.test($inputPass.value):
+            case !regExPass.test($inputPassword.value):
                 $errorsPass.innerHTML = `${icono} La contraseña debe ser alfanumerica y debe tener 8 caracteres`
                 $inputPassword.style.borderColor = "red"
                 break;

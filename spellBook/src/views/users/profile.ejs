@@ -76,7 +76,7 @@
           </p>
           <span class="warning" id="nameError"></span>
           <!-- APELLIDO -->
-          <p class="confirmation">
+          <p class="user-data-firstname">
             <input
               class="user-date-inputs"
               placeholder="Apellido"
@@ -142,12 +142,15 @@
               id="avatar"
               value="<%= user.avatar %> "
             />
-          </p>
-
-          <!-- BOTON PARA DE GUARDAR -->
-          <button type="submit" class="btn-save button">GUARDAR</button>
+          </p>        
         </section>
+          <!-- BOTON PARA DE GUARDAR -->
+          <div class="user-submit-container">
+            <button type="submit" class="btn-save button">GUARDAR</button>
+          </div>
+          
       </form>
+    </main>
       <h2 class="title-seccion">Tus ultimas Compras</h2>
 
       <!-- LINEA HR -->
@@ -157,7 +160,7 @@
         <p class="now-buy">No haz realizado ninguna compra aún</p>
         <a href="#"><p class="now-buy">Empieza ahora</p></a>
       </section>
-    </main>
+  
 
     <!-- FOOTER -->
     <%- include('../partials/footer') %>
