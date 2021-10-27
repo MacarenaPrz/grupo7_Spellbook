@@ -23,7 +23,7 @@
         />
       </figure>
 
-      <form action="/user/signup" method="POST" class="form">
+      <form action="/user/signup" method="POST" class="form" id="form">
         <div class="box">
           <h2 class="box__title">Registrate</h2>
         </div>
@@ -61,17 +61,20 @@
             <span class="warning"><i class="fas fa-exclamation-circle"></i><%= errors.repeat_password.msg %> </span>
             <%}%>
         </div>
-
-        <button type="submit" class="btn__send button">Registrate</button>
-
+        
         <div class="terminos">
           <input class="fit-content" type="checkbox"  name="terminos" id="check"/>
           <label class="fit-content" for="ckeck">Acepto los <a href="">Terminos y condiciones </a></label>
         </div>
+        <span class="warning" id="checkError"></span>
         <% if (locals.errors && errors.terminos) { %>
           <span class="warning"><%= errors.terminos.msg %> </span>
         <% } %>
        
+
+        <button type="submit" class="btn__send button">Registrate</button>
+
+        
 
         <div class="user">
           <a href="/user/login" class="enlace_link">¿Ya tenés cuenta?</a>
