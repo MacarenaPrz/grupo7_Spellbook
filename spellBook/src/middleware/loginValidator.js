@@ -18,7 +18,7 @@ module.exports = [
             })
             .catch(() => {
               if(req.body.email) {
-                return Promise.reject("Nuestros Goblins no pudieron encontrar tu cuenta");
+                return Promise.reject("Nuestros Goblins no pudieron encontrar tu cuenta vuelve a intentarlo");
               }
              
             });

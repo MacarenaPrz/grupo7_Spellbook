@@ -1,7 +1,7 @@
 window.addEventListener("load",()=>{
     let $email = document.querySelector("#email"),
     $pass = document.querySelector("#password"),
-    $form = document.querySelector("form"),
+    $form = document.querySelector("#form"),
     $emailError = document.querySelector("#emailError"),
     $passwordError = document.querySelector("#passwordError"),
     icono = "<i class='fas fa-exclamation-circle'></i>"
@@ -41,7 +41,7 @@ window.addEventListener("load",()=>{
         let error = false;
         e.preventDefault();
         let elementosForm = $form.elements;
-        for (let index = 0; index < elementosForm.length - 1; index++) {
+        for (let index = 0; index < elementosForm.length - 2; index++) {
             if (elementosForm[index].value.trim() == "" ) {
                 elementosForm[index].style.borderColor = "red"
                 error = true
@@ -50,7 +50,7 @@ window.addEventListener("load",()=>{
         }
         if(!error){
             console.log('Todo bien');
-            $formProduct.submit()
+            $form.submit()
         }
     } )
 })
