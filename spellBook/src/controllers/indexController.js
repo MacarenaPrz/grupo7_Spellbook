@@ -3,12 +3,11 @@ const { Op } = require('sequelize')
 
 module.exports = {
     index: (req, res) => {
-        const monthSelection = db.Book.findAll({ where: { id: [1, 6, 3] }, include: [{ association: "author"}] })
-        const booksCarrousel = db.Book.findAll({ where: { id: [1, 6, 3, 4, 5] }, include: [{ association: "author"}] })
-        const books = db.Book.findAll({ include: [{ association: "author"}] })
-        Promise.all([monthSelection, booksCarrousel, books])
-            .then(([monthSelection, booksCarrousel, books]) => {
-                let booksNovelties = books.slice( books.length - 4 )
+        const monthSelection = db.Book.findAll({ order: [[ "id", "DESC"]], offset : 5 , limit : 3, include: [{ association: "author"}] })
+        const booksCarrousel = db.Book.findAll({ order: [[ "id", "ASC"]], limit : 5, include: [{ association: "author"}] })
+        const booksNovelties = db.Book.findAll({ order: [[ "id", "DESC"]], limit : 4, include: [{ association: "author"}] })
+        Promise.all([monthSelection, booksCarrousel, booksNovelties])
+            .then(([monthSelection, booksCarrousel, booksNovelties]) => {
                 res.render('index', {
                     monthSelection,
                     booksNovelties,
@@ -49,11 +48,11 @@ module.exports = {
             })
         })
     },
-    novelties: (req, res) => {
-        db.Book.findAll({ include: [{ association : "author" }]})
-        .then( books => {
-            let booksNovelties = books.slice( books.length - 4 )
-            let booksRecommended = books.slice( 0, 3 )
+    novelties: (req, res) => {      
+        let booksNovelties = db.Book.findAll({ order: [[ "id", "DESC"]], limit : 4, include: [{ association: "author"}] })
+        let booksRecommended = db.Book.findAll({ order: [[ "id", "DESC"]], offset : 5 , limit : 3, include: [{ association: "author"}] })
+        Promise.all([booksNovelties, booksRecommended])
+        .then(([booksNovelties, booksRecommended]) => {
             res.render('products/novelties', {
                 booksNovelties,
                 booksRecommended
