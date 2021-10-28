@@ -154,20 +154,35 @@ module.exports={
     deleteUser: ( req, res ) => {
         db.Users.findByPk(req.params.id)
         .then(user => {
-            if (user.avatar !== "user-image.png") {
-                fs.existsSync("./public/images/Imagenes de perfil/", user.avatar)
-            ? fs.unlinkSync("./public/images/Imagenes de perfil/" + user.avatar)
-            : console.log("-- No se encontró")
-            db.Users.destroy({ where : { id : req.params.id }})
-            .then(() => {             
-                res.redirect('/admin/users')
-            }) 
-            } else {
-                db.Users.destroy({ where : { id : req.params.id }})
+            if(res.locals.userLog.rol == "admin"){ //Si en session un usuario con rol admin
+                if (user.avatar !== "user-image.png") { // Y su imagen no es la de default
+                    fs.existsSync("./public/images/Imagenes de perfil/", user.avatar)//Si existe la ruta y el avatar
+                ? fs.unlinkSync("./public/images/Imagenes de perfil/" + user.avatar)//Elimina la imagen con .unlinkSync
+                : console.log("-- No se encontró")
+                db.Users.destroy({ where : { id : req.params.id }})// luego busca a usuario en la DB y lo elimina
                 .then(() => {             
-                    res.redirect('/admin/users')
-            })}
-                       
+                    res.redirect('/admin/users')//luego redirecciona a la lista de usuarios
+                }) 
+                } else {
+                    db.Users.destroy({ where : { id : req.params.id }}) //Si el avatar es la de default solo elimina el usuario y no la imagen
+                    .then(() => {             
+                        res.redirect('/admin/users')// Luego redirige al listado de usuarios
+                })}
+            }else if (res.locals.userLog.rol == "user"){//Aca si el usuario tiene rol user
+                if (user.avatar !== "user-image.png") {//Y su imagen no es la de default
+                    fs.existsSync("./public/images/Imagenes de perfil/", user.avatar)//Si existe la ruta y el avatar
+                ? fs.unlinkSync("./public/images/Imagenes de perfil/" + user.avatar)//Elimina la imagen con .unlinkSync
+                : console.log("-- No se encontró")
+                db.Users.destroy({ where : { id : req.params.id }})//uego busca a usuario en la DB y lo elimina
+                .then(() => {             
+                    res.redirect('http://localhost:3030/user/logout')//luego redirecciona al /logout para sacarlo de session y redireccionar al home
+                }) 
+                } else {
+                    db.Users.destroy({ where : { id : req.params.id }})//uego busca a usuario en la DB y lo elimina
+                    .then(() => {             
+                        res.redirect('http://localhost:3030/user/logout')//luego redirecciona al /logout para sacarlo de session y redireccionar al home
+                })}
+            }
         })
     },
     infoUser: ( req, res ) => {

@@ -34,4 +34,17 @@ window.addEventListener("load",()=>{
             $formProduct.submit()
         }
     } )
+
+    let $deleteUser = document.querySelector('#delete-user')//Boton de eliminar 
+//Alert para reafirmar si estas seguro de eliminarte
+    console.log($deleteUser)
+    $deleteUser.addEventListener('submit', function(event){
+        event.preventDefault()
+        let isOk = confirm('Estas seguro de eliminarte')
+        if (isOk) {
+            $deleteUser.submit()
+        }else {
+            console.log('No se elimino')
+        }
+    })
 })

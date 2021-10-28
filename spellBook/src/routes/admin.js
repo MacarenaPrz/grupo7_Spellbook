@@ -32,7 +32,7 @@ router.delete('/deleteProduct/:id', deleteProduct);
 //ADMIN USUARIOS
 router.get('/users',   userSession, userAdminCheck, adminUser)
 //ADMIN ELIMINAR USUSARIO
-router.delete('/deleteUser/:id', deleteUser);
+router.delete('/deleteUser/:id', userSession, deleteUser);
 //ADMIN DATOS DEL USUSARIO
 router.get('/users/:id',  userSession, userAdminCheck, infoUser)
 //ADMIN EDITAR USUSARIO
