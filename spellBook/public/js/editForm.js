@@ -193,11 +193,11 @@ let icono = "<i class='fas fa-exclamation-circle'></i>"//icono de alerta (!)
 
     })
 //CANCELAR LA MODIFICACION
-let $buttonCancel = qs('#cancel-edit')
+/* let $buttonCancel = qs('#cancel-edit')
 $buttonCancel.addEventListener('click', function(event) {
     event.preventDefault()
      confirm('Si acepta no se guardaran los cambios')
     if(confirm){
        window.location.href = "http://localhost:3030/admin/addProduct"
     }
-    })
+    }) */

@@ -114,7 +114,16 @@
       </main>
       <div class="edit-submit">
        
-        <button class=" button edit-button-submit button__send" id="cancel-edit" type="reset">Cancelar</button>
+        <button class=" button edit-button-submit button__send" id="cancel-edit" type="reset"  onclick="jmgModal('miventana',{
+          title: 'Vas vas cancelar',
+          width: 400,
+          height: 20,
+          content: 'Si cancelas no se guardaran los cambios'},
+          ['Aceptar',function(){
+            `${window.location.href = '/admin/addProduct'}`            
+          }           
+          ],
+          ['Cancelar', '']);">Cancelar</button>
         <button class=" button edit-button-submit" type="submit"> Guardar</button>
       </div>              
       <p id="submit-error" class="warning"></p>
@@ -123,6 +132,7 @@
       <%- include('../partials/footer') %>
         <!-- LINK DEL JS DE EDIT FORM -->
         <script src="/js/editForm.js"></script>
+        <script src="/js/jmgmodal.js"></script>
     </body>
 
 </html>

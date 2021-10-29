@@ -211,7 +211,6 @@ $buttonCreate.addEventListener('click', () => {
         let error = false;
         event.preventDefault()
         confirm("estas seguro")
-        console.log($formProduct.elements)
         let elementosFormProduct = this.elements
         
         for (let index = 0; index < elementosFormProduct.length-2; index++) {
