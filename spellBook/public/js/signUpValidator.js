@@ -11,7 +11,8 @@ window.addEventListener("load", () => {
     $checkError = document.querySelector('#checkError')
     $submitButton = document.querySelector(".btn__send"),
     $form = document.querySelector("#form");
-    
+    $formError = document.querySelector('#formError')
+
     let icono = "<i class='fas fa-exclamation-circle'></i>"
     let validationsErrors = true
 
@@ -109,9 +110,10 @@ window.addEventListener("load", () => {
         let elementosForm = $form.elements;
         for (let index = 0; index < elementosForm.length - 1; index++) {
             console.log(elementosForm[index].value)
-            if (elementosForm[index] == "" ) {
-                elementosForm[index].style.borderColor = "#C1A1D3"
+            if (elementosForm[index].value == "" ) {
+                elementosForm[index].classList.add('invalid')
                 //llenar un span con errores
+                $formError.innerHTML = "Los campos señalados deben llenarse"
                 error = true
             }
             
@@ -122,9 +124,9 @@ window.addEventListener("load", () => {
             error = true
         }
 
-        if (!error && validationsErrors) {
-            alert("Felicidades ya te registrarte, es hora de iniciar sesión")
-            $form.submit()             
+        if (!error && !validationsErrors) {            
+            $form.submit()  
+            alert("Felicidades ya te registrarte, es hora de iniciar sesión")           
         }
     } )
 

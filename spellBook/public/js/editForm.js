@@ -178,7 +178,7 @@ let icono = "<i class='fas fa-exclamation-circle'></i>"//icono de alerta (!)
         for (let index = 0; index < elementosFormProduct.length-2; index++) {
             if(elementosFormProduct[index].value == "" ){
                 console.log(elementosFormProduct[index])
-               elementosFormProduct[index].classList.add('invalid');
+                elementosFormProduct[index].classList.add('invalid');
                 $submitError.innerHTML = `${icono}Los campos señalados son obligatorios`
                 error = true;
             }

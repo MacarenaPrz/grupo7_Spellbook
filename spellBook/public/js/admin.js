@@ -210,7 +210,6 @@ $buttonCreate.addEventListener('click', () => {
     $formProduct.addEventListener('submit',function(event){
         let error = false;
         event.preventDefault()
-        confirm("estas seguro")
         let elementosFormProduct = this.elements
         
         for (let index = 0; index < elementosFormProduct.length-2; index++) {
@@ -220,10 +219,13 @@ $buttonCreate.addEventListener('click', () => {
                 error = true;
             }
         }
-        if(!error){
-            console.log('Todo bien');
-            $formProduct.submit()
-        }
+        if(!error){           
+            confirm("estas seguro")
+            if (confirm) {
+                $formProduct.submit()
+                console.log('Todo bien');        
+            }
+            }
 
     })
 })
