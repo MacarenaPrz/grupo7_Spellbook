@@ -41,7 +41,7 @@ function jmgModal(id, data, ok, cancel, input) {
     ct.innerHTML=data.content || '';
     f.innerHTML='';
     if (!isNaN(data.width)) p.style.maxWidth=data.width+'px';
-    if (!isNaN(data.height)) p.style.maxHeight=data.height+'vh';
+    if (!isNaN(data.height)) p.style.maxHeight=data.height+'px';
     if (ok && ok.length>1) {
       var param={value:null};
       if (input && input.length>0) {

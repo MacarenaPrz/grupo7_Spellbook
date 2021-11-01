@@ -14,8 +14,8 @@
     position: absolute; margin: auto;
     top:0;left:0;right:0;bottom:0;
     max-width: 600px; max-height: 70vh;
-    background: beige; border-radius: 10px;
-    color: beige; padding: 50px 0;
+    background: var(--color-beige); border-radius: 10px;
+    color: var(--color-beige); padding: 50px 0;
     transform: translateY(-25%);
     transition: all .12s;
     }
@@ -37,6 +37,9 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
+    color: var(--color-beige);
+    text-align: center;
+    margin: 0;
     }
     .jmgmodal .panel .close {
     position: absolute; top: .25em; right: .75em;
@@ -45,10 +48,16 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    color: var(--color-beige);
     }
     .jmgmodal .panel .content-modal {
     max-height: 100%; overflow: auto;
     padding: 1em; box-sizing: border-box;
+    font-size: 1.2rem;
+    font-family: var(--font-berkshire);
+    text-align: center;
+    color: var(--color-azulClaro);
+    
     }
     .jmgmodal .panel .content-modal iframe:only-child {
     border: 0; width: 100%;
@@ -68,11 +77,11 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-    text-align: right;
+    text-align: center;
     }
     .jmgmodal .panel .footer .action {
-    border-radius: 10px; color: #000;
-    background: #fff; border: 0;
+    border-radius: 10px; color:var(--color-azulOscuro);
+    background: var(--color-beige); border: 0;
     min-width: 80px; min-height: 35px;
     font-weight: bold; cursor: pointer;
     margin-left: 20px;
