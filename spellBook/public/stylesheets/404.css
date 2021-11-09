@@ -75,6 +75,7 @@
     line-height: 0.8;
     margin: 0;
     text-align: center;
+    color: var(--color-beige);
 }
 .magic{
     display: flex;

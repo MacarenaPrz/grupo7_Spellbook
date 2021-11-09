@@ -89,9 +89,9 @@ module.exports = {
         } = req.body
         db.Users.update({
             name: name ,
-            last_name : firstName ,          
+            last_name : firstName , 
             country: location ,
-            birthday: date ,
+            birthday: date ? date : user.birthday ,
             avatar: req.file ? req.file.filename : user.avatar
         },{
             where: {

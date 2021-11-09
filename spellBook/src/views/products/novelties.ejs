@@ -33,7 +33,7 @@
           <span class="nov-price">$ <%= book.price %> </span>
         </div>
       </div>
-  
+      <hr class=" one-line">
   <% } else { %>
     <div class="nov-product" >
       <div class="nov-description">
@@ -51,6 +51,7 @@
         <img class="books__img book-cover" src="images/libros/<%= book.image%>" alt="aca va una imagen">       
       </figure>
     </div>
+    <hr class="one-line-rigth">
   <% } %>   
   <% }) %>
   
@@ -70,9 +71,9 @@
     <hr class="bg-blue">
   </div>
 
-  <div class="m-1">
-    <p>Somos fanaticos de la lectura y lo fantastico.. </p>
-  </div>
+  
+    <p class="m-1">Somos fanaticos de la lectura y lo fantastico.. </p>
+  
   <p class="m-1">Por ello te brindamos esta sección que elegimos nosotros mismos para que disfrutes.</p>
 
   <% booksRecommended.forEach((book, i) => { %>
@@ -94,6 +95,7 @@
               <span class="nov-price">$ <%= book.price %> </span>
             </div>
           </div>
+          <hr class=" one-line">
 
       <% } else { %>
         <div class="nov-product">
@@ -112,6 +114,7 @@
             <img class="books__img book-cover" src="images/libros/<%= book.image%>" alt="aca va una imagen">       
           </figure>
         </div>
+        <hr class=" one-line-rigth">
     <% } %>   
   <% }) %>
 
@@ -123,18 +126,21 @@
     <h1>Los más vistos</h1>
     <hr class="bg-blue">
   </div>
-
-  <div class="m-1">
-   <p>Tambien queremos mostrarte los MAS BUSCADOS por los amantes de la magia y fantasia.</p>
-  </div>
-  <div  class="m-1">
-    <p>Que no te sorprenda que algunos coincidan con la selección de arriba. </p>
-    <br>
-    <p>Que te pudedo decir...</p>
-  </div>
+<section>
   <div class="m-1 text-center">
-    <p>TENEMOS BUEN GUSTO!!!!   🤓🤓</p>
-  </div>
+    <p>Tambien queremos mostrarte los MAS BUSCADOS por los amantes de la magia y fantasia.</p>
+   </div>
+   <div  class="m-1 text-center">
+     <p>Que no te sorprenda que algunos coincidan con la selección de arriba. </p>
+     <br>
+     <p>Que te pudedo decir...</p>
+   </div>
+   <div class="m-1 text-center">
+     <p>TENEMOS BUEN GUSTO!!!!   🤓🤓</p>
+   </div>
+   <br>
+   <br> 
+</section>
   <% booksRecommended.forEach((book, i) => { %>
     <% if (i % 2 == 0) { %>
 
@@ -154,6 +160,7 @@
               <span class="nov-price">$ <%= book.price %> </span>
             </div>
           </div>
+          <hr class=" one-line">
       <% } else { %>
         <div class="nov-product">
           <div class="nov-description">
@@ -171,6 +178,7 @@
             <img class="books__img book-cover" src="images/libros/<%= book.image%>" alt="aca va una imagen">       
           </figure>
         </div>
+        <hr class=" one-line-rigth">
     <% } %>
    
    

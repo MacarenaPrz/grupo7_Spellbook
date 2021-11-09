@@ -1,6 +1,8 @@
 const { body, validationResult } = require('express-validator');
 const db = require('../dataBase/models');
-const fs = require('fs')
+const fs = require('fs');
+const { product } = require('./indexController');
+const { Op } = require('sequelize')
 
 module.exports={
     admin: (req, res) => {
@@ -218,5 +220,30 @@ module.exports={
         .then(() =>{ 
             res.redirect('/admin/users' ) })})
         .catch(err => {console.log(err)})  
-    }
+    },
+    bookSearch: (req, res) => {
+        let search = req.query.search.toLowerCase();
+        db.Book.findAll({
+            where: { title : {[Op.substring]: search } },
+            limit : 9
+        })
+        .then(products => {
+            res.render('admin/adminSearch', {
+                search,
+                products
+            })
+        })
+    },
+    usersSearch: (req, res) => {
+        let searchUser = req.query.search.toLowerCase();
+        db.Users.findAll({
+            where: { email : {[Op.substring]: searchUser } },
+            limit : 9
+        })
+        .then(users => {
+            res.render('admin/adminSearchUser', {
+                users
+            })
+        })
+    },
 }

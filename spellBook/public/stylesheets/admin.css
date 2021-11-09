@@ -31,7 +31,7 @@ main{
 section.product-list{
     background-size: contain;
     background-repeat: no-repeat;
-    margin: 0;
+    margin: 75px auto;
     padding: 0 1rem;
 }
 
@@ -235,7 +235,7 @@ form#product fieldset input.display-shop{
     display: none;
 }
 section.product-form{
-    top: 120px;
+    top: 60px;
 }
 
 /* ESTILOS PARA USERS ADMIN */
@@ -312,5 +312,8 @@ section.product-form{
 @media (min-width: 1024px ){
     .products-table{
        font-size: 0.8rem;
+    }
+    section.product-form{
+        top: 120px;       
     }
 }

@@ -80,6 +80,7 @@
     color: darkred;
     font-size: 0.9rem;
     font-weight: 600;
+    text-align: center;
 }
 @media (min-width: 500px) {
   .aside {

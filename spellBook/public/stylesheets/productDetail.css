@@ -20,6 +20,7 @@
 }
 .item__img img {
   height: 320px;
+  max-width: 290px;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
   border-radius: 3px;
 }

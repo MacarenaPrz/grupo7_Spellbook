@@ -60,8 +60,8 @@
 
           <% relatedBook.forEach(book => { %>
             <figure class="books">
-              <img class="books__img book-cover" src="/images/libros/<%= book.image %> " alt="">
-                <a href="" class="books__title"><%= book.title %> </a>
+              <a href="/product/<%= book.id %> " class="books__title"><img class="books__img book-cover" src="/images/libros/<%= book.image %> " alt=""></a>
+                <a href="/product/<%= book.id %> " class="books__title"><%= book.title %> </a>
             </figure>
           <% }) %>
           

@@ -14,6 +14,13 @@ p.m-1{
     text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
 
 }
+/* LINEA HR */
+.one-line-rigth {
+    background: linear-gradient( 90deg,  var(--color-beige), var(--color-azulOscuro));
+    height: 2px;
+    margin-bottom: 2rem;
+    width: 100%;
+ }
 
 .nov-product {
     display: flex ;

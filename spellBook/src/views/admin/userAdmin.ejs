@@ -4,7 +4,7 @@
     <%- include('../partials/head') %>
 <body>
   <!-- HEADER -->
- <header class="header error-bg relative">
+ <header class="header error-bg">
   <div class="star star1"></div>
   <div class="star star2"></div>
   <div class="star star3"></div>
@@ -38,10 +38,13 @@
       </div>
       <div class="search-table">
         <h2>Usuarios</h2>
-        <label name="search" id="search" >
-          <i class="fas fa-search "></i>
-          <input class="" type="search" name="search" id="search" placeholder="">
-        </label>
+
+        <form action="/admin/users/search/search" method="GET" id="">
+          <label name="searchUser" id="search">
+            <i class="fas fa-search "></i>
+            <input class="" type="search" name="search" id="" placeholder="">
+          </label>
+        </form>
       </div>
       <div class="products-table">
         <table class="f-1rem">
@@ -58,12 +61,12 @@
           <tbody class="text-center">             
             <% users.forEach(user => { %>
             <tr>
-              <td><a href="/users/<%= user.id %> "><img src="/images/Imagenes de perfil/<%= user.avatar%>" class="admin-avatars"></a></td>
+              <td><a href="users/<%= user.id %> "><img src="/images/Imagenes de perfil/<%= user.avatar%>" class="admin-avatars"></a></td>
               <td><a href="users/<%= user.id %> "><%= user.email%></a></td>
-              <td><a href="/users/<%= user.id %> "><%= user.name%></a></td>
-              <td><a href="/users/<%= user.id %> "><%= user.last_name%></a></td>
-              <td><a href="/users/<%= user.id %> "><%= user.country%></a></td>
-              <td><a href="/users/<%= user.id %> "><%= user.rol%></a></td>
+              <td><a href="users/<%= user.id %> "><%= user.name%></a></td>
+              <td><a href="users/<%= user.id %> "><%= user.last_name%></a></td>
+              <td><a href="users/<%= user.id %> "><%= user.country%></a></td>
+              <td><a href="users/<%= user.id %> "><%= user.rol%></a></td>
               <td>
                 <form action="deleteUser/<%=user.id%>?_method=DELETE" id="button-delete-user" method="POST">
                   <button class="btn-delete" type="submit"><i class="far fa-trash-alt"></i></button>

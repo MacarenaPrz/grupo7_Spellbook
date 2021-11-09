@@ -57,8 +57,9 @@ $submitError = qs('#submit-error'),
 regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
 regExDNI = /^[0-9]{7,8}$/,
 regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,
-regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/;
-let icono = "<i class='fas fa-exclamation-circle'></i>"
+regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/,
+regExNum = /^\d+$/,
+icono = "<i class='fas fa-exclamation-circle'></i>"
 
 //
 $buttonCreate.addEventListener('click', () => {
@@ -89,6 +90,9 @@ $buttonCreate.addEventListener('click', () => {
                 $cantidadError.innerHTML =  `${icono}El Stock es obligatorio`
                 $cantidad.classList.add('invalid')
                 break;  
+            case !regExNum.test($cantidad.value):
+                $cantidadError.innerHTML =  `${icono}El Stock no pueder ser negativo `
+                $cantidad.classList.add('invalid')
             default:
                 $cantidad.classList.remove("invalid");
                 $cantidad.classList.add('valid')
@@ -103,6 +107,9 @@ $buttonCreate.addEventListener('click', () => {
                 $precioError.innerHTML = `${icono}El precio es obligatorio`
                 $precio.classList.add('invalid')
                 break;  
+            case $precio.value >= 0 :
+                $precioError.innerHTML = `${icono}El precio debe de ser mayor a 0`
+                $precio.classList.add('invalid')                
             default:
                 $precio.classList.remove("invalid");
                 $precio.classList.add('valid')
@@ -144,7 +151,10 @@ $buttonCreate.addEventListener('click', () => {
             case !$publicationYear.value.trim():
                 $publicationYearError.innerHTML =`${icono}El año de publicación es obligatorio`
                 $publicationYear.classList.add('invalid')
-                break;  
+                break; 
+            case $publicationYear.value >= 1900 :
+                    $publicationYearError.innerHTML = `${icono}El año de publicacion debe de ser mayor a 1900`
+                    $publicationYear.classList.add('invalid')  
             default:
                 $publicationYear.classList.remove("invalid");
                 $publicationYear.classList.add('valid')
@@ -159,6 +169,9 @@ $buttonCreate.addEventListener('click', () => {
                 $pagesError.innerHTML =`${icono}La cantidad de páginas es obligatorio`
                 $pages.classList.add('invalid')
                 break;  
+            case $pages.value >= 0 :
+                $pagesError.innerHTML = `${icono}El numero de paginas debe de ser mayor a 0`
+                $pages.classList.add('invalid') 
             default:
                 $pages.classList.remove("invalid");
                 $pages.classList.add('valid')

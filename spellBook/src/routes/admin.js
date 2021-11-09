@@ -15,6 +15,8 @@ let {
     deleteUser,
     infoUser,
     editUser,
+    bookSearch,
+    usersSearch,
         } = require('../controllers/adminController');
 
 
@@ -28,6 +30,8 @@ router.get('/editProduct/:id', userSession, userAdminCheck, editView);
 router.put('/editProduct/:id', upload.single('imagen'), editProduct);
 //Admin delete product
 router.delete('/deleteProduct/:id', deleteProduct);
+// SEARCH BOOK ADMIN
+router.get('/search', bookSearch)
 
 //ADMIN USUARIOS
 router.get('/users',   userSession, userAdminCheck, adminUser)
@@ -37,5 +41,10 @@ router.delete('/deleteUser/:id', userSession, deleteUser);
 router.get('/users/:id',  userSession, userAdminCheck, infoUser)
 //ADMIN EDITAR USUSARIO
 router.put('/users/:id', uploadUser.single('avatar'), userAdminCheck, editUser)
+//ADMIN USER SEARCH
+router.get('/users/search/search', usersSearch)
+
+
+
 
 module.exports = router;

@@ -123,11 +123,9 @@ window.addEventListener("load", () => {
             $checkError.innerHTML = "Debes aceptar los términos y condiciones"
             error = true
         }
-
-        if (!error && !validationsErrors) {            
-            $form.submit()  
-            alert("Felicidades ya te registrarte, es hora de iniciar sesión")           
-        }
+        if (!error && validationsErrors) {            
+            $form.submit() 
+            alert("Felicidades ya te registrarte, es hora de iniciar sesión")
+        }  
     } )
-
 })

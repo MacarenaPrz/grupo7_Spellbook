@@ -48,22 +48,24 @@
             placeholder="Contraseña"
             class="user__info"
           />
-          <span class="warning" id="passwordError"></span>
-          <% if(locals.errors && errors.password) { %> 
-            <span class="warning"><i class="fas fa-exclamation-circle"></i><%= errors.password.msg %> </span>
-          <% } %> 
         </div>
-    
+          <div class="text-center">
+            <span class="warning" id="passwordError"></span>
+            <% if(locals.errors && errors.password) { %> 
+              <span class="warning"><i class="fas fa-exclamation-circle"></i><%= errors.password.msg %> </span>
+            <% } %> 
+          </div>
         <div>
-          <label class="terminos" for="recuerdame">
+          <label class="terminos" for="recuerdame"></label>
             <input class="fit-content" type="checkbox" 
             name="recuerdame" 
             id="remember">
             Recordarme en este equipo
-          </label>
         </div>
         <button type="submit" value="Enviar" class="btn__send button">Iniciar sesion</button>
-        <span class="warning" id="formError"></span>
+        <div>
+          <span class="warning" id="formError"></span>
+        </div>        
         <div class="user">
           <a href="" class="enlace_link">¿Olvidaste tu contraseña?</a>
           <a href="/user/signup" class="enlace_link"  >¿No tenés cuenta?</a>

@@ -4,8 +4,9 @@
 <%- include('../partials/head') %>
 
   <body>
+   
     <!-- HEADER -->
-    <header class="header error-bg relative">
+    <header class="header error-bg ">
       <div class="star star1"></div>
       <div class="star star2"></div>
       <div class="star star3"></div>
@@ -21,6 +22,26 @@
     </header>
 
     <body>
+      <!-- MODAL DE ACEPTAR -->
+  <div class="modal-container" id="modal-submit-edit">
+    <div class="modal-body">
+      <p>¿Estas seguro de guardar los cambios?</p>
+      <div class="modal-action">
+        <button class="modal-button" id="modal-button-submit-edit">Guardar</button>
+        <button class="modal-button" id="modal-button-cancel-edit">Cancelar</button>
+      </div>
+    </div>    
+  </div>
+  <!-- MODAL DE CANCELAR -->
+  <div class="modal-container" id="modal-cancel-edit">
+    <div class="modal-body">
+      <p>Si cancelas no se guardaran los cambios</p>
+      <div  class="modal-action">
+        <button  class="modal-button" id="modal-button-go-edit">Seguir</button>
+        <button  class="modal-button" id="modal-button-return-edit">Volver</button>
+      </div>
+    </div>    
+  </div>
       <form method="POST" action="/admin/editProduct/<%= idBook.id %>?_method=PUT"
         enctype="multipart/form-data" id="product">
       <main class="edit-container">
@@ -55,7 +76,7 @@
 
               <label for="amount">Stock:</label>
               <div>
-                <input type="number" name="cantidad" id="amount" value="<%= idBook.stock %>" />
+                <input type="number" name="cantidad" id="amount" value="<%= idBook.stock %>" min="1" pattern="^[0-9]+" />
                 <p id="cantidad-error" class="warning"></p>
               </div>
           </div>
@@ -65,7 +86,7 @@
             <section class="form-product-admin">
               <label for="precio">Precio:</label>
               <div>
-                <input type="number" id="precio" name="precio" value="<%= idBook.price %>" />
+                <input type="number" id="precio" name="precio" value="<%= idBook.price %>" min="1" pattern="^[0-9]+" />
                 <p id="precio-error" class="warning"></p>
               </div>
 
@@ -99,12 +120,12 @@
 
               <div>
                 <input type="number" name="publication_year" id="publication_year"
-                  value="<%= idBook.publication_year %>" />
+                  value="<%= idBook.publication_year %>" min="1" pattern="^[0-9]+" />
                 <p id="publication_year-error" class="warning"></p>
               </div>
               <label for="pages">Nro de Páginas:</label>
               <div>
-                <input type="number" name="pages" id="pages" value="<%= idBook.pages %>" />
+                <input type="number" name="pages" id="pages" value="<%= idBook.pages %>" min="1" pattern="^[0-9]+"/>
                 <p id="pages-error" class="warning"></p>
               </div>          
               
@@ -114,25 +135,18 @@
       </main>
       <div class="edit-submit">
        
-        <button class=" button edit-button-submit button__send" id="cancel-edit" type="reset"  onclick="jmgModal('miventana',{
-          title: 'Cancelar',
-          width: 400,
-          height: 80,
-          content: 'Si cancelas no se guardaran los cambios'},
-          ['Aceptar',function(){
-            `${window.location.href = '/admin/addProduct'}`            
-          }           
-          ],
-          ['Cancelar', '']);">Cancelar</button>
-        <button class=" button edit-button-submit" type="submit"> Guardar</button>
-      </div>              
-      <p id="submit-error" class="warning"></p>
+
+        <button class=" button edit-button-submit button__send" id="cancel-edit" type="reset" >Cancelar</button>
+        <button class=" button edit-button-submit" type="submit" id="save-edit">Guardar</button>
+        
+    <p id="submit-error" class="warning"></p> 
+    </div>              
+      
     </form>
       <!-- FOOTER -->
       <%- include('../partials/footer') %>
-        <!-- LINK DEL JS DE EDIT FORM -->
+        <!-- LINK DEL JS DE EDIT FORM -->        
         <script src="/js/editForm.js"></script>
-        <script src="/js/jmgmodal.js"></script>
     </body>
-
+   
 </html>
