@@ -271,6 +271,10 @@ section.product-form{
     text-align: center;
     font-size: 0.9rem;
 }
+.edit-user-conteiner-main {
+    max-width: 400px;
+    padding: 50px 0;
+}
 .edit-submit {
     display: flex;
     justify-content: space-evenly;
@@ -309,6 +313,11 @@ section.product-form{
         align-items: unset;
     }
 }
+@media (min-width: 800px) {
+    section.product-list {
+        margin: 160px auto;
+    }
+}
 @media (min-width: 1024px ){
     .products-table{
        font-size: 0.8rem;
@@ -316,4 +325,5 @@ section.product-form{
     section.product-form{
         top: 120px;       
     }
+   
 }
