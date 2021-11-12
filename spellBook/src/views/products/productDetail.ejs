@@ -37,7 +37,7 @@
             </p>
           </div>
           <div class="card__box">
-          <button class="cart text-center fit-content">
+          <button class="cart text-center fit-content" value="<%= idBook.id %> " id="buy-button">
             <i class="fas fa-cart-plus icon-cart"></i> Agregar al Carrito
           </button>
           </div>
@@ -74,5 +74,7 @@
   <%- include('../partials/footer') %>
   
     <script src="/js/header.js"></script>
+     <!-- LINK DEL JS DEL CART -->
+    <script src="/js/cart.js"></script>
   </body>
 </html>

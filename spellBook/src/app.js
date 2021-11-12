@@ -7,10 +7,12 @@ const logger = require('morgan');
 const methodOverride = require('method-override');
 const session = require('express-session');
 const inLogged = require('./middleware/inLogged')
+
 //Routers
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const adminRouter = require('./routes/admin');
+const apiRoutes = require('./routes/apiRoutes');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -34,7 +36,7 @@ app.use(inLogged)
 app.use('/', indexRouter); // home
 app.use('/user', usersRouter); // login
 app.use('/admin', adminRouter);//admin
-
+app.use('/api', apiRoutes);
 
 
 // catch 404 and forward to error handler
