@@ -17,56 +17,41 @@
         enctype="multipart/form-data"
         id="editForm"
       >
-        <!-- IMAGEN DE USUARIO, BARITA -->
-        <section class="register-user">
-          <div class="user-image">
+      <section class="user-card">
+        <!-- IMAGEN DE USUARIO, VARITA --> 
             <img
               class="user-image-item"
               src="/images/Imagenes de perfil/<%= user.avatar %>"
               alt=""
             />
-          </div>
-        </section>
-
+            
         <!-- NOMBRE DEL USUARIO -->
 
         <!-- CAMPOS A LLENAR -->
         <div class="conteiner-info-user">
           <!-- NOMBRE -->
           <div class="info-user">
-            <img
-              class="user-data-icon user-pocision"
-              height="40px"
-              src="/images/recursos/wizard-icon.png"
-              alt="img de mago"
-            />
-            <p><%= user.name %></p>
-          </div>
-
+            <p class="profile-data-name"><%= user.name %></p>
           <!-- EMAIL -->
-          <div class="info-user">
-            <i class="fas fa-envelope user-data-icon"></i>
-            <p><%= user.email %></p>
+            <p class="profile-data-mail"><%= user.email %></p>
           </div>
         </div>
-
+      </section>
         <!-- TÍTULO DE SECCIÓN -->
-        <h2 class="title-seccion">Datos Personales</h2>
+        <div class="headline">
+          <img class="varita"src="/images/Recursos/varita.png" alt=" imágen de varita mágica">
+          <h1>Datos Personales</h1>
+          </div>
 
         <!-- CAMPOS A LLENAR -->
         <section class="conteiner-user-data">
           <!-- NOMBRE -->
           <p class="user-data">
             <label for="name">
-              <img
-                class="user-data-icon user-pocision"
-                height="40px"
-                src="/images/recursos/wizard-icon.png"
-                alt="img de mago"
-              />
+              <p class="label">Nombre</p>
             </label>
             <input
-              class="user-date-inputs"
+            class="profile-input"
               placeholder="Nombre"
               type="text"
               name="name"
@@ -76,9 +61,12 @@
           </p>
           <span class="warning" id="nameError"></span>
           <!-- APELLIDO -->
-          <p class="user-data-firstname">
+          <p class="user-data">
+          <label for="apellido">
+            <p class="label">Apellido</p>
+          </label>
             <input
-              class="user-date-inputs"
+            class="profile-input"
               placeholder="Apellido"
               type="text"
               name="firstName"
@@ -90,12 +78,11 @@
           <!-- LUGAR -->
           <p class="user-data">
             <label for="location">
-              <i
-                class="fas fa-globe-americas user-data-icon world-pocision"
+              <i class="fas fa-globe-americas user-data-icon world-pocision label"
               ></i>
             </label>
             <input
-              class="user-date-inputs"
+            class="profile-input"
               placeholder="País de Residencia"
               type="text"
               name="location"
@@ -107,16 +94,10 @@
           <!-- NACIMIENTO -->
           <p class="user-data">
             <label for="date">
-              <i class="far fa-calendar user-data-icon"
-                ><img
-                  class="image-icon"
-                  height="18px"
-                  src="/images/recursos/wizard-icon.png"
-                  alt="img de mago"
-              /></i>
+              <i class="fas fa-birthday-cake user-data-icon label"></i>
             </label>
             <input
-              class="user-date-inputs-date date-pocision"
+            class="profile-input"
               type="date"
               name="date"
               id="date"
@@ -126,17 +107,11 @@
 
           <!-- AVATAR -->
           <p class="user-data">
-            <label for="avatar" class="cont-flex-column">
-              <img
-                class="user-data-icon user-pocision"
-                height="25px"
-                src="/images/recursos/wizard-icon.png"
-                alt="img de mago"
-              />
-              <spam class=""> Avatar </spam>
+            <label for="avatar">
+              <i class="fas fa-camera user-data-icon label"></i>
             </label>
             <input
-              class="user-date-inputs-date"
+            class="profile-input"
               type="file"
               name="avatar"
               id="avatar"
@@ -151,16 +126,6 @@
           
       </form>
     </main>
-    
-      <h2 class="title-seccion">Tus ultimas Compras</h2>
-
-      <!-- LINEA HR -->
-      <hr class="one-line" />
-
-      <section>
-        <p class="now-buy">No haz realizado ninguna compra aún</p>
-        <a href="#"><p class="now-buy">Empieza ahora</p></a>
-      </section>
 
       <form action="http://localhost:3030/admin/deleteUser/<%=user.id%>?_method=DELETE" id="delete-user" method="POST">
         <button class="button" type="submit">Eliminar mi cuenta</button>
