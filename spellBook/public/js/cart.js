@@ -60,11 +60,11 @@ console.log(localStorage.getItem("bookCart"))
 
     let $title = document.querySelector('#title-cart')
     let newBook = []
-    console.log($title)
     async function fetchBooks () {
         await fetch('http://localhost:3030/api/books')
         .then(response => response.json())
         .then(result => {
+            //ordena lo que trae de fetch por id decendientemente
             let books = result.data.sort((prev, next) =>
             prev.id > next.id
                 ? 1
@@ -72,18 +72,50 @@ console.log(localStorage.getItem("bookCart"))
                 ? -1
                 : 0
             );
-        let booksCart =localStorage.getItem("bookCart").split(",")            
+        let booksCart =localStorage.getItem("bookCart").split(",") 
+        console.log(result)
+
             booksCart.forEach((b, index) => {
                  newBook.push(books.find(e => e.id === +b))
             })
+            
+            //ordena los libros por id decendientemente
+            newBook.sort((prev, next) =>
+            prev.id > next.id 
+            ? 1 : prev.id < next.id 
+            ? -1 : 0) //Ordenamos los resultados por id
+
 
              let $conteinerCarts = qs('#conteiner-cart-items-1');
              let $conteinerPrice = qs('#conteiner-price');
              let $subtotal =qs('#subtotal');
              let $total = qs('#total');
              let total = []
+             let repetidos = []
 
-             newBook.forEach(book => {
+            console.log(newBook)
+            //obtener un array con los valores repetidos
+            const busqueda = newBook.reduce((acc, book) => {
+
+                const clave = JSON.stringify(book);
+                acc[clave] = ++acc[clave] || 0;
+                return acc;
+              }, {});             
+              
+              const repeated = newBook.filter( (book) => {
+                  return busqueda[JSON.stringify(book)];
+              });
+              
+            console.log(repeated);
+            //obtener valores unicos de un array
+            function onlyUnique(value, index, self) { 
+                return self.indexOf(value) === index;
+            }
+            var unique = repeated.filter( onlyUnique )
+            console.log(unique)
+
+            //lista los productos del carrito
+            newBook.forEach(book => {
                 total.push(book.price)
                  $conteinerCarts.innerHTML +=`<article  class="conteiner-item">   
                     <div class="item-left">
@@ -98,7 +130,7 @@ console.log(localStorage.getItem("bookCart"))
                         <form action="/carrito" method="GET">
                              <label>Cantidad: </label>
                              <select  class="quantity-button" name="cantidad">
-                                 <option value="1">1</option>
+                                <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
                                 <option value="4">4</option>

@@ -10,7 +10,7 @@ router.get('/product', controller.books);
 // Detalle de producto 
 router.get('/product/:id', controller.product);
 // Shopping Cart 
-router.get('/cart', userSession, controller.cart);
+router.get('/cart',/*  userSession, */ controller.cart);
 // Novelties 
 router.get('/novelties', controller.novelties);
 // About us
