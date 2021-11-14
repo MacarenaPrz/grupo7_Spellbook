@@ -21,6 +21,8 @@ $pages = qs('#pages'),
 $pagesError = qs('#pages-error'),
 $image =qs('#image'),
 $imageError = qs('#image-error'),
+$imgPreview = qs('#img-preview'),
+$imgBefore = qs('#img-before'),
 $descripcion = qs('#description'),
 $descripcionError = qs('#description-error'),
 $formProduct = qs('#product'),
@@ -30,9 +32,8 @@ regExDNI = /^[0-9]{7,8}$/,
 regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,
 regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/;
 let icono = "<i class='fas fa-exclamation-circle'></i>"//icono de alerta (!)
-let validationsErrors = false
+var validationsErrors = true
 
-    console.log($titulo)
     $titulo.addEventListener('blur', function(){
         switch (true) {
             case !$titulo.value.trim():
@@ -169,39 +170,43 @@ let validationsErrors = false
         if(!allowefExtensions.exec(filePath)){ //El método exec() ejecuta una busqueda sobre las coincidencias de una expresión regular en una cadena especifica. Devuelve el resultado como array, o null.
             $imageError.innerHTML = `${icono}Carga un archivo de imagen válido, con las extensiones (.jpg - .jpeg - .png - .gif)`;
             $image.value = '';
-           // $imgPreview.innerHTML = '';
+            $imgPreview.innerHTML = '';
             return false;
         }else{
             // Image preview
-            //console.log($image.files);
             if($image.files && $image.files[0]){
                 let reader = new FileReader();
-                /* reader.onload = function(e){
-                   $imgPreview.innerHTML = '<img src="' + e.target.result +'"/>';
-                }; */
+                reader.onload = function(e){
+                   $imgPreview.innerHTML = '<img src="' + e.target.result +'" class="edit-form-image"/>';
+                };
                 reader.readAsDataURL($image.files[0]);
+                $imgBefore.style.display = 'none'
                 $imageError.innerHTML = '';
                 $image.classList.remove('invalid')
+                return true
             }
         }
     }) 
-
-
-
   
     
     $formProduct.addEventListener('submit',function(event){
         let error = false;
         event.preventDefault()      
-        let elementosFormProduct = this.elements      
-        for (let index = 0; index < elementosFormProduct.length-2; index++) {
-            if(elementosFormProduct[index].value == "" ){               
+        let elementosFormProduct = this.elements 
+        for (let index = 0; index < elementosFormProduct.length - 3; index++) {
+            if(elementosFormProduct[index].value == "" ){
+                if (elementosFormProduct[index].name !== "imagen"){
                 elementosFormProduct[index].classList.add('invalid');
                 $submitError.innerHTML = `${icono}Los campos señalados son obligatorios`
                 error = true;
+                }else {
+                    $imageError.innerHTML = `${icono} Debes cargar una imagen`
+                    $submitError.innerHTML = `${icono}Los campos señalados son obligatorios`
+                    error = true;
+                }
             }
-        }
-      
+        }       
+
         if(!error && validationsErrors){
             //MODAL DE ACEPTAR MODIFICACIÓN
             let $modalSubmitEdit = qs('#modal-submit-edit'),
@@ -234,4 +239,5 @@ $buttonCancel.addEventListener('click', function(event) {
         $modalCancelEdit.style.display = "none"
     })
    })
+
         

@@ -311,6 +311,7 @@ section.product-form{
         display: flex;
         flex-direction: row;
         align-items: unset;
+        margin-bottom: 0px ;
     }
 }
 @media (min-width: 800px) {
