@@ -315,7 +315,7 @@ section.product-form{
 }
 @media (min-width: 800px) {
     section.product-list {
-        margin: 160px auto;
+        margin: 120px auto;
     }
 }
 @media (min-width: 1024px ){

@@ -15,24 +15,33 @@ document.querySelector('#cancel').addEventListener('click', function() {
 document.querySelector('.button-edit').addEventListener('click', function() {
     document.querySelector('.productEdit-form').style.display = 'flex';
     });
-//Alert para reafirmar si esta seguro de eliminar un producto
-$deleteBtn.forEach(book => {
-    book.addEventListener('submit', function(event){
-        event.preventDefault()
-        let okDelete = confirm('¿Estás seguro de eliminar este producto?')
-        if (okDelete) {
-            book.submit()
-        }else {
-            console.log('No se eliminó')
-        }
-    })
-});
 
-//VALIDACIONES DEL FORMULARIO
 // FUNCION PARA EVITAR REPETIR document.querySelector
 function qs(element) {
     return document.querySelector(element)
 }
+//OBTENGO LOS ELEMENTOS DEL MODAL
+let $modalClearProduct = qs('#modal-clear-product'),
+$modalButtonClearProduct = qs('#modal-button-clear-product'),
+$modalButtonCancelClearProduct = qs('#modal-button-cancel-clear-product')
+
+
+    //Alert para reafirmar si esta seguro de eliminar un producto
+$deleteBtn.forEach(book => {
+    book.addEventListener('submit', function(event){
+        event.preventDefault()
+        $modalClearProduct.style.display = "flex"
+        $modalButtonClearProduct.addEventListener('click', () =>{
+            book.submit()
+        })
+        $modalButtonCancelClearProduct.addEventListener('click', () => {
+            $modalClearProduct.style.display = "none"
+        })
+    })
+});
+
+//VALIDACIONES DEL FORMULARIO
+
 //VARIABLES PARA OBTENER TODOS LOS ELEMENTOS A VALIDAR
 let $titulo = qs('#titulo'),
 $tituloError = qs('#titulo-error'),
@@ -232,13 +241,21 @@ $buttonCreate.addEventListener('click', () => {
                 error = true;
             }
         }
+
+
         if(!error){           
-            confirm("estas seguro")
-            if (confirm) {
+            let $modalSubmitProduct = qs('#modal-submit-product'),
+            $modalButtonSubmitProduct = qs('#modal-button-submit-product'),
+            $modalButtonCancelProduct = qs('#modal-button-cancel-product')
+
+            $modalSubmitProduct.style.display = "flex"
+            $modalButtonSubmitProduct.addEventListener('click', function(){
                 $formProduct.submit()
-                console.log('Todo bien');        
-            }
-            }
+            })
+            $modalButtonCancelProduct.addEventListener('click', function(){
+                $modalSubmitProduct.style.display = "none"
+            })
+        }
 
     })
 })

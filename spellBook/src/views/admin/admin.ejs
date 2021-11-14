@@ -5,6 +5,27 @@
 
   <body>
    <%- include('../partials/headerAdmin') %> 
+    <!-- MODAL DE ACEPTAR CLEAR -->
+  <div class="modal-container" id="modal-clear-product">
+    <div class="modal-body">
+      <p>¿Estas seguro de eliminar el producto?</p>
+      <div class="modal-action">
+        <button class="modal-button" id="modal-button-clear-product">Eliminar</button>
+        <button class="modal-button" id="modal-button-cancel-clear-product">Cancelar</button>
+      </div>
+    </div>    
+  </div>
+  <!-- MODAL DE ACEPTAR CREACIÓN DE PRODUCTO-->
+  <div class="modal-container" id="modal-submit-product">
+    <div class="modal-body">
+      <p>¿Estas seguro de guardar este producto?</p>
+      <div class="modal-action">
+        <button class="modal-button" id="modal-button-submit-product">Guardar</button>
+        <button class="modal-button" id="modal-button-cancel-product">Cancelar</button>
+      </div>
+    </div>    
+  </div>
+
     <main>
       <!--LIST OF PRODUCTS SECTION-->
       <section class="product-list">

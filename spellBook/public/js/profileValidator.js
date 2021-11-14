@@ -1,3 +1,8 @@
+// FUNCION PARA EVITAR REPETIR document.querySelector
+function qs(element) {
+    return document.querySelector(element)
+}
+
 window.addEventListener("load",()=>{
     let $email = document.querySelector("#name"),
     $form = document.querySelector("form"),
@@ -35,16 +40,23 @@ window.addEventListener("load",()=>{
         }
     } )
 
+    //OBTENGO LOS ELEMENTOS DEL MODAL
+    let $modalClearUser = qs('#modal-clear-user'),
+    $modalButtonClearUser = qs('#modal-button-clear-user'),
+    $modalButtonCancelClearUser = qs('#modal-button-cancel-clear-user')
+
+
     let $deleteUser = document.querySelector('#delete-user')//Boton de eliminar 
 //Alert para reafirmar si estas seguro de eliminarte
     console.log($deleteUser)
     $deleteUser.addEventListener('submit', function(event){
         event.preventDefault()
-        let isOk = confirm('Estas seguro de eliminarte')
-        if (isOk) {
-            $deleteUser.submit()
-        }else {
-            console.log('No se elimino')
-        }
+            $modalClearUser.style.display = "flex"
+            $modalButtonClearUser.addEventListener('click', () =>{
+                 $deleteUser.submit()
+            })
+            $modalButtonCancelClearUser.addEventListener('click', () => {
+                $modalClearUser.style.display = "none"
+            })
     })
 })

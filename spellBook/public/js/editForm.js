@@ -194,10 +194,8 @@ let validationsErrors = false
         let error = false;
         event.preventDefault()      
         let elementosFormProduct = this.elements      
-        console.log(elementosFormProduct[0].value)
         for (let index = 0; index < elementosFormProduct.length-2; index++) {
-            if(elementosFormProduct[index].value == "" ){
-               
+            if(elementosFormProduct[index].value == "" ){               
                 elementosFormProduct[index].classList.add('invalid');
                 $submitError.innerHTML = `${icono}Los campos señalados son obligatorios`
                 error = true;
@@ -205,7 +203,7 @@ let validationsErrors = false
         }
       
         if(!error && validationsErrors){
-            console.log("hasta aca llegue")
+            //MODAL DE ACEPTAR MODIFICACIÓN
             let $modalSubmitEdit = qs('#modal-submit-edit'),
             $modalButtonSubmitEdit = qs('#modal-button-submit-edit'),
             $modalButtonCancelEdit = qs('#modal-button-cancel-edit')
