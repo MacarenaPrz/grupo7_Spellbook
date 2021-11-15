@@ -81,6 +81,7 @@
     font-size: 0.9rem;
     font-weight: 600;
     text-align: center;
+    width: 100%;
 }
 @media (min-width: 500px) {
   .aside {

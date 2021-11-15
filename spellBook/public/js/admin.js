@@ -12,9 +12,9 @@ document.querySelector('#cancel').addEventListener('click', function() {
     document.querySelector('.product-form').style.display = 'none';
     })
 //EDITAR PRODUCTO
-document.querySelector('.button-edit').addEventListener('click', function() {
+/* document.querySelector('.button-edit').addEventListener('click', function() {
     document.querySelector('.productEdit-form').style.display = 'flex';
-    });
+    }); */
 
 // FUNCION PARA EVITAR REPETIR document.querySelector
 function qs(element) {
@@ -59,6 +59,7 @@ $pages = qs('#pages'),
 $pagesError = qs('#pages-error'),
 $image =qs('#image'),
 $imageError = qs('#image-error'),
+$imgPreview = qs('#img-preview'),
 $descripcion = qs('#description'),
 $descripcionError = qs('#description-error'),
 $formProduct = qs('#product'),
@@ -72,7 +73,6 @@ icono = "<i class='fas fa-exclamation-circle'></i>"
 
 //
 $buttonCreate.addEventListener('click', () => {
-    console.log($titulo)
     $titulo.addEventListener('blur', function(){
         console.log($titulo.value.trim())
         switch (true) {
@@ -212,15 +212,14 @@ $buttonCreate.addEventListener('click', () => {
         if(!allowefExtensions.exec(filePath)){ //El método exec() ejecuta una busqueda sobre las coincidencias de una expresión regular en una cadena especifica. Devuelve el resultado como array, o null.
             $imageError.innerHTML = `${icono}Carga un archivo de imagen válido, con las extensiones (.jpg - .jpeg - .png - .gif)`;
             $image.value = '';
-           // $imgPreview.innerHTML = '';
+            $imgPreview.innerHTML = '';
             return false;
         }else{
             // Image preview
-            console.log($image.files);
             if($image.files && $image.files[0]){
                 let reader = new FileReader();
                 reader.onload = function(e){
-                    //$imgPreview.innerHTML = '<img src="' + e.target.result +'"/>';
+                    $imgPreview.innerHTML = '<img src="' + e.target.result +'" class="edit-form-image"/>';
                 };
                 reader.readAsDataURL($image.files[0]);
                 $imageError.innerHTML = '';

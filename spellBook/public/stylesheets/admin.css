@@ -109,6 +109,7 @@ tr:hover {
 table img{
     width: 40px;
     height: auto;
+    max-height: 120px;
 }
 table td button{
     background-color: transparent;
@@ -125,11 +126,11 @@ section.product-form{
     background-color: rgba(0, 0, 0, 0.6);
     position: absolute;
     top: 0;
-    display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    display: none;
+    display: flex;
+    top: 60px;
 }
 section.productEdit-form{
     width: 100%;
@@ -148,7 +149,7 @@ section.productEdit-form{
     background-color: var(--color-azulClaro);
     color: white;
     margin: 1rem;
-    width: fit-content;
+    width: 80%;
     height: fit-content;
     border-radius: 10px;
     border: 1px solid var(--color-violeta);
@@ -157,6 +158,7 @@ section.productEdit-form{
     justify-content: space-evenly;
     text-align: center;
     position: relative;
+    max-width: 570px;
   }
 .add-btn{
     width: 100%;
@@ -189,19 +191,26 @@ form#product fieldset{
     font-size: 0.8rem;
     display: flex;
     justify-content: space-between;
-    align-items:flex-end;
+    align-items:center;
+    position: relative;
+    margin-bottom: 25px;
+    width: 100%;
 }
+
 form#product input#image{
     background-color: transparent;
     border: none;
     color: var(--color-violeta);
+    width: 70%;
 }
 .product-inputs{
     background-color: transparent;
     border: none;
     border-bottom: 2px solid var(--color-azulOscuro);
     font-size: 0.8rem;
-    width: 100%;
+    width: 90%;
+    align-items: flex-end;
+    text-align: center;
 }
 form#product fieldset select{
     width: 60%;
@@ -234,10 +243,21 @@ form#product fieldset input.display-shop{
 .description-on{
     display: none;
 }
-section.product-form{
-    top: 60px;
+.create-form-labels {
+    position: absolute;
+    top: 0;
+    left: 15px;
 }
-
+.create-form-select{
+    text-align-last: center;
+    align-self: self-end;
+}
+.create-form-content-inputs{
+    display: flex;
+    flex-direction: column;
+    align-items: self-end;
+    width: 100%;
+}
 /* ESTILOS PARA USERS ADMIN */
 /* AVATAR DE USUARIOS */
 .admin-avatars {

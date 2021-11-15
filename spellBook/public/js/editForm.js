@@ -183,7 +183,6 @@ var validationsErrors = true
                 $imgBefore.style.display = 'none'
                 $imageError.innerHTML = '';
                 $image.classList.remove('invalid')
-                return true
             }
         }
     }) 
