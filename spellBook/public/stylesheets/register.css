@@ -1,214 +1,74 @@
-/* COMIENZA EL REGITRO DE USUARIO */
-.conteiner-main {
-    max-width: 400px;
+/* MOBILE */
+
+/* CARD USUARIO */
+main{
     margin: 0 auto;
-    padding: 50px 0;
+    width: 80%;
 }
-
-/*  FORMULARIO DE REGISTRO */
-
-/* IMAGEN DE USUARIO */
-.register-user {
-    display: flex;
-    justify-content: center;
-    margin-top: 15px;
-   
+.container-main{
+    max-width: 80%;
 }
-
-/* .user-image {   
-    text-align: right;
-    width:fit-content ;
-} */
-
-.user-image-item {
-    border-radius: 100%;
-    height: 150px;
-    width: 150px;
+.user-image{
+    width: 80%;
+    margin: 0;
 }
-
-/* VARITA */
-.user-magic-wand {
-    width: 55%;
+.user-image-item{
+    width: 80%;
+    margin-bottom: 10%;
+    border-radius: 50%;
+    max-width: 30%;
 }
-
-.user-magic-wand i {
-    font-size:  0.9rem;
-}
-
-/*  CONTENEDOR DE USER Y EMAIL */
-.conteiner-info-user{
+.user-card {
+    width: 80%;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    border-radius: 15px;
-    background-color: var(--color-beige);
-    width: 75%;
-    margin: 0 auto;
-    margin-top: 2rem;
-}
-/* NOMBRE DEL USUARIO */
-.info-user{
-    display: flex;
-    justify-content: space-evenly;
     align-items: center;
-    margin: 1rem auto;
-    width: 100%;
-    font-size:1.2rem;
-    font-family: var(--font-berkshire);
 }
-
-/* TÍTULO DE SECCIÓN */
-.title-seccion {
+.profile-data-name, .profile-data-email{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.profile-data-name{
+    font-family: var(--font-berkshire);
     font-size: 2rem;
-    font-family: var(--font-berkshire);
-    margin: 3rem 1rem ;
-    text-shadow: 1px 1px 2px grey;
-    text-align: center;
-
+    margin-bottom: 5%;
 }
 
-/* CAMPOS A LLENAR */
-
-.conteiner-user-data {
-    
-    background-color: var(--color-beige);
-    width: 90%;
-    margin: 0 auto;
-    margin-top: 1rem;
-    position: relative;   
+/* FORM */
+.label{
+    margin-top: 5%;
 }
-/* PARA TODOS LOS IMPUTS */
-.user-data {
-    display: flex;
-    justify-content: space-between;
-    width: 100% ;
-    margin: 20px auto;
-    height: 80px;
-}
-.user-data-firstname {
-    text-align: right;
-    display: inline-block;
-    width: 100%;
-    margin: 0px auto 20;
-    height: 80px;
-}
-
-.user-data-icon {
-    opacity: 0.8;
+.profile-input{
+    font-size: 1rem;
     color: var(--color-azulOscuro);
-    font-size: 40px;
-    text-align: center;
-} 
-
-.user-date-inputs {
-    outline: none;
-    text-align: center;
-    max-height: 30px;
-    background: transparent;
-    border: none;
-    border-bottom: solid 3px var(--color-azulOscuro);
-    width: 70%;
-    transition: all 0.5s;
-    
-}
-.user-date-inputs:focus {
-    border-bottom: solid 3px var(--color-violeta);
-}
-::placeholder {
-    color: gray;
-    font-size: 12px;
-    opacity: 0.6;
 }
 
-.confirmation {
-    height: 30px;
-    justify-content: flex-end;
-    display: flex;
-    width: 74%;
-    margin-left: 13%;
-    margin-bottom: 32px;
+.container-user-data{
+    width: 80%;
 }
 
-
-
-/* NOMBRE */
-.user-pocision {
-    position: relative;
-    left: 3px;
+.button-delete{
+        float:right;
+        padding:8px 12px;
+        margin:20px 30px 100px 0px;
+        font-family: var(--font-roboto);
+        border:2px solid darkred;
+        background: darkred;
+        color: var(--color-beige);
+        cursor:pointer;transition:all .3s;
+        border-radius: 5px;
+        font-size: 15px;
+}
+.profile-input-img{
+    border: 0;
 }
 
-
-
-/* LUGAR */
-.world-pocision {
-    position: relative;
-    right: 3px;
+.profile-input-img:focus{
+    border-bottom: 0;
 }
-
-/* TELEFONO */
-.tel-pocision {
-    position: relative;
-    left: 4px;
-}
-
-/* NACIMIENTO */
-.image-icon {
-    position: relative;
-    right: 24px;;
-}
-
-.user-date-inputs-date {
-    color: var(--color-azulOscuro);
-    font-size: 1.2rem;
-    font-family: var(--font-roboto);
-    outline: none;
-    max-height: 40px;
-    background: transparent;
-    border: none;
-    width: 70%;
-   
-}
-
-.date-pocision {
-    position: relative;
-    right: 10px;
-}
-
-
-
-/* BOTON DE GUARDAR */
-.user-submit-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
- .btn-save {
-    background-color: var(--color-azulOscuro);
-    border: none;
-    border-radius: 7px;
-    color: var(--color-beige);
-    width: 10rem;
-    height: 2rem;
-    box-shadow: var(--box-shadow-button);
-    display: block;
-    margin: 2rem auto;
-    text-align: center;
- }
-
- /* LINEA HR */
- .one-line {
-    background: linear-gradient(90deg, var(--color-azulOscuro), var(--color-beige));
-    height: 2px;
-    margin-bottom: 2rem;
-    width: 100%;
- }
-
- /* NO HAZ REALIZADO COMPRA */
- .now-buy {
-     font-size: 1.2rem;
-     margin: 25px auto;
-     text-align: center;
-
- }
 
 
  @media (min-width: 768px) {
@@ -216,3 +76,45 @@
 
 
  }
+
+ @media (min-width: 1024px) {
+    main{
+        margin: 0 auto;
+        width: 80%;
+    }
+    .container-main{
+        max-width: 80%;
+    }
+    .user-image{
+        width: 80%;
+        margin: 0;
+    }
+    .user-image-item{
+        width: 80%;
+        margin-bottom: 10%;
+        border-radius: 50%;
+        max-width: 20%;
+    }
+    .user-card {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        margin: 5% auto;
+    }
+    .profile-data-name{
+        font-size: 3.5rem;
+        margin-bottom: 10%;
+    }
+  
+    .user-image-item{
+       margin:0;
+        border-radius: 50%;
+    }
+
+    .user-profile{
+        max-width: 50%;
+        margin: 0 auto;
+    }
+
+}
