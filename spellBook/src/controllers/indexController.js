@@ -1,5 +1,8 @@
 const db = require('../database/models');
-const { Op } = require('sequelize')
+const { Op } = require('sequelize');
+const fetch = require('node-fetch');
+const axios = require('axios');
+
 
 module.exports = {
     index: (req, res) => {
@@ -36,9 +39,15 @@ module.exports = {
     },
 
     cart: (req, res) => {
-        res.render('products/shoppingCart', {
-            session: req.session.userLog
+        fetch('http://localhost:3030/api/books')
+        .then(res => res.json())
+        .then(result => {
+            return res.render('products/shoppingCart', {
+                session: req.session.userLog,
+                books : result.data
+            })
         })
+        
     },
     books: (req, res) => {
         db.Book.findAll({ limit : 9 })

@@ -17,20 +17,21 @@
   <% result.forEach(book => { %>
     
     <div class="nov-product">
-      <figure class="nov-book">
-        <img class="books__img book-cover" src="images/libros/<%= book.image%>" alt="">       
-      </figure>
-      <div class="nov-description">
-        <p class="nov-text">      
-            <% let descriptionLow = book.description.slice(0 , 250) %>
-            <%= descriptionLow %> ...               
-        </p>
-        <p class="nov-text-d">
-          <%= book.description %>
-        </p>
-        <a class="nov-autor" href=""><%= book.author %> </a>
-        <span class="nov-price">$ <%= book.price %> </span>
-      </div>
+      <a href="/product/<%= book.id %>">
+        <figure class="nov-book">
+          <img class="books__img book-cover" src="images/libros/<%= book.image%>" alt="">       
+        </figure>
+      </a>
+      <a href="/product/<%= book.id %>">
+        <div class="nov-description">
+          <p class="">      
+              <% let descriptionLow = book.description.slice(0 , 250) %>
+              <%= descriptionLow %> ...               
+          </p>
+          <a class="nov-autor" href=""><%= book.author %> </a>
+          <span class="nov-price">$ <%= book.price %> </span>
+        </div>
+      </a>      
     </div>
     <% }) %>
 <!-- Este es el msj si no encuentra coincidencia -->
@@ -46,6 +47,7 @@
 
 <!-- LINK DEL JS DEL HEADER -->
 <script src="/js/header.js"></script>
+
 
   </body>
 </html>

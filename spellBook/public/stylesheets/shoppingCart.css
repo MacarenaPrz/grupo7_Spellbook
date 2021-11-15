@@ -29,6 +29,7 @@
 .item-left{
     text-align: center;
     font-size:1rem;
+    width: 40%;
 }
 
 .buy-image {
@@ -166,6 +167,7 @@
 /* IMAGEN DEL PRODUCTO A COMPRAR Y TITULO */
 .item-left{
    font-size: 1.2rem;
+  
 }
 
 .buy-image {

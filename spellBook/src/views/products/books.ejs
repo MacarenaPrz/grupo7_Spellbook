@@ -29,24 +29,19 @@
       </div>
    <!-- Botón de comprar -->
       <div>
-        <input class="button" type="button" value="Comprar">
+        <button class="button" type="button" value="<%= book.id %>" id="buy-button">Comprar</button>
       </div>
    </div>
    </article>
    <% }) %>
   </section>
   
-
-
-
-
-
-
-
 <!-- FOOTER -->
 <%- include('../partials/footer') %>
 
 <!-- LINK DEL JS DEL HEADER -->
 <script src="/js/header.js"></script>
+ <!-- LINK DEL JS DEL CART -->
+ <script src="/js/cart.js"></script>
 
 </body>
