@@ -9,8 +9,9 @@
 
     <!-- COMIENZA EL REGITRO DE USUARIO -->
     
-    <main class="conteiner-main">
+    <main class="container-main">
       <!-- FORMULARIO DE REGISTRO -->
+      <div class="user-profile">
       <form
         action="/user/profile?_method=PUT"
         method="POST"
@@ -83,7 +84,7 @@
             </label>
             <input
             class="profile-input"
-              placeholder="País de Residencia"
+              placeholder="Provincia"
               type="text"
               name="location"
               id="location"
@@ -111,7 +112,7 @@
               <i class="fas fa-camera user-data-icon label"></i>
             </label>
             <input
-            class="profile-input"
+            class="profile-input-img"
               type="file"
               name="avatar"
               id="avatar"
@@ -121,14 +122,15 @@
         </section>
           <!-- BOTON PARA DE GUARDAR -->
           <div class="user-submit-container">
-            <button type="submit" class="btn-save button">GUARDAR</button>
+            <button type="submit" class="btn-save button">Guardar</button>
           </div>
           
       </form>
+    </div>
     </main>
 
       <form action="http://localhost:3030/admin/deleteUser/<%=user.id%>?_method=DELETE" id="delete-user" method="POST">
-        <button class="button" type="submit">Eliminar mi cuenta</button>
+        <button class="button-delete" type="submit">Eliminar mi cuenta</button>
       </form>
 
     <!-- FOOTER -->

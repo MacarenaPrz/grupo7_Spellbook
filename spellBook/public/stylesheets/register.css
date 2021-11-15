@@ -5,6 +5,9 @@ main{
     margin: 0 auto;
     width: 80%;
 }
+.container-main{
+    max-width: 80%;
+}
 .user-image{
     width: 80%;
     margin: 0;
@@ -13,6 +16,7 @@ main{
     width: 80%;
     margin-bottom: 10%;
     border-radius: 50%;
+    max-width: 30%;
 }
 .user-card {
     width: 80%;
@@ -46,6 +50,26 @@ main{
     width: 80%;
 }
 
+.button-delete{
+        float:right;
+        padding:8px 12px;
+        margin:20px 30px 100px 0px;
+        font-family: var(--font-roboto);
+        border:2px solid darkred;
+        background: darkred;
+        color: var(--color-beige);
+        cursor:pointer;transition:all .3s;
+        border-radius: 5px;
+        font-size: 15px;
+}
+.profile-input-img{
+    border: 0;
+}
+
+.profile-input-img:focus{
+    border-bottom: 0;
+}
+
 
  @media (min-width: 768px) {
 
@@ -54,7 +78,43 @@ main{
  }
 
  @media (min-width: 1024px) {
+    main{
+        margin: 0 auto;
+        width: 80%;
+    }
+    .container-main{
+        max-width: 80%;
+    }
+    .user-image{
+        width: 80%;
+        margin: 0;
+    }
+    .user-image-item{
+        width: 80%;
+        margin-bottom: 10%;
+        border-radius: 50%;
+        max-width: 20%;
+    }
+    .user-card {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        margin: 5% auto;
+    }
+    .profile-data-name{
+        font-size: 3.5rem;
+        margin-bottom: 10%;
+    }
+  
+    .user-image-item{
+       margin:0;
+        border-radius: 50%;
+    }
 
-
+    .user-profile{
+        max-width: 50%;
+        margin: 0 auto;
+    }
 
 }
