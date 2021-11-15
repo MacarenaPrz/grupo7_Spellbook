@@ -283,6 +283,13 @@ section.product-form{
     width: 20%;
     min-width: 100px;
 }
+.headline-admin{
+    font-size: 3rem;
+}
+
+.admin-libros{
+    margin: 0;
+}
 
 @media (min-width: 515px) {
     table {
@@ -325,5 +332,12 @@ section.product-form{
     section.product-form{
         top: 120px;       
     }
+
+    .description-on{
+        font-size: 1rem;
+        width: 40%;
+    }
+
+    
    
 }
