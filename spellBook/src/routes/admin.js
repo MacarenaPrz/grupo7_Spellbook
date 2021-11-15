@@ -21,11 +21,11 @@ let {
 
 
 // Admin 
-router.get('/addProduct', /* userSession, userAdminCheck, */ admin);
+router.get('/addProduct', userSession, userAdminCheck, admin);
 // Admin, new product
 router.post('/addProduct', /* bookValidator, */ upload.single('imagen'), newProduct);
 // Admin, edit view
-router.get('/editProduct/:id', /* userSession, userAdminCheck, */ editView);
+router.get('/editProduct/:id', userSession, userAdminCheck, editView);
 // Admin, edit product
 router.put('/editProduct/:id', upload.single('imagen'), editProduct);
 //Admin delete product
@@ -34,11 +34,11 @@ router.delete('/deleteProduct/:id', deleteProduct);
 router.get('/search', bookSearch)
 
 //ADMIN USUARIOS
-router.get('/users',   /* userSession, userAdminCheck, */ adminUser)
+router.get('/users',   userSession, userAdminCheck, adminUser)
 //ADMIN ELIMINAR USUSARIO
 router.delete('/deleteUser/:id', userSession, deleteUser);
 //ADMIN DATOS DEL USUSARIO
-router.get('/users/:id',  /* userSession, userAdminCheck, */ infoUser)
+router.get('/users/:id',  userSession, userAdminCheck, infoUser)
 //ADMIN EDITAR USUSARIO
 router.put('/users/:id', uploadUser.single('avatar'), userAdminCheck, editUser)
 //ADMIN USER SEARCH
