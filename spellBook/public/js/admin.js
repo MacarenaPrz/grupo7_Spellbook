@@ -12,27 +12,36 @@ document.querySelector('#cancel').addEventListener('click', function() {
     document.querySelector('.product-form').style.display = 'none';
     })
 //EDITAR PRODUCTO
-document.querySelector('.button-edit').addEventListener('click', function() {
+/* document.querySelector('.button-edit').addEventListener('click', function() {
     document.querySelector('.productEdit-form').style.display = 'flex';
-    });
-//Alert para reafirmar si esta seguro de eliminar un producto
-$deleteBtn.forEach(book => {
-    book.addEventListener('submit', function(event){
-        event.preventDefault()
-        let okDelete = confirm('¿Estás seguro de eliminar este producto?')
-        if (okDelete) {
-            book.submit()
-        }else {
-            console.log('No se eliminó')
-        }
-    })
-});
+    }); */
 
-//VALIDACIONES DEL FORMULARIO
 // FUNCION PARA EVITAR REPETIR document.querySelector
 function qs(element) {
     return document.querySelector(element)
 }
+//OBTENGO LOS ELEMENTOS DEL MODAL
+let $modalClearProduct = qs('#modal-clear-product'),
+$modalButtonClearProduct = qs('#modal-button-clear-product'),
+$modalButtonCancelClearProduct = qs('#modal-button-cancel-clear-product')
+
+
+    //Alert para reafirmar si esta seguro de eliminar un producto
+$deleteBtn.forEach(book => {
+    book.addEventListener('submit', function(event){
+        event.preventDefault()
+        $modalClearProduct.style.display = "flex"
+        $modalButtonClearProduct.addEventListener('click', () =>{
+            book.submit()
+        })
+        $modalButtonCancelClearProduct.addEventListener('click', () => {
+            $modalClearProduct.style.display = "none"
+        })
+    })
+});
+
+//VALIDACIONES DEL FORMULARIO
+
 //VARIABLES PARA OBTENER TODOS LOS ELEMENTOS A VALIDAR
 let $titulo = qs('#titulo'),
 $tituloError = qs('#titulo-error'),
@@ -50,6 +59,7 @@ $pages = qs('#pages'),
 $pagesError = qs('#pages-error'),
 $image =qs('#image'),
 $imageError = qs('#image-error'),
+$imgPreview = qs('#img-preview'),
 $descripcion = qs('#description'),
 $descripcionError = qs('#description-error'),
 $formProduct = qs('#product'),
@@ -63,7 +73,6 @@ icono = "<i class='fas fa-exclamation-circle'></i>"
 
 //
 $buttonCreate.addEventListener('click', () => {
-    console.log($titulo)
     $titulo.addEventListener('blur', function(){
         console.log($titulo.value.trim())
         switch (true) {
@@ -203,15 +212,14 @@ $buttonCreate.addEventListener('click', () => {
         if(!allowefExtensions.exec(filePath)){ //El método exec() ejecuta una busqueda sobre las coincidencias de una expresión regular en una cadena especifica. Devuelve el resultado como array, o null.
             $imageError.innerHTML = `${icono}Carga un archivo de imagen válido, con las extensiones (.jpg - .jpeg - .png - .gif)`;
             $image.value = '';
-           // $imgPreview.innerHTML = '';
+            $imgPreview.innerHTML = '';
             return false;
         }else{
             // Image preview
-            console.log($image.files);
             if($image.files && $image.files[0]){
                 let reader = new FileReader();
                 reader.onload = function(e){
-                    //$imgPreview.innerHTML = '<img src="' + e.target.result +'"/>';
+                    $imgPreview.innerHTML = '<img src="' + e.target.result +'" class="edit-form-image"/>';
                 };
                 reader.readAsDataURL($image.files[0]);
                 $imageError.innerHTML = '';
@@ -232,13 +240,21 @@ $buttonCreate.addEventListener('click', () => {
                 error = true;
             }
         }
+
+
         if(!error){           
-            confirm("estas seguro")
-            if (confirm) {
+            let $modalSubmitProduct = qs('#modal-submit-product'),
+            $modalButtonSubmitProduct = qs('#modal-button-submit-product'),
+            $modalButtonCancelProduct = qs('#modal-button-cancel-product')
+
+            $modalSubmitProduct.style.display = "flex"
+            $modalButtonSubmitProduct.addEventListener('click', function(){
                 $formProduct.submit()
-                console.log('Todo bien');        
-            }
-            }
+            })
+            $modalButtonCancelProduct.addEventListener('click', function(){
+                $modalSubmitProduct.style.display = "none"
+            })
+        }
 
     })
 })

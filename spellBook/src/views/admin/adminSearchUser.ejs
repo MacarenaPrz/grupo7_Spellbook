@@ -5,7 +5,19 @@
 <body>
   <!-- HEADER -->
   <%- include('../partials/headerAdmin') %> 
-  <main>
+
+    <!-- MODAL DE ACEPTAR -->
+    <div class="modal-container" id="modal-clear-user">
+      <div class="modal-body">
+        <p>¿Estas seguro de eliminar este usuario?</p>
+        <div class="modal-action">
+          <button class="modal-button" id="modal-button-clear-user">Eliminar</button>
+          <button class="modal-button" id="modal-button-cancel-clear-user">Cancelar</button>
+        </div>
+      </div>    
+    </div>
+  
+    <main class="admin-main">
     <!--LIST OF PRODUCTS SECTION-->
     <section class="product-list">
       <!--LINKS TO Agregar libro, Bell AND user-->
@@ -54,7 +66,7 @@
               <td><a href="http://localhost:3030/admin/users/<%= user.id %> "><%= user.country%></a></td>
               <td><a href="http://localhost:3030/admin/users/<%= user.id %> "><%= user.rol%></a></td>
               <td>
-                <form action="deleteUser/<%=user.id%>?_method=DELETE" id="button-delete-user" method="POST">
+                <form action="http://localhost:3030/admin/deleteUser/<%=user.id%>?_method=DELETE" id="button-delete-user" method="POST">
                   <button class="btn-delete" type="submit"><i class="far fa-trash-alt"></i></button>
                 </form>
               </td>

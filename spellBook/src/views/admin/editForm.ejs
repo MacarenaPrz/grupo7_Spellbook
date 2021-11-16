@@ -39,11 +39,13 @@
               <h2 id="shop-form" class="info-user">
                 <%= idBook.title %>
               </h2>
-              <img src="/images/Libros/<%= idBook.image %> " alt="" class="edit-form-image">
+              <img src="/images/Libros/<%= idBook.image %> " alt="" id="img-before" class="edit-form-image">
+              <div class="" id="img-preview">
+              </div>
             </div>
               <label for="image">Imagen:</label>
               <div>
-                <input type="file" name="imagen" id="image" />
+                <input type="file" name="imagen" id="image"/>
                 <p id="image-error" class="warning"></p>
               </div>
               <label for="titulo">Título:</label>
@@ -120,15 +122,13 @@
           </div>
         </section>
       </main>
+      
+      <p id="submit-error" class="warning"></p> 
       <div class="edit-submit">
-       
-
         <button class=" button edit-button-submit button__send" id="cancel-edit" type="reset" >Cancelar</button>
         <button class=" button edit-button-submit" type="submit" id="save-edit">Guardar</button>
-        
-    <p id="submit-error" class="warning"></p> 
-    </div>              
-      
+      </div>              
+    
     </form>
       <!-- FOOTER -->
       <%- include('../partials/footer') %>

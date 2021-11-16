@@ -223,14 +223,20 @@ module.exports={
     },
     bookSearch: (req, res) => {
         let search = req.query.search.toLowerCase();
-        db.Book.findAll({
+        const recommended_age = db.RecommendedAges.findAll()
+        const authors = db.Authors.findAll()
+        const products = db.Book.findAll({
             where: { title : {[Op.substring]: search } },
             limit : 9
         })
-        .then(products => {
+               
+        Promise.all([recommended_age, authors, products])
+        .then(([recommended_age, authors, products]) => {
             res.render('admin/adminSearch', {
                 search,
-                products
+                products, 
+                authors,
+                recommended_age
             })
         })
     },
