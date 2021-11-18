@@ -6,15 +6,26 @@
 <body>
 <!-- HEADER -->
 <%- include('./partials/header') %> 
+ <!-- MODAL DE GRACIAS -->
+ <div class="modal-container" id="modal-tanks">
+  <div class="modal-body ">
+    <h1 class="d-inline f-2rem">GRACIAS</h1>
+   <!--  <p>Por comunicarte</p> -->
+    <p>Responderemos a la brevedad</p>
+    <div class="modal-action">
+      <button class="modal-button" id="modal-button-tanks">Cerrar</button>
+    </div>
+  </div>    
+</div>
 
 
 <!-- Texto central de la vista -->
-<main class="main-AboutUs">
+<main class="main-AboutUs mtop-60px">
 
   <div class="headline">
     <img class="varita"src="/images/Recursos/varita.png" alt=" imágen de varita mágica">
     <h1>Sobre Nosotros</h1>
-    </div>
+  </div>
 
   <div class="text-AboutUs">
   <p class="AboutUs-p">Somos una empresa familiar fundada en 1950. Inicialmente comercializabamos únicamente libros infantiles y teníamos una sucursal fija en Buenos Aires. Empezamos siendo un equipo de 5 personas, que luego se expandió a 15 y actualmente somos más de 500. <br>
@@ -24,22 +35,24 @@
     Con el propósito de ampliar nuestro horizonte de mercado, facilidades de compra y servicio, es que empezamos con este proyecto una nueva etapa en nuestra historia, la tienda on line. Como siempre, la premisa es seguir ofreciéndoles el mejor asesoramiento posible, y la atención por la que somos ampliamente reconocidos.
     Es por acá que queremos llegar a ustedes y acercarles nuestro trabajo diario, nuestro conocimiento y lo que las letras generan: cultura.
    </p>
-  <img src="/images/Recursos/Magic-book.png" alt="">
+  <img id="aboutUs-img" src="/images/Recursos/Magic-book.png" alt="">
 </div>
 
 
 </main>
-
-
+  
 
 <!-- CONTACT US -->
 
-  <form class="contactUs-form">
+  <form class="contactUs-form" action="https://formsubmit.co/spellbook@outlook.com.ar" method="POST" id="form-contact">
     <h2 class="aboutUs-h2">¡Hablemos!</h2>
-    <p class="p-form" type="Nombre:"><input placeholder="Ingresá tu nombre"></input></p>
-    <p class="p-form" type="E-mail:"><input placeholder="Dejanos tu e-mail"></input></p>
-    <p class="p-form" type="Mensaje:"><input placeholder="¿Qué te gustaría decirnos?"></input></p>
-    <button class="send-button">Enviar</button>
+    <p class="p-form" type="Nombre:"><input type="text"  name="name" placeholder="Ingresá tu nombre"></input></p>
+    <p class="p-form"  type="E-mail:"><input type="email" name="email" placeholder="Dejanos tu e-mail"></input></p>
+    <p class="p-form" type="Mensaje:"><input type="textarea" name="message"  placeholder="¿Qué te gustaría decirnos?"></input></p>
+    <input type = "hidden" name = "_next" value = "http://localhost:3030/aboutUs#aboutUs-img">
+    <input type = "hidden" name = "_captcha" value = "false">
+    <input type = "hidden" name = "_template" value = "table">
+    <button class="send-button" type="submit">Enviar</button>
   </form>
 
 
@@ -91,5 +104,21 @@
 
 <!-- LINK DEL JS DEL HEADER -->
 <script src="js/header.js"></script>
+<script>
+  let $formContact = document.querySelector('#form-contact')
+  $formContact.addEventListener('submit', (e) => {
+    e.preventDefault()
+    let $modalTanks = document.querySelector('#modal-tanks'),
+    $modalButtonTanks = document.querySelector('#modal-button-tanks')
+
+    $modalTanks.style.display = "flex"
+    $modalButtonTanks.addEventListener('click', () => {
+      $modalTanks.style.display = "none"
+      $formContact.submit()
+    })
+   
+  
+  })
+</script>
 
 </body>

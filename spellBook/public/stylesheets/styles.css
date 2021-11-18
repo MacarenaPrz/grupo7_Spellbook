@@ -15,6 +15,9 @@
 @import url('editUser.css');
 
 /* ESTILOS   GENERALES */
+.mtop-60px {
+    margin-top: 60px;
+}
 .flex-between {
     display: flex;
     align-content: space-between;
@@ -55,6 +58,9 @@
 }
 .f-1rem {
     font-size: 1rem;
+}
+.f-2rem {
+    font-size: 2rem;
 }
 /* EFECTO DE LOS LIBROS */
 .book-cover {

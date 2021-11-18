@@ -341,6 +341,7 @@ form#product fieldset input.display-shop{
         flex-direction: row;
         align-items: unset;
         margin-bottom: 0px ;
+        padding: 60px 0 0;
     }
 }
 @media (min-width: 800px) {
@@ -355,12 +356,7 @@ form#product fieldset input.display-shop{
     section.product-form{
         top: 120px;       
     }
-
-    .description-on{
-        font-size: 1rem;
-        width: 40%;
+    .edit-container {
+        padding: 120px 0 0;
     }
-
-    
-   
 }
