@@ -8,80 +8,69 @@
     <%- include('../partials/headerAdmin') %> 
 
     <body>
-      <main class="edit-user-conteiner-main">
+      <main class="containerUser">
 
         <!-- FORMULARIO DE REGISTRO -->
-        <form action="/admin/users/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data"
+        <form class="" action="/admin/users/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data"
           id="editUser">
 
-          <!-- IMAGEN DE USUARIO, BARITA -->
-          <section class="register-user">
-            <div class="user-image">
-              <img class="user-image-item" src="/images/Imagenes de perfil/<%= user.avatar %>" alt="">
-            </div>
-          </section>
-          <div class="conteiner-info-user">
-            <!-- EMAIL -->
-            <div class="info-user">
-              <i class="fas fa-envelope user-data-icon"></i>
-              <p>
-                <%= user.email %>
-              </p>
-            </div>
+          <!-- IMAGEN DE USUARIO, VARITA -->
+          <div class="editUser-card">
+              <img class="editUser-img" src="/images/Imagenes de perfil/<%= user.avatar %>" alt="">
+            <!-- NOMBRE, EMAIL -->
+              <p class="profile-data-name"><%= user.name %></p>
+              <p class="profile-data-email"><%= user.email %></p>
           </div>
+          
           <!-- TÍTULO DE SECCIÓN -->
-          <h2 class="title-seccion">Datos Personales</h2>
+          <div class="headline">
+            <img class="varita"src="/images/Recursos/varita.png" alt=" imágen de varita mágica">
+            <h1>Datos Personales</h1>
+            </div>
           <!-- CAMPOS A LLENAR -->
           <section class="conteiner-user-data">
             <!-- NOMBRE -->
-            <p class="user-data">
-              <label for="name">
-                <img class="user-data-icon user-pocision" height="40px" src="/images/recursos/wizard-icon.png"
-                  alt="img de mago">
-              </label>
-              <input class="user-date-inputs" placeholder="Nombre" type="text" name="name" id="name"
+            <p class="label">
+              <input class="profile-input" placeholder="Nombre" type="text" name="name" id="name"
                 value="<%= user.name %>">
             </p>
             <!-- APELLIDO -->
-            <p class="user-data-firstname">
-              <input class="user-date-inputs " placeholder="Apellido" type="text" name="firstName" id="firstName"
+            <p class="">
+              <input class="profile-input" placeholder="Apellido" type="text" name="firstName" id="firstName"
                 value="<%= user.last_name %>">
             </p>
 
             <!-- LUGAR -->
-            <p class="user-data">
+            <p class="">
               <label for="location">
                 <i class="fas fa-globe-americas user-data-icon world-pocision"></i>
               </label>
-              <input class="user-date-inputs" placeholder="País de Residencia" type="text" name="location" id="location"
+              <input class="profile-input" placeholder="Provincia" type="text" name="location" id="location"
                 value="<%= user.country %>">
             </p>
 
             <!-- NACIMIENTO -->
-            <p class="user-data ">
+            <p class="">
               <label for="date">
-                <i class="far fa-calendar user-data-icon "><img class="image-icon" height="18px"
-                    src="/images/recursos/wizard-icon.png" alt="img de mago"></i>
+                <i class="fas fa-birthday-cake user-data-icon label"></i>
               </label>
-              <input class="user-date-inputs-date date-pocision" type="date" name="date" id="date" value="">
+              <input class="profile-input" type="date" name="date" id="date" value="">
             </p>
 
             <!-- AVATAR -->
-            <p class="user-data ">
-              <label for="avatar" class="cont-flex-column">
-                <img class="user-data-icon user-pocision" height="25px" src="/images/recursos/wizard-icon.png"
-                  alt="img de mago">
-                <spam class=''> Avatar </spam>
+            <p class="">
+              <label for="avatar" class="">
+                <i class="fas fa-camera user-data-icon label"></i>
               </label>
-              <input class="user-date-inputs-date " type="file" name="avatar" id="avatar" value="<%= user.avatar %> ">
+              <input class="profile-input" type="file" name="avatar" id="avatar" value="<%= user.avatar %> ">
             </p>
 
             <!-- ROL -->
-            <p class="user-data ">
+            <p class="">
               <label for="rol" class="rol-user">
                 <spam class=''> ROL </spam>
               </label>
-              <select name="rol" id="rol" class="user-date-inputs-date text-center">
+              <select name="rol" id="rol" class="">
                 <option value="user">user</option>
                 <option value="admin">admin</option>
               </select>
@@ -89,8 +78,8 @@
           </section>
 
           <!-- BOTON PARA DE GUARDAR -->
-          <div class="user-submit-container">
-            <button type="submit" class="btn-save button">GUARDAR</button>
+          <div class="">
+            <button type="submit" class="button">GUARDAR</button>
           </div>
 
 

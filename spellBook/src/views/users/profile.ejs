@@ -20,16 +20,16 @@
 
     <!-- COMIENZA EL REGITRO DE USUARIO -->
     
-    <main class="container-main">
+    <main class="containerUser">
       <!-- FORMULARIO DE REGISTRO -->
       <div class="user-profile">
-      <form
+        <form
         action="/user/profile?_method=PUT"
         method="POST"
         enctype="multipart/form-data"
         id="editForm"
-      >
-      <section class="user-card">
+        >
+        <section class="user-card">
         <!-- IMAGEN DE USUARIO, VARITA --> 
             <img
               class="user-image-item"
@@ -48,6 +48,7 @@
             <p class="profile-data-mail"><%= user.email %></p>
           </div>
         </div>
+     </div>
       </section>
         <!-- TÍTULO DE SECCIÓN -->
         <div class="headline">

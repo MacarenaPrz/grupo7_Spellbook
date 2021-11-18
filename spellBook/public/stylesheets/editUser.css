@@ -1,0 +1,17 @@
+.containerUser{
+    height: 100%;
+    margin: 25% auto;
+}
+
+.editUser-img{
+    width: 80%;
+    margin-bottom: 10%;
+    border-radius: 50%;
+    max-width: 30%;
+}
+
+.editUser-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
