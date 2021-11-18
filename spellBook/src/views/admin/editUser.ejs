@@ -42,23 +42,18 @@
 
             <!-- LUGAR -->
             <p class="">
-              <label for="location">
-                <i class="fas fa-globe-americas user-data-icon world-pocision"></i>
-              </label>
+
               <input class="profile-input" placeholder="Provincia" type="text" name="location" id="location"
                 value="<%= user.country %>">
             </p>
 
             <!-- NACIMIENTO -->
             <p class="">
-              <label for="date">
-                <i class="fas fa-birthday-cake user-data-icon label"></i>
-              </label>
               <input class="profile-input" type="date" name="date" id="date" value="">
             </p>
 
             <!-- AVATAR -->
-            <p class="">
+            <p class="editProfile-avatar">
               <label for="avatar" class="">
                 <i class="fas fa-camera user-data-icon label"></i>
               </label>
@@ -66,15 +61,15 @@
             </p>
 
             <!-- ROL -->
-            <p class="">
-              <label for="rol" class="rol-user">
-                <spam class=''> ROL </spam>
+            <div class="profileEdit-rol">
+              <label for="rol" class="rol-title">
+                <span class=''> ROL </span>
               </label>
-              <select name="rol" id="rol" class="">
+              <select name="rol" id="rol" class="rol-name">
                 <option value="user">user</option>
                 <option value="admin">admin</option>
               </select>
-            </p>
+            </div>
           </section>
 
           <!-- BOTON PARA DE GUARDAR -->

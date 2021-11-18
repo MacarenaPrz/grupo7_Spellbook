@@ -15,3 +15,35 @@
     flex-direction: column;
     align-items: center;
 }
+
+.profileEdit-rol{
+    font-size: 1rem;
+    margin: 20px 0;
+}
+
+.rol-name{
+    margin: 0 20px;
+}
+
+.editProfile-avatar{
+    display: flex;
+    align-items: center;
+}
+
+/* media query */
+    @media (min-width: 768px){
+        .containerUser{
+            width: 70%;
+            height: 70%;
+            margin: 10% auto;
+        }
+    }
+
+    .editUser-img{
+        width: 10%;
+        margin-bottom: 10%;
+        border-radius: 50%;
+        max-width: 30%;
+    }
+
+    
