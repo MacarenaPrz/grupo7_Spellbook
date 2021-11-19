@@ -4,21 +4,67 @@ function qs(element) {
 }
 
 window.addEventListener("load",()=>{
-    let $email = document.querySelector("#name"),
-    $form = document.querySelector("form"),
-    $emailError = document.querySelector("#nameError"),
-    icono = "<i class='fas fa-exclamation-circle'></i>"
-    
-    $email.addEventListener("blur" , () => {
+    let $name = document.querySelector("#name"),
+    $nameError = document.querySelector("#nameError"),
+    $form = document.querySelector("#editForm"),
+    $formError = qs('#formError'),
+    $lastName = qs("#firstName"),
+    $lastNameError = qs("#firstNameError"),
+    $location = qs('#location'),
+    $locationError = qs('#locationError'),
+    regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
+
+    icono = "<i class='fas fa-exclamation-circle'></i>";
+    let validationsErrors = true;
+
+    $name.addEventListener("blur" , () => {
         switch (true) {
-            case !$email.value.trim():
-                $emailError.innerHTML = `${icono} Debes ingresar un nombre`
-                $email.style.borderColor = "red"
+            case !$name.value.trim():
+                $nameError.innerHTML = `${icono} Debes ingresar un nombre`
+                $name.classList.add('invalid')
                 break;
+            case !regExAlpha.test($name.value):
+                $nameError.innerHTML = `${icono}Ingresa un nombre válido`
+                $name.classList.add('invalid')
+                validationsErrors = false
+                break
+            default:
+                $nameError.innerHTML = ``
+                $name.style.borderColor = "#C1A1D3"
+                validationsErrors = true
+                break;
+        }
+    })
+
+    $lastName.addEventListener("blur", () => {
+        switch (true) {
+            case !regExAlpha.test($lastName.value):
+                $lastNameError.innerHTML = `${icono} Ingresa un apellido válido`
+                $lastName.classList.add('invalid')
+                validationsErrors = false
+                break;
+
         
             default:
-                $emailError.innerHTML = ``
-                $email.style.borderColor = "#C1A1D3"
+                $lastNameError.innerHTML = ''
+                $lastName.style.borderColor = "#C1A1D3"
+                validationsErrors = true
+                break;
+        }
+    })
+    $location.addEventListener('blur', () => {
+        switch (true) {
+            case !regExAlpha.test($location.value):
+                $locationError.innerHTML = `${icono} Ingresa un lugar válido`
+                $location.classList.add('invalid')
+                validationsErrors = false
+                break;
+
+        
+            default:
+                $locationError.innerHTML = ''
+                $location.style.borderColor = "#C1A1D3"
+                validationsErrors = true
                 break;
         }
     })
@@ -26,17 +72,19 @@ window.addEventListener("load",()=>{
     $form.addEventListener("submit", (e) => {
         let error = false;
         e.preventDefault();
-        let elementosForm = $form.elements;
+        let elementosForm = this.elements;
+        console.log(elementosForm)
         for (let index = 0; index < elementosForm.length - 1; index++) {
-            if (elementosForm[index].value.trim() == "" ) {
+            if (elementosForm[index].value == "" ) {
                 elementosForm[index].style.borderColor = "red"
+                $formError.innerHTML = `${icono}Algunos campos deben modificarse`
                 error = true
             }
             
         }
-        if(!error){
+        if(!error && validationsErrors){
             console.log('Todo bien');
-            $formProduct.submit()
+            $form.submit()
         }
     } )
 

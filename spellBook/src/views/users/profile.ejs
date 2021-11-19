@@ -86,7 +86,7 @@
               value="<%= user.last_name %>"
             />
           </p>
-
+          <span class="warning" id="firstNameError"></span>
           <!-- LUGAR -->
           <p class="user-data">
             <label for="location">
@@ -102,6 +102,7 @@
               value="<%= user.country %>"
             />
           </p>
+          <span class="warning" id="locationError"></span>
 
           <!-- NACIMIENTO -->
           <p class="user-data">
@@ -138,6 +139,7 @@
           
       </form>
     </div>
+    <span class="warning" id="formError"></span>
     </main>
 
       <form action="http://localhost:3030/admin/deleteUser/<%=user.id%>?_method=DELETE" id="delete-user" method="POST">
