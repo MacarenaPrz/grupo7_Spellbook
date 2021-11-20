@@ -142,13 +142,12 @@ h4 {
 
 .month-selection .book {
   margin-top: 0;
-  width: 20%;
-  height: 80%;
 }
 
 h3{
   margin-top: 1.5rem;
   font-size: 1rem;
+  text-align: center;
 }
 
 h3, h5 {
@@ -168,7 +167,6 @@ h5 {
   justify-content: center;
   align-items: center;
   flex-wrap: nowrap;
-  
   
 }
 
@@ -250,7 +248,7 @@ h5 {
     position: relative;
     width: 200px;
     height: 300px;
-    margin-top: 15px;
+    margin-top: 2rem;
   }
   
   .carrousel a{
@@ -262,6 +260,7 @@ h5 {
     animation: display 10s infinite;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
     border-radius: 3px;
+    height: 300px;
   }
 
   .carrousel a img {
@@ -416,7 +415,6 @@ h5 {
     min-height: 400px;
     perspective: 450px;
     overflow: hidden;
-    
   }
   .testimonials .item {
     background-color: transparent;
