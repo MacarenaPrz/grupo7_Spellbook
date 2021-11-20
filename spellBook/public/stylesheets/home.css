@@ -314,7 +314,20 @@ h5 {
 /* Desktop */
 
 @media (min-width: 768px) {
+  .month-selection .book{
+    width: 25%;
+  }
 
+  .month-selection .book .book-content {
+    margin: 1rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 90%;
+    
+  }
   .card{
     margin: auto 40px;
   }
