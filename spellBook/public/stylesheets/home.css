@@ -15,7 +15,8 @@ main{
     align-items: center;
     font-size: 1rem;
     height: 75px;
-    margin: 2rem 0;
+    margin-bottom: 2rem;
+    margin-top: 3.5rem;
     text-shadow: 1px 1px 2px grey;
     
 }

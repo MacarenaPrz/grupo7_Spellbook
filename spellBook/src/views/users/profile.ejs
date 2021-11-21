@@ -119,10 +119,8 @@
           </p>
 
           <!-- AVATAR -->
-          <p class="user-data">
-            <label for="avatar">
-              <i class="fas fa-camera user-data-icon label"></i>
-            </label>
+          <p class="user-data-avatar">
+              <i class="fas fa-camera user-data-icon"></i>
             <input
             class="profile-input-img"
               type="file"
@@ -132,18 +130,20 @@
             />
           </p>        
         </section>
-          <!-- BOTON PARA DE GUARDAR -->
+          <!-- BOTON PARA DE GUARDAR Y DELETE -->
+          <div class="profile-btn">
           <div class="user-submit-container">
             <button type="submit" class="btn-save button">Guardar</button>
           </div>
-          
+          <form action="http://localhost:3030/admin/deleteUser/<%=user.id%>?_method=DELETE" id="delete-user" method="POST">
+            <button class="button-delete" type="submit">Eliminar mi cuenta</button>
+          </form>
+        </div>
       </form>
     </div>
     </main>
 
-      <form action="http://localhost:3030/admin/deleteUser/<%=user.id%>?_method=DELETE" id="delete-user" method="POST">
-        <button class="button-delete" type="submit">Eliminar mi cuenta</button>
-      </form>
+      
 
     <!-- FOOTER -->
     <%- include('../partials/footer') %>

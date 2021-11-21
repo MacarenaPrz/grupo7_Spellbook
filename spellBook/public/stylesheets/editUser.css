@@ -1,6 +1,6 @@
 .containerUser{
     height: 100%;
-    margin: 25% auto;
+    margin: 10% auto;
 }
 
 .editUser-img{
@@ -33,7 +33,7 @@
 /* media query */
     @media (min-width: 768px){
         .containerUser{
-            width: 70%;
+            width: 50%;
             height: 70%;
             margin: 10% auto;
         }
