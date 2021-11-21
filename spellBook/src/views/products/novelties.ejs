@@ -29,8 +29,11 @@
           <p class="nov-text-d">
             <%= book.description.slice(0 , 340) %> ...
           </p>
+          <div class="nov-priceAuthor">
           <a class="nov-autor" href=""><%= book.author.name %> </a>
+          
           <span class="nov-price">$ <%= book.price %> </span>
+          </div>
         </div>
       </div>
       <hr class="one-line">
@@ -44,8 +47,10 @@
         <p class="nov-text-d">
           <%= book.description.slice( 0, 350) %> ...
         </p>
+        <div class="nov-priceAuthor">
         <a class="nov-autor" href=""><%= book.author.name %> </a>
         <span class="nov-price">$ <%= book.price %> </span>
+        </div>
       </div>
       <figure class="nov-book">
         <img class="books__img book-cover" src="images/libros/<%= book.image%>" alt="aca va una imagen">       
@@ -91,8 +96,10 @@
             <p class="nov-text-d">
               <%= book.description.slice(0 , 340) %> ...
             </p>
+            <div class="nov-priceAuthor">
               <a class="nov-autor" href=""><%= book.author.name %> </a>
               <span class="nov-price">$ <%= book.price %> </span>
+            </div>
             </div>
           </div>
           <hr class=" one-line">
@@ -107,8 +114,10 @@
           <p class="nov-text-d">
             <%= book.description.slice(0 , 340) %> ...
           </p>
+          <div class="nov-priceAuthor">
             <a class="nov-autor" href=""><%= book.author.name %> </a>
             <span class="nov-price">$ <%= book.price %> </span>
+          </div>
           </div>
           <figure class="nov-book">
             <img class="books__img book-cover" src="images/libros/<%= book.image%>" alt="aca va una imagen">       
@@ -146,9 +155,11 @@
             <p class="nov-text-d">
               <%= book.description.slice(0 , 340) %> ...
             </p>
+            <div class="nov-priceAuthor">
               <a class="nov-autor" href=""><%= book.author.name %> </a>
               <span class="nov-price">$ <%= book.price %> </span>
             </div>
+          </div>
           </div>
           <hr class=" one-line">
       <% } else { %>
@@ -161,8 +172,10 @@
             <p class="nov-text-d">
               <%= book.description.slice(0 , 340) %> ...
             </p>
+            <div class="nov-priceAuthor">
             <a class="nov-autor" href=""><%= book.author.name %> </a>
             <span class="nov-price">$ <%= book.price %> </span>
+          </div>
           </div>
           <figure class="nov-book">
             <img class="books__img book-cover" src="images/libros/<%= book.image%>" alt="aca va una imagen">       
