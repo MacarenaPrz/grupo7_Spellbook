@@ -158,7 +158,7 @@ console.log(localStorage.getItem("bookCart"))
         let $conteinerCarts = qs('#conteiner-cart-items-1');
         let $buttonClear = qs('#clear-cart').style.display = "none"
         let $detailBuy =qs('#detail-buy').style.display = "none"
-        let $recommendedTitle = qs('#recommended-title').innerText = "Puedes enpezar con algunos de estos"
+        let $recommendedTitle = qs('#recommended-title').innerText = "Puedes empezar con algunos de estos"
         $conteinerCarts.innerHTML = "<h1> No has comprado nada aún </h1>";
 
 }}
