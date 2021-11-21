@@ -17,7 +17,7 @@ p.m-1{
 /* LINEA HR */
 .one-line-rigth {
     background: linear-gradient( 90deg,  var(--color-beige), var(--color-azulOscuro));
-    height: 2px;
+    height: 1px;
     margin-bottom: 2rem;
     width: 100%;
  }
@@ -39,6 +39,12 @@ p.m-1{
     justify-content: space-between;
     flex-basis: 40%;
     position: relative;
+    
+}
+.nov-description a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .nov-text{
     flex-basis: 40%;
@@ -57,6 +63,9 @@ p.m-1{
 
 .books__img{
     width: 10rem;
+}
+.headline-search{
+    
 }
 
 @media (min-width:500px){

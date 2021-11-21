@@ -8,8 +8,8 @@
 <%- include('../partials/header') %> 
 
 <!-- Titulo de pagina -->
-<div class="nov-title">
-  <h1>Resultados de la Busqueda de: <%= search %> </h1>
+<div class="admin-title">
+  <h1 class="headline-search">Resultados de la Búsqueda: "<%= search %>" </h1>
   <hr class="bg-blue">
 </div>
 <!-- Si hay productos que coincida con la busqueda los lista -->
@@ -30,18 +30,21 @@
           </p>
           <a class="nov-autor" href=""><%= book.author %> </a>
           <span class="nov-price">$ <%= book.price %> </span>
+          <hr class="bg-blue">
         </div>
-      </a>      
+    
+      </a> 
     </div>
     <% }) %>
+    
 <!-- Este es el msj si no encuentra coincidencia -->
 <% } else { %>
-  <br><br><br><br>  
   <div class="nov-title">
     <h1>No tenemos Libros con ese nombre </h1>
   </div>
-  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  
   <% } %>  
+  
 <!-- FOOTER -->
 <%- include('../partials/footer') %>
 
