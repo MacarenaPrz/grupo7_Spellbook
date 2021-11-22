@@ -75,7 +75,7 @@
 /* LINEA HR */
 .one-line {
     background: linear-gradient(90deg, var(--color-azulOscuro), var(--color-beige));
-    height: 2px;
+    height: 1px;
     margin-bottom: 3rem;
     width: 100%;
  }

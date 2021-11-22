@@ -7,7 +7,7 @@ p{
 p.m-1{
     margin: 50px auto;
     width: 80%;
-    font-size: 2rem;
+    font-size: 1.5rem;
     line-height: 40px;
     text-align: center;
     font-weight: bolder;
@@ -17,7 +17,7 @@ p.m-1{
 /* LINEA HR */
 .one-line-rigth {
     background: linear-gradient( 90deg,  var(--color-beige), var(--color-azulOscuro));
-    height: 2px;
+    height: 1px;
     margin-bottom: 2rem;
     width: 100%;
  }
@@ -29,7 +29,7 @@ p.m-1{
 }
 
 .nov-book {
-  margin: 0.5rem 2rem;
+  /* margin: 0.5rem 2rem; */
   display: flex;
   align-items: center;
 }
@@ -39,42 +39,52 @@ p.m-1{
     justify-content: space-between;
     flex-basis: 40%;
     position: relative;
+    
+}
+.nov-description a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .nov-text{
     flex-basis: 40%;
+    margin-bottom: 20px;
 }
 .nov-text-d{
     display: none;
 }
 .nov-autor{
-    align-self: flex-end;
-    font-size: 0.8rem;
+    font-size: 1rem;
+    margin-bottom: 5px;
 }
 .nov-price {
     font-size: 1rem;
-    color: var(--color-azulClaro);
+    color: var(--color-violeta);
+    font-weight: bold;
 }
 
 .books__img{
     width: 10rem;
 }
-
-@media (min-width:500px){
-    .nov-description {
-        flex-basis: 60%;
-    }
-    .nov-price{
-        position: absolute;
-        left: 40%;
-        top: 90%;
-    }
-    .nov-text{
-        display: none;
-    }
-    .nov-text-d{
-        display: block;
-    }
+.headline-search{
+    
 }
+
+.nov-priceAuthor{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
 @media (min-width: 768px){
+    .nov-priceAuthor{
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+    }
 
 }

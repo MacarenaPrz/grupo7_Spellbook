@@ -30,15 +30,12 @@
       <!--LIST OF PRODUCTS SECTION-->
       <section class="product-list">
         <!--LINKS TO Agregar libro, Bell AND user-->
-        <h1>Hola <%= /* locals.userLog.name */ %>
+        <h1 class ="headline-admin">Panel de control
         </h1>
         <div class="belluser">
           <a href="/admin/users" class="display-shop">Ir a usuarios</a>
           <button class="display-shop" id="button-create">Agregar libro</button>
           <a href="/user/login">
-            <div class="">
-              <i class="far fa-bell" id="icon"></i>
-            </div>
           </a>
           <a href="/user/login">
             <div class="">
@@ -47,7 +44,7 @@
           </a>
         </div>
         <div class="search-table">
-          <h2>Libros</h2>
+          <h2 class="admin-libros">Libros</h2>
           <form action="/admin/search" method="get" id="">
             <label name="search" id="search">
               <i class="fas fa-search "></i>
@@ -87,7 +84,7 @@
                           <td class="description-on"><a href="/product/<%= book.id %>">
                               <%= book.description.slice(0 , 200) %> ...
                             </a></td>
-                          <td><a href="/product/<%= book.id %>">
+                          <td class="admin-bookTitle"><a href="/product/<%= book.id %>">
                               <%= book.title%>
                             </a></td>
                           <td><a href="/product/<%= book.id %>">

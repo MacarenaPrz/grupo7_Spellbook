@@ -305,6 +305,18 @@ form#product fieldset input.display-shop{
     width: 20%;
     min-width: 100px;
 }
+.headline-admin{
+    font-size: 3rem;
+    margin-top: 4rem;
+}
+
+.admin-libros{
+    margin: 0;
+}
+.admin-bookTitle{
+    text-align: center;
+    font-weight: bold;
+}
 
 @media (min-width: 515px) {
     table {
@@ -327,7 +339,7 @@ form#product fieldset input.display-shop{
     }
     .description-on{
         display: table-cell;
-        width: 45%;
+        width: 30%;
     }
     .edit-container {
         display: flex;
