@@ -100,7 +100,7 @@ main{
         flex-direction: row;
         align-items: center;
         justify-content: space-around;
-        margin: 5% auto;
+        margin: 15% auto 5%;
     }
     .profile-data-name{
         font-size: 3.5rem;

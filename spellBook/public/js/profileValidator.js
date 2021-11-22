@@ -15,7 +15,10 @@ window.addEventListener("load",()=>{
     regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
 
     icono = "<i class='fas fa-exclamation-circle'></i>";
-    let validationsErrors = true;
+    let validationsErrorsName = true,
+    validationsErrorsLastName = true,
+    validationsErrorsLocation = true
+
 
     $name.addEventListener("blur" , () => {
         switch (true) {
@@ -26,12 +29,12 @@ window.addEventListener("load",()=>{
             case !regExAlpha.test($name.value):
                 $nameError.innerHTML = `${icono}Ingresa un nombre válido`
                 $name.classList.add('invalid')
-                validationsErrors = false
+                validationsErrorsName = false
                 break
             default:
                 $nameError.innerHTML = ``
                 $name.style.borderColor = "#C1A1D3"
-                validationsErrors = true
+                validationsErrorsName = true
                 break;
         }
     })
@@ -41,14 +44,14 @@ window.addEventListener("load",()=>{
             case !regExAlpha.test($lastName.value):
                 $lastNameError.innerHTML = `${icono} Ingresa un apellido válido`
                 $lastName.classList.add('invalid')
-                validationsErrors = false
+                validationsErrorsLastName = false
                 break;
 
         
             default:
                 $lastNameError.innerHTML = ''
                 $lastName.style.borderColor = "#C1A1D3"
-                validationsErrors = true
+                validationsErrorsLastName = true
                 break;
         }
     })
@@ -57,32 +60,30 @@ window.addEventListener("load",()=>{
             case !regExAlpha.test($location.value):
                 $locationError.innerHTML = `${icono} Ingresa un lugar válido`
                 $location.classList.add('invalid')
-                validationsErrors = false
+                validationsErrorsLocation = false
                 break;
 
         
             default:
                 $locationError.innerHTML = ''
                 $location.style.borderColor = "#C1A1D3"
-                validationsErrors = true
+                validationsErrorsLocation = true
                 break;
         }
     })
-
-    $form.addEventListener("submit", (e) => {
+   
+    $form.addEventListener("submit", function(event) {
         let error = false;
-        e.preventDefault();
+        event.preventDefault();
         let elementosForm = this.elements;
-        console.log(elementosForm)
         for (let index = 0; index < elementosForm.length - 1; index++) {
-            if (elementosForm[index].value == "" ) {
+            if (elementosForm[index].value == "" && elementosForm[index].name == "name" ) {
                 elementosForm[index].style.borderColor = "red"
                 $formError.innerHTML = `${icono}Algunos campos deben modificarse`
                 error = true
-            }
-            
+            }            
         }
-        if(!error && validationsErrors){
+        if(!error && validationsErrorsName && validationsErrorsLastName && validationsErrorsLocation){
             console.log('Todo bien');
             $form.submit()
         }
@@ -96,7 +97,6 @@ window.addEventListener("load",()=>{
 
     let $deleteUser = document.querySelector('#delete-user')//Boton de eliminar 
 //Alert para reafirmar si estas seguro de eliminarte
-    console.log($deleteUser)
     $deleteUser.addEventListener('submit', function(event){
         event.preventDefault()
             $modalClearUser.style.display = "flex"
@@ -105,6 +105,6 @@ window.addEventListener("load",()=>{
             })
             $modalButtonCancelClearUser.addEventListener('click', () => {
                 $modalClearUser.style.display = "none"
-            })
+            })             
     })
 })
