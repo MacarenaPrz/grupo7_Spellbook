@@ -4,39 +4,88 @@ function qs(element) {
 }
 
 window.addEventListener("load",()=>{
-    let $email = document.querySelector("#name"),
-    $form = document.querySelector("form"),
-    $emailError = document.querySelector("#nameError"),
-    icono = "<i class='fas fa-exclamation-circle'></i>"
-    
-    $email.addEventListener("blur" , () => {
+    let $name = document.querySelector("#name"),
+    $nameError = document.querySelector("#nameError"),
+    $form = document.querySelector("#editForm"),
+    $formError = qs('#formError'),
+    $lastName = qs("#firstName"),
+    $lastNameError = qs("#firstNameError"),
+    $location = qs('#location'),
+    $locationError = qs('#locationError'),
+    regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
+
+    icono = "<i class='fas fa-exclamation-circle'></i>";
+    let validationsErrorsName = true,
+    validationsErrorsLastName = true,
+    validationsErrorsLocation = true
+
+
+    $name.addEventListener("blur" , () => {
         switch (true) {
-            case !$email.value.trim():
-                $emailError.innerHTML = `${icono} Debes ingresar un nombre`
-                $email.style.borderColor = "red"
+            case !$name.value.trim():
+                $nameError.innerHTML = `${icono} Debes ingresar un nombre`
+                $name.classList.add('invalid')
                 break;
-        
+            case !regExAlpha.test($name.value):
+                $nameError.innerHTML = `${icono}Ingresa un nombre válido`
+                $name.classList.add('invalid')
+                validationsErrorsName = false
+                break
             default:
-                $emailError.innerHTML = ``
-                $email.style.borderColor = "#C1A1D3"
+                $nameError.innerHTML = ``
+                $name.style.borderColor = "#C1A1D3"
+                validationsErrorsName = true
                 break;
         }
     })
 
-    $form.addEventListener("submit", (e) => {
-        let error = false;
-        e.preventDefault();
-        let elementosForm = $form.elements;
-        for (let index = 0; index < elementosForm.length - 1; index++) {
-            if (elementosForm[index].value.trim() == "" ) {
-                elementosForm[index].style.borderColor = "red"
-                error = true
-            }
-            
+    $lastName.addEventListener("blur", () => {
+        switch (true) {
+            case !regExAlpha.test($lastName.value):
+                $lastNameError.innerHTML = `${icono} Ingresa un apellido válido`
+                $lastName.classList.add('invalid')
+                validationsErrorsLastName = false
+                break;
+
+        
+            default:
+                $lastNameError.innerHTML = ''
+                $lastName.style.borderColor = "#C1A1D3"
+                validationsErrorsLastName = true
+                break;
         }
-        if(!error){
+    })
+    $location.addEventListener('blur', () => {
+        switch (true) {
+            case !regExAlpha.test($location.value):
+                $locationError.innerHTML = `${icono} Ingresa un lugar válido`
+                $location.classList.add('invalid')
+                validationsErrorsLocation = false
+                break;
+
+        
+            default:
+                $locationError.innerHTML = ''
+                $location.style.borderColor = "#C1A1D3"
+                validationsErrorsLocation = true
+                break;
+        }
+    })
+   
+    $form.addEventListener("submit", function(event) {
+        let error = false;
+        event.preventDefault();
+        let elementosForm = this.elements;
+        for (let index = 0; index < elementosForm.length - 1; index++) {
+            if (elementosForm[index].value == "" && elementosForm[index].name == "name" ) {
+                elementosForm[index].style.borderColor = "red"
+                $formError.innerHTML = `${icono}Algunos campos deben modificarse`
+                error = true
+            }            
+        }
+        if(!error && validationsErrorsName && validationsErrorsLastName && validationsErrorsLocation){
             console.log('Todo bien');
-            $formProduct.submit()
+            $form.submit()
         }
     } )
 
@@ -48,7 +97,6 @@ window.addEventListener("load",()=>{
 
     let $deleteUser = document.querySelector('#delete-user')//Boton de eliminar 
 //Alert para reafirmar si estas seguro de eliminarte
-    console.log($deleteUser)
     $deleteUser.addEventListener('submit', function(event){
         event.preventDefault()
             $modalClearUser.style.display = "flex"
@@ -57,6 +105,6 @@ window.addEventListener("load",()=>{
             })
             $modalButtonCancelClearUser.addEventListener('click', () => {
                 $modalClearUser.style.display = "none"
-            })
+            })             
     })
 })
