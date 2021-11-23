@@ -25,7 +25,7 @@ console.log(localStorage.getItem("bookCart"))
         let buyBooks = [];
         $buyButtons.forEach(button => {
             button.addEventListener('click', () => {
-            let confirmation = confirm('¿Estas seguro que quieres sumar al carrito?')
+            let confirmation = confirm('¿Estás seguro que quieres sumar al carrito?')
             if (confirmation) {               
                 buyBooks.push(button.value)
                 localStorage.setItem('bookCart', buyBooks)

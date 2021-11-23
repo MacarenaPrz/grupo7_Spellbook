@@ -125,7 +125,7 @@ window.addEventListener("load", () => {
         }
         if (!error && validationsErrors) {            
             $form.submit() 
-            alert("Felicidades ya te registrarte, es hora de iniciar sesión")
+            alert("¡Felicidades, ya te registraste! es hora de iniciar sesión.")
         }  
     } )
 })
