@@ -35,9 +35,12 @@
       <div class="cart-icon">
         <a href="/cart"><i class="fas fa-shopping-cart cart-icon"></i></a>
       </div>
-      <div >
+      <div class="icons relative">
          <img class="wizard" src="/images/Recursos/wizard-icon.png" alt="" />
-      </div>
+        <% if (locals.inLogged) { %>
+          <div class="inLog"></div>
+        <% } %> 
+      </div>      
     </div>
     <!-- LUPA DE BUSQUEDA -->
     <form action="/search" method="get" class="search" >
