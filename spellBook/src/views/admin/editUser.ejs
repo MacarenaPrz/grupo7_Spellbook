@@ -6,9 +6,14 @@
   <body>
     <!-- HEADER -->
     <%- include('../partials/headerAdmin') %> 
-
+ 
     <body>
       <main class="containerUser">
+           
+    <div class="belluser">
+      <a href="/admin/users" class="display-shop">Ir a usuarios</a>
+    </div>
+
 
         <!-- FORMULARIO DE REGISTRO -->
         <form class="" action="/admin/users/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data"

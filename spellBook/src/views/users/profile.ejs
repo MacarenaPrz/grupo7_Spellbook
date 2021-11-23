@@ -136,11 +136,12 @@
           <div class="user-submit-container">
             <button type="submit" class="btn-save button">Guardar</button>
           </div>
+        </form>
           <form action="http://localhost:3030/admin/deleteUser/<%=user.id%>?_method=DELETE" id="delete-user" method="POST">
             <button class="button-delete" type="submit">Eliminar mi cuenta</button>
           </form>
         </div>
-      </form>
+     
     </div>
     <span class="warning" id="formError"></span>
     </main>

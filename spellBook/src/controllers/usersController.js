@@ -26,7 +26,7 @@ module.exports = {
                 if(req.body.recuerdame){
                     res.cookie('logSpellbook', req.session.userLog, {maxAge: (1000*60) * 60} )
                 }
-                res.redirect('/user/profile'); 
+                res.redirect('/'); 
                 
             })
             .catch(err => console.log(err))            
